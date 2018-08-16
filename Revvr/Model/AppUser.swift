@@ -9,24 +9,24 @@
 import UIKit
 
 class AppUser: ModelObject {
-    static var User: AppUser?// The current user of the app
+    static var User: AppUser?// The current user of the app TODO: should this be a singleton?
     
     var firstName: String
     var lastName: String
+    var handle: String
+    var email: String
+    var password: String
+    
     var city: String?
     var administrativeArea: String?
     var country: String?
-    var dob: Date
+    var dob: Date?
     var gender: String?
     var religion: String?
     var politics: String?
     var education: String?
     var profession: String?
     var interests: String?
-    
-    var handle: String
-    var email: String
-    var password: String
 
     var content: AppUserContent?
     var settings: AppUserSettings?
@@ -37,7 +37,6 @@ class AppUser: ModelObject {
 
             dict["firstName"] = firstName
             dict["lastName"] = lastName
-            dict["dob"] = ModelObject.dateStringForDate(date: dob)
             dict["handle"] = handle
             dict["email"] = email
             dict["password"] = password
@@ -51,6 +50,7 @@ class AppUser: ModelObject {
             dict["education"] = education
             dict["profession"] = profession
             dict["interests"] = interests
+            dict["dob"] = ModelObject.dateStringForDate(date: dob)
 
             return try? JSONSerialization.data(withJSONObject: dict, options:[])
         }
@@ -58,13 +58,11 @@ class AppUser: ModelObject {
 
     init(firstName: String,
          lastName: String,
-         dob: Date,
          handle: String,
          email: String,
          password: String) {
         self.firstName = firstName
         self.lastName = lastName
-        self.dob = dob
         self.handle = handle
         self.email = email
         self.password = password
@@ -75,7 +73,6 @@ class AppUser: ModelObject {
     required init?(json: [String: Any]) {
         guard let firstName = json["firstName"] as? String,
             let lastName = json["lastName"] as? String,
-            let dob = json["dob"] as? String,
             let handle = json["handle"] as? String,
             let email = json["email"] as? String,
             let password = json["password"] as? String
@@ -87,8 +84,18 @@ class AppUser: ModelObject {
         self.lastName = lastName
         self.handle = handle
         self.email = email
-        self.dob = ModelObject.dateFromDateString(dateString: dob)
         self.password = password
+        
+        self.dob = ModelObject.dateFromDateString(dateString: json["dob"] as? String)
+        self.city = json["city"] as? String
+        self.administrativeArea = json["administrativeArea"] as? String
+        self.country = json["country"] as? String
+        self.gender = json["gender"] as? String
+        self.religion = json["religion"] as? String
+        self.politics = json["politics"] as? String
+        self.education = json["education"] as? String
+        self.profession = json["profession"] as? String
+        self.interests = json["interests"] as? String
         
         super.init(json: json)
     }

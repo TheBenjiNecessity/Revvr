@@ -21,24 +21,23 @@ class ModelObject: NSObject {
     }
     
     required init?(json: [String: Any]) {
-        guard let id = json["id"] as? Int else {
-            return nil
-        }
-        
-        self.ID = id
+        self.ID = json["id"] as? Int
         
         super.init()
     }
-    
-    static func dateStringForDate(date: Date) -> String {
+        
+    // TODO: these functions should be stored somewhere else
+    static func dateStringForDate(date: Date?) -> String {
+        guard let date = date else { return "" }
         let formatter = DateFormatter()
         formatter.dateFormat = dateFormatString
         return formatter.string(from: date)
     }
     
-    static func dateFromDateString(dateString: String) -> Date {
+    static func dateFromDateString(dateString: String?) -> Date? {
+        guard let dateString = dateString else { return nil }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormatString
-        return dateFormatter.date(from: dateString)!
+        return dateFormatter.date(from: dateString)
     }
 }
