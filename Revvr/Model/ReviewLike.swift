@@ -39,7 +39,7 @@ class ReviewLike: ModelObject {
         self.appUserID = appUserID
         self.reviewID = reviewID
         self.type = type
-        self.created = ModelObject.dateFromDateString(dateString: created)
+        self.created = ModelObject.dateFromDateString(dateString: created)!
         
         super.init(json: json)
     }

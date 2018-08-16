@@ -17,16 +17,38 @@ class Review: ModelObject {
     var comment: String?
     var emojis: String
     
-    init(ID: Int, appUserID: Int, reviewableID: Int, created: Date, emojis: String) {
-        self.appUserID = appUserID
-        self.reviewableID = reviewableID
-        self.emojis = emojis
-        self.created = created
-        
-        super.init()
+    override var data: Data? {
+        get {
+            var dict = [String: Any]()
+            
+            dict["appUserID"] = appUserID
+            dict["reviewableID"] = reviewableID
+            dict["title"] = title
+            dict["comment"] = comment
+            dict["emojis"] = emojis
+            dict["created"] = ModelObject.dateStringForDate(date: created)
+            
+            return try? JSONSerialization.data(withJSONObject: dict, options:[])
+        }
     }
     
     required init?(json: [String: Any]) {
+        guard let appUserID = json["appUserID"] as? Int,
+            let reviewableID = json["reviewableID"] as? Int,
+            let created = json["created"] as? String,
+            let emojis = json["emojis"] as? String
+        else {
+                return nil
+        }
+        
+        self.appUserID = appUserID
+        self.reviewableID = reviewableID
+        self.emojis = emojis
+        self.created = ModelObject.dateFromDateString(dateString: created)!
+        
+        self.title = json["title"] as? String
+        self.comment = json["comment"] as? String
+        
         return nil
     }
 }
