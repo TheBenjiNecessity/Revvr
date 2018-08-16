@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */; };
-		7913A87F212503F000233328 /* AppUserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913A87E212503F000233328 /* AppUserDetail.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
 		7994BFE020608A9600D05B25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDF20608A9600D05B25 /* ViewController.swift */; };
 		7994BFE320608A9600D05B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7994BFE120608A9600D05B25 /* Main.storyboard */; };
@@ -59,7 +58,6 @@
 		55D193159E258AA569254070 /* Pods-RevvrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevvrUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RevvrUITests/Pods-RevvrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		563D02650801DFCE8B495E64 /* Pods_RevvrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevvrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserFollowing.swift; sourceTree = "<group>"; };
-		7913A87E212503F000233328 /* AppUserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDetail.swift; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7994BFDF20608A9600D05B25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 				79B48BC721150E5A00AB5415 /* JSONObjects */,
 				79B48BB8211509B700AB5415 /* ModelObject.swift */,
 				79B48BBB211509E200AB5415 /* AppUser.swift */,
-				7913A87E212503F000233328 /* AppUserDetail.swift */,
 				790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */,
 				79B48BBD211509FF00AB5415 /* Review.swift */,
 				79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */,
@@ -483,7 +480,6 @@
 				7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */,
 				790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */,
 				79B48BC621150E5200AB5415 /* AppUserContent.swift in Sources */,
-				7913A87F212503F000233328 /* AppUserDetail.swift in Sources */,
 				799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */,
 				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
 			);
