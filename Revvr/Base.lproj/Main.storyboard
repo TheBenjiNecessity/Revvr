@@ -74,7 +74,7 @@
         <!--AR View Controller-->
         <scene sceneID="ca9-gU-YSv">
             <objects>
-                <viewController title="AR View Controller" id="cnZ-L9-t5R" sceneMemberID="viewController">
+                <viewController title="AR View Controller" id="cnZ-L9-t5R" customClass="ViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oWH-DB-tLX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,6 +86,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LL-HF-aVL">
+                                <rect key="frame" x="172" y="318" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Test"/>
+                                <connections>
+                                    <action selector="Test:" destination="cnZ-L9-t5R" eventType="touchUpInside" id="v03-zG-6qM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XZR-5T-Ye7"/>

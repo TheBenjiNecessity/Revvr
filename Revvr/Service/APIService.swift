@@ -7,43 +7,96 @@
 //
 
 import UIKit
+import Promises
 
 class APIService: NSObject {
-    
-    static let url: String = "service-api"
+    static let errorDomain = "com.revvr.Revvr"
+    static let serviceUrl: String = "http://localhost:5001/service-api/"//TODO
 
-    func get(uri: String, postString: String) -> () {
+    static func get(url: String) -> Promise<Data> {
+        return request(url: url, httpMethod: "GET", body: nil)
+    }
+   
+    static func post(url: String, body: Data) -> Promise<Data> {
+        return request(url: url, httpMethod: "POST", body: body)
+    }
+    
+    static func delete(url: String) -> Promise<Data> {
+        return request(url: url, httpMethod: "DELETE", body: nil)
+    }
+    
+    static func request(url: String, httpMethod: String, body: Data?) -> Promise<Data> {
+        let uri = APIService.serviceUrl + url
+        var request = URLRequest(url: URL(string: uri)!)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = httpMethod
+        if let body = body {
+            request.httpBody = body
+        }
         
-        let url = URL(string: uri)!
-        var request = URLRequest(url: url)
-        //request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "GET"
-        //request.httpBody = postString.data(using: .utf8)
+        let promise = Promise<Data>.pending()
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                
-                print("error=\(String(describing: error))")
-                return
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                let error = NSError(domain: NSURLErrorDomain,
+                                    code: httpStatus.statusCode,
+                                    userInfo: nil)
+                promise.reject(error)
+            } else if data != nil && error == nil {
+                promise.fulfill(data!)
+            } else if error != nil {
+                promise.reject(error!)
             }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
         }
         task.resume()
         
+        return promise
     }
     
-    func getDomain() -> String {
-        return ""
+    //Only user this function when you know that the backend will return an object
+    static func getPromise<T: ModelObject>(data: Data, type: T.Type) -> Promise<T> {
+        let promise = Promise<T>.pending()
+        let error = NSError(domain: APIService.errorDomain, code: 1, userInfo: nil)
+        print("test")
+        print(String(data: data, encoding: String.Encoding.utf8)!)
+        if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
+            if let obj = T.init(json: json!) {
+                promise.fulfill(obj)
+            } else {
+                promise.reject(error)
+            }
+        } else {
+            promise.reject(error)
+        }
+        
+        return promise
     }
     
-}
-
-class Response: NSObject {
-    var string: String?
+    //Only user this function when you know that the backend will return an array of objects
+    static func getArrayPromise<T: ModelObject>(data: Data, type: T.Type) -> Promise<[T]> {
+        let promise = Promise<[T]>.pending()
+        
+        func getTsFromData<T: ModelObject>(data: Data, type: T.Type) -> [T]? {
+            let json = try? JSONSerialization.jsonObject(with: data, options: [])
+            let TJson = json as! [T]
+            
+            return TJson
+        }
+        
+        if let objs = getTsFromData(data: data, type: type) {
+            promise.fulfill(objs)
+        } else {
+            let error = NSError(domain: APIService.errorDomain, code: 1, userInfo: nil)
+            promise.reject(error)
+        }
+        
+        return promise
+    }
+    
+//    static func getTsFromData<T: ModelObject>(data: Data, type: T.Type) -> [T]? {
+//        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+//        let TJson = json as! [T]
+//        
+//        return TJson
+//    }
 }

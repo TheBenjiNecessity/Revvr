@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */; };
+		7913A87F212503F000233328 /* AppUserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913A87E212503F000233328 /* AppUserDetail.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
 		7994BFE020608A9600D05B25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDF20608A9600D05B25 /* ViewController.swift */; };
 		7994BFE320608A9600D05B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7994BFE120608A9600D05B25 /* Main.storyboard */; };
@@ -18,6 +20,21 @@
 		799C004E21128F04001BF07D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C004D21128F04001BF07D /* APIService.swift */; };
 		799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C005021128F32001BF07D /* AppUserAPIService.swift */; };
 		79B3E380210FFD7200CD73EB /* RevListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3E37E210FFD7200CD73EB /* RevListTableViewController.swift */; };
+		79B48BB9211509B700AB5415 /* ModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BB8211509B700AB5415 /* ModelObject.swift */; };
+		79B48BBC211509E200AB5415 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBB211509E200AB5415 /* AppUser.swift */; };
+		79B48BBE211509FF00AB5415 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBD211509FF00AB5415 /* Review.swift */; };
+		79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBF21150A1B00AB5415 /* Reviewable.swift */; };
+		79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BC121150C3100AB5415 /* ReviewableAPIService.swift */; };
+		79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BC321150C5A00AB5415 /* ReviewAPIService.swift */; };
+		79B48BC621150E5200AB5415 /* AppUserContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BC521150E5200AB5415 /* AppUserContent.swift */; };
+		79B48BC921150E6E00AB5415 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BC821150E6E00AB5415 /* JSONObject.swift */; };
+		79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BCA21150EAB00AB5415 /* ReviewableContent.swift */; };
+		79B48BCD21150EC200AB5415 /* AppUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BCC21150EC200AB5415 /* AppUserSettings.swift */; };
+		79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BCE21150EFB00AB5415 /* ReviewableInfo.swift */; };
+		79C07EAE2121BC1F00B7D024 /* ReviewLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */; };
+		8A556A4E41C57697223E17B5 /* Pods_RevvrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563D02650801DFCE8B495E64 /* Pods_RevvrTests.framework */; };
+		A5D798BB729D688B6A4F799F /* Pods_RevvrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E9D931E19714A811F984E9 /* Pods_RevvrUITests.framework */; };
+		F173A3B93CF76264ABB3EFE1 /* Pods_Revvr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF466C5C824EFFDF63B56756 /* Pods_Revvr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		339CFAFFB37B129947BEB4B6 /* Pods-Revvr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revvr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Revvr/Pods-Revvr.release.xcconfig"; sourceTree = "<group>"; };
+		55D193159E258AA569254070 /* Pods-RevvrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevvrUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RevvrUITests/Pods-RevvrUITests.release.xcconfig"; sourceTree = "<group>"; };
+		563D02650801DFCE8B495E64 /* Pods_RevvrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevvrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserFollowing.swift; sourceTree = "<group>"; };
+		7913A87E212503F000233328 /* AppUserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDetail.swift; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7994BFDF20608A9600D05B25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +77,24 @@
 		799C004D21128F04001BF07D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		799C005021128F32001BF07D /* AppUserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserAPIService.swift; sourceTree = "<group>"; };
 		79B3E37E210FFD7200CD73EB /* RevListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevListTableViewController.swift; sourceTree = "<group>"; };
+		79B48BB8211509B700AB5415 /* ModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelObject.swift; sourceTree = "<group>"; };
+		79B48BBB211509E200AB5415 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		79B48BBD211509FF00AB5415 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		79B48BBF21150A1B00AB5415 /* Reviewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviewable.swift; sourceTree = "<group>"; };
+		79B48BC121150C3100AB5415 /* ReviewableAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableAPIService.swift; sourceTree = "<group>"; };
+		79B48BC321150C5A00AB5415 /* ReviewAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAPIService.swift; sourceTree = "<group>"; };
+		79B48BC521150E5200AB5415 /* AppUserContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserContent.swift; sourceTree = "<group>"; };
+		79B48BC821150E6E00AB5415 /* JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
+		79B48BCA21150EAB00AB5415 /* ReviewableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableContent.swift; sourceTree = "<group>"; };
+		79B48BCC21150EC200AB5415 /* AppUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserSettings.swift; sourceTree = "<group>"; };
+		79B48BCE21150EFB00AB5415 /* ReviewableInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableInfo.swift; sourceTree = "<group>"; };
+		79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLike.swift; sourceTree = "<group>"; };
+		80FF82895DB7AC9B7F0D7938 /* Pods-Revvr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revvr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Revvr/Pods-Revvr.debug.xcconfig"; sourceTree = "<group>"; };
+		83689F9E1F249FC5295F03C7 /* Pods-RevvrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevvrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RevvrTests/Pods-RevvrTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF466C5C824EFFDF63B56756 /* Pods_Revvr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Revvr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE6DCE84E90948C214DBB473 /* Pods-RevvrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevvrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RevvrTests/Pods-RevvrTests.release.xcconfig"; sourceTree = "<group>"; };
+		E6E9D931E19714A811F984E9 /* Pods_RevvrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevvrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F596A50B021DA6DBB7E55AC9 /* Pods-RevvrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevvrUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RevvrUITests/Pods-RevvrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F173A3B93CF76264ABB3EFE1 /* Pods_Revvr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A556A4E41C57697223E17B5 /* Pods_RevvrTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +118,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D798BB729D688B6A4F799F /* Pods_RevvrUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C3A62EDDF4915B9E1BAC39A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF466C5C824EFFDF63B56756 /* Pods_Revvr.framework */,
+				563D02650801DFCE8B495E64 /* Pods_RevvrTests.framework */,
+				E6E9D931E19714A811F984E9 /* Pods_RevvrUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7994BFD120608A9500D05B25 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +142,8 @@
 				7994BFF420608A9600D05B25 /* RevvrTests */,
 				7994BFFF20608A9600D05B25 /* RevvrUITests */,
 				7994BFDB20608A9600D05B25 /* Products */,
+				7D3656E28DEA0F0B76331FD7 /* Pods */,
+				1C3A62EDDF4915B9E1BAC39A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,8 +160,8 @@
 		7994BFDC20608A9600D05B25 /* Revvr */ = {
 			isa = PBXGroup;
 			children = (
+				79B48BBA211509BD00AB5415 /* Model */,
 				799C004C21128EB6001BF07D /* Service */,
-				799C004A21128E5F001BF07D /* Model */,
 				79B3E373210FEF4500CD73EB /* ViewControllers */,
 				7994BFDD20608A9600D05B25 /* AppDelegate.swift */,
 				7994BFDF20608A9600D05B25 /* ViewController.swift */,
@@ -137,26 +192,13 @@
 			path = RevvrUITests;
 			sourceTree = "<group>";
 		};
-		799C004A21128E5F001BF07D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				799C004B21128E6D001BF07D /* Model Objects */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		799C004B21128E6D001BF07D /* Model Objects */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Model Objects";
-			sourceTree = "<group>";
-		};
 		799C004C21128EB6001BF07D /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				799C004D21128F04001BF07D /* APIService.swift */,
 				799C005021128F32001BF07D /* AppUserAPIService.swift */,
+				79B48BC121150C3100AB5415 /* ReviewableAPIService.swift */,
+				79B48BC321150C5A00AB5415 /* ReviewAPIService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -169,6 +211,46 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		79B48BBA211509BD00AB5415 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79B48BC721150E5A00AB5415 /* JSONObjects */,
+				79B48BB8211509B700AB5415 /* ModelObject.swift */,
+				79B48BBB211509E200AB5415 /* AppUser.swift */,
+				7913A87E212503F000233328 /* AppUserDetail.swift */,
+				790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */,
+				79B48BBD211509FF00AB5415 /* Review.swift */,
+				79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */,
+				79B48BBF21150A1B00AB5415 /* Reviewable.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		79B48BC721150E5A00AB5415 /* JSONObjects */ = {
+			isa = PBXGroup;
+			children = (
+				79B48BC521150E5200AB5415 /* AppUserContent.swift */,
+				79B48BCC21150EC200AB5415 /* AppUserSettings.swift */,
+				79B48BCA21150EAB00AB5415 /* ReviewableContent.swift */,
+				79B48BCE21150EFB00AB5415 /* ReviewableInfo.swift */,
+				79B48BC821150E6E00AB5415 /* JSONObject.swift */,
+			);
+			path = JSONObjects;
+			sourceTree = "<group>";
+		};
+		7D3656E28DEA0F0B76331FD7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80FF82895DB7AC9B7F0D7938 /* Pods-Revvr.debug.xcconfig */,
+				339CFAFFB37B129947BEB4B6 /* Pods-Revvr.release.xcconfig */,
+				83689F9E1F249FC5295F03C7 /* Pods-RevvrTests.debug.xcconfig */,
+				DE6DCE84E90948C214DBB473 /* Pods-RevvrTests.release.xcconfig */,
+				F596A50B021DA6DBB7E55AC9 /* Pods-RevvrUITests.debug.xcconfig */,
+				55D193159E258AA569254070 /* Pods-RevvrUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7994C00520608A9600D05B25 /* Build configuration list for PBXNativeTarget "Revvr" */;
 			buildPhases = (
+				C3CEB39A98A0AFAC47342E3D /* [CP] Check Pods Manifest.lock */,
 				7994BFD620608A9600D05B25 /* Sources */,
 				7994BFD720608A9600D05B25 /* Frameworks */,
 				7994BFD820608A9600D05B25 /* Resources */,
+				F042C0FADCE60DE16B874F62 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +277,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7994C00820608A9600D05B25 /* Build configuration list for PBXNativeTarget "RevvrTests" */;
 			buildPhases = (
+				05E9E9F4135A0714717B0808 /* [CP] Check Pods Manifest.lock */,
 				7994BFED20608A9600D05B25 /* Sources */,
 				7994BFEE20608A9600D05B25 /* Frameworks */,
 				7994BFEF20608A9600D05B25 /* Resources */,
@@ -211,6 +296,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7994C00B20608A9600D05B25 /* Build configuration list for PBXNativeTarget "RevvrUITests" */;
 			buildPhases = (
+				B845AB2526C34C34A8F42E88 /* [CP] Check Pods Manifest.lock */,
 				7994BFF820608A9600D05B25 /* Sources */,
 				7994BFF920608A9600D05B25 /* Frameworks */,
 				7994BFFA20608A9600D05B25 /* Resources */,
@@ -298,17 +384,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05E9E9F4135A0714717B0808 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RevvrTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B845AB2526C34C34A8F42E88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RevvrUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3CEB39A98A0AFAC47342E3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Revvr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F042C0FADCE60DE16B874F62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Revvr/Pods-Revvr-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Revvr/Pods-Revvr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7994BFD620608A9600D05B25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79B48BBC211509E200AB5415 /* AppUser.swift in Sources */,
+				79B48BCD21150EC200AB5415 /* AppUserSettings.swift in Sources */,
 				7994BFE620608A9600D05B25 /* Revvr.xcdatamodeld in Sources */,
+				79B48BBE211509FF00AB5415 /* Review.swift in Sources */,
+				79B48BB9211509B700AB5415 /* ModelObject.swift in Sources */,
+				79C07EAE2121BC1F00B7D024 /* ReviewLike.swift in Sources */,
 				799C004E21128F04001BF07D /* APIService.swift in Sources */,
+				79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */,
+				79B48BC921150E6E00AB5415 /* JSONObject.swift in Sources */,
+				79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */,
+				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
 				7994BFE020608A9600D05B25 /* ViewController.swift in Sources */,
 				79B3E380210FFD7200CD73EB /* RevListTableViewController.swift in Sources */,
+				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
 				7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */,
+				790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */,
+				79B48BC621150E5200AB5415 /* AppUserContent.swift in Sources */,
+				7913A87F212503F000233328 /* AppUserDetail.swift in Sources */,
 				799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */,
+				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +649,7 @@
 		};
 		7994C00620608A9600D05B25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80FF82895DB7AC9B7F0D7938 /* Pods-Revvr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -488,6 +666,7 @@
 		};
 		7994C00720608A9600D05B25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 339CFAFFB37B129947BEB4B6 /* Pods-Revvr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -504,6 +683,7 @@
 		};
 		7994C00920608A9600D05B25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83689F9E1F249FC5295F03C7 /* Pods-RevvrTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -521,6 +701,7 @@
 		};
 		7994C00A20608A9600D05B25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE6DCE84E90948C214DBB473 /* Pods-RevvrTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -538,6 +719,7 @@
 		};
 		7994C00C20608A9600D05B25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F596A50B021DA6DBB7E55AC9 /* Pods-RevvrUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -554,6 +736,7 @@
 		};
 		7994C00D20608A9600D05B25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D193159E258AA569254070 /* Pods-RevvrUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
