@@ -30,12 +30,12 @@ class AppUserFollowing: ModelObject {
             let followingId = json["followingId"] as? Int,
             let created = json["created"] as? String
         else {
-                return nil
+            return nil
         }
         
         self.followerId = followerId
         self.followingId = followingId
-        self.created = ModelObject.dateFromDateString(dateString: created)
+        self.created = ModelObject.dateFromDateString(dateString: created)!
         
         super.init(json: json)
     }
