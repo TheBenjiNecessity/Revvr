@@ -27,8 +27,8 @@ class ModelObject: NSObject {
     }
         
     // TODO: these functions should be stored somewhere else
-    static func dateStringForDate(date: Date?) -> String {
-        guard let date = date else { return "" }
+    static func dateStringForDate(date: Date?) -> String? {
+        guard let date = date else { return nil }
         let formatter = DateFormatter()
         formatter.dateFormat = dateFormatString
         return formatter.string(from: date)
