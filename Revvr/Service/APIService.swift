@@ -53,12 +53,11 @@ class APIService: NSObject {
         return promise
     }
     
-    //Only user this function when you know that the backend will return an object
+    // Only use this function when you know that the backend will return an object
     static func getPromise<T: ModelObject>(data: Data, type: T.Type) -> Promise<T> {
         let promise = Promise<T>.pending()
         let error = NSError(domain: APIService.errorDomain, code: 1, userInfo: nil)
-        print("test")
-        print(String(data: data, encoding: String.Encoding.utf8)!)
+
         if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
             if let obj = T.init(json: json!) {
                 promise.fulfill(obj)
@@ -72,7 +71,7 @@ class APIService: NSObject {
         return promise
     }
     
-    //Only user this function when you know that the backend will return an array of objects
+    // Only use this function when you know that the backend will return an array of objects
     static func getArrayPromise<T: ModelObject>(data: Data, type: T.Type) -> Promise<[T]> {
         let promise = Promise<[T]>.pending()
         
@@ -91,11 +90,4 @@ class APIService: NSObject {
         
         return promise
     }
-    
-//    static func getTsFromData<T: ModelObject>(data: Data, type: T.Type) -> [T]? {
-//        let json = try? JSONSerialization.jsonObject(with: data, options: [])
-//        let TJson = json as! [T]
-//        
-//        return TJson
-//    }
 }
