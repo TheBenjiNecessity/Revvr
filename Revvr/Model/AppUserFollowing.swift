@@ -11,7 +11,7 @@ import UIKit
 class AppUserFollowing: ModelObject {
     var followerId: Int
     var followingId: Int
-    var created: Date
+    var created: Date? //TODO this should be private/not settable
     
     override var data: Data? {
         get {
@@ -27,15 +27,14 @@ class AppUserFollowing: ModelObject {
     
     required init?(json: [String: Any]) {        
         guard let followerId = json["followerId"] as? Int,
-            let followingId = json["followingId"] as? Int,
-            let created = json["created"] as? String
+            let followingId = json["followingId"] as? Int
         else {
             return nil
         }
         
         self.followerId = followerId
         self.followingId = followingId
-        self.created = ModelObject.dateFromDateString(dateString: created)!
+        self.created = ModelObject.dateFromDateString(dateString: json["created"] as? String)
         
         super.init(json: json)
     }
