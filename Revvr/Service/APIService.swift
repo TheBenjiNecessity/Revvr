@@ -77,10 +77,9 @@ class APIService: NSObject {
         let promise = Promise<[T]>.pending()
         
         func getTsFromData<T: ModelObject>(data: Data, type: T.Type) -> [T]? {
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            let TJson = json as! [T]
-            
-            return TJson
+            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            let TJson = json as! [[String: Any]]
+            return TJson.map { T.init(json: $0)! }
         }
         
         if let objs = getTsFromData(data: data, type: type) {
