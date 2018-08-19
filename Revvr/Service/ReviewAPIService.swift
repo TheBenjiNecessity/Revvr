@@ -16,20 +16,20 @@ class ReviewAPIService: APIService {
     static func get(id: Int) -> Promise<Review> {
         let uri = "\(url)/\(id)"
         return APIService.get(url: uri).then { data in
-            return getPromise(data: data, type: Review.self)
+            return getModelObjectPromise(data: data, type: Review.self)
         }
     }
     
     static func create(review: Review) -> Promise<Review> {
         return APIService.post(url: url, body: review.data!).then { data in
-            return getPromise(data: data, type: Review.self)
+            return getModelObjectPromise(data: data, type: Review.self)
         }
     }
     
     static func update(id: Int, review: Review) -> Promise<Review> {
         let uri = "\(url)/\(id)"
         return APIService.post(url: uri, body: review.data!).then { data in
-            return getPromise(data: data, type: Review.self)
+            return getModelObjectPromise(data: data, type: Review.self)
         }
     }
     
@@ -64,7 +64,7 @@ class ReviewAPIService: APIService {
     static func like(reviewLike: ReviewLike) -> Promise<ReviewLike> {
         let uri = "\(url)/like"
         return APIService.post(url: uri, body: reviewLike.data!).then { data in
-            return getPromise(data: data, type: ReviewLike.self)
+            return getModelObjectPromise(data: data, type: ReviewLike.self)
         }
     }
     

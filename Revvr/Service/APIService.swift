@@ -54,7 +54,7 @@ class APIService: NSObject {
     }
     
     // Only use this function when you know that the backend will return an object
-    static func getPromise<T: ModelObject>(data: Data, type: T.Type) -> Promise<T> {
+    static func getModelObjectPromise<T: ModelObject>(data: Data, type: T.Type) -> Promise<T> {
         let promise = Promise<T>.pending()
         let error = NSError(domain: APIService.errorDomain, code: 1, userInfo: nil)
 

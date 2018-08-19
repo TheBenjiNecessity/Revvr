@@ -16,27 +16,27 @@ class AppUserAPIService: APIService {
     static func get(id: Int) -> Promise<AppUser> {
         let uri = "\(url)/\(id)"
         return APIService.get(url: uri).then { data in
-            return getPromise(data: data, type: AppUser.self)
+            return getModelObjectPromise(data: data, type: AppUser.self)
         }
     }
     
     static func get(handle: String) -> Promise<AppUser> {
         let uri = "\(url)/handle/\(handle)"
         return APIService.get(url: uri).then { data in
-            return getPromise(data: data, type: AppUser.self)
+            return getModelObjectPromise(data: data, type: AppUser.self)
         }
     }
     
     static func create(user: AppUser) -> Promise<AppUser> {
         return APIService.post(url: "appuser", body: user.data!).then { data in
-            return getPromise(data: data, type: AppUser.self)
+            return getModelObjectPromise(data: data, type: AppUser.self)
         }
     }
     
     static func update(id: Int, user: AppUser) -> Promise<AppUser> {
         let uri = "\(url)/\(id)"
         return APIService.post(url: uri, body: user.data!).then { data in
-            return getPromise(data: data, type: AppUser.self)
+            return getModelObjectPromise(data: data, type: AppUser.self)
         }
     }
     

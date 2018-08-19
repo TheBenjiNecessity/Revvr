@@ -15,7 +15,7 @@ class ReviewableAPIService: APIService {
     static func get(id: Int) -> Promise<Reviewable> {
         let uri = "\(url)/\(id)"
         return APIService.get(url: uri).then { data in
-            return getPromise(data: data, type: Reviewable.self)
+            return getModelObjectPromise(data: data, type: Reviewable.self)
         }
     }
     
