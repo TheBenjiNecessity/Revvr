@@ -90,4 +90,17 @@ class APIService: NSObject {
         
         return promise
     }
+    
+    static func getGenericPromise<T>(data: Data) -> Promise<T> {
+        let promise = Promise<T>.pending();
+        let error = NSError(domain: APIService.errorDomain, code: 1, userInfo: nil)
+        
+        if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? T {
+            promise.fulfill(json!)
+        } else {
+            promise.reject(error)
+        }
+        
+        return promise
+    }
 }
