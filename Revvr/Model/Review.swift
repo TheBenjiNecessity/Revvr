@@ -38,7 +38,7 @@ class Review: ModelObject {
             let created = json["created"] as? String,
             let emojis = json["emojis"] as? String
         else {
-                return nil
+            return nil
         }
         
         self.appUserID = appUserID
@@ -49,6 +49,6 @@ class Review: ModelObject {
         self.title = json["title"] as? String
         self.comment = json["comment"] as? String
         
-        return nil
+        super.init(json: json)
     }
 }
