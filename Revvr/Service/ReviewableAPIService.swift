@@ -21,17 +21,17 @@ class ReviewableAPIService: APIService {
     
     //list reviewables by type?
     
-    static func getReviewCount(id: Int) -> Promise<Reviewable> {
+    static func getReviewCount(id: Int) -> Promise<Int> {
         let uri = "\(url)/stats/reviewcount/\(id)"
         return APIService.get(url: uri).then { data in
-            return getPromise(data: data, type: Reviewable.self)
+            return getGenericPromise(data: data)
         }
     }
     
-    static func getEmojiStats(id: Int) -> Promise<Reviewable> {
+    static func getEmojiStats(id: Int) -> Promise<[String: Int]> {
         let uri = "\(url)/stats/emojistats/\(id)"
         return APIService.get(url: uri).then { data in
-            return getPromise(data: data, type: Reviewable.self)
+            return getGenericPromise(data: data)
         }
     }
 }
