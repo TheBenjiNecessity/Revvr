@@ -12,7 +12,7 @@ class ReviewLike: ModelObject {
     var appUserID: Int
     var reviewID: Int
     var type: String
-    var created: Date
+    var created: Date?
     
     override var data: Data? {
         get {
@@ -30,8 +30,7 @@ class ReviewLike: ModelObject {
     required init?(json: [String: Any]) {
         guard let appUserID = json["appUserID"] as? Int,
             let reviewID = json["reviewID"] as? Int,
-            let type = json["type"] as? String,
-            let created = json["created"] as? String
+            let type = json["type"] as? String
             else {
                 return nil
         }
@@ -39,7 +38,7 @@ class ReviewLike: ModelObject {
         self.appUserID = appUserID
         self.reviewID = reviewID
         self.type = type
-        self.created = ModelObject.dateFromDateString(dateString: created)!
+        self.created = ModelObject.dateFromDateString(dateString: json["created"] as? String)
         
         super.init(json: json)
     }

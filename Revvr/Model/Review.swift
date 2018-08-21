@@ -13,7 +13,7 @@ class Review: ModelObject {
     var appUserID: Int
     var reviewableID: Int
     var title: String?
-    var created: Date
+    var created: Date?
     var comment: String?
     var emojis: String
     
@@ -35,7 +35,6 @@ class Review: ModelObject {
     required init?(json: [String: Any]) {
         guard let appUserID = json["appUserID"] as? Int,
             let reviewableID = json["reviewableID"] as? Int,
-            let created = json["created"] as? String,
             let emojis = json["emojis"] as? String
         else {
             return nil
@@ -44,7 +43,7 @@ class Review: ModelObject {
         self.appUserID = appUserID
         self.reviewableID = reviewableID
         self.emojis = emojis
-        self.created = ModelObject.dateFromDateString(dateString: created)!
+        self.created = ModelObject.dateFromDateString(dateString: json["created"] as? String)
         
         self.title = json["title"] as? String
         self.comment = json["comment"] as? String
