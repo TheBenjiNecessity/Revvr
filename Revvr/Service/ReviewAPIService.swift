@@ -13,8 +13,8 @@ class ReviewAPIService: APIService {
     static let url = "reviews"
     
     /* ========================== CRUD ========================== */
-    static func get(id: Int) -> Promise<Review> {
-        let uri = "\(url)/\(id)"
+    static func get(id: Int, reviewableId: Int) -> Promise<Review> {
+        let uri = "\(url)/\(id)?reviewableId=\(reviewableId)"
         return APIService.get(url: uri).then { data in
             return getModelObjectPromise(data: data, type: Review.self)
         }
@@ -68,8 +68,8 @@ class ReviewAPIService: APIService {
         }
     }
     
-    static func deleteLike(id: Int) -> Promise<Data> {
-        let uri = "\(url)/like/\(id)"
+    static func deleteLike(id: Int, appUserId: Int) -> Promise<Data> {
+        let uri = "\(url)/like/\(id)?appUserId=\(appUserId)"
         return APIService.delete(url: uri)
     }
 }
