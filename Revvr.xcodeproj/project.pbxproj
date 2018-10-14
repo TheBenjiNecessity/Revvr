@@ -20,14 +20,12 @@
 		799C004E21128F04001BF07D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C004D21128F04001BF07D /* APIService.swift */; };
 		799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C005021128F32001BF07D /* AppUserAPIService.swift */; };
 		79B3E380210FFD7200CD73EB /* RevListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3E37E210FFD7200CD73EB /* RevListTableViewController.swift */; };
-		79B48BB9211509B700AB5415 /* ModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BB8211509B700AB5415 /* ModelObject.swift */; };
 		79B48BBC211509E200AB5415 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBB211509E200AB5415 /* AppUser.swift */; };
 		79B48BBE211509FF00AB5415 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBD211509FF00AB5415 /* Review.swift */; };
 		79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBF21150A1B00AB5415 /* Reviewable.swift */; };
 		79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BC121150C3100AB5415 /* ReviewableAPIService.swift */; };
 		79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BC321150C5A00AB5415 /* ReviewAPIService.swift */; };
 		79B48BC621150E5200AB5415 /* AppUserContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BC521150E5200AB5415 /* AppUserContent.swift */; };
-		79B48BC921150E6E00AB5415 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BC821150E6E00AB5415 /* JSONObject.swift */; };
 		79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BCA21150EAB00AB5415 /* ReviewableContent.swift */; };
 		79B48BCD21150EC200AB5415 /* AppUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BCC21150EC200AB5415 /* AppUserSettings.swift */; };
 		79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BCE21150EFB00AB5415 /* ReviewableInfo.swift */; };
@@ -77,14 +75,12 @@
 		799C004D21128F04001BF07D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		799C005021128F32001BF07D /* AppUserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserAPIService.swift; sourceTree = "<group>"; };
 		79B3E37E210FFD7200CD73EB /* RevListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevListTableViewController.swift; sourceTree = "<group>"; };
-		79B48BB8211509B700AB5415 /* ModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelObject.swift; sourceTree = "<group>"; };
 		79B48BBB211509E200AB5415 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		79B48BBD211509FF00AB5415 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		79B48BBF21150A1B00AB5415 /* Reviewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviewable.swift; sourceTree = "<group>"; };
 		79B48BC121150C3100AB5415 /* ReviewableAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableAPIService.swift; sourceTree = "<group>"; };
 		79B48BC321150C5A00AB5415 /* ReviewAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAPIService.swift; sourceTree = "<group>"; };
 		79B48BC521150E5200AB5415 /* AppUserContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserContent.swift; sourceTree = "<group>"; };
-		79B48BC821150E6E00AB5415 /* JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
 		79B48BCA21150EAB00AB5415 /* ReviewableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableContent.swift; sourceTree = "<group>"; };
 		79B48BCC21150EC200AB5415 /* AppUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserSettings.swift; sourceTree = "<group>"; };
 		79B48BCE21150EFB00AB5415 /* ReviewableInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableInfo.swift; sourceTree = "<group>"; };
@@ -135,6 +131,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		795EAB962172E33D00BB35F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7994BFD120608A9500D05B25 = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +163,9 @@
 		7994BFDC20608A9600D05B25 /* Revvr */ = {
 			isa = PBXGroup;
 			children = (
-				79B48BBA211509BD00AB5415 /* Model */,
-				799C004C21128EB6001BF07D /* Service */,
+				795EAB962172E33D00BB35F7 /* Views */,
+				79B48BBA211509BD00AB5415 /* Models */,
+				799C004C21128EB6001BF07D /* Services */,
 				79B3E373210FEF4500CD73EB /* ViewControllers */,
 				7994BFDD20608A9600D05B25 /* AppDelegate.swift */,
 				7994BFDF20608A9600D05B25 /* ViewController.swift */,
@@ -193,7 +197,7 @@
 			path = RevvrUITests;
 			sourceTree = "<group>";
 		};
-		799C004C21128EB6001BF07D /* Service */ = {
+		799C004C21128EB6001BF07D /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				799C004D21128F04001BF07D /* APIService.swift */,
@@ -201,7 +205,7 @@
 				79B48BC121150C3100AB5415 /* ReviewableAPIService.swift */,
 				79B48BC321150C5A00AB5415 /* ReviewAPIService.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		79B3E373210FEF4500CD73EB /* ViewControllers */ = {
@@ -212,18 +216,17 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		79B48BBA211509BD00AB5415 /* Model */ = {
+		79B48BBA211509BD00AB5415 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				79B48BC721150E5A00AB5415 /* JSONObjects */,
-				79B48BB8211509B700AB5415 /* ModelObject.swift */,
 				79B48BBB211509E200AB5415 /* AppUser.swift */,
 				790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */,
 				79B48BBD211509FF00AB5415 /* Review.swift */,
 				79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */,
 				79B48BBF21150A1B00AB5415 /* Reviewable.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		79B48BC721150E5A00AB5415 /* JSONObjects */ = {
@@ -233,7 +236,6 @@
 				79B48BCC21150EC200AB5415 /* AppUserSettings.swift */,
 				79B48BCA21150EAB00AB5415 /* ReviewableContent.swift */,
 				79B48BCE21150EFB00AB5415 /* ReviewableInfo.swift */,
-				79B48BC821150E6E00AB5415 /* JSONObject.swift */,
 			);
 			path = JSONObjects;
 			sourceTree = "<group>";
@@ -470,11 +472,9 @@
 				79B48BCD21150EC200AB5415 /* AppUserSettings.swift in Sources */,
 				7994BFE620608A9600D05B25 /* Revvr.xcdatamodeld in Sources */,
 				79B48BBE211509FF00AB5415 /* Review.swift in Sources */,
-				79B48BB9211509B700AB5415 /* ModelObject.swift in Sources */,
 				79C07EAE2121BC1F00B7D024 /* ReviewLike.swift in Sources */,
 				799C004E21128F04001BF07D /* APIService.swift in Sources */,
 				79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */,
-				79B48BC921150E6E00AB5415 /* JSONObject.swift in Sources */,
 				79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */,
 				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
 				7994BFE020608A9600D05B25 /* ViewController.swift in Sources */,

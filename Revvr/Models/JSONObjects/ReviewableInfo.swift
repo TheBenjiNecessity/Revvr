@@ -1,5 +1,5 @@
 //
-//  ReviewableContent.swift
+//  ReviewableInfo.swift
 //  Revvr
 //
 //  Created by Benjamin Wishart on 2018-08-03.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ReviewableContent: JSONObject {
+struct ReviewableInfo: Codable {
 
 }

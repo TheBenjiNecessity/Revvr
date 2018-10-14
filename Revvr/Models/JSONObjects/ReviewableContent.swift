@@ -1,5 +1,5 @@
 //
-//  AppUserSettings.swift
+//  ReviewableContent.swift
 //  Revvr
 //
 //  Created by Benjamin Wishart on 2018-08-03.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class AppUserSettings: JSONObject {
+struct ReviewableContent: Codable {
 
 }

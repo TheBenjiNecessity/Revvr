@@ -16,27 +16,29 @@ class AppUserAPIService: APIService {
     static func get(id: Int) -> Promise<AppUser> {
         let uri = "\(url)/\(id)"
         return APIService.get(url: uri).then { data in
-            return getModelObjectPromise(data: data, type: AppUser.self)
+            return getModel(data: data, type: AppUser.self)
         }
     }
     
     static func get(handle: String) -> Promise<AppUser> {
         let uri = "\(url)/handle/\(handle)"
         return APIService.get(url: uri).then { data in
-            return getModelObjectPromise(data: data, type: AppUser.self)
+            return getModel(data: data, type: AppUser.self)
         }
     }
     
     static func create(user: AppUser) -> Promise<AppUser> {
-        return APIService.post(url: "appuser", body: user.data!).then { data in
-            return getModelObjectPromise(data: data, type: AppUser.self)
+        let userData = APIService.getData(model: user)
+        return APIService.post(url: "appuser", body: userData!).then { data in
+            return getModel(data: data, type: AppUser.self)
         }
     }
     
     static func update(id: Int, user: AppUser) -> Promise<AppUser> {
         let uri = "\(url)/\(id)"
-        return APIService.post(url: uri, body: user.data!).then { data in
-            return getModelObjectPromise(data: data, type: AppUser.self)
+        let userData = APIService.getData(model: user)
+        return APIService.post(url: uri, body: userData!).then { data in
+            return getModel(data: data, type: AppUser.self)
         }
     }
     
@@ -48,7 +50,8 @@ class AppUserAPIService: APIService {
     /* ========================== Followers ========================== */
     static func addFollower(follower: AppUserFollowing) -> Promise<Data> {
         let uri = "\(url)/follower"
-        return APIService.post(url: uri, body: follower.data!)
+        let followerData = APIService.getData(model: follower)
+        return APIService.post(url: uri, body: followerData!)
     }
     
     static func deleteFollower(id: Int, followingId: Int) -> Promise<Data> {
@@ -56,17 +59,17 @@ class AppUserAPIService: APIService {
         return APIService.delete(url: uri)
     }
 
-    static func listFollowers(id: Int, order: String, pageStart: Int, pageLimit: Int) -> Promise<[AppUser]> {
+    static func listFollowers(id: Int, order: String = "DESC", pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[AppUser]> {
         let uri = "\(url)/followers/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return APIService.get(url: uri).then { data in
-            return getArrayPromise(data: data, type: AppUser.self)
+            return getModels(data: data, type: [AppUser].self)
         }
     }
     
-    static func listFollowings(id: Int, order: String, pageStart: Int, pageLimit: Int) -> Promise<[AppUser]> {
+    static func listFollowings(id: Int, order: String = "DESC", pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[AppUser]> {
         let uri = "\(url)/followings/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return APIService.get(url: uri).then { data in
-            return getArrayPromise(data: data, type: AppUser.self)
+            return getModels(data: data, type: [AppUser].self)
         }
     }
     

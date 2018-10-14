@@ -1,5 +1,5 @@
 //
-//  JSONObject.swift
+//  AppUserSettings.swift
 //  Revvr
 //
 //  Created by Benjamin Wishart on 2018-08-03.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class JSONObject: NSObject {
+struct AppUserSettings: Codable {
 
 }
