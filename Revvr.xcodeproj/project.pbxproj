@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79085991216DA3D900E16AD1 /* AppUserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79085990216DA3D900E16AD1 /* AppUserModelTests.swift */; };
 		790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
 		7994BFE020608A9600D05B25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDF20608A9600D05B25 /* ViewController.swift */; };
@@ -57,6 +58,7 @@
 		339CFAFFB37B129947BEB4B6 /* Pods-Revvr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revvr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Revvr/Pods-Revvr.release.xcconfig"; sourceTree = "<group>"; };
 		55D193159E258AA569254070 /* Pods-RevvrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevvrUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RevvrUITests/Pods-RevvrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		563D02650801DFCE8B495E64 /* Pods_RevvrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevvrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79085990216DA3D900E16AD1 /* AppUserModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserModelTests.swift; sourceTree = "<group>"; };
 		790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserFollowing.swift; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				7994BFF520608A9600D05B25 /* RevvrTests.swift */,
+				79085990216DA3D900E16AD1 /* AppUserModelTests.swift */,
 				7994BFF720608A9600D05B25 /* Info.plist */,
 			);
 			path = RevvrTests;
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79085991216DA3D900E16AD1 /* AppUserModelTests.swift in Sources */,
 				7994BFF620608A9600D05B25 /* RevvrTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
