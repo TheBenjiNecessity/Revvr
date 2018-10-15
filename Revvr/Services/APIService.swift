@@ -9,8 +9,8 @@
 import Promises
 
 class APIService: NSObject {
-    static let errorDomain = "com.revvr.Revvr"
-    static let serviceUrl: String = "http://localhost:5001/service-api/"//TODO
+    static private let errorDomain = "com.revvr.Revvr"
+    static private let serviceUrl: String = "http://localhost:5001/service-api/"//TODO
 
     static func get(url: String) -> Promise<Data> {
         return request(url: url, httpMethod: "GET", body: nil)
@@ -24,7 +24,7 @@ class APIService: NSObject {
         return request(url: url, httpMethod: "DELETE", body: nil)
     }
     
-    static func request(url: String, httpMethod: String, body: Data?) -> Promise<Data> {
+    static private func request(url: String, httpMethod: String, body: Data?) -> Promise<Data> {
         let promise = Promise<Data>.pending()
         let uri = APIService.serviceUrl + url
         var request = URLRequest(url: URL(string: uri)!)
