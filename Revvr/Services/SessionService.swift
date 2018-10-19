@@ -10,32 +10,31 @@ import Foundation
 import Promises
 
 class SessionService: APIService {
-    static let kLogoutNotificationKey = "logout_notification_key"
+    static let sharedSessionService = SessionService()
     
-    static let shared = SessionService()
-    static let url = "connect"
+    let kLogoutNotificationKey = "logout_notification_key"
 
-    static var user: AppUser?
-    static var passwordItems: [KeychainPasswordItem] = []
+    var user: AppUser?
+    var passwordItems: [KeychainPasswordItem] = []
     
     override init() {}
     
-    static func login(username: String, password: String) -> Promise<AppUser> {
-        let uri = "\(SessionService.url)/token"
+    func login(username: String, password: String) -> Promise<AppUser> {
+        let uri = "connect/token"
         let body = "client_id=com.revoji&client_secret=secret&grant_type=password&username=\(username)&password=\(password)".data(using: .utf8)!
 
         UserDefaults.standard.setValue(username, forKey: "username")
         
-        return APIService.getToken(url: uri, body: body).then { token in
-            return AppUserAPIService.getApiUser().then { user in
-                SessionService.user = user //user defaults?
+        return getToken(url: uri, body: body).then { token in
+            return AppUserAPIService.sharedAppUserService.getApiUser().then { user in
+                self.user = user //user defaults?
             }
         }
     }
     
-    static func logout() {
-        SessionService.user = nil
-        APIService.accessToken = nil
+    func logout() {
+        user = nil
+        accessToken = nil
         NotificationCenter.default.post(name: Notification.Name(rawValue: kLogoutNotificationKey),
                                         object: self,
                                         userInfo: nil)

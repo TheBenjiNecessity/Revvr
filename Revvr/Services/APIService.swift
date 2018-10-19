@@ -9,17 +9,19 @@
 import Promises
 
 class APIService: NSObject {//TODO this should be a singleton
+    static let shared = APIService()
+    
     //TODO: add authentication header
-    static private let errorDomain = "com.revvr.Revvr"
-    static private let serviceUrl: String = "http://localhost:5001/"//TODO
-    static private let kUserNameKey = "username"
+    private let errorDomain = "com.revvr.Revvr"
+    private let serviceUrl: String = "http://localhost:5001/"//TODO
+    private let kUserNameKey = "username"
     
     struct KeychainConfiguration {
         static let serviceName = "Revvr"
         static let accessGroup: String? = nil
     }
     
-    static var accessToken: String? {
+    var accessToken: String? {
         get {
             var token: String? = nil;
             if let username = UserDefaults.standard.string(forKey: kUserNameKey) {
@@ -56,39 +58,41 @@ class APIService: NSObject {//TODO this should be a singleton
             }
         }
     }
+    
+    override init() {}
 
-    static func get<T: Codable>(url: String, type: T.Type) -> Promise<T> {
+    func get<T: Codable>(url: String, type: T.Type) -> Promise<T> {
         return request(url: url, httpMethod: "GET", body: nil, type: type.self)
     }
    
-    static func post<T: Codable>(url: String, body: Data, type: T.Type) -> Promise<T> {
+    func post<T: Codable>(url: String, body: Data, type: T.Type) -> Promise<T> {
         return request(url: url, httpMethod: "POST", body: body, type: type.self)
     }
     
-    static func delete<T: Codable>(url: String, type: T.Type) -> Promise<T> {
+    func delete<T: Codable>(url: String, type: T.Type) -> Promise<T> {
         return request(url: url, httpMethod: "DELETE", body: nil, type: type.self)
     }
     
-    static func getToken(url: String, body: Data) -> Promise<Token> {
+    func getToken(url: String, body: Data) -> Promise<Token> {
         return request(url: url,
                        httpMethod: "POST",
                        body: body,
                        type: Token.self,
                        contentType: "application/x-www-form-urlencoded").then { token in
-            accessToken = token.access_token
+            self.accessToken = token.access_token
         }.catch { error in
-            accessToken = nil
+            self.accessToken = nil
         }
     }
     
     //TODO if this ever returns 401 then log the user out
-    static private func request<T: Codable>(url: String,
+    private func request<T: Codable>(url: String,
                                             httpMethod: String,
                                             body: Data?,
                                             type: T.Type,
                                             contentType: String = "application/json") -> Promise<T> {
         let promise = Promise<T>.pending()
-        let uri = APIService.serviceUrl + url
+        let uri = serviceUrl + url
         var request = URLRequest(url: URL(string: uri)!)
         request.setValue(contentType, forHTTPHeaderField: "Content-Type")
         request.httpMethod = httpMethod
@@ -124,7 +128,7 @@ class APIService: NSObject {//TODO this should be a singleton
     }
     
     //TODO: need to figure out how to merge this into 'request'
-    static func getData<T: Codable>(model: T) -> Data? {
+    func getData<T: Codable>(model: T) -> Data? {
         do {
             return try JSONEncoder().encode(model)
         } catch {

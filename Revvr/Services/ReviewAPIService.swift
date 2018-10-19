@@ -10,54 +10,54 @@ import UIKit
 import Promises
 
 class ReviewAPIService: APIService {
-    static let url = "service-api/reviews"
+    let url = "service-api/reviews"
     
     /* ========================== CRUD ========================== */
-    static func get(id: Int, reviewableId: Int) -> Promise<Review> {
+    func get(id: Int, reviewableId: Int) -> Promise<Review> {
         let uri = "\(url)/\(id)?reviewableId=\(reviewableId)"
         return get(url: uri, type: Review.self)
     }
     
-    static func create(review: Review) -> Promise<Review> {
+    func create(review: Review) -> Promise<Review> {
         let reviewData = getData(model: review)
         return post(url: url, body: reviewData!, type: Review.self)
     }
     
-    static func update(id: Int, review: Review) -> Promise<Review> {
+    func update(id: Int, review: Review) -> Promise<Review> {
         let uri = "\(url)/\(id)"
         let reviewData = getData(model: review)
         return post(url: uri, body: reviewData!, type: Review.self)
     }
     
-    static func delete(id: Int) -> Promise<Data> {
+    func delete(id: Int) -> Promise<Data> {
         let uri = "\(url)/\(id)"
         return delete(url: uri, type: Data.self)
     }
     
     /* ========================== List By... ========================== */
-    static func listByUser(id: Int, order: String, pageStart: Int, pageLimit: Int) -> Promise<[Review]> {
+    func listByUser(id: Int, order: String, pageStart: Int, pageLimit: Int) -> Promise<[Review]> {
         let uri = "\(url)/list/user/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [Review].self)
     }
     
-    static func listByReviewable(id: Int, order: String, pageStart: Int, pageLimit: Int) -> Promise<[Review]> {
+    func listByReviewable(id: Int, order: String, pageStart: Int, pageLimit: Int) -> Promise<[Review]> {
         let uri = "\(url)/list/reviewable/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [Review].self)
     }
     
-    static func listByFollowings(id: Int, order: String, pageStart: Int, pageLimit: Int) -> Promise<[Review]> {
+    func listByFollowings(id: Int, order: String, pageStart: Int, pageLimit: Int) -> Promise<[Review]> {
         let uri = "\(url)/list/followings/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [Review].self)
     }
     
     /* ========================== Like ========================== */
-    static func like(reviewLike: ReviewLike) -> Promise<ReviewLike> {
+    func like(reviewLike: ReviewLike) -> Promise<ReviewLike> {
         let uri = "\(url)/like"
         let reviewLikeData = getData(model: reviewLike)
         return post(url: uri, body: reviewLikeData!, type: ReviewLike.self)
     }
     
-    static func deleteLike(id: Int, appUserId: Int) -> Promise<Data> {
+    func deleteLike(id: Int, appUserId: Int) -> Promise<Data> {
         let uri = "\(url)/like/\(id)?appUserId=\(appUserId)"
         return delete(url: uri, type: Data.self)
     }

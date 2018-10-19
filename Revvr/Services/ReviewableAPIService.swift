@@ -10,9 +10,9 @@ import UIKit
 import Promises
 
 class ReviewableAPIService: APIService {
-    static let url = "service-api/reviewable"
+    let url = "service-api/reviewable"
     
-    static func get(id: Int) -> Promise<Reviewable> {
+    func get(id: Int) -> Promise<Reviewable> {
         let uri = "\(url)/\(id)"
         return get(url: uri, type: Reviewable.self)
     }
