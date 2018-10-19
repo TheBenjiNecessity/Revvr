@@ -11,6 +11,7 @@
 		790B5AA2217967E400A88A0D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 790B5AA1217967E400A88A0D /* LICENSE.txt */; };
 		790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */; };
 		795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FD217813D600311390 /* KeychainPasswordItem.swift */; };
+		795CE102217817E400311390 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE101217817E400311390 /* Token.swift */; };
 		795E71A32175926600E40F16 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E71A22175926600E40F16 /* FrontViewController.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
 		7994BFE020608A9600D05B25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDF20608A9600D05B25 /* ViewController.swift */; };
@@ -63,6 +64,7 @@
 		790B5AA1217967E400A88A0D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserFollowing.swift; sourceTree = "<group>"; };
 		795CE0FD217813D600311390 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		795CE101217817E400311390 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		795E71A22175926600E40F16 /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				79B48BBD211509FF00AB5415 /* Review.swift */,
 				79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */,
 				79B48BBF21150A1B00AB5415 /* Reviewable.swift */,
+				795CE101217817E400311390 /* Token.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
 				7994BFE020608A9600D05B25 /* ViewController.swift in Sources */,
 				79B3E380210FFD7200CD73EB /* RevListTableViewController.swift in Sources */,
+				795CE102217817E400311390 /* Token.swift in Sources */,
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
 				7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */,
 				790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */,
