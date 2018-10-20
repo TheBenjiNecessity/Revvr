@@ -8,53 +8,21 @@
 
 import Promises
 
-class APIService: NSObject {//TODO this should be a singleton
+class APIService: NSObject {
     static let shared = APIService()
-    
-    //TODO: add authentication header
+
     private let errorDomain = "com.revvr.Revvr"
     private let serviceUrl: String = "http://localhost:5001/"//TODO
-    private let kUserNameKey = "username"
-    
-    struct KeychainConfiguration {
-        static let serviceName = "Revvr"
-        static let accessGroup: String? = nil
-    }
-    
+
     var accessToken: String? {
         get {
-            var token: String? = nil;
-            if let username = UserDefaults.standard.string(forKey: kUserNameKey) {
-                do {
-                    let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
-                                                            account: username,
-                                                            accessGroup: KeychainConfiguration.accessGroup)
-                    
-                    token = try passwordItem.readPassword()
-                } catch {}
-            }
-            return token
+            return KeyChainService.shared.getUserToken()
         }
         set {
-            if let username = UserDefaults.standard.string(forKey: kUserNameKey) {
-                do {
-                    if let token = newValue {
-                        let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
-                                                                account: username,
-                                                                accessGroup: KeychainConfiguration.accessGroup)
-                        
-                        try passwordItem.savePassword(token)
-                    } else {
-                        let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
-                                                                account: username,
-                                                                accessGroup: KeychainConfiguration.accessGroup)
-                        
-                        try passwordItem.deleteItem()
-                        UserDefaults.standard.removeObject(forKey: kUserNameKey)
-                    }
-                } catch let error {
-                    fatalError("Error updating keychain - \(error)")
-                }
+            if let token = newValue {
+                KeyChainService.shared.setUserToken(token: token)
+            } else {
+                KeyChainService.shared.removeUserToken()
             }
         }
     }
