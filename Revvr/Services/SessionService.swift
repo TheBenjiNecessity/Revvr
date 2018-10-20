@@ -41,4 +41,10 @@ class SessionService: APIService {
                                         object: self,
                                         userInfo: nil)
     }
+    
+    func isLoggedIn() -> Bool {
+        return user != nil &&
+            accessToken != nil &&
+            UserDefaults.standard.value(forKey: KeyChainService.shared.kUserNameKey) != nil
+    }
 }

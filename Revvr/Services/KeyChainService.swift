@@ -12,7 +12,7 @@ import Foundation
 class KeyChainService: NSObject {
     static let shared = KeyChainService()
     
-    private let kUserNameKey = "username"
+    let kUserNameKey = "username"
     
     struct KeychainConfiguration {
         static let serviceName = "Revvr"
