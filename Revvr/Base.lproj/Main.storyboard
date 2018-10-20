@@ -252,6 +252,8 @@
                         <outlet property="signupLastNameField" destination="wy4-Nt-Bnc" id="6dM-5H-BcR"/>
                         <outlet property="signupPasswordField" destination="Nam-Ee-ycJ" id="U75-B2-PKZ"/>
                         <outlet property="signupUserNameField" destination="cL0-S6-tFc" id="2Jn-9Z-LD7"/>
+                        <segue destination="Pyk-Av-MYh" kind="show" identifier="LoggedInSegueIdentifier" id="IfK-j3-vjf"/>
+                        <segue destination="Pyk-Av-MYh" kind="show" identifier="LoggedInNoAnimationSegueIdentifier" animates="NO" id="MUq-Os-ZcG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -560,4 +562,7 @@
             <point key="canvasLocation" x="-1314.4000000000001" y="-227.13643178410797"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="MUq-Os-ZcG"/>
+    </inferredMetricsTieBreakers>
 </document>

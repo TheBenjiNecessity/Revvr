@@ -88,6 +88,12 @@ class FrontViewController: UIViewController {
         state = .Front
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if SessionService.sharedSessionService.isLoggedIn() {
+            self.performSegue(withIdentifier: "LoggedInNoAnimationSegueIdentifier", sender: nil)
+        }
+    }
+    
     @IBAction func loginPress(_ sender: Any) {
         state = .Login
     }
@@ -103,12 +109,23 @@ class FrontViewController: UIViewController {
     
     @IBAction func goButtonPress(_ sender: Any) {
         switch state {
-        case .Front:
-            break
         case .Signup:
             break
         case .Login:
+            guard let username = loginUsernameField.text, let password = loginPasswordField.text else {
+                print("invalid credentials")
+                return
+            }
+            
+            SessionService.sharedSessionService.login(username: username,
+                                                      password: password).then {_ in
+                self.performSegue(withIdentifier: "LoggedInSegueIdentifier", sender: nil)
+            }.catch { error in
+                print(error)
+            }
+            
             break
+        default: break
         }
     }
 
