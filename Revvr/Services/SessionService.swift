@@ -13,15 +13,17 @@ class SessionService: APIService {
     static let sharedSessionService = SessionService()
     
     let kLogoutNotificationKey = "logout_notification_key"
+    let kClientId = "com.revoji"
+    let kClientSecret = "secret"//TODO
+    let kGrantType = "password"
 
     var user: AppUser?
-    var passwordItems: [KeychainPasswordItem] = []
     
     override init() {}
     
     func login(username: String, password: String) -> Promise<AppUser> {
         let uri = "connect/token"
-        let body = "client_id=com.revoji&client_secret=secret&grant_type=password&username=\(username)&password=\(password)".data(using: .utf8)!
+        let body = "client_id=\(kClientId)&client_secret=\(kClientSecret)&grant_type=\(kGrantType)&username=\(username)&password=\(password)".data(using: .utf8)!
 
         UserDefaults.standard.setValue(username, forKey: "username")
         
