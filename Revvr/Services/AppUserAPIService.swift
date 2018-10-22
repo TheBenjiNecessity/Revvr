@@ -18,8 +18,7 @@ class AppUserAPIService: APIService {
     
     /* ========================== CRUD ========================== */
     func getApiUser() -> Promise<AppUser> {
-        let uri = "\(url)"
-        return get(url: uri, type: AppUser.self)
+        return get(url: url, type: AppUser.self)
     }
     
     func get(id: Int) -> Promise<AppUser> {

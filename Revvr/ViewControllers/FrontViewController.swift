@@ -110,19 +110,44 @@ class FrontViewController: UIViewController {
     @IBAction func goButtonPress(_ sender: Any) {
         switch state {
         case .Signup:
+            guard let firstName = signupFirstNameField.text,
+                let lastName = signupLastNameField.text,
+                let email = signupEmailField.text,
+                let username = signupUserNameField.text,
+                let password = signupPasswordField.text
+                else {
+                // TODO check for empty fields
+                print("Not all details entered")
+                return
+            }
+            
+            let json = """
+            {
+                "firstName": "\(firstName)",
+                "lastName": "\(lastName)",
+                "handle": "\(username)",
+                "email": "\(email)",
+                "password": "\(password)"
+            }
+            """.data(using: .utf8)!
+            
+            if let user = try? JSONDecoder().decode(AppUser.self, from: json) {
+                AppUserAPIService.sharedAppUserService.create(user: user).then { userResp in
+                    self.login(withUsername: username, password: password)
+                }.catch { error in
+                    print(error)
+                }
+            }
+            
             break
         case .Login:
-            guard let username = loginUsernameField.text, let password = loginPasswordField.text else {
+            guard let username = loginUsernameField.text,
+                let password = loginPasswordField.text else {
                 print("invalid credentials")
                 return
             }
             
-            SessionService.sharedSessionService.login(username: username,
-                                                      password: password).then {_ in
-                self.performSegue(withIdentifier: "LoggedInSegueIdentifier", sender: nil)
-            }.catch { error in
-                print(error)
-            }
+            login(withUsername: username, password: password)
             
             break
         default: break
@@ -132,5 +157,14 @@ class FrontViewController: UIViewController {
     func initStyles() {
         loginContainerView.layer.cornerRadius = 5.0
         signupContainerView.layer.cornerRadius = 5.0
+    }
+    
+    func login(withUsername username: String, password: String) {
+        SessionService.sharedSessionService.login(username: username,
+                                                  password: password).then {_ in
+            self.performSegue(withIdentifier: "LoggedInSegueIdentifier", sender: nil)
+        }.catch { error in
+            print(error)
+        }
     }
 }
