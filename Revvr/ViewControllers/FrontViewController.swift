@@ -121,24 +121,16 @@ class FrontViewController: UIViewController {
                 return
             }
             
-            let json = """
-            {
-                "firstName": "\(firstName)",
-                "lastName": "\(lastName)",
-                "handle": "\(username)",
-                "email": "\(email)",
-                "password": "\(password)"
-            }
-            """.data(using: .utf8)!
+            let user = AppUser(firstName: firstName,
+                               lastName: lastName,
+                               handle: username,
+                               email: email,
+                               password: password)
             
-            if let user = try? JSONDecoder().decode(AppUser.self, from: json) {
-                AppUserAPIService.sharedAppUserService.create(user: user).then { userResp in
-                    self.login(withUsername: username, password: password)
-                }.catch { error in
-                    print(error)
-                }
+            AppUserAPIService.sharedAppUserService.create(user: user).then { userResp in
+                self.login(withUsername: username, password: password)
             }
-            
+
             break
         case .Login:
             guard let username = loginUsernameField.text,
