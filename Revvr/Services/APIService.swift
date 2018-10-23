@@ -9,8 +9,6 @@
 import Promises
 
 class APIService: NSObject {
-    static let shared = APIService()
-
     private let errorDomain = "com.revvr.Revvr"
     private let serviceUrl: String = "http://localhost:5001/"//TODO
 

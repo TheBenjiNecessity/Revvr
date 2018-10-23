@@ -12,7 +12,7 @@ import Promises
 class AppUserAPIService: APIService {
     let url = "service-api/appuser"
     
-    static let sharedAppUserService = AppUserAPIService()
+    static let shared = AppUserAPIService()
     
     override init() {}
     

@@ -10,7 +10,7 @@ import Foundation
 import Promises
 
 class SessionService: APIService {
-    static let sharedSessionService = SessionService()
+    static let shared = SessionService()
     
     let kLogoutNotificationKey = "logout_notification_key"
     let kClientId = "com.revoji"
@@ -46,7 +46,7 @@ class SessionService: APIService {
         UserDefaults.standard.setValue(username, forKey: "username")
         
         return getToken(url: uri, body: body).then { token in
-            return AppUserAPIService.sharedAppUserService.getApiUser().then { user in
+            return AppUserAPIService.shared.getApiUser().then { user in
                 self.user = user
             }
         }

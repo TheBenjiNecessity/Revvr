@@ -10,6 +10,8 @@ import UIKit
 import Promises
 
 class ReviewAPIService: APIService {
+    static let shared = ReviewAPIService()
+    
     let url = "service-api/reviews"
     
     /* ========================== CRUD ========================== */

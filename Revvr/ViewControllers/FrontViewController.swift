@@ -89,7 +89,7 @@ class FrontViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if SessionService.sharedSessionService.isLoggedIn() {
+        if SessionService.shared.isLoggedIn() {
             self.performSegue(withIdentifier: "LoggedInNoAnimationSegueIdentifier", sender: nil)
         }
     }
@@ -127,7 +127,7 @@ class FrontViewController: UIViewController {
                                email: email,
                                password: password)
             
-            AppUserAPIService.sharedAppUserService.create(user: user).then { userResp in
+            AppUserAPIService.shared.create(user: user).then { userResp in
                 self.login(withUsername: username, password: password)
             }
 
@@ -152,7 +152,7 @@ class FrontViewController: UIViewController {
     }
     
     func login(withUsername username: String, password: String) {
-        SessionService.sharedSessionService.login(username: username,
+        SessionService.shared.login(username: username,
                                                   password: password).then {_ in
             self.performSegue(withIdentifier: "LoggedInSegueIdentifier", sender: nil)
         }.catch { error in
