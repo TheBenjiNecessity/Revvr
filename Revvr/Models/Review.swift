@@ -16,4 +16,7 @@ struct Review: Codable {
     let created: Date?
     let comment: String?
     let emojis: String
+    
+    let appUser: AppUser
+    let reviewable: Reviewable
 }
