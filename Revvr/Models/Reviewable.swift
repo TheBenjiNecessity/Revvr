@@ -14,9 +14,9 @@ struct Reviewable: Codable {
     let description: String?
     let titleImageUrl: String?
     
-    let reviewCount: Int
-    let emojiCounts: [String: Int]
+    let reviewCount: Int?
+    let emojiCounts: [String: Int]?
     
-    let content: ReviewableContent
-    let info: ReviewableInfo
+    let content: ReviewableContent?
+    let info: ReviewableInfo?
 }
