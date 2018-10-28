@@ -8,7 +8,7 @@
 import Foundation
 
 struct AppUser: Codable {
-    let ID: Int?
+    let id: Int?
     
     let firstName: String
     let lastName: String
@@ -54,7 +54,7 @@ struct AppUser: Codable {
         self.email = email
         self.password = password
         
-        self.ID = -1
+        self.id = -1
         self.city = city
         self.administrativeArea = administrativeArea
         self.country = country
