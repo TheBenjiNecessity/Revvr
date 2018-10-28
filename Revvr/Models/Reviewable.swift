@@ -10,8 +10,8 @@ struct Reviewable: Codable {
     let ID: Int?
     
     let title: String
-    let reviewableType: String
-    let reviewableDescription: String?
+    let type: String
+    let description: String?
     let titleImageUrl: String?
     
     let reviewCount: Int
