@@ -10,6 +10,9 @@
 		79085991216DA3D900E16AD1 /* AppUserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79085990216DA3D900E16AD1 /* AppUserModelTests.swift */; };
 		790B5AA2217967E400A88A0D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 790B5AA1217967E400A88A0D /* LICENSE.txt */; };
 		790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */; };
+		79594BA6217F72FB00A5C34C /* ReviewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */; };
+		79594BA8217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */; };
+		79594BAA217FBCDF00A5C34C /* ReviewWithoutCommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA9217FBCDF00A5C34C /* ReviewWithoutCommentCollectionViewCell.swift */; };
 		795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FD217813D600311390 /* KeychainPasswordItem.swift */; };
 		795CE1002178144500311390 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FF2178144500311390 /* SessionService.swift */; };
 		795CE102217817E400311390 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE101217817E400311390 /* Token.swift */; };
@@ -65,6 +68,9 @@
 		79085990216DA3D900E16AD1 /* AppUserModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserModelTests.swift; sourceTree = "<group>"; };
 		790B5AA1217967E400A88A0D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserFollowing.swift; sourceTree = "<group>"; };
+		79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCollectionViewController.swift; sourceTree = "<group>"; };
+		79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWithCommentCollectionViewCell.swift; sourceTree = "<group>"; };
+		79594BA9217FBCDF00A5C34C /* ReviewWithoutCommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWithoutCommentCollectionViewCell.swift; sourceTree = "<group>"; };
 		795CE0FD217813D600311390 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		795CE0FF2178144500311390 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		795CE101217817E400311390 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -163,6 +169,8 @@
 		795EAB962172E33D00BB35F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */,
+				79594BA9217FBCDF00A5C34C /* ReviewWithoutCommentCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +253,7 @@
 			children = (
 				79B3E37E210FFD7200CD73EB /* RevListTableViewController.swift */,
 				795E71A22175926600E40F16 /* FrontViewController.swift */,
+				79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -519,12 +528,15 @@
 				795CE102217817E400311390 /* Token.swift in Sources */,
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
 				7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */,
+				79594BA8217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift in Sources */,
+				79594BAA217FBCDF00A5C34C /* ReviewWithoutCommentCollectionViewCell.swift in Sources */,
 				7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */,
 				790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */,
 				79B48BC621150E5200AB5415 /* AppUserContent.swift in Sources */,
 				799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */,
 				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
 				795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */,
+				79594BA6217F72FB00A5C34C /* ReviewsCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
