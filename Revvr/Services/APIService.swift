@@ -79,7 +79,13 @@ class APIService: NSObject {
                 promise.reject(error)
             } else if data != nil && error == nil {
                 do {
-                    let model = try JSONDecoder().decode(type.self, from: data!)
+                    let formatter = DateFormatter()
+                    let decoder = JSONDecoder()
+                    
+                    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                    decoder.dateDecodingStrategy = .formatted(formatter)
+                    
+                    let model = try decoder.decode(type.self, from: data!)
                     promise.fulfill(model)
                 } catch let jsonError {
                     promise.reject(jsonError)
