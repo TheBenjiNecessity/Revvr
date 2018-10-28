@@ -18,6 +18,7 @@
 		795CE102217817E400311390 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE101217817E400311390 /* Token.swift */; };
 		795E71A32175926600E40F16 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E71A22175926600E40F16 /* FrontViewController.swift */; };
 		7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960649A217ACA6C009F2EEA /* KeyChainService.swift */; };
+		79639BF82183F02C00996DD9 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79639BF72183F02C00996DD9 /* String+Size.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
 		7994BFE020608A9600D05B25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDF20608A9600D05B25 /* ViewController.swift */; };
 		7994BFE320608A9600D05B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7994BFE120608A9600D05B25 /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		795CE101217817E400311390 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		795E71A22175926600E40F16 /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		7960649A217ACA6C009F2EEA /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
+		79639BF72183F02C00996DD9 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7994BFDF20608A9600D05B25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		79639BF62183EFFD00996DD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				79639BF72183F02C00996DD9 /* String+Size.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7994BFD120608A9500D05B25 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +210,7 @@
 		7994BFDC20608A9600D05B25 /* Revvr */ = {
 			isa = PBXGroup;
 			children = (
+				79639BF62183EFFD00996DD9 /* Extensions */,
 				795CE0FC2178123E00311390 /* Vendor */,
 				795EAB962172E33D00BB35F7 /* Views */,
 				79B48BBA211509BD00AB5415 /* Models */,
@@ -536,6 +547,7 @@
 				799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */,
 				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
 				795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */,
+				79639BF82183F02C00996DD9 /* String+Size.swift in Sources */,
 				79594BA6217F72FB00A5C34C /* ReviewsCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
