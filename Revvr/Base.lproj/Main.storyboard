@@ -296,7 +296,7 @@
         <!--Reviews-->
         <scene sceneID="hwx-ov-Mhh">
             <objects>
-                <collectionViewController id="Jqa-oR-dUG" customClass="ReviewsCollectionViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="Jqa-oR-dUG" customClass="ReviewsOnlyCollectionViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0Wk-cl-g07">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

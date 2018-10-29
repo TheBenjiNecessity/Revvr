@@ -33,13 +33,6 @@ class ReviewsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let user = SessionService.shared.user {
-            ReviewAPIService.shared.listByFollowings(id: user.id!).then { reviews in
-                self.reviews = reviews
-                self.refresh()
-            }
-        }
     }
 
     // MARK: UICollectionViewDataSource
