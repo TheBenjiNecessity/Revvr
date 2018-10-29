@@ -16,7 +16,10 @@
 		795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FD217813D600311390 /* KeychainPasswordItem.swift */; };
 		795CE1002178144500311390 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FF2178144500311390 /* SessionService.swift */; };
 		795CE102217817E400311390 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE101217817E400311390 /* Token.swift */; };
+		795E719D2175796900E40F16 /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E719C2175796900E40F16 /* SearchUsersTableViewController.swift */; };
 		795E71A32175926600E40F16 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E71A22175926600E40F16 /* FrontViewController.swift */; };
+		795F25A1217419360022DFE2 /* UsersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F25A0217419360022DFE2 /* UsersListTableViewController.swift */; };
+		795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F25A221741E610022DFE2 /* UserTableViewCell.swift */; };
 		7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960649A217ACA6C009F2EEA /* KeyChainService.swift */; };
 		79639BF82183F02C00996DD9 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79639BF72183F02C00996DD9 /* String+Size.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
@@ -75,7 +78,10 @@
 		795CE0FD217813D600311390 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		795CE0FF2178144500311390 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		795CE101217817E400311390 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		795E719C2175796900E40F16 /* SearchUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersTableViewController.swift; sourceTree = "<group>"; };
 		795E71A22175926600E40F16 /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
+		795F25A0217419360022DFE2 /* UsersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListTableViewController.swift; sourceTree = "<group>"; };
+		795F25A221741E610022DFE2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		7960649A217ACA6C009F2EEA /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		79639BF72183F02C00996DD9 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +177,7 @@
 		795EAB962172E33D00BB35F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				795F25A221741E610022DFE2 /* UserTableViewCell.swift */,
 				79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */,
 				79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */,
 			);
@@ -263,6 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				79B3E37E210FFD7200CD73EB /* RevListTableViewController.swift */,
+				795F25A0217419360022DFE2 /* UsersListTableViewController.swift */,
+				795E719C2175796900E40F16 /* SearchUsersTableViewController.swift */,
 				795E71A22175926600E40F16 /* FrontViewController.swift */,
 				79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */,
 			);
@@ -535,7 +544,9 @@
 				79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */,
 				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
 				7994BFE020608A9600D05B25 /* ViewController.swift in Sources */,
+				795F25A1217419360022DFE2 /* UsersListTableViewController.swift in Sources */,
 				79B3E380210FFD7200CD73EB /* RevListTableViewController.swift in Sources */,
+				795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */,
 				795CE102217817E400311390 /* Token.swift in Sources */,
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
 				7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */,
@@ -545,6 +556,7 @@
 				790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */,
 				79B48BC621150E5200AB5415 /* AppUserContent.swift in Sources */,
 				799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */,
+				795E719D2175796900E40F16 /* SearchUsersTableViewController.swift in Sources */,
 				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
 				795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */,
 				79639BF82183F02C00996DD9 /* String+Size.swift in Sources */,

@@ -464,28 +464,45 @@
         <!--Revoji-->
         <scene sceneID="jgk-8x-2jB">
             <objects>
-                <tableViewController id="Qn0-Vm-Ed7" sceneMemberID="viewController">
+                <tableViewController id="Qn0-Vm-Ed7" customClass="SearchUsersTableViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ycH-4R-PCc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="B39-z9-X8R">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" id="B39-z9-X8R" customClass="UserTableViewCell" customModule="Revvr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B39-z9-X8R" id="LZt-Zu-Chj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scrolling list of things you might be interested in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzV-ff-FIN">
-                                            <rect key="frame" x="0.0" y="11" width="367" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="85b-aF-HY6">
+                                            <rect key="frame" x="0.0" y="0.0" width="43.5" height="43.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="85b-aF-HY6" secondAttribute="height" multiplier="1:1" id="l87-Ls-Dtj"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNv-xY-Khy">
+                                            <rect key="frame" x="48.5" y="16" width="31" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="85b-aF-HY6" firstAttribute="top" secondItem="LZt-Zu-Chj" secondAttribute="top" id="JY5-TA-2Va"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="QNv-xY-Khy" secondAttribute="bottom" constant="5" id="KSI-wq-npq"/>
+                                        <constraint firstItem="85b-aF-HY6" firstAttribute="leading" secondItem="LZt-Zu-Chj" secondAttribute="leading" id="TW8-As-xsH"/>
+                                        <constraint firstItem="QNv-xY-Khy" firstAttribute="top" secondItem="LZt-Zu-Chj" secondAttribute="topMargin" constant="5" id="eCw-om-1Dw"/>
+                                        <constraint firstItem="QNv-xY-Khy" firstAttribute="leading" secondItem="85b-aF-HY6" secondAttribute="trailing" constant="5" id="ojA-bR-O50"/>
+                                        <constraint firstAttribute="bottom" secondItem="85b-aF-HY6" secondAttribute="bottom" id="rhI-Gj-cof"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profilePictureImageView" destination="85b-aF-HY6" id="Nd2-LV-WGO"/>
+                                    <outlet property="userInfoLabel" destination="QNv-xY-Khy" id="I4p-hZ-qhh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -565,12 +582,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ti6-94-ZAD" kind="relationship" relationship="rootViewController" id="7p4-qX-Lc1"/>
+                        <segue destination="Jqa-oR-dUG" kind="relationship" relationship="rootViewController" id="Wma-6L-hTg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yty-nH-BWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162.40000000000001" y="-688.60569715142435"/>
+            <point key="canvasLocation" x="776.79999999999995" y="-688.60569715142435"/>
         </scene>
         <!--Search-->
         <scene sceneID="reX-hV-5EW">

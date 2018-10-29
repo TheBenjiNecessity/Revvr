@@ -1,58 +1,44 @@
 //
-//  RevListTableViewController.swift
+//  UsersListTableViewController.swift
 //  Revvr
 //
-//  Created by Benjamin Wishart on 2018-07-30.
+//  Created by Benjamin Wishart on 2018-10-14.
 //  Copyright © 2018 Benjamin Wishart. All rights reserved.
 //
 
+//Different ways you could list users
+// - search (request after debounce)
+// - list followers/followings (no search/increase page size when scroll to bottom)
+// - people who have reviewed a reviewable (no search/increase page size when scroll to bottom)
+
 import UIKit
 
-class RevListTableViewController: UITableViewController {
-        
+class UsersListTableViewController: RevListTableViewController {
+    var users: [AppUser]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        //navigationItem.title = "Reviews"
-        //navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
-        //navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 0/255, green: 150/255, blue: 136/255, alpha: 1.0)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return users?.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+        
+        if let user = users?[indexPath.row] {
+            cell.setUserInfoLabel(user: user)
+        }
 
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
     /*
     // Override to support editing the table view.
@@ -86,9 +72,9 @@ class RevListTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
+        // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
     */
-    
+
 }
