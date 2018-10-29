@@ -572,11 +572,11 @@
             </objects>
             <point key="canvasLocation" x="-162.40000000000001" y="-688.60569715142435"/>
         </scene>
-        <!--People-->
+        <!--Search-->
         <scene sceneID="reX-hV-5EW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NDa-5n-AzJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="People" id="uhw-eo-HWA"/>
+                    <tabBarItem key="tabBarItem" title="Search" id="uhw-eo-HWA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t22-S6-vKo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
