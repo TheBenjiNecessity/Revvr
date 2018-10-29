@@ -375,7 +375,6 @@
                                 </constraints>
                                 <size key="customSize" width="375" height="106"/>
                                 <connections>
-                                    <outlet property="commentLabel" destination="FbE-C6-NxU" id="rah-my-jWc"/>
                                     <outlet property="emojiImageView" destination="Mzp-0D-SeG" id="Vhh-H8-sMp"/>
                                     <outlet property="profilePictureImageView" destination="wbe-Vi-Emc" id="XW4-se-HNK"/>
                                     <outlet property="reviewableImageView" destination="uVF-mC-jdz" id="zOk-cN-hOG"/>
