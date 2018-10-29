@@ -13,9 +13,7 @@ fileprivate let shadowOpacity = Float(0.5)
 fileprivate let shadowOffset = CGSize(width: 0, height: 1)
 fileprivate let masksToBounds = false
 
-class ReviewWithoutCommentCollectionViewCell: UICollectionViewCell {
-    static let reuseIdentifier = "ReviewWithoutCommentCollectionViewCellIdentifier"
-    
+class ReviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var reviewableImageView: UIImageView!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var emojiImageView: UIImageView!

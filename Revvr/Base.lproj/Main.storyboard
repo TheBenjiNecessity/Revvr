@@ -385,15 +385,15 @@
                                 </constraints>
                                 <size key="customSize" width="375" height="106"/>
                                 <connections>
-                                    <outlet property="commentLabel" destination="FbE-C6-NxU" id="Yqq-R9-gqj"/>
-                                    <outlet property="emojiImageView" destination="Mzp-0D-SeG" id="Ol8-lY-Tg7"/>
-                                    <outlet property="profilePictureImageView" destination="wbe-Vi-Emc" id="GQf-l4-MUG"/>
-                                    <outlet property="reviewableImageView" destination="uVF-mC-jdz" id="XgY-Ui-HVj"/>
-                                    <outlet property="reviewableLabel" destination="i4t-Ty-fqP" id="kWE-cn-EJe"/>
-                                    <outlet property="usernameLabel" destination="5Hb-e9-S5R" id="z95-1z-Ng5"/>
+                                    <outlet property="commentLabel" destination="FbE-C6-NxU" id="rah-my-jWc"/>
+                                    <outlet property="emojiImageView" destination="Mzp-0D-SeG" id="Vhh-H8-sMp"/>
+                                    <outlet property="profilePictureImageView" destination="wbe-Vi-Emc" id="XW4-se-HNK"/>
+                                    <outlet property="reviewableImageView" destination="uVF-mC-jdz" id="zOk-cN-hOG"/>
+                                    <outlet property="reviewableLabel" destination="i4t-Ty-fqP" id="7Cb-61-dOL"/>
+                                    <outlet property="usernameLabel" destination="5Hb-e9-S5R" id="NCh-tZ-DXF"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReviewWithoutCommentCollectionViewCellIdentifier" id="Sz8-kP-hMw" customClass="ReviewWithoutCommentCollectionViewCell" customModule="Revvr" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReviewWithoutCommentCollectionViewCellIdentifier" id="Sz8-kP-hMw" customClass="ReviewCollectionViewCell" customModule="Revvr" customModuleProvider="target">
                                 <rect key="frame" x="125" y="116" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -453,11 +453,11 @@
                                 </constraints>
                                 <size key="customSize" width="125" height="125"/>
                                 <connections>
-                                    <outlet property="emojiImageView" destination="M91-f5-j9c" id="k3X-N2-rMc"/>
-                                    <outlet property="profilePictureImageView" destination="3Bm-HW-qMI" id="Myl-ES-Dbc"/>
-                                    <outlet property="reviewableImageView" destination="QmP-ow-HsE" id="VSp-fT-xfB"/>
-                                    <outlet property="reviewableLabel" destination="dxj-O6-d6V" id="I7G-XA-l7X"/>
-                                    <outlet property="usernameLabel" destination="S3e-Ea-esQ" id="byA-el-YeM"/>
+                                    <outlet property="emojiImageView" destination="M91-f5-j9c" id="xYt-7P-1bF"/>
+                                    <outlet property="profilePictureImageView" destination="3Bm-HW-qMI" id="Fdh-Hh-3zF"/>
+                                    <outlet property="reviewableImageView" destination="QmP-ow-HsE" id="LeI-l2-NQx"/>
+                                    <outlet property="reviewableLabel" destination="dxj-O6-d6V" id="sET-cw-qN4"/>
+                                    <outlet property="usernameLabel" destination="S3e-Ea-esQ" id="BVB-fa-xcd"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

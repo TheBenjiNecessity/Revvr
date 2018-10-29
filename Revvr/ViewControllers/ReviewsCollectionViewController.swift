@@ -8,6 +8,9 @@
 
 import UIKit
 
+fileprivate let reviewWithCommentCVCId = "ReviewWithCommentCollectionViewCellIdentifier"
+fileprivate let reviewWithoutCommentCVCId = "ReviewWithoutCommentCollectionViewCellIdentifier"
+
 extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -53,7 +56,7 @@ class ReviewsCollectionViewController: UICollectionViewController {
             ReviewAPIService.shared.listByFollowings(id: user.id!).then { reviews in
                 self.reviews = reviews
                 self.refresh()
-            }.catch{error in print(error)}
+            }
         }
     }
 
@@ -69,17 +72,11 @@ class ReviewsCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let review = reviews![indexPath.row]
-        let identifier = (review.comment != nil) ? ReviewWithCommentCollectionViewCell.reuseIdentifier : ReviewWithoutCommentCollectionViewCell.reuseIdentifier
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+        let identifier = (review.comment != nil) ? reviewWithCommentCVCId : reviewWithoutCommentCVCId
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! ReviewCollectionViewCell
         
-        if review.comment != nil {
-            let cellWithComment = cell as! ReviewWithCommentCollectionViewCell
-            cellWithComment.setReview(review: review)
-        } else {
-            let cellWithoutComment = cell as! ReviewWithoutCommentCollectionViewCell
-            cellWithoutComment.setReview(review: review)
-        }
-    
+        cell.setReview(review: review)
+        
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1.0
         

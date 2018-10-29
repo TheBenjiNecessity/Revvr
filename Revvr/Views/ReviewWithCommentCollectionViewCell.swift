@@ -13,27 +13,28 @@ import UIKit
 fileprivate let paddingConstraint: CGFloat = CGFloat(5.0)
 fileprivate let spacingConstraint: CGFloat = CGFloat(8.0)
 
-class ReviewWithCommentCollectionViewCell: UICollectionViewCell {
-    static let reuseIdentifier = "ReviewWithCommentCollectionViewCellIdentifier"
-    
-    @IBOutlet weak var profilePictureImageView: UIImageView!
-    @IBOutlet weak var reviewableImageView: UIImageView!
-    @IBOutlet weak var emojiImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var reviewableLabel: UILabel!
+class ReviewWithCommentCollectionViewCell: ReviewCollectionViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     
     /**
         Sets up the cell with the given review
         - parameter review: the review
      */
-    func setReview(review: Review) {
+    override func setReview(review: Review) {
+        super.setReview(review: review)
+        
         // It shouldn't be possible for the review comment to be nil so this should be okay
         commentLabel?.text = review.comment!
-        reviewableLabel?.text = review.reviewable.title
-        usernameLabel?.text = review.appUser.handle
         
-        //TODO: add setup for images
+        usernameLabel.layer.shadowRadius = 0.0
+        usernameLabel.layer.shadowOpacity = 0.0
+        usernameLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+        usernameLabel.layer.masksToBounds = true
+        
+        reviewableLabel.layer.shadowRadius = 0.0
+        reviewableLabel.layer.shadowOpacity = 0.0
+        reviewableLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+        reviewableLabel.layer.masksToBounds = true
     }
     
     /**

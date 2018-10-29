@@ -12,7 +12,7 @@
 		790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */; };
 		79594BA6217F72FB00A5C34C /* ReviewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */; };
 		79594BA8217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */; };
-		79594BAA217FBCDF00A5C34C /* ReviewWithoutCommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA9217FBCDF00A5C34C /* ReviewWithoutCommentCollectionViewCell.swift */; };
+		79594BAA217FBCDF00A5C34C /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */; };
 		795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FD217813D600311390 /* KeychainPasswordItem.swift */; };
 		795CE1002178144500311390 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FF2178144500311390 /* SessionService.swift */; };
 		795CE102217817E400311390 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE101217817E400311390 /* Token.swift */; };
@@ -71,7 +71,7 @@
 		790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserFollowing.swift; sourceTree = "<group>"; };
 		79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCollectionViewController.swift; sourceTree = "<group>"; };
 		79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWithCommentCollectionViewCell.swift; sourceTree = "<group>"; };
-		79594BA9217FBCDF00A5C34C /* ReviewWithoutCommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWithoutCommentCollectionViewCell.swift; sourceTree = "<group>"; };
+		79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		795CE0FD217813D600311390 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		795CE0FF2178144500311390 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		795CE101217817E400311390 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */,
-				79594BA9217FBCDF00A5C34C /* ReviewWithoutCommentCollectionViewCell.swift */,
+				79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -540,7 +540,7 @@
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
 				7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */,
 				79594BA8217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift in Sources */,
-				79594BAA217FBCDF00A5C34C /* ReviewWithoutCommentCollectionViewCell.swift in Sources */,
+				79594BAA217FBCDF00A5C34C /* ReviewCollectionViewCell.swift in Sources */,
 				7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */,
 				790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */,
 				79B48BC621150E5200AB5415 /* AppUserContent.swift in Sources */,
