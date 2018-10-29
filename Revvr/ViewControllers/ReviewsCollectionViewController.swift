@@ -15,11 +15,14 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let review = reviews![indexPath.row]
+        // This sizeForItemAt method simply sizes reviews with comments to be full width while
+        // reviews without comments should be square and a third the width of the collection view.
         let collectionViewWidth = collectionView.bounds.size.width
+        guard let review = models?[indexPath.row] as? Review else {
+            return CGSize(width: 0, height: 0)
+        }
 
         if review.comment != nil {
-            //TODO there must be a better way
             let cell = self.collectionView(collectionView, cellForItemAt: indexPath) as! ReviewWithCommentCollectionViewCell
             return CGSize(width: collectionViewWidth, height: cell.getMinHeight(collectionViewWidth: collectionViewWidth))
         } else {
@@ -27,6 +30,7 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
         }
     }
 
+    // The methods below simple remove spacing between all cells
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -47,14 +51,16 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 class ReviewsCollectionViewController: UICollectionViewController {
-    var reviews: [Review]?
+    // Using 'Any' here as the model may be preceded by user or reviewable models before the list of reviews
+    var models: [Any]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //TODO this is wrong (this should be happening in a subclass)
         if let user = SessionService.shared.user {
             ReviewAPIService.shared.listByFollowings(id: user.id!).then { reviews in
-                self.reviews = reviews
+                self.models = reviews //TODO: this should be a property with refresh()
                 self.refresh()
             }
         }
@@ -67,11 +73,11 @@ class ReviewsCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return reviews?.count ?? 0
+        return models?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let review = reviews![indexPath.row]
+        let review = models![indexPath.row] as! Review
         let identifier = (review.comment != nil) ? reviewWithCommentCVCId : reviewWithoutCommentCVCId
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! ReviewCollectionViewCell
         
@@ -84,33 +90,36 @@ class ReviewsCollectionViewController: UICollectionViewController {
     }
     
     func refresh() {
-        guard let reviews = reviews else {
+        guard let models = models else {
             return
         }
         
-        // Group reviews based on reviews having or not having a comment.
-        // Reviews without comments are grouped in blocks of three.
+        var finalModels: [Any] = []
         var groupedReviews: [Review] = []
         var smallArray: [Review] = []
         
-        for review in reviews {
-            if review.comment != nil {
-                groupedReviews.append(review)
-            } else {
-                smallArray.append(review)
-                if smallArray.count == 3 {
-                    groupedReviews += smallArray
-                    smallArray.removeAll()
+        for model in models {
+            if case let review as Review = model {
+                // Group reviews based on reviews having or not having a comment.
+                // Reviews without comments are grouped in blocks of three.
+                if review.comment != nil {
+                    groupedReviews.append(review)
+                } else {
+                    smallArray.append(review)
+                    if smallArray.count == 3 {
+                        groupedReviews += smallArray
+                        smallArray.removeAll()
+                    }
                 }
+            } else {
+                // For any models that aren't reviews then put them at the beginning
+                finalModels.append(model)
             }
         }
         
-        // set reviews to grouped formation (not forgetting to add remainder of smallArray
+        // Set reviews to grouped formation (not forgetting to add remainder of smallArray
         // if smallArray had fewer than 3 elements by the end).
-        self.reviews = groupedReviews + smallArray
-        
-        // I may also want to group by reviewable where all reviews without comments with the same reviewable should
-        // use the same cell
+        self.models = finalModels + groupedReviews as [Any] + smallArray as [Any]
         
         collectionView?.reloadData()
     }
