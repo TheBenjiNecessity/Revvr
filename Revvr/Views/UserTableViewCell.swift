@@ -10,27 +10,14 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var profilePictureImageView: UIImageView!
-    @IBOutlet weak var userInfoLabel: UILabel!
+    @IBOutlet weak var firstLastNameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    static let cellHeight = CGFloat(72.0)
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    func setUserInfoLabel(user: AppUser) {
-        //profilePictureImageView.image = user.content.profilePicture ?? defaultProfilePicture
-        let userInfoString: String = "\(user.firstName) \(user.lastName) \n \(user.handle)"
-        
-        userInfoLabel.text = userInfoString
+    func setUser(user: AppUser) {
+        //profilePictureImageView.image = user.content.profilePicture
+        firstLastNameLabel?.text = "\(user.firstName) \(user.lastName)"
+        usernameLabel?.text = user.handle
     }
 }

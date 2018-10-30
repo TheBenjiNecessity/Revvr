@@ -32,7 +32,7 @@ class AppUserAPIService: APIService {
     }
     
     func search(text: String, pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[AppUser]> {
-        let uri = "\(url)/search"
+        let uri = "\(url)/search?text=\(text)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [AppUser].self)
     }
     

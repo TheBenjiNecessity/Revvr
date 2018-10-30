@@ -41,10 +41,10 @@ class SearchUsersTableViewController: UsersListTableViewController {
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         debounceTimer?.invalidate()
         let nextTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
-            AppUserAPIService.shared.search(text: searchText).then({ (users) in
+            AppUserAPIService.shared.search(text: searchText).then { users in
                 self.users = users
                 self.tableView.reloadData()
-            })
+            }
         }
         debounceTimer = nextTimer
     }

@@ -401,38 +401,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" id="B39-z9-X8R" customClass="UserTableViewCell" customModule="Revvr" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="72" id="B39-z9-X8R" customClass="UserTableViewCell" customModule="Revvr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B39-z9-X8R" id="LZt-Zu-Chj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="85b-aF-HY6">
-                                            <rect key="frame" x="0.0" y="0.0" width="43.5" height="43.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultProfilePictureThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="85b-aF-HY6">
+                                            <rect key="frame" x="5" y="14" width="44" height="44"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="85b-aF-HY6" secondAttribute="height" multiplier="1:1" id="l87-Ls-Dtj"/>
+                                                <constraint firstAttribute="width" constant="44" id="8SZ-mQ-WUM"/>
+                                                <constraint firstAttribute="height" constant="44" id="yj2-CG-8Zp"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNv-xY-Khy">
-                                            <rect key="frame" x="48.5" y="16" width="31" height="12"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firstname Lastname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNv-xY-Khy">
+                                            <rect key="frame" x="54" y="14" width="155" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z17-sx-Irt">
+                                            <rect key="frame" x="54" y="35" width="68" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="85b-aF-HY6" firstAttribute="top" secondItem="LZt-Zu-Chj" secondAttribute="top" id="JY5-TA-2Va"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="QNv-xY-Khy" secondAttribute="bottom" constant="5" id="KSI-wq-npq"/>
-                                        <constraint firstItem="85b-aF-HY6" firstAttribute="leading" secondItem="LZt-Zu-Chj" secondAttribute="leading" id="TW8-As-xsH"/>
-                                        <constraint firstItem="QNv-xY-Khy" firstAttribute="top" secondItem="LZt-Zu-Chj" secondAttribute="topMargin" constant="5" id="eCw-om-1Dw"/>
-                                        <constraint firstItem="QNv-xY-Khy" firstAttribute="leading" secondItem="85b-aF-HY6" secondAttribute="trailing" constant="5" id="ojA-bR-O50"/>
-                                        <constraint firstAttribute="bottom" secondItem="85b-aF-HY6" secondAttribute="bottom" id="rhI-Gj-cof"/>
+                                        <constraint firstItem="85b-aF-HY6" firstAttribute="leading" secondItem="LZt-Zu-Chj" secondAttribute="leading" constant="5" id="G3m-LF-wtX"/>
+                                        <constraint firstItem="z17-sx-Irt" firstAttribute="leading" secondItem="QNv-xY-Khy" secondAttribute="leading" id="IiS-zL-a0D"/>
+                                        <constraint firstItem="QNv-xY-Khy" firstAttribute="leading" secondItem="85b-aF-HY6" secondAttribute="trailing" constant="5" id="N2Q-Xs-9Uu"/>
+                                        <constraint firstItem="z17-sx-Irt" firstAttribute="top" secondItem="QNv-xY-Khy" secondAttribute="bottom" id="blf-oZ-Qq7"/>
+                                        <constraint firstItem="QNv-xY-Khy" firstAttribute="top" secondItem="85b-aF-HY6" secondAttribute="top" id="eVf-xa-sg2"/>
+                                        <constraint firstItem="85b-aF-HY6" firstAttribute="centerY" secondItem="LZt-Zu-Chj" secondAttribute="centerY" id="kZo-ma-UnL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="firstLastNameLabel" destination="QNv-xY-Khy" id="8lb-Hp-DLu"/>
                                     <outlet property="profilePictureImageView" destination="85b-aF-HY6" id="Nd2-LV-WGO"/>
-                                    <outlet property="userInfoLabel" destination="QNv-xY-Khy" id="I4p-hZ-qhh"/>
+                                    <outlet property="usernameLabel" destination="z17-sx-Irt" id="Is1-YN-UvC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

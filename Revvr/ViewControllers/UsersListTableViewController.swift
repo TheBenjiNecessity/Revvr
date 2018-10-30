@@ -34,10 +34,14 @@ class UsersListTableViewController: RevListTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
         
         if let user = users?[indexPath.row] {
-            cell.setUserInfoLabel(user: user)
+            cell.setUser(user: user)
         }
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UserTableViewCell.cellHeight
     }
 
     /*
