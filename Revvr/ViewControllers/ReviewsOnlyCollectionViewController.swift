@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class ReviewsOnlyCollectionViewController: ReviewsCollectionViewController {
 
     override func viewDidLoad() {
