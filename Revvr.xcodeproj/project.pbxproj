@@ -28,7 +28,6 @@
 		7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960649A217ACA6C009F2EEA /* KeyChainService.swift */; };
 		79639BF82183F02C00996DD9 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79639BF72183F02C00996DD9 /* String+Size.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
-		7994BFE020608A9600D05B25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDF20608A9600D05B25 /* ViewController.swift */; };
 		7994BFE320608A9600D05B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7994BFE120608A9600D05B25 /* Main.storyboard */; };
 		7994BFE620608A9600D05B25 /* Revvr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFE420608A9600D05B25 /* Revvr.xcdatamodeld */; };
 		7994BFE820608A9600D05B25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7994BFE720608A9600D05B25 /* Assets.xcassets */; };
@@ -96,7 +95,6 @@
 		79639BF72183F02C00996DD9 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7994BFDF20608A9600D05B25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7994BFE220608A9600D05B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7994BFE520608A9600D05B25 /* Revvr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Revvr.xcdatamodel; sourceTree = "<group>"; };
 		7994BFE720608A9600D05B25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 				799C004C21128EB6001BF07D /* Services */,
 				79B3E373210FEF4500CD73EB /* ViewControllers */,
 				7994BFDD20608A9600D05B25 /* AppDelegate.swift */,
-				7994BFDF20608A9600D05B25 /* ViewController.swift */,
 				7994BFE120608A9600D05B25 /* Main.storyboard */,
 				7994BFE720608A9600D05B25 /* Assets.xcassets */,
 				7994BFE920608A9600D05B25 /* LaunchScreen.storyboard */,
@@ -561,7 +558,6 @@
 				79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */,
 				79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */,
 				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
-				7994BFE020608A9600D05B25 /* ViewController.swift in Sources */,
 				795F25A1217419360022DFE2 /* UsersListTableViewController.swift in Sources */,
 				79B3E380210FFD7200CD73EB /* RevListTableViewController.swift in Sources */,
 				795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */,
