@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReviewWithCommentCollectionViewCell" customModule="Revvr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultProfilePictureThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="kqm-HB-1ja">
+                    <rect key="frame" x="5" y="5" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="2ew-Yd-Gfh"/>
+                        <constraint firstAttribute="height" constant="44" id="Vai-gY-JtO"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultReviewableThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="coA-Ym-yIi">
+                    <rect key="frame" x="5" y="57" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="don-w1-ioy"/>
+                        <constraint firstAttribute="height" constant="44" id="fzh-DX-XxX"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultEmojiThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-mz-ODg">
+                    <rect key="frame" x="326" y="5" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="AVm-2T-FkD"/>
+                        <constraint firstAttribute="width" constant="44" id="EOp-J4-BER"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWa-Ye-8Jh">
+                    <rect key="frame" x="54" y="5" width="267" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Reviewable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm1-vH-dKP">
+                    <rect key="frame" x="54" y="19.5" width="267" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMK-6M-d3j">
+                    <rect key="frame" x="54" y="34" width="267" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nm1-vH-dKP" firstAttribute="leading" secondItem="fWa-Ye-8Jh" secondAttribute="leading" id="9JZ-Jm-oqE"/>
+                <constraint firstItem="fQQ-mz-ODg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="H90-Mc-bd1"/>
+                <constraint firstItem="nm1-vH-dKP" firstAttribute="trailing" secondItem="fWa-Ye-8Jh" secondAttribute="trailing" id="IzG-bm-xyy"/>
+                <constraint firstItem="fQQ-mz-ODg" firstAttribute="leading" secondItem="fWa-Ye-8Jh" secondAttribute="trailing" constant="5" id="JuA-Dw-lXA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fQQ-mz-ODg" secondAttribute="trailing" constant="5" id="LXe-xs-ynn"/>
+                <constraint firstItem="fWa-Ye-8Jh" firstAttribute="leading" secondItem="kqm-HB-1ja" secondAttribute="trailing" constant="5" id="MpV-C7-UyV"/>
+                <constraint firstItem="coA-Ym-yIi" firstAttribute="leading" secondItem="kqm-HB-1ja" secondAttribute="leading" id="TZu-oe-mJ4"/>
+                <constraint firstItem="CMK-6M-d3j" firstAttribute="top" secondItem="nm1-vH-dKP" secondAttribute="bottom" id="USC-AX-5lb"/>
+                <constraint firstItem="CMK-6M-d3j" firstAttribute="leading" secondItem="nm1-vH-dKP" secondAttribute="leading" id="asM-Jh-CET"/>
+                <constraint firstItem="coA-Ym-yIi" firstAttribute="top" secondItem="kqm-HB-1ja" secondAttribute="bottom" constant="8" id="bdl-5r-4Mx"/>
+                <constraint firstItem="CMK-6M-d3j" firstAttribute="trailing" secondItem="nm1-vH-dKP" secondAttribute="trailing" id="ecc-xp-QOe"/>
+                <constraint firstItem="nm1-vH-dKP" firstAttribute="top" secondItem="fWa-Ye-8Jh" secondAttribute="bottom" id="fHM-Q3-fbI"/>
+                <constraint firstItem="fWa-Ye-8Jh" firstAttribute="top" secondItem="kqm-HB-1ja" secondAttribute="top" id="pOr-AU-hig"/>
+                <constraint firstItem="kqm-HB-1ja" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="q8H-WL-vTt"/>
+                <constraint firstItem="kqm-HB-1ja" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="zfq-ga-tWt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="commentLabel" destination="CMK-6M-d3j" id="5j9-CM-0DL"/>
+                <outlet property="emojiImageView" destination="fQQ-mz-ODg" id="bxa-4G-apT"/>
+                <outlet property="profilePictureImageView" destination="kqm-HB-1ja" id="Md5-8E-ru2"/>
+                <outlet property="reviewableImageView" destination="coA-Ym-yIi" id="7Jd-eB-47e"/>
+                <outlet property="reviewableLabel" destination="nm1-vH-dKP" id="rxp-jx-AUd"/>
+                <outlet property="usernameLabel" destination="fWa-Ye-8Jh" id="l8W-DU-Rp1"/>
+            </connections>
+            <point key="canvasLocation" x="53.600000000000001" y="48.575712143928037"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="DefaultEmojiThumbnail" width="37.5" height="37.5"/>
+        <image name="DefaultProfilePictureThumbnail" width="48" height="48"/>
+        <image name="DefaultReviewableThumbnail" width="48" height="48"/>
+    </resources>
+</document>

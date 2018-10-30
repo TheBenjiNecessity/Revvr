@@ -33,6 +33,12 @@ class ReviewsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let reviewViewNib = UINib(nibName: "ReviewCollectionViewCell", bundle: nil)
+        self.collectionView!.register(reviewViewNib, forCellWithReuseIdentifier: reviewWithoutCommentCVCId)
+        
+        let reviewWithCommentViewNib = UINib(nibName: "ReviewWithCommentCollectionViewCell", bundle: nil)
+        self.collectionView!.register(reviewWithCommentViewNib, forCellWithReuseIdentifier: reviewWithCommentCVCId)
     }
 
     // MARK: UICollectionViewDataSource
