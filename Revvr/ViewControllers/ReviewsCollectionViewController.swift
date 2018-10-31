@@ -15,7 +15,7 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let review = reviews![indexPath.row]
+        let review = reviews[indexPath.row]
         let collectionViewWidth = collectionView.bounds.size.width
 
         if review.comment != nil {
@@ -29,7 +29,7 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 class ReviewsCollectionViewController: UICollectionViewController {
-    var reviews: [Review]?
+    var reviews: [Review] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +48,11 @@ class ReviewsCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return reviews?.count ?? 0
+        return reviews.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let review = reviews![indexPath.row]
+        let review = reviews[indexPath.row]
         let identifier = (review.comment != nil) ? reviewWithCommentCVCId : reviewWithoutCommentCVCId
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! ReviewCollectionViewCell
         
@@ -65,10 +65,6 @@ class ReviewsCollectionViewController: UICollectionViewController {
     }
     
     func refresh() {
-        guard let reviews = reviews else {
-            return
-        }
-        
         // Group reviews based on reviews having or not having a comment.
         // Reviews without comments are grouped in blocks of three.
         var groupedReviews: [Review] = []
@@ -88,7 +84,7 @@ class ReviewsCollectionViewController: UICollectionViewController {
         
         // set reviews to grouped formation (not forgetting to add remainder of smallArray
         // if smallArray had fewer than 3 elements by the end).
-        self.reviews = groupedReviews + smallArray
+        reviews = groupedReviews + smallArray
         
         // I may also want to group by reviewable where all reviews without comments with the same reviewable should
         // use the same cell
