@@ -49,6 +49,7 @@
 		79C07EAE2121BC1F00B7D024 /* ReviewLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */; };
 		79D4814A218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D48149218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift */; };
 		79D4814C218A187A001AEB95 /* ReviewableCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D4814B218A187A001AEB95 /* ReviewableCollectionReusableView.swift */; };
+		79D48150218A5F4A001AEB95 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D4814F218A5F4A001AEB95 /* MainTabbarViewController.swift */; };
 		8A556A4E41C57697223E17B5 /* Pods_RevvrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563D02650801DFCE8B495E64 /* Pods_RevvrTests.framework */; };
 		A5D798BB729D688B6A4F799F /* Pods_RevvrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E9D931E19714A811F984E9 /* Pods_RevvrUITests.framework */; };
 		F173A3B93CF76264ABB3EFE1 /* Pods_Revvr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF466C5C824EFFDF63B56756 /* Pods_Revvr.framework */; };
@@ -123,6 +124,7 @@
 		79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLike.swift; sourceTree = "<group>"; };
 		79D48149218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableWithReviewsCollectionViewController.swift; sourceTree = "<group>"; };
 		79D4814B218A187A001AEB95 /* ReviewableCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableCollectionReusableView.swift; sourceTree = "<group>"; };
+		79D4814F218A5F4A001AEB95 /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		80FF82895DB7AC9B7F0D7938 /* Pods-Revvr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revvr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Revvr/Pods-Revvr.debug.xcconfig"; sourceTree = "<group>"; };
 		83689F9E1F249FC5295F03C7 /* Pods-RevvrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevvrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RevvrTests/Pods-RevvrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF466C5C824EFFDF63B56756 /* Pods_Revvr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Revvr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				795E719C2175796900E40F16 /* SearchTableViewController.swift */,
+				79D4814F218A5F4A001AEB95 /* MainTabbarViewController.swift */,
 				795E71A22175926600E40F16 /* FrontViewController.swift */,
 				79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */,
 				794FCC1B2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift */,
@@ -583,6 +586,7 @@
 				795E719D2175796900E40F16 /* SearchTableViewController.swift in Sources */,
 				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
 				795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */,
+				79D48150218A5F4A001AEB95 /* MainTabbarViewController.swift in Sources */,
 				79639BF82183F02C00996DD9 /* String+Size.swift in Sources */,
 				79594BA6217F72FB00A5C34C /* ReviewsCollectionViewController.swift in Sources */,
 			);

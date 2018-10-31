@@ -401,7 +401,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="72" id="B39-z9-X8R" customClass="UserTableViewCell" customModule="Revvr" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCellIdentifier" rowHeight="72" id="B39-z9-X8R" customClass="UserTableViewCell" customModule="Revvr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B39-z9-X8R" id="LZt-Zu-Chj">
@@ -508,7 +508,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="jdm-fy-Roi" kind="show" identifier="ShowReviewableSequeIdentifier" id="oba-r9-PQI"/>
-                        <segue destination="gzc-2r-YGu" kind="show" identifier="ShowUserSequeIdentifier" id="2SY-Jy-RYT"/>
+                        <segue destination="gzc-2r-YGu" kind="show" identifier="ShowUserSequeIdentifier" id="dYA-Hg-Txv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDm-3K-Q61" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -626,10 +626,10 @@
             </objects>
             <point key="canvasLocation" x="651" y="817"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tabbar View Controller-->
         <scene sceneID="B7c-z7-462">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Pyk-Av-MYh" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Pyk-Av-MYh" customClass="MainTabbarViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jwU-0g-uVr">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -730,6 +730,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MUq-Os-ZcG"/>
-        <segue reference="xeq-70-FOm"/>
+        <segue reference="dYA-Hg-Txv"/>
     </inferredMetricsTieBreakers>
 </document>

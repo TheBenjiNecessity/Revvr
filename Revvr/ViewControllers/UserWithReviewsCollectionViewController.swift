@@ -17,19 +17,12 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController {
     var user: AppUser? {
         didSet {
             if let user = self.user {
-                ReviewAPIService.shared.listByFollowings(id: user.id!).then { reviews in
+                ReviewAPIService.shared.listByUser(id: user.id!).then { reviews in
                     self.reviews = reviews
                     self.refresh()
                 }
             }
         }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        //TODO: this user should be gotten through a segue
-        user = SessionService.shared.user
     }
 
     // MARK: UICollectionViewDataSource

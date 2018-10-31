@@ -59,6 +59,27 @@ class SearchTableViewController: UITableViewController {
         return models[indexPath.row] is AppUser ? UserTableViewCell.cellHeight : ReviewableTableViewCell.cellHeight
     }
     
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = models[indexPath.row]
+        if case let user = model, model is AppUser {
+            self.performSegue(withIdentifier: "ShowUserSequeIdentifier", sender: user)
+        } else if case let reviewable = model, model is Reviewable {
+            self.performSegue(withIdentifier: "ShowReviewableSequeIdentifier", sender: reviewable)
+        }
+    }
+    
+    // MARK: - Navigation methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if case let uvc = segue.destination as! UserWithReviewsCollectionViewController, sender is AppUser {
+            uvc.user = sender as? AppUser
+        } else if case let rvc = segue.destination as! ReviewableWithReviewsCollectionViewController, sender is Reviewable {
+            rvc.reviewable = sender as? Reviewable
+        }
+    }
+    
     // MARK: - Search bar delegate methods
     
     func searchBarIsEmpty() -> Bool {
