@@ -21,7 +21,7 @@
 		795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FD217813D600311390 /* KeychainPasswordItem.swift */; };
 		795CE1002178144500311390 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FF2178144500311390 /* SessionService.swift */; };
 		795CE102217817E400311390 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE101217817E400311390 /* Token.swift */; };
-		795E719D2175796900E40F16 /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E719C2175796900E40F16 /* SearchUsersTableViewController.swift */; };
+		795E719D2175796900E40F16 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E719C2175796900E40F16 /* SearchTableViewController.swift */; };
 		795E71A32175926600E40F16 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E71A22175926600E40F16 /* FrontViewController.swift */; };
 		795F25A1217419360022DFE2 /* UsersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F25A0217419360022DFE2 /* UsersListTableViewController.swift */; };
 		795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F25A221741E610022DFE2 /* UserTableViewCell.swift */; };
@@ -87,7 +87,7 @@
 		795CE0FD217813D600311390 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		795CE0FF2178144500311390 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		795CE101217817E400311390 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		795E719C2175796900E40F16 /* SearchUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersTableViewController.swift; sourceTree = "<group>"; };
+		795E719C2175796900E40F16 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		795E71A22175926600E40F16 /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		795F25A0217419360022DFE2 /* UsersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListTableViewController.swift; sourceTree = "<group>"; };
 		795F25A221741E610022DFE2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 			children = (
 				79B3E37E210FFD7200CD73EB /* RevListTableViewController.swift */,
 				795F25A0217419360022DFE2 /* UsersListTableViewController.swift */,
-				795E719C2175796900E40F16 /* SearchUsersTableViewController.swift */,
+				795E719C2175796900E40F16 /* SearchTableViewController.swift */,
 				795E71A22175926600E40F16 /* FrontViewController.swift */,
 				79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */,
 				794FCC1B2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift */,
@@ -572,7 +572,7 @@
 				790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */,
 				79B48BC621150E5200AB5415 /* AppUserContent.swift in Sources */,
 				799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */,
-				795E719D2175796900E40F16 /* SearchUsersTableViewController.swift in Sources */,
+				795E719D2175796900E40F16 /* SearchTableViewController.swift in Sources */,
 				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
 				795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */,
 				79639BF82183F02C00996DD9 /* String+Size.swift in Sources */,

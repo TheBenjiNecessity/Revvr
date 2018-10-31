@@ -8,14 +8,14 @@
 
 import UIKit
 
-extension SearchUsersTableViewController: UISearchResultsUpdating {
+extension SearchTableViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
 
-class SearchUsersTableViewController: UsersListTableViewController {
+class SearchTableViewController: UsersListTableViewController {
     let searchController = UISearchController(searchResultsController: nil)
 
     var debounceTimer: Timer?
