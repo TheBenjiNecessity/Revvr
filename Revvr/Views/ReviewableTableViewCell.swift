@@ -14,9 +14,11 @@ class ReviewableTableViewCell: ModelTableViewCell {
     @IBOutlet weak var reviewableImageView: UIImageView!
     
     static let reuseIdentifier = "ReviewableTableViewCellIdentifier"
-    static let cellHeight = CGFloat(101.0)
+    static let cellHeight = CGFloat(100.0)
     
-    override func setModel(model: Reviewable) {
+    override func setModel(model: Any) {
+        let reviewable = model as! Reviewable
+        
         //reviewableImageView.image = reviewable...
         reviewableTitleLabel?.text = reviewable.title
         reviewableDescriptionLabel?.text = reviewable.description

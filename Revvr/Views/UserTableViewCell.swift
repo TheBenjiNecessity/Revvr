@@ -16,7 +16,9 @@ class UserTableViewCell: ModelTableViewCell {
     static let reuseIdentifier = "UserTableViewCellIdentifier"
     static let cellHeight = CGFloat(72.0)
     
-    override func setModel(model: AppUser) {
+    override func setModel(model: Any) {
+        let user = model as! AppUser
+        
         //profilePictureImageView.image = user.content.profilePicture
         firstLastNameLabel?.text = "\(user.firstName) \(user.lastName)"
         usernameLabel?.text = user.handle
