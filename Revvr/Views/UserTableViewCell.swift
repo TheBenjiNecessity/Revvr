@@ -8,14 +8,15 @@
 
 import UIKit
 
-class UserTableViewCell: UITableViewCell {
+class UserTableViewCell: ModelTableViewCell {
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var firstLastNameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     
+    static let reuseIdentifier = "UserTableViewCellIdentifier"
     static let cellHeight = CGFloat(72.0)
     
-    func setUser(user: AppUser) {
+    override func setModel(model: AppUser) {
         //profilePictureImageView.image = user.content.profilePicture
         firstLastNameLabel?.text = "\(user.firstName) \(user.lastName)"
         usernameLabel?.text = user.handle

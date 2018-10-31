@@ -443,6 +443,60 @@
                                     <outlet property="usernameLabel" destination="z17-sx-Irt" id="Is1-YN-UvC"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="101" id="A8q-Rh-s4c" customClass="ReviewableTableViewCell" customModule="Revvr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="100" width="375" height="101"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A8q-Rh-s4c" id="zzB-fX-laa">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultReviewableThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="eTf-Hl-Qrb">
+                                            <rect key="frame" x="5" y="5" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="602-dp-UfU"/>
+                                                <constraint firstAttribute="width" constant="44" id="eqg-cR-hTg"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Reviewable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgY-5o-Qk4">
+                                            <rect key="frame" x="54" y="5" width="221" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTf-xl-f1H">
+                                            <rect key="frame" x="54" y="26" width="221" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWl-aj-3gp">
+                                            <rect key="frame" x="280" y="5" width="90" height="90"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="90" id="aI5-PL-6Hk"/>
+                                                <constraint firstAttribute="width" constant="90" id="mGK-5a-xaN"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JgY-5o-Qk4" firstAttribute="top" secondItem="eTf-Hl-Qrb" secondAttribute="top" id="1ed-S8-Fv8"/>
+                                        <constraint firstItem="TWl-aj-3gp" firstAttribute="top" secondItem="zzB-fX-laa" secondAttribute="top" constant="5" id="8ir-Rl-2Xk"/>
+                                        <constraint firstAttribute="trailing" secondItem="TWl-aj-3gp" secondAttribute="trailing" constant="5" id="B5F-88-U5h"/>
+                                        <constraint firstItem="RTf-xl-f1H" firstAttribute="top" secondItem="JgY-5o-Qk4" secondAttribute="bottom" id="BqR-Xp-SMb"/>
+                                        <constraint firstItem="RTf-xl-f1H" firstAttribute="leading" secondItem="JgY-5o-Qk4" secondAttribute="leading" id="DSa-dg-0Sg"/>
+                                        <constraint firstItem="eTf-Hl-Qrb" firstAttribute="leading" secondItem="zzB-fX-laa" secondAttribute="leading" constant="5" id="RBs-I6-gcb"/>
+                                        <constraint firstItem="eTf-Hl-Qrb" firstAttribute="top" secondItem="zzB-fX-laa" secondAttribute="top" constant="5" id="TAY-uI-nL0"/>
+                                        <constraint firstItem="JgY-5o-Qk4" firstAttribute="leading" secondItem="eTf-Hl-Qrb" secondAttribute="trailing" constant="5" id="dvv-qj-CDY"/>
+                                        <constraint firstItem="TWl-aj-3gp" firstAttribute="leading" secondItem="JgY-5o-Qk4" secondAttribute="trailing" constant="5" id="jSb-Dh-BQL"/>
+                                        <constraint firstItem="TWl-aj-3gp" firstAttribute="leading" secondItem="RTf-xl-f1H" secondAttribute="trailing" constant="5" id="kQJ-nw-Hee"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="reviewableDescriptionLabel" destination="RTf-xl-f1H" id="W1I-45-Q3J"/>
+                                    <outlet property="reviewableImageView" destination="eTf-Hl-Qrb" id="uLP-lY-6ve"/>
+                                    <outlet property="reviewableTitleLabel" destination="JgY-5o-Qk4" id="n7d-va-XGU"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Qn0-Vm-Ed7" id="XdM-GE-YP6"/>
@@ -603,6 +657,7 @@
     </scenes>
     <resources>
         <image name="DefaultProfilePictureThumbnail" width="48" height="48"/>
+        <image name="DefaultReviewableThumbnail" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MUq-Os-ZcG"/>

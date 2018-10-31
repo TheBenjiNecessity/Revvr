@@ -10,6 +10,8 @@
 		79085991216DA3D900E16AD1 /* AppUserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79085990216DA3D900E16AD1 /* AppUserModelTests.swift */; };
 		790B5AA2217967E400A88A0D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 790B5AA1217967E400A88A0D /* LICENSE.txt */; };
 		790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */; };
+		792922F5218949FD00EB5C2D /* ReviewableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792922F4218949FD00EB5C2D /* ReviewableTableViewCell.swift */; };
+		792922F92189501100EB5C2D /* ModelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792922F82189501100EB5C2D /* ModelTableViewCell.swift */; };
 		794FCC1C2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FCC1B2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift */; };
 		795239C82187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795239C72187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift */; };
 		795239CE2187FB9D004FEB82 /* ReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */; };
@@ -23,7 +25,6 @@
 		795CE102217817E400311390 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE101217817E400311390 /* Token.swift */; };
 		795E719D2175796900E40F16 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E719C2175796900E40F16 /* SearchTableViewController.swift */; };
 		795E71A32175926600E40F16 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E71A22175926600E40F16 /* FrontViewController.swift */; };
-		795F25A1217419360022DFE2 /* UsersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F25A0217419360022DFE2 /* UsersListTableViewController.swift */; };
 		795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F25A221741E610022DFE2 /* UserTableViewCell.swift */; };
 		7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960649A217ACA6C009F2EEA /* KeyChainService.swift */; };
 		79639BF82183F02C00996DD9 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79639BF72183F02C00996DD9 /* String+Size.swift */; };
@@ -36,7 +37,6 @@
 		7994C00120608A9600D05B25 /* RevvrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994C00020608A9600D05B25 /* RevvrUITests.swift */; };
 		799C004E21128F04001BF07D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C004D21128F04001BF07D /* APIService.swift */; };
 		799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C005021128F32001BF07D /* AppUserAPIService.swift */; };
-		79B3E380210FFD7200CD73EB /* RevListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3E37E210FFD7200CD73EB /* RevListTableViewController.swift */; };
 		79B48BBC211509E200AB5415 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBB211509E200AB5415 /* AppUser.swift */; };
 		79B48BBE211509FF00AB5415 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBD211509FF00AB5415 /* Review.swift */; };
 		79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBF21150A1B00AB5415 /* Reviewable.swift */; };
@@ -76,6 +76,8 @@
 		79085990216DA3D900E16AD1 /* AppUserModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserModelTests.swift; sourceTree = "<group>"; };
 		790B5AA1217967E400A88A0D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		790D9C2B211F75D500BB8CC1 /* AppUserFollowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserFollowing.swift; sourceTree = "<group>"; };
+		792922F4218949FD00EB5C2D /* ReviewableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableTableViewCell.swift; sourceTree = "<group>"; };
+		792922F82189501100EB5C2D /* ModelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTableViewCell.swift; sourceTree = "<group>"; };
 		794FCC1B2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWithReviewsCollectionViewController.swift; sourceTree = "<group>"; };
 		795239C72187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsOnlyCollectionViewController.swift; sourceTree = "<group>"; };
 		795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -89,7 +91,6 @@
 		795CE101217817E400311390 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		795E719C2175796900E40F16 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		795E71A22175926600E40F16 /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
-		795F25A0217419360022DFE2 /* UsersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListTableViewController.swift; sourceTree = "<group>"; };
 		795F25A221741E610022DFE2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		7960649A217ACA6C009F2EEA /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		79639BF72183F02C00996DD9 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
@@ -108,7 +109,6 @@
 		7994C00220608A9600D05B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		799C004D21128F04001BF07D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		799C005021128F32001BF07D /* AppUserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserAPIService.swift; sourceTree = "<group>"; };
-		79B3E37E210FFD7200CD73EB /* RevListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevListTableViewController.swift; sourceTree = "<group>"; };
 		79B48BBB211509E200AB5415 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		79B48BBD211509FF00AB5415 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		79B48BBF21150A1B00AB5415 /* Reviewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviewable.swift; sourceTree = "<group>"; };
@@ -191,6 +191,8 @@
 				79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */,
 				795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */,
 				795239D12188080C004FEB82 /* UserCollectionReusableView.swift */,
+				792922F4218949FD00EB5C2D /* ReviewableTableViewCell.swift */,
+				792922F82189501100EB5C2D /* ModelTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,8 +281,6 @@
 		79B3E373210FEF4500CD73EB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				79B3E37E210FFD7200CD73EB /* RevListTableViewController.swift */,
-				795F25A0217419360022DFE2 /* UsersListTableViewController.swift */,
 				795E719C2175796900E40F16 /* SearchTableViewController.swift */,
 				795E71A22175926600E40F16 /* FrontViewController.swift */,
 				79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */,
@@ -547,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				795E71A32175926600E40F16 /* FrontViewController.swift in Sources */,
+				792922F5218949FD00EB5C2D /* ReviewableTableViewCell.swift in Sources */,
 				79B48BBC211509E200AB5415 /* AppUser.swift in Sources */,
 				79B48BCD21150EC200AB5415 /* AppUserSettings.swift in Sources */,
 				795CE1002178144500311390 /* SessionService.swift in Sources */,
@@ -558,8 +559,6 @@
 				79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */,
 				79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */,
 				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
-				795F25A1217419360022DFE2 /* UsersListTableViewController.swift in Sources */,
-				79B3E380210FFD7200CD73EB /* RevListTableViewController.swift in Sources */,
 				795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */,
 				795CE102217817E400311390 /* Token.swift in Sources */,
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
@@ -567,6 +566,7 @@
 				7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */,
 				79594BA8217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift in Sources */,
 				79594BAA217FBCDF00A5C34C /* ReviewCollectionViewCell.swift in Sources */,
+				792922F92189501100EB5C2D /* ModelTableViewCell.swift in Sources */,
 				795239C82187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift in Sources */,
 				7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */,
 				790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */,
