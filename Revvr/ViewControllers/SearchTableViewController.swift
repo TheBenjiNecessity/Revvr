@@ -35,6 +35,8 @@ class SearchTableViewController: UITableViewController {
         definesPresentationContext = true
     }
     
+    // MARK: - Table view data source
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -56,6 +58,8 @@ class SearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return models[indexPath.row] is AppUser ? UserTableViewCell.cellHeight : ReviewableTableViewCell.cellHeight
     }
+    
+    // MARK: - Search bar delegate methods
     
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
