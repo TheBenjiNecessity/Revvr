@@ -47,6 +47,8 @@
 		79B48BCD21150EC200AB5415 /* AppUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BCC21150EC200AB5415 /* AppUserSettings.swift */; };
 		79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BCE21150EFB00AB5415 /* ReviewableInfo.swift */; };
 		79C07EAE2121BC1F00B7D024 /* ReviewLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */; };
+		79D4814A218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D48149218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift */; };
+		79D4814C218A187A001AEB95 /* ReviewableCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D4814B218A187A001AEB95 /* ReviewableCollectionReusableView.swift */; };
 		8A556A4E41C57697223E17B5 /* Pods_RevvrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563D02650801DFCE8B495E64 /* Pods_RevvrTests.framework */; };
 		A5D798BB729D688B6A4F799F /* Pods_RevvrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E9D931E19714A811F984E9 /* Pods_RevvrUITests.framework */; };
 		F173A3B93CF76264ABB3EFE1 /* Pods_Revvr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF466C5C824EFFDF63B56756 /* Pods_Revvr.framework */; };
@@ -119,6 +121,8 @@
 		79B48BCC21150EC200AB5415 /* AppUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserSettings.swift; sourceTree = "<group>"; };
 		79B48BCE21150EFB00AB5415 /* ReviewableInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableInfo.swift; sourceTree = "<group>"; };
 		79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLike.swift; sourceTree = "<group>"; };
+		79D48149218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableWithReviewsCollectionViewController.swift; sourceTree = "<group>"; };
+		79D4814B218A187A001AEB95 /* ReviewableCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableCollectionReusableView.swift; sourceTree = "<group>"; };
 		80FF82895DB7AC9B7F0D7938 /* Pods-Revvr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revvr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Revvr/Pods-Revvr.debug.xcconfig"; sourceTree = "<group>"; };
 		83689F9E1F249FC5295F03C7 /* Pods-RevvrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevvrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RevvrTests/Pods-RevvrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF466C5C824EFFDF63B56756 /* Pods_Revvr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Revvr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				795F25A221741E610022DFE2 /* UserTableViewCell.swift */,
+				79D4814B218A187A001AEB95 /* ReviewableCollectionReusableView.swift */,
 				79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */,
 				795239CF2187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib */,
 				79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */,
@@ -286,6 +291,7 @@
 				79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */,
 				794FCC1B2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift */,
 				795239C72187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift */,
+				79D48149218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D4814A218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift in Sources */,
 				795E71A32175926600E40F16 /* FrontViewController.swift in Sources */,
 				792922F5218949FD00EB5C2D /* ReviewableTableViewCell.swift in Sources */,
 				79B48BBC211509E200AB5415 /* AppUser.swift in Sources */,
@@ -563,6 +570,7 @@
 				795CE102217817E400311390 /* Token.swift in Sources */,
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
 				794FCC1C2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift in Sources */,
+				79D4814C218A187A001AEB95 /* ReviewableCollectionReusableView.swift in Sources */,
 				7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */,
 				79594BA8217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift in Sources */,
 				79594BAA217FBCDF00A5C34C /* ReviewCollectionViewCell.swift in Sources */,
