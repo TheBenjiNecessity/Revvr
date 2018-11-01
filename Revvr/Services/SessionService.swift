@@ -12,7 +12,6 @@ import Promises
 class SessionService: APIService {
     static let shared = SessionService()
     
-    let kLogoutNotificationKey = "logout_notification_key"
     let kClientId = "com.revoji"
     let kClientSecret = "secret"//TODO
     let kGrantType = "password"
@@ -55,9 +54,8 @@ class SessionService: APIService {
     func logout() {
         user = nil
         accessToken = nil
-        NotificationCenter.default.post(name: Notification.Name(rawValue: kLogoutNotificationKey),
-                                        object: self,
-                                        userInfo: nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.unwindToRootViewController()
     }
     
     func isLoggedIn() -> Bool {

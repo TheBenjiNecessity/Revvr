@@ -98,6 +98,9 @@ class APIService: NSObject {
                                     code: httpStatus.statusCode,
                                     userInfo: nil)
                 promise.reject(error)
+                if httpStatus.statusCode == 401 {
+                    SessionService.shared.logout()
+                }
             } else if data != nil && error == nil {
                 do {
                     let formatter = DateFormatter()

@@ -89,5 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func unwindToRootViewController() {
+        window?.rootViewController?.navigationController?.popToRootViewController(animated: true)
+    }
 }
 
