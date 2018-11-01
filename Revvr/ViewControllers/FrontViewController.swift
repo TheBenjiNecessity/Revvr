@@ -153,10 +153,8 @@ class FrontViewController: UIViewController {
     
     func login(withUsername username: String, password: String) {
         SessionService.shared.login(username: username,
-                                                  password: password).then {_ in
+                                    password: password).then {_ in
             self.performSegue(withIdentifier: "LoggedInSegueIdentifier", sender: nil)
-        }.catch { error in
-            print(error)
         }
     }
 }
