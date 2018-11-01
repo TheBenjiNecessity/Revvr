@@ -12,6 +12,8 @@ import Promises
 class ReviewableAPIService: APIService {
     let url = "service-api/reviewable"
     
+    static let shared = ReviewableAPIService()
+    
     func get(id: Int) -> Promise<Reviewable> {
         let uri = "\(url)/\(id)"
         return get(url: uri, type: Reviewable.self)

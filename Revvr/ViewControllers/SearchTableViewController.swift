@@ -27,7 +27,7 @@ class SearchTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Users & Products"
-        searchController.searchBar.scopeButtonTitles = ["Users", "Products", "Media", "Events", "Services"]
+        searchController.searchBar.scopeButtonTitles = ["Users", "Products"]
         
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -89,10 +89,17 @@ class SearchTableViewController: UITableViewController {
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         debounceTimer?.invalidate()
-        let nextTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
-            AppUserAPIService.shared.search(text: searchText).then { users in
-                self.models = users
-                self.tableView.reloadData()
+        let nextTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
+            if self.searchController.searchBar.selectedScopeButtonIndex == 0 {
+                AppUserAPIService.shared.search(text: searchText).then { users in
+                    self.models = users
+                    self.tableView.reloadData()
+                }
+            } else {
+                ReviewableAPIService.shared.search(text: searchText).then{ reviews in
+                    self.models = reviews
+                    self.tableView.reloadData()
+                }
             }
         }
         debounceTimer = nextTimer
