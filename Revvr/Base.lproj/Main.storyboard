@@ -502,9 +502,7 @@
                             <outlet property="delegate" destination="Qn0-Vm-Ed7" id="TFA-3a-BB6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Revoji" id="6kx-De-ssM">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="camera" id="tPb-Pw-hTv"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Revoji" id="6kx-De-ssM"/>
                     <connections>
                         <segue destination="jdm-fy-Roi" kind="show" identifier="ShowReviewableSequeIdentifier" id="oba-r9-PQI"/>
                         <segue destination="gzc-2r-YGu" kind="show" identifier="ShowUserSequeIdentifier" id="dYA-Hg-Txv"/>
