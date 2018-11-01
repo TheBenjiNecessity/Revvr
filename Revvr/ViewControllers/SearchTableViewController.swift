@@ -8,10 +8,14 @@
 
 import UIKit
 
-extension SearchTableViewController: UISearchResultsUpdating {
+extension SearchTableViewController: UISearchResultsUpdating, UISearchBarDelegate {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        updateSearchResults(for: searchController)
     }
 }
 
@@ -28,6 +32,7 @@ class SearchTableViewController: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Users & Products"
         searchController.searchBar.scopeButtonTitles = ["Users", "Products"]
+        searchController.searchBar.delegate = self
         
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
