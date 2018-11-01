@@ -31,7 +31,7 @@ class APIService: NSObject {
         return request(url: url, httpMethod: "GET", body: nil, type: type.self)
     }
    
-    func post<T: Codable>(url: String, body: Data, type: T.Type) -> Promise<T> {
+    func post<T: Codable>(url: String, body: T, type: T.Type) -> Promise<T> {
         return request(url: url, httpMethod: "POST", body: body, type: type.self)
     }
     
@@ -40,21 +40,42 @@ class APIService: NSObject {
     }
     
     func getToken(url: String, body: Data) -> Promise<Token> {
-        return request(url: url,
-                       httpMethod: "POST",
-                       body: body,
-                       type: Token.self,
-                       contentType: "application/x-www-form-urlencoded").then { token in
-            self.accessToken = token.access_token
-        }.catch { error in
-            self.accessToken = nil
+        let promise = Promise<Token>.pending()
+        let uri = serviceUrl + url
+        var request = URLRequest(url: URL(string: uri)!)
+        
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.httpBody = body
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                let error = NSError(domain: NSURLErrorDomain,
+                                    code: httpStatus.statusCode,
+                                    userInfo: nil)
+                promise.reject(error)
+            } else if data != nil && error == nil {
+                do {
+                    let token = try JSONDecoder().decode(Token.self, from: data!)
+                    self.accessToken = token.access_token
+                    promise.fulfill(token)
+                } catch let jsonError {
+                    promise.reject(jsonError)
+                }
+            } else if error != nil {
+                promise.reject(error!)
+            }
         }
+        task.resume()
+        
+        return promise
+        
     }
     
     //TODO if this ever returns 401 then log the user out
     private func request<T: Codable>(url: String,
                                             httpMethod: String,
-                                            body: Data?,
+                                            body: T?,
                                             type: T.Type,
                                             contentType: String = "application/json") -> Promise<T> {
         let promise = Promise<T>.pending()
@@ -68,7 +89,7 @@ class APIService: NSObject {
         }
         
         if let body = body {
-            request.httpBody = body
+            request.httpBody = try? JSONEncoder().encode(body)
         }
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -97,15 +118,5 @@ class APIService: NSObject {
         task.resume()
         
         return promise
-    }
-    
-    //TODO: need to figure out how to merge this into 'request'
-    func getData<T: Codable>(model: T) -> Data? {
-        do {
-            return try JSONEncoder().encode(model)
-        } catch {
-            //logging?
-            return nil
-        }
     }
 }

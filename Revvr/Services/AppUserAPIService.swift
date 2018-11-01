@@ -37,14 +37,12 @@ class AppUserAPIService: APIService {
     }
     
     func create(user: AppUser) -> Promise<AppUser> {
-        let userData = getData(model: user)
-        return post(url: url, body: userData!, type: AppUser.self)
+        return post(url: url, body: user, type: AppUser.self)
     }
     
     func update(id: Int, user: AppUser) -> Promise<AppUser> {
         let uri = "\(url)/\(id)"
-        let userData = getData(model: user)
-        return post(url: uri, body: userData!, type: AppUser.self)
+        return post(url: uri, body: user, type: AppUser.self)
     }
     
     func delete(id: Int) -> Promise<Data> {
@@ -53,10 +51,9 @@ class AppUserAPIService: APIService {
     }
     
     /* ========================== Followers ========================== */
-    func addFollower(follower: AppUserFollowing) -> Promise<Data> {
+    func addFollower(follower: AppUserFollowing) -> Promise<AppUserFollowing> {
         let uri = "\(url)/follower"
-        let followerData = getData(model: follower)
-        return post(url: uri, body: followerData!, type: Data.self)
+        return post(url: uri, body: follower, type: AppUserFollowing.self)
     }
     
     func deleteFollower(id: Int, followingId: Int) -> Promise<Data> {

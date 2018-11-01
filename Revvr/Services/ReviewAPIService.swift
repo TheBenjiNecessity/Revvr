@@ -21,14 +21,12 @@ class ReviewAPIService: APIService {
     }
     
     func create(review: Review) -> Promise<Review> {
-        let reviewData = getData(model: review)
-        return post(url: url, body: reviewData!, type: Review.self)
+        return post(url: url, body: review, type: Review.self)
     }
     
     func update(id: Int, review: Review) -> Promise<Review> {
         let uri = "\(url)/\(id)"
-        let reviewData = getData(model: review)
-        return post(url: uri, body: reviewData!, type: Review.self)
+        return post(url: uri, body: review, type: Review.self)
     }
     
     func delete(id: Int) -> Promise<Data> {
@@ -55,8 +53,7 @@ class ReviewAPIService: APIService {
     /* ========================== Like ========================== */
     func like(reviewLike: ReviewLike) -> Promise<ReviewLike> {
         let uri = "\(url)/like"
-        let reviewLikeData = getData(model: reviewLike)
-        return post(url: uri, body: reviewLikeData!, type: ReviewLike.self)
+        return post(url: uri, body: reviewLike, type: ReviewLike.self)
     }
     
     func deleteLike(id: Int, appUserId: Int) -> Promise<Data> {
