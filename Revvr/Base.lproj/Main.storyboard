@@ -544,10 +544,10 @@
             </objects>
             <point key="canvasLocation" x="1600" y="817"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Reviewable With Reviews Collection View Controller-->
         <scene sceneID="7gk-oX-KOJ">
             <objects>
-                <collectionViewController id="jdm-fy-Roi" sceneMemberID="viewController">
+                <collectionViewController id="jdm-fy-Roi" customClass="ReviewableWithReviewsCollectionViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hTQ-m8-GS2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
