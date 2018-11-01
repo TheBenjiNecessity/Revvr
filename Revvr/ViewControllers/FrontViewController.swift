@@ -152,8 +152,8 @@ class FrontViewController: UIViewController {
     }
     
     func login(withUsername username: String, password: String) {
-        SessionService.shared.login(username: username,
-                                    password: password).then {_ in
+        SessionService.shared.login(username: username, password: password).then {_ in
+            self.navigationController?.navigationBar.isHidden = true
             self.performSegue(withIdentifier: "LoggedInSegueIdentifier", sender: nil)
         }
     }
