@@ -54,8 +54,10 @@ class SessionService: APIService {
     func logout() {
         user = nil
         accessToken = nil
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.unwindToRootViewController()
+        
+        DispatchQueue.main.async {
+            UIApplication.shared.delegate?.window??.rootViewController?.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     func isLoggedIn() -> Bool {
