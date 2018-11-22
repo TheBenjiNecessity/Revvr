@@ -17,9 +17,9 @@ class ReviewableCollectionReusableView: UICollectionReusableView {
     static let viewHeight = CGFloat(100.0)
     
     func setReviewable(reviewable: Reviewable) {
-        //reviewableImageView?.image = reviewable.content...
-        
         reviewableTitleLabel?.text = reviewable.title
         reviewableDescriptionLabel?.text = reviewable.description
+        
+        reviewableImageView?.image = UIImage.imageFrom(urlString: reviewable.titleImageUrl)
     }
 }
