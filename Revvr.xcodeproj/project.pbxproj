@@ -19,6 +19,8 @@
 		795239CE2187FB9D004FEB82 /* ReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */; };
 		795239D02187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795239CF2187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib */; };
 		795239D22188080C004FEB82 /* UserCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795239D12188080C004FEB82 /* UserCollectionReusableView.swift */; };
+		795447D421A10F7F00AB281D /* UIColor+commonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795447D321A10F7F00AB281D /* UIColor+commonStyles.swift */; };
+		795447D621A10FAD00AB281D /* UIFont+commonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795447D521A10FAD00AB281D /* UIFont+commonStyles.swift */; };
 		7955246921A34D4D0009C431 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */; };
 		7955246E21A357310009C431 /* IconSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955246D21A357310009C431 /* IconSelectorViewController.swift */; };
 		79594BA6217F72FB00A5C34C /* ReviewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */; };
@@ -93,6 +95,8 @@
 		795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		795239CF2187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewWithCommentCollectionViewCell.xib; sourceTree = "<group>"; };
 		795239D12188080C004FEB82 /* UserCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionReusableView.swift; sourceTree = "<group>"; };
+		795447D321A10F7F00AB281D /* UIColor+commonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+commonStyles.swift"; sourceTree = "<group>"; };
+		795447D521A10FAD00AB281D /* UIFont+commonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+commonStyles.swift"; sourceTree = "<group>"; };
 		7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		7955246D21A357310009C431 /* IconSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectorViewController.swift; sourceTree = "<group>"; };
 		79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 				79639BF72183F02C00996DD9 /* String+Size.swift */,
 				7906A279219FBB4C006CC94C /* Image+Url.swift */,
 				7922D54521A07E6400C73816 /* Image+Blur.swift */,
+				795447D321A10F7F00AB281D /* UIColor+commonStyles.swift */,
+				795447D521A10FAD00AB281D /* UIFont+commonStyles.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -588,6 +594,7 @@
 				79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */,
 				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
 				795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */,
+				795447D421A10F7F00AB281D /* UIColor+commonStyles.swift in Sources */,
 				795CE102217817E400311390 /* Token.swift in Sources */,
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
 				794FCC1C2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift in Sources */,
@@ -601,6 +608,7 @@
 				7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */,
 				790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */,
 				79B48BC621150E5200AB5415 /* AppUserContent.swift in Sources */,
+				795447D621A10FAD00AB281D /* UIFont+commonStyles.swift in Sources */,
 				799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */,
 				795E719D2175796900E40F16 /* SearchTableViewController.swift in Sources */,
 				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
