@@ -8,6 +8,8 @@
 
 struct Reviewable: Codable {
     let ID: Int?
+    let tpId: String
+    let tpName: String
     
     let title: String
     let type: String
