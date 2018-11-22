@@ -20,18 +20,15 @@ class CreateReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let r = reviewable {
+            detailsLabel?.text = r.description
+            reviewableImageView?.image = UIImage.imageFrom(urlString: r.titleImageUrl)
+        }
     }
     
     func setReviewable(reviewable: Reviewable) {
         self.reviewable = reviewable
         self.title = reviewable.title
-        detailsLabel?.text = reviewable.description
-        
-        if let url = URL(string: reviewable.titleImageUrl!), reviewable.titleImageUrl != nil {
-            do {
-                reviewableImageView?.image = UIImage(data: try Data(contentsOf: url))
-            } catch {}
-        }
     }
     
     @IBAction func save(_ sender: Any) {
