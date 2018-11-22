@@ -56,7 +56,8 @@ class SessionService: APIService {
         accessToken = nil
         
         DispatchQueue.main.async {
-            UIApplication.shared.delegate?.window??.rootViewController?.navigationController?.popToRootViewController(animated: true)
+            let nav = UIApplication.shared.delegate?.window??.rootViewController as! UINavigationController
+            nav.popToRootViewController(animated: true)
         }
     }
     
