@@ -19,9 +19,12 @@
 		795239CE2187FB9D004FEB82 /* ReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */; };
 		795239D02187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795239CF2187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib */; };
 		795239D22188080C004FEB82 /* UserCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795239D12188080C004FEB82 /* UserCollectionReusableView.swift */; };
+		7955246921A34D4D0009C431 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */; };
+		7955246E21A357310009C431 /* IconSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955246D21A357310009C431 /* IconSelectorViewController.swift */; };
 		79594BA6217F72FB00A5C34C /* ReviewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */; };
 		79594BA8217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */; };
 		79594BAA217FBCDF00A5C34C /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */; };
+		795B85AA21A23C630021DF0E /* CreateReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795B85A921A23C620021DF0E /* CreateReviewViewController.swift */; };
 		795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FD217813D600311390 /* KeychainPasswordItem.swift */; };
 		795CE1002178144500311390 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FF2178144500311390 /* SessionService.swift */; };
 		795CE102217817E400311390 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE101217817E400311390 /* Token.swift */; };
@@ -90,9 +93,12 @@
 		795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		795239CF2187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewWithCommentCollectionViewCell.xib; sourceTree = "<group>"; };
 		795239D12188080C004FEB82 /* UserCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionReusableView.swift; sourceTree = "<group>"; };
+		7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
+		7955246D21A357310009C431 /* IconSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectorViewController.swift; sourceTree = "<group>"; };
 		79594BA5217F72FB00A5C34C /* ReviewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCollectionViewController.swift; sourceTree = "<group>"; };
 		79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWithCommentCollectionViewCell.swift; sourceTree = "<group>"; };
 		79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		795B85A921A23C620021DF0E /* CreateReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewViewController.swift; sourceTree = "<group>"; };
 		795CE0FD217813D600311390 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		795CE0FF2178144500311390 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		795CE101217817E400311390 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -204,6 +210,7 @@
 				795239D12188080C004FEB82 /* UserCollectionReusableView.swift */,
 				792922F4218949FD00EB5C2D /* ReviewableTableViewCell.swift */,
 				792922F82189501100EB5C2D /* ModelTableViewCell.swift */,
+				7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +308,8 @@
 				794FCC1B2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift */,
 				795239C72187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift */,
 				79D48149218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift */,
+				795B85A921A23C620021DF0E /* CreateReviewViewController.swift */,
+				7955246D21A357310009C431 /* IconSelectorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -566,9 +575,11 @@
 				7922D54621A07E6400C73816 /* Image+Blur.swift in Sources */,
 				792922F5218949FD00EB5C2D /* ReviewableTableViewCell.swift in Sources */,
 				79B48BBC211509E200AB5415 /* AppUser.swift in Sources */,
+				7955246921A34D4D0009C431 /* IconCollectionViewCell.swift in Sources */,
 				79B48BCD21150EC200AB5415 /* AppUserSettings.swift in Sources */,
 				795CE1002178144500311390 /* SessionService.swift in Sources */,
 				7994BFE620608A9600D05B25 /* Revvr.xcdatamodeld in Sources */,
+				795B85AA21A23C630021DF0E /* CreateReviewViewController.swift in Sources */,
 				79B48BBE211509FF00AB5415 /* Review.swift in Sources */,
 				79C07EAE2121BC1F00B7D024 /* ReviewLike.swift in Sources */,
 				799C004E21128F04001BF07D /* APIService.swift in Sources */,
@@ -584,6 +595,7 @@
 				7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */,
 				79594BA8217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift in Sources */,
 				79594BAA217FBCDF00A5C34C /* ReviewCollectionViewCell.swift in Sources */,
+				7955246E21A357310009C431 /* IconSelectorViewController.swift in Sources */,
 				792922F92189501100EB5C2D /* ModelTableViewCell.swift in Sources */,
 				795239C82187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift in Sources */,
 				7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */,
