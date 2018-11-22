@@ -16,7 +16,7 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let review = reviews[indexPath.row]
-        let collectionViewWidth = collectionView.bounds.size.width
+        let collectionViewWidth = collectionView.bounds.size.width - 2 // '- 2' for inset spacing
 
         if review.comment != nil {
             //TODO there must be a better way
@@ -39,6 +39,13 @@ class ReviewsCollectionViewController: UICollectionViewController {
         
         let reviewWithCommentViewNib = UINib(nibName: "ReviewWithCommentCollectionViewCell", bundle: nil)
         self.collectionView!.register(reviewWithCommentViewNib, forCellWithReuseIdentifier: reviewWithCommentCVCId)
+        
+        // Add spacing between each cell
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
+        self.collectionView!.collectionViewLayout = layout
     }
 
     // MARK: UICollectionViewDataSource
@@ -57,9 +64,6 @@ class ReviewsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! ReviewCollectionViewCell
         
         cell.setReview(review: review)
-        
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1.0
         
         return cell
     }
