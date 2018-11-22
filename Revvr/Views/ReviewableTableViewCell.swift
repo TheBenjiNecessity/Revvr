@@ -19,7 +19,12 @@ class ReviewableTableViewCell: ModelTableViewCell {
     override func setModel(model: Any) {
         let reviewable = model as! Reviewable
         
-        //reviewableImageView.image = reviewable...
+        if let url = URL(string: reviewable.titleImageUrl!), reviewable.titleImageUrl != nil {
+            do {
+                reviewableImageView?.image = UIImage(data: try Data(contentsOf: url))
+            } catch {}
+        }
+        
         reviewableTitleLabel?.text = reviewable.title
         reviewableDescriptionLabel?.text = reviewable.description
     }
