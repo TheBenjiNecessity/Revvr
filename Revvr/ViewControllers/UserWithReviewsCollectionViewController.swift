@@ -17,7 +17,7 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController {
     var user: AppUser? {
         didSet {
             if let user = self.user {
-                self.navigationController?.navigationBar.topItem?.title = "\(user.firstName) \(user.lastName)"
+                self.title = "\(user.firstName) \(user.lastName)"
                 ReviewAPIService.shared.listByUser(id: user.id!).then { reviews in
                     self.reviews = reviews
                     self.refresh()
@@ -34,9 +34,9 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController {
         let userCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
                                                                                          withReuseIdentifier: UserCollectionReusableView.reuseIdentifier,
                                                                                          for: indexPath) as! UserCollectionReusableView
-        userCollectionReusableView.frame = CGRect(x: 0.0, y: 0.0, width: collectionView.frame.size.width, height: UserCollectionReusableView.viewHeight)
-
         userCollectionReusableView.setUser(user: user!)
+        
+        userCollectionReusableView.frame = CGRect(x: 0.0, y: 0.0, width: collectionView.frame.size.width, height: UserCollectionReusableView.viewHeight)
 
         return userCollectionReusableView
     }
