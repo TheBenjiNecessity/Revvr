@@ -79,8 +79,11 @@ class APIService: NSObject {
                                             type: T.Type,
                                             contentType: String = "application/json") -> Promise<T> {
         let promise = Promise<T>.pending()
-        let uri = serviceUrl + url
-        var request = URLRequest(url: URL(string: uri)!)
+        var uri = serviceUrl + url
+        uri = uri.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+
+        let urlForRequest = URL(string: uri)
+        var request = URLRequest(url: urlForRequest!)
         request.setValue(contentType, forHTTPHeaderField: "Content-Type")
         request.httpMethod = httpMethod
         
