@@ -15,6 +15,7 @@ fileprivate let masksToBounds = false
 
 class ReviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var reviewableImageView: UIImageView!
+    @IBOutlet weak var bgReviewableImageView: UIImageView!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var emojiImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -34,6 +35,16 @@ class ReviewCollectionViewCell: UICollectionViewCell {
         reviewableLabel.layer.shadowOffset = shadowOffset
         reviewableLabel.layer.masksToBounds = masksToBounds
         
-        //TODO images
+        reviewableImageView?.image = UIImage.imageFrom(urlString: review.reviewable.titleImageUrl)
+
+        var image = self.reviewableImageView?.image
+        DispatchQueue.global(qos: .background).async {
+            image = image?.blur()
+            DispatchQueue.main.async {
+                self.bgReviewableImageView?.image = image
+            }
+        }
+
+        //TODO: profile picture
     }
 }

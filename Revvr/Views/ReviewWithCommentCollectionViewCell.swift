@@ -25,16 +25,6 @@ class ReviewWithCommentCollectionViewCell: ReviewCollectionViewCell {
         
         // It shouldn't be possible for the review comment to be nil so this should be okay
         commentLabel?.text = review.comment!
-        
-        usernameLabel.layer.shadowRadius = 0.0
-        usernameLabel.layer.shadowOpacity = 0.0
-        usernameLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
-        usernameLabel.layer.masksToBounds = true
-        
-        reviewableLabel.layer.shadowRadius = 0.0
-        reviewableLabel.layer.shadowOpacity = 0.0
-        reviewableLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
-        reviewableLabel.layer.masksToBounds = true
     }
     
     /**
