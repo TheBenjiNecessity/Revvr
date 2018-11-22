@@ -31,7 +31,7 @@ class SearchTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Users & Products"
-        searchController.searchBar.scopeButtonTitles = ["Users", "Products"]
+        searchController.searchBar.scopeButtonTitles = ["Users", "Media", "Products"]
         searchController.searchBar.delegate = self
         
         navigationItem.searchController = searchController
@@ -78,10 +78,12 @@ class SearchTableViewController: UITableViewController {
     // MARK: - Navigation methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if case let uvc = segue.destination as! UserWithReviewsCollectionViewController, sender is AppUser {
+        if sender is AppUser {
+            let uvc = segue.destination as! UserWithReviewsCollectionViewController
             uvc.user = sender as? AppUser
-        } else if case let rvc = segue.destination as! ReviewableWithReviewsCollectionViewController, sender is Reviewable {
-            rvc.reviewable = sender as? Reviewable
+        } else if sender is Reviewable {
+            let rvc = segue.destination as! ReviewableWithReviewsCollectionViewController
+            rvc.setReviewable(reviewable: sender as! Reviewable)
         }
     }
     
@@ -95,15 +97,18 @@ class SearchTableViewController: UITableViewController {
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         debounceTimer?.invalidate()
         let nextTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
-            if self.searchController.searchBar.selectedScopeButtonIndex == 0 {
+            let index = self.searchController.searchBar.selectedScopeButtonIndex
+            if index == 0 {
                 AppUserAPIService.shared.search(text: searchText).then { users in
                     self.models = users
                     self.tableView.reloadData()
                 }
             } else {
-                ReviewableAPIService.shared.search(text: searchText).then{ reviews in
-                    self.models = reviews
-                    self.tableView.reloadData()
+                if let type = self.searchController.searchBar.scopeButtonTitles?[index] {
+                    ReviewableAPIService.shared.search(text: searchText, type: type.lowercased()).then { reviewables in
+                        self.models = reviewables
+                        self.tableView.reloadData()
+                    }
                 }
             }
         }

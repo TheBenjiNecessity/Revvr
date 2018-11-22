@@ -19,8 +19,8 @@ class ReviewableAPIService: APIService {
         return get(url: uri, type: Reviewable.self)
     }
     
-    func search(text: String, pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[Reviewable]> {
-        let uri = "\(url)/search?text=\(text)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
+    func search(text: String, type: String, pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[Reviewable]> {
+        let uri = "\(url)/search?text=\(text)&type=\(type)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [Reviewable].self)
     }
 }
