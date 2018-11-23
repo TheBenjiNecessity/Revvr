@@ -35,6 +35,7 @@
 		795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F25A221741E610022DFE2 /* UserTableViewCell.swift */; };
 		7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960649A217ACA6C009F2EEA /* KeyChainService.swift */; };
 		79639BF82183F02C00996DD9 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79639BF72183F02C00996DD9 /* String+Size.swift */; };
+		7966E7B221A65EA3000AFE2C /* EmojiTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
 		7994BFE320608A9600D05B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7994BFE120608A9600D05B25 /* Main.storyboard */; };
 		7994BFE620608A9600D05B25 /* Revvr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFE420608A9600D05B25 /* Revvr.xcdatamodeld */; };
@@ -111,6 +112,7 @@
 		795F25A221741E610022DFE2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		7960649A217ACA6C009F2EEA /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		79639BF72183F02C00996DD9 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTabButton.swift; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7994BFE220608A9600D05B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				792922F4218949FD00EB5C2D /* ReviewableTableViewCell.swift */,
 				792922F82189501100EB5C2D /* ModelTableViewCell.swift */,
 				7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */,
+				7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */,
 				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
 				795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */,
+				7966E7B221A65EA3000AFE2C /* EmojiTabButton.swift in Sources */,
 				795447D421A10F7F00AB281D /* UIColor+commonStyles.swift in Sources */,
 				795CE102217817E400311390 /* Token.swift in Sources */,
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
