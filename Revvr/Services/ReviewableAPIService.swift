@@ -14,8 +14,8 @@ class ReviewableAPIService: APIService {
     
     static let shared = ReviewableAPIService()
     
-    func get(id: Int) -> Promise<Reviewable> {
-        let uri = "\(url)/\(id)"
+    func get(tpId: String, type: String) -> Promise<Reviewable> {
+        let uri = "\(url)/\(tpId)?type=\(type)"
         return get(url: uri, type: Reviewable.self)
     }
     
