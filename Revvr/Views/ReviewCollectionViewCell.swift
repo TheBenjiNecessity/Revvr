@@ -36,6 +36,7 @@ class ReviewCollectionViewCell: UICollectionViewCell {
         reviewableLabel.layer.masksToBounds = masksToBounds
         
         reviewableImageView?.image = UIImage.imageFrom(urlString: review.reviewable.titleImageUrl)
+        emojiImageView?.image = UIImage(named: review.emojis + "Emoji")
 
         var image = self.reviewableImageView?.image
         DispatchQueue.global(qos: .background).async {
