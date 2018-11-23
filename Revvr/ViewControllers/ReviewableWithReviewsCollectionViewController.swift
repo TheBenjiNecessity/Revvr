@@ -9,21 +9,25 @@
 import UIKit
 
 class ReviewableWithReviewsCollectionViewController: ReviewsCollectionViewController {
-    var reviewable: Reviewable? {
-        didSet {
-            if let reviewable = self.reviewable {
-                ReviewAPIService.shared.listByReviewable(id: reviewable.ID!).then { reviews in
-                    self.reviews = reviews
-                    self.refresh()
-                }
-            }
-        }
-    }
+    var reviewable: Reviewable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(addReview))
+    }
+    
+    func setReviewable(reviewable: Reviewable) {
+        self.reviewable = reviewable
+        ReviewableAPIService.shared.get(tpId: reviewable.tpId, type: reviewable.tpName).then { r in
+            self.reviewable = r
+            self.title = reviewable.title
+            self.collectionView!.reloadData()
+            ReviewAPIService.shared.listByReviewable(reviewable: reviewable).then { reviews in
+                self.reviews = reviews
+                self.refresh()
+            }
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -36,7 +40,9 @@ class ReviewableWithReviewsCollectionViewController: ReviewsCollectionViewContro
                                                                                          for: indexPath) as! ReviewableCollectionReusableView
         reviewableCollectionReusableView.frame = CGRect(x: 0.0, y: 0.0, width: collectionView.frame.size.width, height: ReviewableCollectionReusableView.viewHeight)
         
-        reviewableCollectionReusableView.setReviewable(reviewable: reviewable!)
+        if let r = reviewable {
+            reviewableCollectionReusableView.setReviewable(reviewable: r)
+        }
         
         return reviewableCollectionReusableView
     }
