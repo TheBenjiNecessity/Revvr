@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol IconSelectorDelegate: AnyObject {
+    func iconSelector(_ selector: UICollectionViewController,
+                      didSelectEmoji emoji: String)
+}
+
 class IconSelectorViewController: UICollectionViewController {
     var icons: [String] = []
+    weak var delegate: IconSelectorDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +42,13 @@ class IconSelectorViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let iconString = icons[indexPath.row]
+        let cell = self.collectionView(collectionView, cellForItemAt: indexPath) as! IconCollectionViewCell
+        let notification = Notification(name: IconCollectionViewCell.kClearCellsNotification, object: nil)
+        NotificationCenter.default.post(notification)
+        
+        cell.setSelected()
+
+        delegate?.iconSelector(self, didSelectEmoji: icons[indexPath.row])
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
