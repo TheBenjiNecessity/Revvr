@@ -9,22 +9,24 @@
 import UIKit
 
 class IconCollectionViewCell: UICollectionViewCell {
+    static let kClearCellsNotification = NSNotification.Name(rawValue: "kClearCellsNotification")
     static let reuseIdentifier = "IconCollectionViewCellIdentifier"
     @IBOutlet weak var iconImageView: UIImageView!
     var iconString = ""
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.black.cgColor
+    func setIcon(icon: String) {
+        iconString = icon
+        iconImageView?.image = UIImage(named: iconString + "Emoji")
+        NotificationCenter.default.addObserver(self, selector: #selector(setUnselected), name: IconCollectionViewCell.kClearCellsNotification, object: nil)
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    @objc func setUnselected() {
         self.layer.borderWidth = 0.0
         self.layer.borderColor = UIColor.clear.cgColor
     }
     
-    func setIcon(icon: String) {
-        iconString = icon
-        iconImageView?.image = UIImage(named: iconString + "Emoji")
+    func setSelected() {
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.black.cgColor
     }
 }

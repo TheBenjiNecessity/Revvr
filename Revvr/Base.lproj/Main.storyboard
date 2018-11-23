@@ -624,6 +624,13 @@
                                     <constraint firstAttribute="height" constant="120" id="fuM-AS-GGj"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wXX-6G-65T">
+                                <rect key="frame" x="15" y="15" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="74q-3C-Fjt"/>
+                                    <constraint firstAttribute="height" constant="35" id="DLH-8z-94I"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviewable details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkg-sl-ovi">
                                 <rect key="frame" x="133" y="5" width="237" height="20.5"/>
                                 <constraints>
@@ -636,7 +643,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VGz-PD-fu6">
                                 <rect key="frame" x="5" y="130" width="365" height="218"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullam.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -649,20 +655,34 @@
                                     <segue destination="IFu-bH-yde" kind="embed" id="q1H-Re-TKr"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naY-ep-bMg" customClass="EmojiTabButton" customModule="Revvr" customModuleProvider="target">
+                                <rect key="frame" x="16" y="613" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="DlO-gx-P0w"/>
+                                    <constraint firstAttribute="height" constant="35" id="yDe-8E-Sex"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="emojiSelectorButtonPress:" destination="tbx-P3-9uI" eventType="touchUpInside" id="IFg-cz-2uK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qkg-sl-ovi" firstAttribute="top" secondItem="Ph0-vX-93u" secondAttribute="top" id="3CZ-LU-pgd"/>
                             <constraint firstItem="6Ha-Za-fCy" firstAttribute="trailing" secondItem="ACO-QM-tXF" secondAttribute="trailing" id="6MV-9K-JhV"/>
+                            <constraint firstItem="naY-ep-bMg" firstAttribute="leading" secondItem="6Ha-Za-fCy" secondAttribute="leading" constant="16" id="OfM-6K-liU"/>
                             <constraint firstItem="VGz-PD-fu6" firstAttribute="leading" secondItem="Ph0-vX-93u" secondAttribute="leading" id="Rnu-3l-yxT"/>
                             <constraint firstItem="qkg-sl-ovi" firstAttribute="leading" secondItem="Ph0-vX-93u" secondAttribute="trailing" constant="8" id="Sme-tG-pee"/>
+                            <constraint firstItem="6Ha-Za-fCy" firstAttribute="bottom" secondItem="naY-ep-bMg" secondAttribute="bottom" constant="-45" id="Uhn-C7-i7g"/>
                             <constraint firstItem="6Ha-Za-fCy" firstAttribute="trailing" secondItem="qkg-sl-ovi" secondAttribute="trailing" constant="5" id="VzD-jK-vEX"/>
                             <constraint firstItem="Ph0-vX-93u" firstAttribute="leading" secondItem="6Ha-Za-fCy" secondAttribute="leading" constant="5" id="WCX-FY-hmt"/>
                             <constraint firstItem="Ph0-vX-93u" firstAttribute="top" secondItem="6Ha-Za-fCy" secondAttribute="top" constant="5" id="YDe-3n-LvX"/>
                             <constraint firstItem="6Ha-Za-fCy" firstAttribute="trailing" secondItem="VGz-PD-fu6" secondAttribute="trailing" constant="5" id="bkS-j2-LJW"/>
+                            <constraint firstItem="Ph0-vX-93u" firstAttribute="top" secondItem="wXX-6G-65T" secondAttribute="top" constant="-10" id="bsN-hd-ITI"/>
                             <constraint firstItem="ACO-QM-tXF" firstAttribute="bottom" secondItem="6Ha-Za-fCy" secondAttribute="bottom" id="cf8-Hu-Acy"/>
                             <constraint firstItem="ACO-QM-tXF" firstAttribute="top" secondItem="VGz-PD-fu6" secondAttribute="bottom" constant="5" id="krN-QE-jA6"/>
                             <constraint firstItem="VGz-PD-fu6" firstAttribute="top" secondItem="Ph0-vX-93u" secondAttribute="bottom" constant="5" id="tmV-fg-J1C"/>
+                            <constraint firstItem="Ph0-vX-93u" firstAttribute="leading" secondItem="wXX-6G-65T" secondAttribute="leading" constant="-10" id="v6q-VY-kZ9"/>
                             <constraint firstItem="ACO-QM-tXF" firstAttribute="leading" secondItem="6Ha-Za-fCy" secondAttribute="leading" id="y5o-yn-krz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Ha-Za-fCy"/>
@@ -683,6 +703,8 @@
                     <connections>
                         <outlet property="commentTextView" destination="VGz-PD-fu6" id="KNi-J4-5yY"/>
                         <outlet property="detailsLabel" destination="qkg-sl-ovi" id="JOL-ID-yP4"/>
+                        <outlet property="emojiImageView" destination="wXX-6G-65T" id="V1x-5c-PQS"/>
+                        <outlet property="emojiSelectorButtonBottomConstraint" destination="Uhn-C7-i7g" id="u16-lu-XVm"/>
                         <outlet property="reviewableImageView" destination="Ph0-vX-93u" id="rRy-3r-TUX"/>
                     </connections>
                 </viewController>
@@ -736,7 +758,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeA-gU-svr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4456.8000000000002" y="-309.44527736131937"/>
+            <point key="canvasLocation" x="4510" y="-286"/>
         </scene>
         <!--Trending-->
         <scene sceneID="ZkO-hC-jtP">
@@ -877,6 +899,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MUq-Os-ZcG"/>
-        <segue reference="xeq-70-FOm"/>
+        <segue reference="dYA-Hg-Txv"/>
     </inferredMetricsTieBreakers>
 </document>

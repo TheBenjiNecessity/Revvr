@@ -11,12 +11,25 @@ struct Review: Codable {
     let ID: Int?
     
     let appUserID: Int
-    let reviewableID: Int
-    let title: String?
+    let reviewableID: Int?
+    let title: String? //TODO: get rid of this
     let created: Date?
     let comment: String?
     let emojis: String
     
     let appUser: AppUser
     let reviewable: Reviewable
+    
+    init(emojis: String, comment: String?, appUser: AppUser, reviewable: Reviewable) {
+        self.appUserID = appUser.id!
+        self.reviewableID = reviewable.id
+        self.comment = comment == "" ? nil : comment
+        self.emojis = emojis
+        self.appUser = appUser
+        self.reviewable = reviewable
+        
+        self.ID = nil
+        self.created = nil
+        self.title = nil
+    }
 }
