@@ -26,6 +26,24 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionViewWidth / 3, height: collectionViewWidth / 3)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(1.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(1.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+    }
 }
 
 class ReviewsCollectionViewController: UICollectionViewController {
@@ -39,13 +57,6 @@ class ReviewsCollectionViewController: UICollectionViewController {
         
         let reviewWithCommentViewNib = UINib(nibName: "ReviewWithCommentCollectionViewCell", bundle: nil)
         self.collectionView!.register(reviewWithCommentViewNib, forCellWithReuseIdentifier: reviewWithCommentCVCId)
-        
-        // Add spacing between each cell
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-        layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 1
-        self.collectionView!.collectionViewLayout = layout
     }
 
     // MARK: UICollectionViewDataSource
