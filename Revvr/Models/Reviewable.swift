@@ -7,7 +7,7 @@
 //
 
 struct Reviewable: Codable {
-    let ID: Int?
+    let id: Int?
     let tpId: String
     let tpName: String
     
