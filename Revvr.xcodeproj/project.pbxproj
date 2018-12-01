@@ -35,6 +35,12 @@
 		795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F25A221741E610022DFE2 /* UserTableViewCell.swift */; };
 		7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960649A217ACA6C009F2EEA /* KeyChainService.swift */; };
 		79639BF82183F02C00996DD9 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79639BF72183F02C00996DD9 /* String+Size.swift */; };
+		79647B6A21AB0D5200C94ED6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B6921AB0D5200C94ED6 /* Settings.swift */; };
+		79647B6C21AB47D700C94ED6 /* SettingsInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B6B21AB47D700C94ED6 /* SettingsInputTableViewCell.swift */; };
+		79647B6E21AB483000C94ED6 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B6D21AB483000C94ED6 /* SettingTableViewCell.swift */; };
+		79647B7021AB635F00C94ED6 /* SettingSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B6F21AB635F00C94ED6 /* SettingSwitchTableViewCell.swift */; };
+		79647B7221AB636D00C94ED6 /* SettingDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */; };
+		79647B7421AB638100C94ED6 /* SettingSegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */; };
 		7966E7B221A65EA3000AFE2C /* EmojiTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
 		7994BFE320608A9600D05B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7994BFE120608A9600D05B25 /* Main.storyboard */; };
@@ -45,6 +51,7 @@
 		7994C00120608A9600D05B25 /* RevvrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994C00020608A9600D05B25 /* RevvrUITests.swift */; };
 		799C004E21128F04001BF07D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C004D21128F04001BF07D /* APIService.swift */; };
 		799C005121128F32001BF07D /* AppUserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C005021128F32001BF07D /* AppUserAPIService.swift */; };
+		799C141621A9DD64001ABFC2 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C141521A9DD64001ABFC2 /* SettingsTableViewController.swift */; };
 		79B48BBC211509E200AB5415 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBB211509E200AB5415 /* AppUser.swift */; };
 		79B48BBE211509FF00AB5415 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBD211509FF00AB5415 /* Review.swift */; };
 		79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBF21150A1B00AB5415 /* Reviewable.swift */; };
@@ -112,6 +119,12 @@
 		795F25A221741E610022DFE2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		7960649A217ACA6C009F2EEA /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		79639BF72183F02C00996DD9 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		79647B6921AB0D5200C94ED6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		79647B6B21AB47D700C94ED6 /* SettingsInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInputTableViewCell.swift; sourceTree = "<group>"; };
+		79647B6D21AB483000C94ED6 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		79647B6F21AB635F00C94ED6 /* SettingSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailTableViewCell.swift; sourceTree = "<group>"; };
+		79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSegmentTableViewCell.swift; sourceTree = "<group>"; };
 		7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTabButton.swift; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +141,7 @@
 		7994C00220608A9600D05B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		799C004D21128F04001BF07D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		799C005021128F32001BF07D /* AppUserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserAPIService.swift; sourceTree = "<group>"; };
+		799C141521A9DD64001ABFC2 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		79B48BBB211509E200AB5415 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		79B48BBD211509FF00AB5415 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		79B48BBF21150A1B00AB5415 /* Reviewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviewable.swift; sourceTree = "<group>"; };
@@ -218,6 +232,11 @@
 				792922F82189501100EB5C2D /* ModelTableViewCell.swift */,
 				7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */,
 				7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */,
+				79647B6B21AB47D700C94ED6 /* SettingsInputTableViewCell.swift */,
+				79647B6F21AB635F00C94ED6 /* SettingSwitchTableViewCell.swift */,
+				79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */,
+				79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */,
+				79647B6D21AB483000C94ED6 /* SettingTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,6 +338,7 @@
 				79D48149218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift */,
 				795B85A921A23C620021DF0E /* CreateReviewViewController.swift */,
 				7955246D21A357310009C431 /* IconSelectorViewController.swift */,
+				799C141521A9DD64001ABFC2 /* SettingsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -333,6 +353,7 @@
 				79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */,
 				79B48BBF21150A1B00AB5415 /* Reviewable.swift */,
 				795CE101217817E400311390 /* Token.swift */,
+				79647B6921AB0D5200C94ED6 /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -580,15 +601,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				79D4814A218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift in Sources */,
+				79647B7021AB635F00C94ED6 /* SettingSwitchTableViewCell.swift in Sources */,
 				795E71A32175926600E40F16 /* FrontViewController.swift in Sources */,
+				79647B6A21AB0D5200C94ED6 /* Settings.swift in Sources */,
+				79647B7421AB638100C94ED6 /* SettingSegmentTableViewCell.swift in Sources */,
 				7922D54621A07E6400C73816 /* Image+Blur.swift in Sources */,
 				792922F5218949FD00EB5C2D /* ReviewableTableViewCell.swift in Sources */,
+				79647B7221AB636D00C94ED6 /* SettingDetailTableViewCell.swift in Sources */,
 				79B48BBC211509E200AB5415 /* AppUser.swift in Sources */,
 				7955246921A34D4D0009C431 /* IconCollectionViewCell.swift in Sources */,
 				79B48BCD21150EC200AB5415 /* AppUserSettings.swift in Sources */,
 				795CE1002178144500311390 /* SessionService.swift in Sources */,
 				7994BFE620608A9600D05B25 /* Revvr.xcdatamodeld in Sources */,
 				795B85AA21A23C630021DF0E /* CreateReviewViewController.swift in Sources */,
+				79647B6E21AB483000C94ED6 /* SettingTableViewCell.swift in Sources */,
 				79B48BBE211509FF00AB5415 /* Review.swift in Sources */,
 				79C07EAE2121BC1F00B7D024 /* ReviewLike.swift in Sources */,
 				799C004E21128F04001BF07D /* APIService.swift in Sources */,
@@ -599,6 +625,7 @@
 				795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */,
 				7966E7B221A65EA3000AFE2C /* EmojiTabButton.swift in Sources */,
 				795447D421A10F7F00AB281D /* UIColor+commonStyles.swift in Sources */,
+				799C141621A9DD64001ABFC2 /* SettingsTableViewController.swift in Sources */,
 				795CE102217817E400311390 /* Token.swift in Sources */,
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
 				794FCC1C2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift in Sources */,
@@ -618,6 +645,7 @@
 				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
 				795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */,
 				79D48150218A5F4A001AEB95 /* MainTabbarViewController.swift in Sources */,
+				79647B6C21AB47D700C94ED6 /* SettingsInputTableViewCell.swift in Sources */,
 				79639BF82183F02C00996DD9 /* String+Size.swift in Sources */,
 				7906A27A219FBB4C006CC94C /* Image+Url.swift in Sources */,
 				79594BA6217F72FB00A5C34C /* ReviewsCollectionViewController.swift in Sources */,
