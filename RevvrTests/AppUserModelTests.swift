@@ -17,7 +17,7 @@ class AppUserModelTests: XCTestCase {
     override func setUp() {
         let dateString = "1988-10-21T00:00:00"
         dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
         dob = dateFormatter.date(from: dateString)
 
         json = """
