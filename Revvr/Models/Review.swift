@@ -8,7 +8,7 @@
 import Foundation
 
 struct Review: Codable {
-    let ID: Int?
+    let id: Int?
     
     let appUserID: Int
     let reviewableID: Int?
@@ -28,7 +28,7 @@ struct Review: Codable {
         self.appUser = appUser
         self.reviewable = reviewable
         
-        self.ID = nil
+        self.id = nil
         self.created = nil
         self.title = nil
     }
