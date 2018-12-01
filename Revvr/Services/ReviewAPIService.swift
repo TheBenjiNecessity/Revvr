@@ -60,4 +60,20 @@ class ReviewAPIService: APIService {
         let uri = "\(url)/like/\(id)?appUserId=\(appUserId)"
         return delete(url: uri, type: Data.self)
     }
+    
+    /* ========================== Reply ========================== */
+    func reply(reply: ReviewReply) -> Promise<ReviewReply> {
+        let uri = "\(url)/reply"
+        return post(url: uri, body: reply, type: ReviewReply.self)
+    }
+    
+    func deleteReply(id: Int, appUserId: Int) -> Promise<Data> {
+        let uri = "\(url)/reply/\(id)?appUserId=\(appUserId)"
+        return delete(url: uri, type: Data.self)
+    }
+    
+    func listReplies(id: Int, order: String = "DESC", pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[ReviewReply]> {
+        let uri = "\(url)/reply/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
+        return get(url: uri, type: [ReviewReply].self)
+    }
 }

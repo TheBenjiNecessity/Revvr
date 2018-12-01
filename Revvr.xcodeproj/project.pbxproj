@@ -42,6 +42,7 @@
 		79647B7221AB636D00C94ED6 /* SettingDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */; };
 		79647B7421AB638100C94ED6 /* SettingSegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */; };
 		7966E7B221A65EA3000AFE2C /* EmojiTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */; };
+		79734CD621A8FEDD004AF5DD /* ReviewReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CD521A8FEDD004AF5DD /* ReviewReply.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
 		7994BFE320608A9600D05B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7994BFE120608A9600D05B25 /* Main.storyboard */; };
 		7994BFE620608A9600D05B25 /* Revvr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFE420608A9600D05B25 /* Revvr.xcdatamodeld */; };
@@ -126,6 +127,7 @@
 		79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailTableViewCell.swift; sourceTree = "<group>"; };
 		79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSegmentTableViewCell.swift; sourceTree = "<group>"; };
 		7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTabButton.swift; sourceTree = "<group>"; };
+		79734CD521A8FEDD004AF5DD /* ReviewReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewReply.swift; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7994BFE220608A9600D05B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				79C07EAD2121BC1F00B7D024 /* ReviewLike.swift */,
 				79B48BBF21150A1B00AB5415 /* Reviewable.swift */,
 				795CE101217817E400311390 /* Token.swift */,
+				79734CD521A8FEDD004AF5DD /* ReviewReply.swift */,
 				79647B6921AB0D5200C94ED6 /* Settings.swift */,
 			);
 			path = Models;
@@ -644,6 +647,7 @@
 				795E719D2175796900E40F16 /* SearchTableViewController.swift in Sources */,
 				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
 				795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */,
+				79734CD621A8FEDD004AF5DD /* ReviewReply.swift in Sources */,
 				79D48150218A5F4A001AEB95 /* MainTabbarViewController.swift in Sources */,
 				79647B6C21AB47D700C94ED6 /* SettingsInputTableViewCell.swift in Sources */,
 				79639BF82183F02C00996DD9 /* String+Size.swift in Sources */,
