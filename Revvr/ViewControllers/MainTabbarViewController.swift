@@ -13,6 +13,8 @@ class MainTabbarViewController: UITabBarController {
         super.viewDidLoad()
         let nav = self.viewControllers![4] as! UINavigationController
         let uservc = nav.topViewController as! UserWithReviewsCollectionViewController
-        uservc.user = SessionService.shared.user
+        if let user = SessionService.shared.user {
+            uservc.user = user
+        }
     }
 }
