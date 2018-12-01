@@ -9,7 +9,7 @@
 import UIKit
 
 class ReviewableWithReviewsCollectionViewController: ReviewsCollectionViewController {
-    var reviewable: Reviewable?
+    var reviewable = Reviewable()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +40,7 @@ class ReviewableWithReviewsCollectionViewController: ReviewsCollectionViewContro
                                                                                          for: indexPath) as! ReviewableCollectionReusableView
         reviewableCollectionReusableView.frame = CGRect(x: 0.0, y: 0.0, width: collectionView.frame.size.width, height: ReviewableCollectionReusableView.viewHeight)
         
-        if let r = reviewable {
-            reviewableCollectionReusableView.setReviewable(reviewable: r)
-        }
+        reviewableCollectionReusableView.setReviewable(reviewable: reviewable)
         
         return reviewableCollectionReusableView
     }

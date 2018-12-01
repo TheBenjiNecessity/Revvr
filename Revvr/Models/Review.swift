@@ -20,6 +20,10 @@ struct Review: Codable {
     let appUser: AppUser
     let reviewable: Reviewable
     
+    init() {
+        self.init(emojis: "", comment: "", appUser: AppUser(), reviewable: Reviewable())
+    }
+    
     init(emojis: String, comment: String?, appUser: AppUser, reviewable: Reviewable) {
         self.appUserID = appUser.id!
         self.reviewableID = reviewable.id

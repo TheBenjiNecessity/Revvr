@@ -21,4 +21,18 @@ struct Reviewable: Codable {
     
     let content: ReviewableContent?
     let info: ReviewableInfo?
+    
+    init() {
+        tpId = ""
+        tpName = ""
+        title = ""
+        type = ""
+        id = nil
+        description = nil
+        titleImageUrl = nil
+        reviewCount = nil
+        emojiCounts = nil
+        content = nil
+        info = nil
+    }
 }

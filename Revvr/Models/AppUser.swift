@@ -30,6 +30,10 @@ struct AppUser: Codable {
     let content: AppUserContent?
     let settings: AppUserSettings?
     
+    init() {
+        self.init(firstName: "", lastName: "", handle: "", email: "", password: "")
+    }
+    
     init(firstName: String,
         lastName: String,
         handle: String,
