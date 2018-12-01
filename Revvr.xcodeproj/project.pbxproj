@@ -42,6 +42,11 @@
 		79647B7221AB636D00C94ED6 /* SettingDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */; };
 		79647B7421AB638100C94ED6 /* SettingSegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */; };
 		7966E7B221A65EA3000AFE2C /* EmojiTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */; };
+		79734CCC21A8B663004AF5DD /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CCB21A8B663004AF5DD /* ReviewTableViewController.swift */; };
+		79734CCE21A8D89B004AF5DD /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CCD21A8D89B004AF5DD /* ReviewTableViewCell.swift */; };
+		79734CD021A8D8E9004AF5DD /* ReviewStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CCF21A8D8E9004AF5DD /* ReviewStatsTableViewCell.swift */; };
+		79734CD221A8D8F7004AF5DD /* ReviewActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CD121A8D8F7004AF5DD /* ReviewActionsTableViewCell.swift */; };
+		79734CD421A8D938004AF5DD /* ReviewReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CD321A8D938004AF5DD /* ReviewReplyTableViewCell.swift */; };
 		79734CD621A8FEDD004AF5DD /* ReviewReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CD521A8FEDD004AF5DD /* ReviewReply.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
 		7994BFE320608A9600D05B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7994BFE120608A9600D05B25 /* Main.storyboard */; };
@@ -127,6 +132,11 @@
 		79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailTableViewCell.swift; sourceTree = "<group>"; };
 		79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSegmentTableViewCell.swift; sourceTree = "<group>"; };
 		7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTabButton.swift; sourceTree = "<group>"; };
+		79734CCB21A8B663004AF5DD /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
+		79734CCD21A8D89B004AF5DD /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		79734CCF21A8D8E9004AF5DD /* ReviewStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewStatsTableViewCell.swift; sourceTree = "<group>"; };
+		79734CD121A8D8F7004AF5DD /* ReviewActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewActionsTableViewCell.swift; sourceTree = "<group>"; };
+		79734CD321A8D938004AF5DD /* ReviewReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewReplyTableViewCell.swift; sourceTree = "<group>"; };
 		79734CD521A8FEDD004AF5DD /* ReviewReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewReply.swift; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +244,10 @@
 				792922F82189501100EB5C2D /* ModelTableViewCell.swift */,
 				7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */,
 				7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */,
+				79734CCD21A8D89B004AF5DD /* ReviewTableViewCell.swift */,
+				79734CD121A8D8F7004AF5DD /* ReviewActionsTableViewCell.swift */,
+				79734CCF21A8D8E9004AF5DD /* ReviewStatsTableViewCell.swift */,
+				79734CD321A8D938004AF5DD /* ReviewReplyTableViewCell.swift */,
 				79647B6B21AB47D700C94ED6 /* SettingsInputTableViewCell.swift */,
 				79647B6F21AB635F00C94ED6 /* SettingSwitchTableViewCell.swift */,
 				79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */,
@@ -340,6 +354,7 @@
 				79D48149218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift */,
 				795B85A921A23C620021DF0E /* CreateReviewViewController.swift */,
 				7955246D21A357310009C431 /* IconSelectorViewController.swift */,
+				79734CCB21A8B663004AF5DD /* ReviewTableViewController.swift */,
 				799C141521A9DD64001ABFC2 /* SettingsTableViewController.swift */,
 			);
 			path = ViewControllers;
@@ -617,14 +632,17 @@
 				795CE1002178144500311390 /* SessionService.swift in Sources */,
 				7994BFE620608A9600D05B25 /* Revvr.xcdatamodeld in Sources */,
 				795B85AA21A23C630021DF0E /* CreateReviewViewController.swift in Sources */,
+				79734CD221A8D8F7004AF5DD /* ReviewActionsTableViewCell.swift in Sources */,
 				79647B6E21AB483000C94ED6 /* SettingTableViewCell.swift in Sources */,
 				79B48BBE211509FF00AB5415 /* Review.swift in Sources */,
+				79734CD421A8D938004AF5DD /* ReviewReplyTableViewCell.swift in Sources */,
 				79C07EAE2121BC1F00B7D024 /* ReviewLike.swift in Sources */,
 				799C004E21128F04001BF07D /* APIService.swift in Sources */,
 				795239D22188080C004FEB82 /* UserCollectionReusableView.swift in Sources */,
 				79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */,
 				79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */,
 				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
+				79734CCE21A8D89B004AF5DD /* ReviewTableViewCell.swift in Sources */,
 				795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */,
 				7966E7B221A65EA3000AFE2C /* EmojiTabButton.swift in Sources */,
 				795447D421A10F7F00AB281D /* UIColor+commonStyles.swift in Sources */,
@@ -632,6 +650,7 @@
 				795CE102217817E400311390 /* Token.swift in Sources */,
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
 				794FCC1C2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift in Sources */,
+				79734CD021A8D8E9004AF5DD /* ReviewStatsTableViewCell.swift in Sources */,
 				79D4814C218A187A001AEB95 /* ReviewableCollectionReusableView.swift in Sources */,
 				7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */,
 				79594BA8217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift in Sources */,
@@ -648,6 +667,7 @@
 				79B48BCF21150EFB00AB5415 /* ReviewableInfo.swift in Sources */,
 				795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */,
 				79734CD621A8FEDD004AF5DD /* ReviewReply.swift in Sources */,
+				79734CCC21A8B663004AF5DD /* ReviewTableViewController.swift in Sources */,
 				79D48150218A5F4A001AEB95 /* MainTabbarViewController.swift in Sources */,
 				79647B6C21AB47D700C94ED6 /* SettingsInputTableViewCell.swift in Sources */,
 				79639BF82183F02C00996DD9 /* String+Size.swift in Sources */,
