@@ -80,7 +80,7 @@ class SearchTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if sender is AppUser {
             let uvc = segue.destination as! UserWithReviewsCollectionViewController
-            uvc.user = sender as? AppUser
+            uvc.user = sender as! AppUser
         } else if sender is Reviewable {
             let rvc = segue.destination as! ReviewableWithReviewsCollectionViewController
             rvc.setReviewable(reviewable: sender as! Reviewable)
