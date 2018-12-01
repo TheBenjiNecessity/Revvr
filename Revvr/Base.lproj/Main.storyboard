@@ -1027,7 +1027,7 @@
                         <viewLayoutGuide key="safeArea" id="6Ha-Za-fCy"/>
                     </view>
                     <navigationItem key="navigationItem" id="nyc-6w-B8O">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Qcb-pf-4hO">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Qcb-pf-4hO">
                             <connections>
                                 <action selector="cancel:" destination="tbx-P3-9uI" id="F6d-vD-87d"/>
                             </connections>
