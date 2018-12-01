@@ -109,7 +109,7 @@ class APIService: NSObject {
                     let formatter = DateFormatter()
                     let decoder = JSONDecoder()
                     
-                    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
+                    formatter.dateFormat = Date.format
                     decoder.dateDecodingStrategy = .formatted(formatter)
                     
                     let model = try decoder.decode(type.self, from: data!)
