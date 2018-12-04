@@ -22,8 +22,8 @@ class ReviewableWithReviewsCollectionViewController: ReviewsCollectionViewContro
         ReviewableAPIService.shared.get(tpId: reviewable.tpId, type: reviewable.tpName).then { r in
             self.reviewable = r
             self.title = reviewable.title
-            self.collectionView!.reloadData()
-            ReviewAPIService.shared.listByReviewable(reviewable: reviewable).then { reviews in
+            self.collectionView!.reloadData()//TODO needed?
+            ReviewAPIService.shared.listByReviewable(reviewable: r).then { reviews in
                 self.reviews = reviews
                 self.refresh()
             }
@@ -52,10 +52,14 @@ class ReviewableWithReviewsCollectionViewController: ReviewsCollectionViewContro
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let reviewable = sender as? Reviewable {
-            let nav = segue.destination as! UINavigationController
-            let cvc = nav.topViewController as! CreateReviewViewController
-            cvc.setReviewable(reviewable: reviewable)
+        if segue.identifier == "ShowReviewCreatorFromReviewablePageSegueIdentifier" {
+            if let reviewable = sender as? Reviewable {
+                let nav = segue.destination as! UINavigationController
+                let cvc = nav.topViewController as! CreateReviewViewController
+                cvc.setReviewable(reviewable: reviewable)
+            }
+        } else {
+            super.prepare(for: segue, sender: sender)
         }
     }
 }

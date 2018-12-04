@@ -40,39 +40,43 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let json = """
-        {
-            "title": "Settings",
-            "groups": [{
-                "title": "test",
-                "items": [{
-                    "title": "subgroup",
-                    "itemType": "setting",
-                    "setting": {
-                        "title": "Sub Settings",
-                        "groups": [{
-                            "title": "subgrouptest1",
-                            "items": [{
-                                "title": "subgroupitem1",
-                                "itemType": "boolean"
+        if segue.identifier == "ShowSettingsSegueIdentifier" {
+            let json = """
+            {
+                "title": "Settings",
+                "groups": [{
+                    "title": "test",
+                    "items": [{
+                        "title": "subgroup",
+                        "itemType": "setting",
+                        "setting": {
+                            "title": "Sub Settings",
+                            "groups": [{
+                                "title": "subgrouptest1",
+                                "items": [{
+                                    "title": "subgroupitem1",
+                                    "itemType": "boolean"
+                                }]
                             }]
-                        }]
-                    }
-                },{
-                    "title": "subtest1",
-                    "itemType": "boolean"
-                }, {
-                    "title": "subtest2",
-                    "itemType": "info",
-                    "value": "Benjamin"
+                        }
+                    },{
+                        "title": "subtest1",
+                        "itemType": "boolean"
+                    }, {
+                        "title": "subtest2",
+                        "itemType": "info",
+                        "value": "Benjamin"
+                    }]
                 }]
-            }]
-        }
-        """.data(using: .utf8)!
-        
-        if let settings = try? JSONDecoder().decode(Setting.self, from: json) {
-            let destination = segue.destination as! SettingsTableViewController
-            destination.settings = settings
+            }
+            """.data(using: .utf8)!
+            
+            if let settings = try? JSONDecoder().decode(Setting.self, from: json) {
+                let destination = segue.destination as! SettingsTableViewController
+                destination.settings = settings
+            }
+        } else {
+            super.prepare(for: segue, sender: sender)
         }
     }
 }

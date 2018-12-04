@@ -313,6 +313,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Reviews" id="Cyg-PW-qks"/>
+                    <connections>
+                        <segue destination="7Ka-qV-uVQ" kind="show" identifier="ReviewDetailSegueIdentifier" id="IAG-lf-MD3"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QrD-na-ImE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -392,6 +395,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="7Ka-qV-uVQ" kind="show" identifier="ReviewDetailSegueIdentifier" id="xLi-oG-NjF"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N35-dd-WOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,21 +619,22 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewStatsTableViewCellIdentifier" id="Sx0-kg-BED" customClass="ReviewStatsTableViewCell" customModule="Revvr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="236" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sx0-kg-BED" id="Ofc-kr-dDM" customClass="ReviewStatsTableViewCell" customModule="Revvr" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sx0-kg-BED" id="Ofc-kr-dDM">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mN-Xd-9bz">
-                                            <rect key="frame" x="5" y="11.5" width="365" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mN-Xd-9bz">
+                                            <rect key="frame" x="5" y="5" width="365" height="33.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="0mN-Xd-9bz" firstAttribute="leading" secondItem="Ofc-kr-dDM" secondAttribute="leading" constant="5" id="bNd-on-hD4"/>
-                                        <constraint firstItem="0mN-Xd-9bz" firstAttribute="centerY" secondItem="Ofc-kr-dDM" secondAttribute="centerY" id="mNI-KW-8IE"/>
-                                        <constraint firstAttribute="trailing" secondItem="0mN-Xd-9bz" secondAttribute="trailing" constant="5" id="udS-Wb-7cr"/>
+                                        <constraint firstAttribute="bottom" secondItem="0mN-Xd-9bz" secondAttribute="bottom" constant="5" id="J7u-XY-5Ap"/>
+                                        <constraint firstItem="0mN-Xd-9bz" firstAttribute="top" secondItem="Ofc-kr-dDM" secondAttribute="top" constant="5" id="beG-a9-Fr3"/>
+                                        <constraint firstAttribute="trailing" secondItem="0mN-Xd-9bz" secondAttribute="trailing" constant="5" id="gdU-3a-hcD"/>
+                                        <constraint firstItem="0mN-Xd-9bz" firstAttribute="leading" secondItem="Ofc-kr-dDM" secondAttribute="leading" constant="5" id="wyZ-Uk-5kV"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -725,10 +732,68 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Review" id="lvh-lt-5HG"/>
+                    <connections>
+                        <segue destination="C1d-f2-Pav" kind="presentation" identifier="CreateReplySegueIdentifier" id="EzF-Xr-yFI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hl-rU-XK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1821.5999999999999" y="-1238.2308845577213"/>
+        </scene>
+        <!--Review Reply Modal View Controller-->
+        <scene sceneID="fEu-bu-wGe">
+            <objects>
+                <viewController id="dKO-iu-Ioi" customClass="ReviewReplyModalViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TxO-1H-Jry">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replying to @username's review of Reviewable" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCL-Mk-RkV">
+                                <rect key="frame" x="16" y="72" width="284" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8nF-bu-VpC">
+                                <rect key="frame" x="5" y="93" width="365" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="yka-6n-hOU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8nF-bu-VpC" firstAttribute="top" secondItem="vCL-Mk-RkV" secondAttribute="bottom" constant="5" id="A1S-hl-yFf"/>
+                            <constraint firstItem="8nF-bu-VpC" firstAttribute="leading" secondItem="kmQ-wN-OO5" secondAttribute="leading" constant="5" id="Gyt-di-1ix"/>
+                            <constraint firstItem="vCL-Mk-RkV" firstAttribute="leading" secondItem="kmQ-wN-OO5" secondAttribute="leading" constant="16" id="UsE-nf-NGt"/>
+                            <constraint firstItem="kmQ-wN-OO5" firstAttribute="trailing" secondItem="8nF-bu-VpC" secondAttribute="trailing" constant="5" id="WBI-5k-ADh"/>
+                            <constraint firstItem="vCL-Mk-RkV" firstAttribute="top" secondItem="kmQ-wN-OO5" secondAttribute="top" constant="8" id="qSf-p4-N6C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kmQ-wN-OO5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="csm-Fm-qwg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="FLU-Qy-61y">
+                            <connections>
+                                <action selector="cancel:" destination="dKO-iu-Ioi" id="54v-Se-Zuo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="mjv-K4-W34">
+                            <connections>
+                                <action selector="save:" destination="dKO-iu-Ioi" id="4Lt-LD-sF7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="commentTextView" destination="8nF-bu-VpC" id="CZq-Uq-fAw"/>
+                        <outlet property="detailsLabel" destination="vCL-Mk-RkV" id="Auy-qo-LMc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HdI-Cu-UKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3728.8000000000002" y="-1238.2308845577213"/>
         </scene>
         <!--Revoji-->
         <scene sceneID="jgk-8x-2jB">
@@ -942,6 +1007,7 @@
                     </collectionView>
                     <connections>
                         <segue destination="vRD-q3-oAZ" kind="presentation" identifier="ShowReviewCreatorFromReviewablePageSegueIdentifier" id="RKQ-7c-c6x"/>
+                        <segue destination="7Ka-qV-uVQ" kind="show" identifier="ReviewDetailSegueIdentifier" id="ZFb-J9-tIi"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3q-HT-1AT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1231,6 +1297,24 @@
             </objects>
             <point key="canvasLocation" x="2789.5999999999999" y="-474.51274362818594"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LSK-2D-4RX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C1d-f2-Pav" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LQN-K4-tEw">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dKO-iu-Ioi" kind="relationship" relationship="rootViewController" id="DWA-0c-dwl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xGm-zK-SED" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2789.5999999999999" y="-1238.2308845577213"/>
+        </scene>
     </scenes>
     <resources>
         <image name="DefaultProfilePictureThumbnail" width="48" height="48"/>
@@ -1238,6 +1322,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MUq-Os-ZcG"/>
+        <segue reference="ZFb-J9-tIi"/>
         <segue reference="dYA-Hg-Txv"/>
     </inferredMetricsTieBreakers>
 </document>

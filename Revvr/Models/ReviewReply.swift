@@ -16,4 +16,14 @@ struct ReviewReply: Codable {
     
     let appUser: AppUser // The user who left the reply
     let review: Review
+    
+    init(appUserID: Int, reviewID: Int, comment: String) {
+        self.appUserID = appUserID
+        self.reviewID = reviewID
+        self.comment = comment
+        self.created = nil
+        
+        self.appUser = AppUser()
+        self.review = Review()
+    }
 }

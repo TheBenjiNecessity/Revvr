@@ -17,8 +17,6 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
     
     var review = Review()
     var replies: [ReviewReply] = []
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +78,7 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
     
     func reviewActionCellDidPressReply() {
         print("reply")
+        self.performSegue(withIdentifier: "CreateReplySegueIdentifier", sender: nil)
     }
     
     func reviewActionCellDidPressAgree() {
@@ -90,6 +89,11 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
         print("extras")
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nav = segue.destination as! UINavigationController
+        let rrmvc = nav.topViewController as! ReviewReplyModalViewController
+        rrmvc.review = review
+    }
 
     /*
     // Override to support conditional editing of the table view.
