@@ -14,6 +14,6 @@ struct ReviewReply: Codable {
     let comment: String
     let created: Date?
     
-    let AppUser: AppUser // The user who left the reply
-    let Review: Review
+    let appUser: AppUser // The user who left the reply
+    let review: Review
 }
