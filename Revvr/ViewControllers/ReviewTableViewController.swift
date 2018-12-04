@@ -77,7 +77,6 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
     }
     
     func reviewActionCellDidPressReply() {
-        print("reply")
         self.performSegue(withIdentifier: "CreateReplySegueIdentifier", sender: nil)
     }
     
