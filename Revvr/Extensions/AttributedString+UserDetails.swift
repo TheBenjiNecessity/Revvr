@@ -16,10 +16,18 @@ extension NSAttributedString {
         
         let nameLength = user.firstName.count + user.lastName.count + 1
         let nameRange = NSRange(location: 0, length: nameLength)
-        //let handleRange = NSRange(location: nameLength + 2, length: userDetailsText.count)
+        let handleStart = nameLength + 2
+        let handleRange = NSRange(location: handleStart, length: userDetailsText.count - handleStart)
         
-        text.addAttribute(NSAttributedStringKey.font, value: UIFont.boldSystemFont(ofSize: CGFloat(12.0)), range: nameRange)
-        //text.addAttribute(NSAttributedStringKey.font, value: UIFont.boldSystemFont(ofSize: CGFloat(12.0)), range: handleRange)
+        let nameAttributes: [NSAttributedStringKey: Any] = [
+            .font : UIFont.boldSystemFont(ofSize: CGFloat(17.0))
+        ]
+        text.addAttributes(nameAttributes, range: nameRange)
+        
+        let handleAttributes: [NSAttributedStringKey: Any] = [
+            .font : UIFont.systemFont(ofSize: 15.0)
+        ]
+        text.addAttributes(handleAttributes, range: handleRange)
         
         return text
     }
