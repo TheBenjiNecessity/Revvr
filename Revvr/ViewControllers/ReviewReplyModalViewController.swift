@@ -26,7 +26,7 @@ class ReviewReplyModalViewController: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         if let comment = commentTextView?.text {
-            let reviewReply = ReviewReply(appUserID: review.appUserID, reviewID: review.id!, comment: comment)
+            let reviewReply = ReviewReply(appUserID: review.appUserID, reviewID: review.id, comment: comment)
             ReviewAPIService.shared.reply(reply: reviewReply).then { reply in
                 //TODO: show success
                 self.presentingViewController?.dismiss(animated: true, completion: nil)

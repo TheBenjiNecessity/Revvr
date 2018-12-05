@@ -17,7 +17,7 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController {
     var user = AppUser() {
         didSet {
             self.title = "\(user.firstName) \(user.lastName)"
-            ReviewAPIService.shared.listByUser(id: user.id!).then { reviews in
+            ReviewAPIService.shared.listByUser(id: user.id).then { reviews in
                 self.reviews = reviews
                 self.refresh()
             }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Review: Codable {
-    let id: Int?
+    let id: Int
     
     let appUserID: Int
     let reviewableID: Int?
@@ -25,14 +25,14 @@ struct Review: Codable {
     }
     
     init(emojis: String, comment: String?, appUser: AppUser, reviewable: Reviewable) {
-        self.appUserID = appUser.id!
+        self.appUserID = appUser.id
         self.reviewableID = reviewable.id
         self.comment = comment == "" ? nil : comment
         self.emojis = emojis
         self.appUser = appUser
         self.reviewable = reviewable
         
-        self.id = nil
+        self.id = -1
         self.created = nil
         self.title = nil
     }

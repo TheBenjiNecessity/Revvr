@@ -23,7 +23,7 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
         
         tableView.tableFooterView = UIView()
         
-        ReviewAPIService.shared.listReplies(id: review.id!).then { replies in
+        ReviewAPIService.shared.listReplies(id: review.id).then { replies in
             self.replies = replies
         }
     }

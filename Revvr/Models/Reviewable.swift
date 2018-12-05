@@ -7,7 +7,7 @@
 //
 
 struct Reviewable: Codable {
-    let id: Int?
+    let id: Int
     let tpId: String
     let tpName: String
     
@@ -27,7 +27,7 @@ struct Reviewable: Codable {
         tpName = ""
         title = ""
         type = ""
-        id = nil
+        id = -1
         description = nil
         titleImageUrl = nil
         reviewCount = nil
