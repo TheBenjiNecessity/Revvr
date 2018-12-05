@@ -11,8 +11,8 @@ import UIKit
 @IBDesignable
 class EmojiTabButton: UIButton {
     override func draw(_ rect: CGRect) {
-        let bgColor = UIColor.blue
-        let faceColor = UIColor.white
+        let bgColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        let faceColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         // Set background tab
         let bottomHalfRect = CGRect(x: rect.origin.x, y: rect.origin.y + (rect.size.height / 2), width: rect.size.width, height: rect.size.height / 2)
