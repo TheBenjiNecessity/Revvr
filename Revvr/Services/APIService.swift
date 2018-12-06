@@ -69,15 +69,13 @@ class APIService: NSObject {
         task.resume()
         
         return promise
-        
     }
     
-    //TODO if this ever returns 401 then log the user out
     private func request<T: Codable>(url: String,
-                                            httpMethod: String,
-                                            body: T?,
-                                            type: T.Type,
-                                            contentType: String = "application/json") -> Promise<T> {
+                                     httpMethod: String,
+                                     body: T?,
+                                     type: T.Type,
+                                     contentType: String = "application/json") -> Promise<T> {
         let promise = Promise<T>.pending()
         var uri = serviceUrl + url
         uri = uri.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
