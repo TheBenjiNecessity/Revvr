@@ -31,4 +31,26 @@ extension NSAttributedString {
         
         return text
     }
+    
+    static func attributedString(for reviewable: Reviewable) -> NSAttributedString {
+        let reviewableText = "\(reviewable.title)\n\(reviewable.description ?? "")"
+        let text = NSMutableAttributedString(string: reviewableText)
+        
+        let titleLength = reviewable.title.count
+        let titleRange = NSRange(location: 0, length: titleLength)
+        let descriptionStart = titleLength + 2
+        let descriptionRange = NSRange(location: descriptionStart, length: reviewableText.count - descriptionStart)
+        
+        let titleAttributes: [NSAttributedStringKey: Any] = [
+            .font : UIFont.boldSystemFont(ofSize: CGFloat(17.0))
+        ]
+        text.addAttributes(titleAttributes, range: titleRange)
+        
+        let descriptionAttributes: [NSAttributedStringKey: Any] = [
+            .font : UIFont.systemFont(ofSize: 15.0)
+        ]
+        text.addAttributes(descriptionAttributes, range: descriptionRange)
+        
+        return text
+    }
 }
