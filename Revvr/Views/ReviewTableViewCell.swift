@@ -22,13 +22,11 @@ class ReviewTableViewCell: UITableViewCell {
         userDetailsLabel?.attributedText = NSAttributedString.attributedStringFor(user: review.appUser)
         reviewCommentLabel?.text = review.comment
         
-        reviewableDetailsLabel?.text = "\(review.reviewable.title)\n"
-        if let description = review.reviewable.description,
-            let reviewableDetailsLabelText = reviewableDetailsLabel?.text {
-            reviewableDetailsLabel?.text = reviewableDetailsLabelText + description
-        }
-        
-        reviewableImageView?.image = UIImage.imageFrom(urlString: review.reviewable.titleImageUrl)
         emojiImageView?.image = UIImage(named: review.emojis + "Emoji")
+        
+        ReviewableAPIService.shared.get(tpId: review.reviewable.tpId, type: review.reviewable.tpName).then { reviewable in
+            self.reviewableDetailsLabel?.attributedText = NSAttributedString.attributedString(for: reviewable)
+            self.reviewableImageView?.image = UIImage.imageFrom(urlString: reviewable.titleImageUrl)
+        }
     }
 }
