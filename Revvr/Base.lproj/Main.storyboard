@@ -568,9 +568,9 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zud-vV-dFe">
-                                            <rect key="frame" x="100" y="54" width="270" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zud-vV-dFe">
+                                            <rect key="frame" x="100" y="54" width="270" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -601,6 +601,7 @@
                                         <constraint firstItem="a3F-wu-74P" firstAttribute="leading" secondItem="cIV-Pe-w5W" secondAttribute="leading" constant="-10" id="ToE-Xw-lmw"/>
                                         <constraint firstItem="a3F-wu-74P" firstAttribute="leading" secondItem="zvC-Oe-zyi" secondAttribute="leading" id="UjS-zn-NAX"/>
                                         <constraint firstItem="a3F-wu-74P" firstAttribute="top" secondItem="cIV-Pe-w5W" secondAttribute="top" constant="-10" id="W7f-sd-04D"/>
+                                        <constraint firstItem="zud-vV-dFe" firstAttribute="height" relation="lessThanOrEqual" secondItem="a3F-wu-74P" secondAttribute="height" id="l5b-Fo-YeL"/>
                                         <constraint firstItem="zud-vV-dFe" firstAttribute="leading" secondItem="a3F-wu-74P" secondAttribute="trailing" constant="5" id="mUi-Ie-1Hl"/>
                                         <constraint firstItem="8at-10-pcS" firstAttribute="top" secondItem="zvC-Oe-zyi" secondAttribute="top" id="ncd-NH-vje"/>
                                         <constraint firstItem="qA4-Ll-ue3" firstAttribute="trailing" secondItem="zud-vV-dFe" secondAttribute="trailing" id="v8b-6J-6Sg"/>
