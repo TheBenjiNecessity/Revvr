@@ -35,6 +35,10 @@ class APIService: NSObject {
         return request(url: url, httpMethod: "POST", body: body, type: type.self)
     }
     
+    func put<T: Codable>(url: String, body: T, type: T.Type) -> Promise<T> {
+        return request(url: url, httpMethod: "PUT", body: body, type: type.self)
+    }
+    
     func delete<T: Codable>(url: String, type: T.Type) -> Promise<T> {
         return request(url: url, httpMethod: "DELETE", body: nil, type: type.self)
     }
