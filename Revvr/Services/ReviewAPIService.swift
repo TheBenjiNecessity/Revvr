@@ -12,7 +12,7 @@ import Promises
 class ReviewAPIService: APIService {
     static let shared = ReviewAPIService()
     
-    let url = "service-api/reviews"
+    let url = "service-api/review"
     
     /* ========================== CRUD ========================== */
     func get(id: Int, reviewableId: Int) -> Promise<Review> {
@@ -26,7 +26,7 @@ class ReviewAPIService: APIService {
     
     func update(id: Int, review: Review) -> Promise<Review> {
         let uri = "\(url)/\(id)"
-        return post(url: uri, body: review, type: Review.self)
+        return put(url: uri, body: review, type: Review.self)
     }
     
     func delete(id: Int) -> Promise<Data> {
@@ -36,17 +36,17 @@ class ReviewAPIService: APIService {
     
     /* ========================== List By... ========================== */
     func listByUser(id: Int, order: String = "DESC", pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[Review]> {
-        let uri = "\(url)/list/user/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
+        let uri = "\(url)/user/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [Review].self)
     }
     
     func listByReviewable(reviewable: Reviewable, order: String = "DESC", pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[Review]> {
-        let uri = "\(url)/list/reviewable/\(reviewable.tpId)?tpName=\(reviewable.tpName)&order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
+        let uri = "\(url)/reviewable/\(reviewable.tpId)?tpName=\(reviewable.tpName)&order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [Review].self)
     }
     
     func listByFollowings(id: Int, order: String = "DESC", pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[Review]> {
-        let uri = "\(url)/list/followings/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
+        let uri = "\(url)/followings/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [Review].self)
     }
     

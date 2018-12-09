@@ -32,7 +32,7 @@ class AppUserAPIService: APIService {
     }
     
     func search(text: String, pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[AppUser]> {
-        let uri = "\(url)/search?text=\(text)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
+        let uri = "\(url)/search/\(text)?pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [AppUser].self)
     }
     
@@ -42,7 +42,7 @@ class AppUserAPIService: APIService {
     
     func update(id: Int, user: AppUser) -> Promise<AppUser> {
         let uri = "\(url)/\(id)"
-        return post(url: uri, body: user, type: AppUser.self)
+        return put(url: uri, body: user, type: AppUser.self)
     }
     
     func delete(id: Int) -> Promise<Data> {
@@ -51,29 +51,29 @@ class AppUserAPIService: APIService {
     }
     
     /* ========================== Followers ========================== */
-    func addFollower(follower: AppUserFollowing) -> Promise<AppUserFollowing> {
-        let uri = "\(url)/follower"
-        return post(url: uri, body: follower, type: AppUserFollowing.self)
+    func add(following: AppUserFollowing) -> Promise<AppUserFollowing> {
+        let uri = "\(url)/following"
+        return post(url: uri, body: following, type: AppUserFollowing.self)
     }
     
-    func deleteFollower(id: Int, followingId: Int) -> Promise<Data> {
-        let uri = "\(url)/follower/\(id)?followingId=\(followingId)"
+    func delete(following id: Int, followingId: Int) -> Promise<Data> {
+        let uri = "\(url)/\(id)/following/\(followingId)"
         return delete(url: uri, type: Data.self)
     }
 
     func listFollowers(id: Int, order: String = "DESC", pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[AppUser]> {
-        let uri = "\(url)/followers/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
+        let uri = "\(url)/\(id)/followers?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [AppUser].self)
     }
     
     func listFollowings(id: Int, order: String = "DESC", pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[AppUser]> {
-        let uri = "\(url)/followings/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
+        let uri = "\(url)/\(id)/followings?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [AppUser].self)
     }
     
     /* ========================== Stats ========================== */
     func getStats(id: Int) -> Promise<Data> {
-        let uri = "\(url)/counts/\(id)"
+        let uri = "\(url)/\(id)/counts"
         return get(url: uri, type: Data.self)
     }
 }
