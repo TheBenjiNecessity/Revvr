@@ -9,13 +9,13 @@
 import UIKit
 
 extension UIImage {
-    static func imageFrom(urlString: String?) -> UIImage? {
-        if let urlString = urlString, let url = URL(string: urlString) {
-            do {
-                return UIImage(data: try Data(contentsOf: url))
-            } catch {}
+    static func image(from urlString: String) -> UIImage? {
+        guard let url = URL(string: from urlString),
+              let imageData = try? Data(contentsOf: url)
+        else {
+            return nil
         }
         
-        return nil
+        return UIImage(data:imageData)
     }
 }
