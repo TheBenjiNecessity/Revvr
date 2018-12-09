@@ -46,7 +46,7 @@ class ReviewAPIService: APIService {
     }
     
     func listByFollowings(id: Int, order: String = "DESC", pageStart: Int = 0, pageLimit: Int = 20) -> Promise<[Review]> {
-        let uri = "\(url)/followings/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
+        let uri = "\(url)/following/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [Review].self)
     }
     
