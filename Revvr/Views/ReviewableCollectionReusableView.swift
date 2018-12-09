@@ -20,6 +20,8 @@ class ReviewableCollectionReusableView: UICollectionReusableView {
         reviewableTitleLabel?.text = reviewable.title
         reviewableDescriptionLabel?.text = reviewable.description
         
-        reviewableImageView?.image = UIImage.imageFrom(urlString: reviewable.titleImageUrl)
+        if let imageUrl = reviewable.titleImageUrl {
+            self.reviewableImageView?.image = UIImage.image(from: imageUrl)
+        }
     }
 }

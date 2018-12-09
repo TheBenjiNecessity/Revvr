@@ -26,7 +26,10 @@ class ReviewTableViewCell: UITableViewCell {
         
         ReviewableAPIService.shared.get(tpId: review.reviewable.tpId, type: review.reviewable.tpName).then { reviewable in
             self.reviewableDetailsLabel?.attributedText = NSAttributedString.attributedString(for: reviewable)
-            self.reviewableImageView?.image = UIImage.imageFrom(urlString: reviewable.titleImageUrl)
+            
+            if let imageUrl = reviewable.titleImageUrl {
+                self.reviewableImageView?.image = UIImage.image(from: imageUrl)
+            }
         }
     }
 }

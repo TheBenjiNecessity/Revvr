@@ -44,7 +44,10 @@ class CreateReviewViewController: UIViewController, IconSelectorDelegate {
         
         if let r = reviewable {
             detailsLabel?.text = r.description
-            reviewableImageView?.image = UIImage.imageFrom(urlString: r.titleImageUrl)
+            
+            if let imageUrl = r.titleImageUrl {
+                self.reviewableImageView?.image = UIImage.image(from: imageUrl)
+            }
         }
     }
     

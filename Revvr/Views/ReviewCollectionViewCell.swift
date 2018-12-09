@@ -35,7 +35,10 @@ class ReviewCollectionViewCell: UICollectionViewCell {
         reviewableLabel.layer.shadowOffset = shadowOffset
         reviewableLabel.layer.masksToBounds = masksToBounds
         
-        reviewableImageView?.image = UIImage.imageFrom(urlString: review.reviewable.titleImageUrl)
+        if let imageUrl = review.reviewable.titleImageUrl {
+            self.reviewableImageView?.image = UIImage.image(from: imageUrl)
+        }
+        
         emojiImageView?.image = UIImage(named: review.emojis + "Emoji")
 
         var image = self.reviewableImageView?.image

@@ -19,9 +19,11 @@ class ReviewableTableViewCell: ModelTableViewCell {
     override func setModel(model: Any) {
         let reviewable = model as! Reviewable
         
-        reviewableImageView?.image = UIImage.imageFrom(urlString: reviewable.titleImageUrl)
-        
         reviewableTitleLabel?.text = reviewable.title
         reviewableDescriptionLabel?.text = reviewable.description
+        
+        if let imageUrl = reviewable.titleImageUrl {
+            self.reviewableImageView?.image = UIImage.image(from: imageUrl)
+        }
     }
 }
