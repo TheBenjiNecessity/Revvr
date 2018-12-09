@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     static func image(from urlString: String) -> UIImage? {
-        guard let url = URL(string: from urlString),
+        guard let url = URL(string: urlString),
               let imageData = try? Data(contentsOf: url)
         else {
             return nil
