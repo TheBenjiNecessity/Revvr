@@ -388,15 +388,10 @@
                             <outlet property="delegate" destination="gzc-2r-YGu" id="LVo-V2-AyF"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="uBb-tI-doj">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="gmL-5r-D0z">
-                            <connections>
-                                <segue destination="k6A-hu-wMS" kind="show" identifier="ShowSettingsSegueIdentifier" id="dlp-oc-yWq"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="uBb-tI-doj"/>
                     <connections>
                         <segue destination="7Ka-qV-uVQ" kind="show" identifier="ReviewDetailSegueIdentifier" id="xLi-oG-NjF"/>
+                        <segue destination="k6A-hu-wMS" kind="show" identifier="ShowSettingsSegueIdentifier" id="Vif-bf-hbZ"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N35-dd-WOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1324,7 +1319,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MUq-Os-ZcG"/>
-        <segue reference="ZFb-J9-tIi"/>
+        <segue reference="xLi-oG-NjF"/>
         <segue reference="dYA-Hg-Txv"/>
     </inferredMetricsTieBreakers>
 </document>

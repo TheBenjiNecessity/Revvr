@@ -23,6 +23,14 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController {
             }
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let apiUser = SessionService.shared.user {
+            hideSettingsButton(hide: user.id != apiUser.id)
+        }
+    }
 
     // MARK: UICollectionViewDataSource
     
@@ -78,5 +86,17 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController {
         } else {
             super.prepare(for: segue, sender: sender)
         }
+    }
+    
+    func hideSettingsButton(hide: Bool) {
+        if hide {
+            self.navigationItem.rightBarButtonItem = nil
+        } else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(showSettings))
+        }
+    }
+    
+    @objc func showSettings() {
+        self.performSegue(withIdentifier: "ShowSettingsSegueIdentifier", sender: nil)
     }
 }
