@@ -71,6 +71,11 @@ class AppUserAPIService: APIService {
         return get(url: uri, type: [AppUser].self)
     }
     
+    func user(withId followerId: Int, isFollowingUserWithId followingId: Int) -> Promise<Bool> {
+        let uri = "\(url)/\(followerId)/following/\(followingId)"
+        return get(url: uri, type: Bool.self)
+    }
+    
     /* ========================== Stats ========================== */
     func getStats(id: Int) -> Promise<Data> {
         let uri = "\(url)/\(id)/counts"
