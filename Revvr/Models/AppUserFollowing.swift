@@ -11,4 +11,10 @@ struct AppUserFollowing: Codable {
     let followerId: Int
     let followingId: Int
     let created: Date? //TODO this should be private/not settable
+    
+    init(followerId: Int, followingId: Int) {
+        self.followerId = followerId
+        self.followingId = followingId
+        self.created = nil
+    }
 }
