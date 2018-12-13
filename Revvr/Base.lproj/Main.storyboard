@@ -365,15 +365,35 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" tag="222" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHs-yX-wEn">
+                                    <rect key="frame" x="328" y="4" width="39" height="28"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="Follow"/>
+                                    <connections>
+                                        <action selector="follow:" destination="gi5-wH-HBe" eventType="touchUpInside" id="7CJ-xz-JGR"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWR-ly-ZCa">
+                                    <rect key="frame" x="269" y="4" width="51" height="28"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="Settings"/>
+                                    <connections>
+                                        <action selector="settings:" destination="gi5-wH-HBe" eventType="touchUpInside" id="PKt-Wt-Ttw"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="RxC-zh-R9I" firstAttribute="top" secondItem="gi5-wH-HBe" secondAttribute="top" constant="8" id="2U0-4G-48X"/>
                                 <constraint firstItem="FGK-RD-SxF" firstAttribute="leading" secondItem="RxC-zh-R9I" secondAttribute="leading" id="BE0-4P-YNA"/>
                                 <constraint firstItem="ev3-lO-cHW" firstAttribute="top" secondItem="gi5-wH-HBe" secondAttribute="top" constant="8" id="BkV-IG-Bal"/>
+                                <constraint firstItem="vHs-yX-wEn" firstAttribute="top" secondItem="gi5-wH-HBe" secondAttribute="top" constant="4" id="E78-6g-YT5"/>
                                 <constraint firstItem="FGK-RD-SxF" firstAttribute="top" secondItem="RxC-zh-R9I" secondAttribute="bottom" id="FSd-eR-H8O"/>
+                                <constraint firstItem="vHs-yX-wEn" firstAttribute="leading" secondItem="TWR-ly-ZCa" secondAttribute="trailing" constant="8" id="Osd-yC-ifE"/>
+                                <constraint firstItem="TWR-ly-ZCa" firstAttribute="firstBaseline" secondItem="vHs-yX-wEn" secondAttribute="firstBaseline" id="YtO-3Y-QSd"/>
                                 <constraint firstItem="RxC-zh-R9I" firstAttribute="leading" secondItem="ev3-lO-cHW" secondAttribute="trailing" constant="8" id="Ytv-cY-jQV"/>
                                 <constraint firstItem="86x-nf-Po2" firstAttribute="leading" secondItem="ev3-lO-cHW" secondAttribute="leading" id="Z42-Ug-quG"/>
                                 <constraint firstItem="ev3-lO-cHW" firstAttribute="leading" secondItem="gi5-wH-HBe" secondAttribute="leading" constant="8" id="f5B-IS-mKi"/>
+                                <constraint firstAttribute="trailing" secondItem="vHs-yX-wEn" secondAttribute="trailing" constant="8" id="nOe-zb-OH5"/>
                                 <constraint firstItem="86x-nf-Po2" firstAttribute="top" secondItem="ev3-lO-cHW" secondAttribute="bottom" constant="3" id="tKV-ah-RAA"/>
                             </constraints>
                             <connections>

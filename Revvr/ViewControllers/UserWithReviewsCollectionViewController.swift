@@ -13,7 +13,7 @@
 
 import UIKit
 
-class UserWithReviewsCollectionViewController: ReviewsCollectionViewController {
+class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, UserSettingsDelegate {
     var user = AppUser() {
         didSet {
             self.title = "\(user.firstName) \(user.lastName)"
@@ -43,6 +43,8 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController {
         userCollectionReusableView.setUser(user: user)
         
         userCollectionReusableView.frame = CGRect(x: 0.0, y: 0.0, width: collectionView.frame.size.width, height: UserCollectionReusableView.viewHeight)
+        
+        userCollectionReusableView.delegate = self
 
         return userCollectionReusableView
     }
@@ -94,6 +96,26 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController {
         } else {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(showSettings))
         }
+    }
+    
+    func showUserSettingsActionSheet() {
+        let userSettingsMenu = UIAlertController(title: "User Options", message: nil, preferredStyle: .actionSheet)
+
+        let blockAction = UIAlertAction(title: "Block", style: .default) { action in
+            print("Block")
+        }
+
+        let reportAction = UIAlertAction(title: "Report", style: .default) { action in
+            print("Report")
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+
+        userSettingsMenu.addAction(blockAction)
+        userSettingsMenu.addAction(reportAction)
+        userSettingsMenu.addAction(cancelAction)
+
+        self.present(userSettingsMenu, animated: true, completion: nil)
     }
     
     @objc func showSettings() {
