@@ -11,7 +11,7 @@ import UIKit
 class MainTabbarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nav = self.viewControllers![4] as! UINavigationController
+        let nav = self.viewControllers![3] as! UINavigationController
         let uservc = nav.topViewController as! UserWithReviewsCollectionViewController
         if let user = SessionService.shared.user {
             uservc.user = user
