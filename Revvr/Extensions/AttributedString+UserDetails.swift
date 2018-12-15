@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension NSAttributedString {
-    static func attributedStringFor(user: AppUser) -> NSAttributedString {
+    static func attributedStringFor(user: AppUser, of fontSize: CGFloat) -> NSAttributedString {
         let userDetailsText = "\(user.firstName) \(user.lastName)\n\(user.handle)"
         let text = NSMutableAttributedString(string: userDetailsText)
         
@@ -20,12 +20,12 @@ extension NSAttributedString {
         let handleRange = NSRange(location: handleStart, length: userDetailsText.count - handleStart)
         
         let nameAttributes: [NSAttributedStringKey: Any] = [
-            .font : UIFont.boldSystemFont(ofSize: CGFloat(17.0))
+            .font : UIFont.boldSystemFont(ofSize: fontSize)
         ]
         text.addAttributes(nameAttributes, range: nameRange)
         
         let handleAttributes: [NSAttributedStringKey: Any] = [
-            .font : UIFont.systemFont(ofSize: 15.0)
+            .font : UIFont.systemFont(ofSize: fontSize - 2)
         ]
         text.addAttributes(handleAttributes, range: handleRange)
         

@@ -19,7 +19,7 @@ class ReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var emojiImageView: UIImageView!
     
     func setReview(review: Review) {
-        userDetailsLabel?.attributedText = NSAttributedString.attributedStringFor(user: review.appUser)
+        userDetailsLabel?.attributedText = NSAttributedString.attributedStringFor(user: review.appUser, of: CGFloat(17.0))
         reviewCommentLabel?.text = review.comment
         
         emojiImageView?.image = UIImage(named: review.emojis + "Emoji")

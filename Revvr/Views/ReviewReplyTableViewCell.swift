@@ -16,7 +16,7 @@ class ReviewReplyTableViewCell: UITableViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     
     func setReply(reply: ReviewReply) {
-        userDetailsLabel?.attributedText = NSAttributedString.attributedStringFor(user: reply.appUser)
+        userDetailsLabel?.attributedText = NSAttributedString.attributedStringFor(user: reply.appUser, of: CGFloat(17.0))
         commentLabel?.text = reply.comment
     }
 }
