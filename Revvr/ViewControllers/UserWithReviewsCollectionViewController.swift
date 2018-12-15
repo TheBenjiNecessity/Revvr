@@ -118,6 +118,15 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
         self.present(userSettingsMenu, animated: true, completion: nil)
     }
     
+    func follow(user: AppUser) {
+        if let apiUser = SessionService.shared.user {
+            let following = AppUserFollowing(followerId: apiUser.id, followingId: user.id)
+            AppUserAPIService.shared.add(following: following).then { following in
+                
+            }
+        }
+    }
+    
     @objc func showSettings() {
         self.performSegue(withIdentifier: "ShowSettingsSegueIdentifier", sender: nil)
     }

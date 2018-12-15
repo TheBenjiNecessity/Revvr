@@ -10,6 +10,7 @@ import UIKit
 
 protocol UserSettingsDelegate: AnyObject {
     func showUserSettingsActionSheet()
+    func follow(user: AppUser)
 }
 
 class UserCollectionReusableView: UICollectionReusableView {
@@ -46,12 +47,7 @@ class UserCollectionReusableView: UICollectionReusableView {
     }
     
     @IBAction func follow(_ sender: Any) {
-        if let apiUser = SessionService.shared.user {
-            let following = AppUserFollowing(followerId: apiUser.id, followingId: user.id)
-            AppUserAPIService.shared.add(following: following).then { following in
-                
-            }
-        }
+        delegate?.follow(user: user)
     }
     
     @IBAction func settings(_ sender: Any) {
