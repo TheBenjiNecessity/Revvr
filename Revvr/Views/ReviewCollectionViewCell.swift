@@ -8,47 +8,38 @@
 
 import UIKit
 
-fileprivate let shadowRadius = CGFloat(2.0)
-fileprivate let shadowOpacity = Float(0.5)
-fileprivate let shadowOffset = CGSize(width: 0, height: 1)
-fileprivate let masksToBounds = false
+fileprivate let bottomPadding = CGFloat(80.0)
 
 class ReviewCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var reviewableImageView: UIImageView!
     @IBOutlet weak var bgReviewableImageView: UIImageView!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var emojiImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var reviewableLabel: UILabel!
     
+    var imageSize = CGSize.zero
+    
     func setReview(review: Review) {
-        usernameLabel.text = review.appUser.handle
+        usernameLabel.attributedText = NSAttributedString.attributedStringFor(user: review.appUser, of: CGFloat(15.0))
         reviewableLabel.text = review.reviewable.title
         
-        usernameLabel.layer.shadowRadius = shadowRadius
-        usernameLabel.layer.shadowOpacity = shadowOpacity
-        usernameLabel.layer.shadowOffset = shadowOffset
-        usernameLabel.layer.masksToBounds = masksToBounds
-        
-        reviewableLabel.layer.shadowRadius = shadowRadius
-        reviewableLabel.layer.shadowOpacity = shadowOpacity
-        reviewableLabel.layer.shadowOffset = shadowOffset
-        reviewableLabel.layer.masksToBounds = masksToBounds
-        
         if let imageUrl = review.reviewable.titleImageUrl {
-            self.reviewableImageView?.image = UIImage.image(from: imageUrl)
+            self.bgReviewableImageView?.image = UIImage.image(from: imageUrl)
         }
         
         emojiImageView?.image = UIImage(named: review.emojis + "Emoji")
-
-        var image = self.reviewableImageView?.image
-        DispatchQueue.global(qos: .background).async {
-            image = image?.blur()
-            DispatchQueue.main.async {
-                self.bgReviewableImageView?.image = image
-            }
-        }
-
+        
+        imageSize = bgReviewableImageView?.image!.size ?? CGSize.zero
+        
         //TODO: profile picture
+    }
+    
+    func getMinHeight(collectionViewWidth: CGFloat) -> CGFloat {
+        let cellWidth = self.getMinWidth(collectionViewWidth: collectionViewWidth)
+        return (cellWidth * (imageSize.height / imageSize.width)) + bottomPadding
+    }
+    
+    func getMinWidth(collectionViewWidth: CGFloat) -> CGFloat {
+        return (collectionViewWidth / 2) - 3
     }
 }

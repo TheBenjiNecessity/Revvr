@@ -15,16 +15,13 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let review = reviews[indexPath.row]
+        //let review = reviews[indexPath.row]
         let collectionViewWidth = collectionView.bounds.size.width - 2 // '- 2' for inset spacing
-
-        if review.comment != nil {
-            //TODO there must be a better way
-            let cell = self.collectionView(collectionView, cellForItemAt: indexPath) as! ReviewWithCommentCollectionViewCell
-            return CGSize(width: collectionViewWidth, height: cell.getMinHeight(collectionViewWidth: collectionViewWidth))
-        } else {
-            return CGSize(width: collectionViewWidth / 3, height: collectionViewWidth / 3)
-        }
+        
+        let cell = self.collectionView(collectionView, cellForItemAt: indexPath) as! ReviewCollectionViewCell
+        //let width = review.comment != nil ? collectionViewWidth : collectionViewWidth / 3
+        return CGSize(width: cell.getMinWidth(collectionViewWidth: collectionViewWidth),
+                      height: cell.getMinHeight(collectionViewWidth: collectionViewWidth))
     }
     
     func collectionView(_ collectionView: UICollectionView,

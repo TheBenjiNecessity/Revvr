@@ -10,51 +10,49 @@
 
 import UIKit
 
+fileprivate let shadowRadius = CGFloat(2.0)
+fileprivate let shadowOpacity = Float(0.5)
+fileprivate let shadowOffset = CGSize(width: 0, height: 1)
+fileprivate let masksToBounds = false
+
 fileprivate let paddingConstraint: CGFloat = CGFloat(5.0)
 fileprivate let spacingConstraint: CGFloat = CGFloat(8.0)
+fileprivate let minHeight: CGFloat = CGFloat(120.0)
 
 class ReviewWithCommentCollectionViewCell: ReviewCollectionViewCell {
     @IBOutlet weak var commentLabel: UILabel!
+     @IBOutlet weak var reviewableImageView: UIImageView!
     
-    /**
-        Sets up the cell with the given review
-        - parameter review: the review
-     */
     override func setReview(review: Review) {
         super.setReview(review: review)
+        
+        usernameLabel.layer.shadowRadius = shadowRadius
+        usernameLabel.layer.shadowOpacity = shadowOpacity
+        usernameLabel.layer.shadowOffset = shadowOffset
+        usernameLabel.layer.masksToBounds = masksToBounds
+        
+        reviewableLabel.layer.shadowRadius = shadowRadius
+        reviewableLabel.layer.shadowOpacity = shadowOpacity
+        reviewableLabel.layer.shadowOffset = shadowOffset
+        reviewableLabel.layer.masksToBounds = masksToBounds
         
         // It shouldn't be possible for the review comment to be nil so this should be okay
         commentLabel?.text = review.comment!
     }
     
-    /**
-        Returns the minimum height that the cell should be based on it's comment label. If the comment is short then
-        this function will return the a height based on the profile picture image view height plus the height of the
-        reviewable image view along with spacing between elements. If the comment is long then this function will return
-        the height of the username label plus the height of the reviewable name label plus the computed height of the
-        comment label along with spacing between elements.
-        - parameter collectionViewWidth: the full width of the collection view (used for computing label heights)
-     */
-    func getMinHeight(collectionViewWidth: CGFloat) -> CGFloat {
+    override func getMinHeight(collectionViewWidth: CGFloat) -> CGFloat {
         let ppWidth = profilePictureImageView.frame.size.width
-        let eWidth = emojiImageView.frame.size.width
-        // The width of each label is computed using the full collection view width minus the width of the image views
-        // that surround it.
-        let lblWidth = collectionViewWidth - (paddingConstraint + ppWidth + eWidth + paddingConstraint)//TODO magic numbers are gross
+        let lblWidth = collectionViewWidth - (paddingConstraint + ppWidth + paddingConstraint)
         
-        // Compute the height of all the labels based on their widths and text contents
-        let commentLblHeight = commentLabel.text?.height(withConstrainedWidth: CGFloat(lblWidth), font: commentLabel.font)
-        let reviewableLblHeight = reviewableLabel.text?.height(withConstrainedWidth: CGFloat(lblWidth), font: reviewableLabel.font)
-        let usernameLblHeight = usernameLabel.text?.height(withConstrainedWidth: CGFloat(lblWidth), font: usernameLabel.font)
-        let lblHeight = paddingConstraint + reviewableLblHeight! + usernameLblHeight! + commentLblHeight! + paddingConstraint
-        
-        // Compute the minimum height of the collection view cell which is the height of the profile picture image view
-        // plus the height of the reviewable image view along with spacing between elements.
+        // Compute the height of the username and comment labels based on their widths and text contents
         let profilePictureHeight = profilePictureImageView.frame.size.height
-        let reviewableImageHeight = reviewableImageView.frame.size.height
-        let minHeight = CGFloat(paddingConstraint + profilePictureHeight + spacingConstraint + reviewableImageHeight + paddingConstraint)
+        let commentLblHeight = commentLabel.text?.height(withConstrainedWidth: CGFloat(lblWidth), font: commentLabel.font)
+        let lblHeight = paddingConstraint + profilePictureHeight + commentLblHeight! + paddingConstraint
         
-        // The final height is the tallest between the labels and the imageviews.
         return max(minHeight, lblHeight)
+    }
+    
+    override func getMinWidth(collectionViewWidth: CGFloat) -> CGFloat {
+        return collectionViewWidth
     }
 }
