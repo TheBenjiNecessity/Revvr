@@ -13,7 +13,7 @@ class ReviewsOnlyCollectionViewController: ReviewsCollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let user = SessionService.shared.user {
+        AppUserAPIService.shared.getApiUser().then { user in
             ReviewAPIService.shared.listByFollowings(id: user.id).then { reviews in
                 self.reviews = reviews
                 self.refresh()

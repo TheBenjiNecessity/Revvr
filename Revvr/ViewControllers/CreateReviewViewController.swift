@@ -58,16 +58,17 @@ class CreateReviewViewController: UIViewController, IconSelectorDelegate {
     
     @IBAction func save(_ sender: Any) {
         guard let reviewable = self.reviewable,
-              let user = SessionService.shared.user,
               let emoji = selectedEmoji
         else {
             return
         }
-
-        let review = Review(emojis: emoji, comment: commentTextView?.text, appUser: user, reviewable: reviewable)
-        ReviewAPIService.shared.create(review: review).then { review in
-            //TODO: show success
-            self.dismiss(animated: true, completion: nil)
+        
+        AppUserAPIService.shared.getApiUser().then { apiUser in
+            let review = Review(emojis: emoji, comment: self.commentTextView?.text, appUser: apiUser, reviewable: reviewable)
+            ReviewAPIService.shared.create(review: review).then { review in
+                //TODO: show success
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     

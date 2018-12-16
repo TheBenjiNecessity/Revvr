@@ -17,9 +17,16 @@ class UserCollectionReusableView: UICollectionReusableView {
     var user = AppUser()
     weak var delegate: UserSettingsDelegate?
     
+    var isFollowing: Bool = false {
+        didSet {
+            if let followButton = self.viewWithTag(222) as? UIButton {
+                followButton.titleLabel?.text = isFollowing ? "Unfollow" : "Follow"
+            }
+        }
+    }
+    
     @IBOutlet weak var profilePictureImageView: UIImageView!
-    @IBOutlet weak var firstLastNameLabel: UILabel!
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var statsLabel: UILabel!
     
     static let reuseIdentifier = "UserCollectionReusableViewIdentifier"
@@ -27,21 +34,20 @@ class UserCollectionReusableView: UICollectionReusableView {
     
     func setUser(user: AppUser) {
         self.user = user
-        firstLastNameLabel?.text = user.firstName + " " + user.lastName
-        userNameLabel?.text = user.handle
+        userLabel?.attributedText = NSAttributedString.attributedStringFor(user: user, of: CGFloat(17.0))
         
-        if let apiUser = SessionService.shared.user {
-            if user.id == apiUser.id {
+        AppUserAPIService.shared.get(followingId: user.id).then { following in
+            self.isFollowing = true
+        }.catch { error in
+            self.isFollowing = false
+        }
+        
+        AppUserAPIService.shared.getApiUser().then { apiUser in
+            if self.user.id == apiUser.id {
                 let settingsButton = self.viewWithTag(111)
                 let followButton = self.viewWithTag(222)
                 settingsButton?.isHidden = true
                 followButton?.isHidden = true
-            } else {
-                AppUserAPIService.shared.user(withId: apiUser.id, isFollowingUserWithId: user.id).then { isFollowing in
-                    if let followButton = self.viewWithTag(222) as? UIButton {
-                        followButton.titleLabel?.text = "Unfollow"
-                    }
-                }
             }
         }
     }

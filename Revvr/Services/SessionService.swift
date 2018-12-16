@@ -16,23 +16,6 @@ class SessionService: APIService {
     let kClientSecret = "secret"//TODO
     let kGrantType = "password"
     let kUserObjectKey = "user"
-
-    // Store user info in userdefaults
-    var user: AppUser? {
-        get {
-            if let data = UserDefaults.standard.value(forKey:kUserObjectKey) as? Data {
-                return try? PropertyListDecoder().decode(AppUser.self, from: data)
-            }
-            return nil
-        }
-        set {
-            if let newUser = newValue {
-                UserDefaults.standard.set(try? PropertyListEncoder().encode(newUser), forKey:kUserObjectKey)
-            } else {
-                UserDefaults.standard.removeObject(forKey: kUserObjectKey)
-            }
-        }
-    }
     
     override init() {}
     
@@ -46,13 +29,12 @@ class SessionService: APIService {
         
         return getToken(url: uri, body: body).then { token in
             return AppUserAPIService.shared.getApiUser().then { user in
-                self.user = user
+                //TODO: Necessary?
             }
         }
     }
     
     func logout() {
-        user = nil
         accessToken = nil
         
         DispatchQueue.main.async {
@@ -62,8 +44,7 @@ class SessionService: APIService {
     }
     
     func isLoggedIn() -> Bool {
-        return user != nil &&
-            accessToken != nil &&
+        return accessToken != nil &&
             UserDefaults.standard.value(forKey: KeyChainService.shared.kUserNameKey) != nil
     }
 }

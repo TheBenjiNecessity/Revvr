@@ -27,8 +27,8 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let apiUser = SessionService.shared.user {
-            hideSettingsButton(hide: user.id != apiUser.id)
+        AppUserAPIService.shared.getApiUser().then { apiUser in
+            self.hideSettingsButton(hide: self.user.id != apiUser.id)
         }
     }
 
