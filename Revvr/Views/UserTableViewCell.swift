@@ -10,7 +10,6 @@ import UIKit
 
 class UserTableViewCell: ModelTableViewCell {
     @IBOutlet weak var profilePictureImageView: UIImageView!
-    @IBOutlet weak var firstLastNameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     
     static let reuseIdentifier = "UserTableViewCellIdentifier"
@@ -20,7 +19,6 @@ class UserTableViewCell: ModelTableViewCell {
         let user = model as! AppUser
         
         //profilePictureImageView.image = user.content.profilePicture
-        firstLastNameLabel?.text = "\(user.firstName) \(user.lastName)"
-        usernameLabel?.text = user.handle
+        usernameLabel?.attributedText = NSAttributedString.attributedStringFor(user: user, of: CGFloat(17.0))
     }
 }
