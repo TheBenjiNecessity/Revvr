@@ -360,16 +360,16 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" tag="222" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHs-yX-wEn">
-                                    <rect key="frame" x="328" y="4" width="39" height="28"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <rect key="frame" x="323" y="4" width="44" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="Follow"/>
                                     <connections>
                                         <action selector="follow:" destination="gi5-wH-HBe" eventType="touchUpInside" id="7CJ-xz-JGR"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWR-ly-ZCa">
-                                    <rect key="frame" x="269" y="4" width="51" height="28"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <rect key="frame" x="258" y="4" width="57" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="Settings"/>
                                     <connections>
                                         <action selector="settings:" destination="gi5-wH-HBe" eventType="touchUpInside" id="PKt-Wt-Ttw"/>
