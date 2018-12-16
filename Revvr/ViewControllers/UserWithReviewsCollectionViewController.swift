@@ -123,7 +123,7 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
         return AppUserAPIService.shared.add(followingId: user.id)
     }
     
-    func unFollow(user: AppUser) -> Promise<Data> {
+    func unFollow(user: AppUser) -> Promise<AppUserFollowing> {
         return AppUserAPIService.shared.delete(followingId: user.id)
     }
     

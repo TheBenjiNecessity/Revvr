@@ -12,7 +12,7 @@ import Promises
 protocol UserSettingsDelegate: AnyObject {
     func showUserSettingsActionSheet()
     func follow(user: AppUser) -> Promise<AppUserFollowing>
-    func unFollow(user: AppUser) -> Promise<Data>
+    func unFollow(user: AppUser) -> Promise<AppUserFollowing>
 }
 
 class UserCollectionReusableView: UICollectionReusableView {
@@ -22,7 +22,8 @@ class UserCollectionReusableView: UICollectionReusableView {
     var isFollowing: Bool = false {
         didSet {
             if let followButton = self.viewWithTag(222) as? UIButton {
-                followButton.titleLabel?.text = isFollowing ? "Unfollow" : "Follow"
+                let titleText = isFollowing ? "Unfollow" : "Follow"
+                followButton.setTitle(titleText, for: UIControlState.normal)
             }
         }
     }
@@ -56,11 +57,11 @@ class UserCollectionReusableView: UICollectionReusableView {
     
     @IBAction func follow(_ sender: Any) {
         if isFollowing {
-            delegate?.unFollow(user: user).then{ _ in
+            delegate?.unFollow(user: user).then { _ in
                 self.isFollowing = false
             }
         } else {
-            delegate?.follow(user: user).then{ _ in
+            delegate?.follow(user: user).then { _ in
                 self.isFollowing = true
             }
         }
