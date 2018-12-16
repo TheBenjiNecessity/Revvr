@@ -347,14 +347,8 @@
                                         <constraint firstAttribute="width" constant="44" id="UTW-Qw-xb1"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firstname Lastname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxC-zh-R9I">
-                                    <rect key="frame" x="60" y="8" width="155" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGK-RD-SxF">
-                                    <rect key="frame" x="60" y="29" width="71" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGK-RD-SxF">
+                                    <rect key="frame" x="57" y="8" width="70.5" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -383,24 +377,22 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="RxC-zh-R9I" firstAttribute="top" secondItem="gi5-wH-HBe" secondAttribute="top" constant="8" id="2U0-4G-48X"/>
-                                <constraint firstItem="FGK-RD-SxF" firstAttribute="leading" secondItem="RxC-zh-R9I" secondAttribute="leading" id="BE0-4P-YNA"/>
+                                <constraint firstItem="FGK-RD-SxF" firstAttribute="bottom" secondItem="ev3-lO-cHW" secondAttribute="bottom" id="0Oc-j2-S4l"/>
+                                <constraint firstItem="FGK-RD-SxF" firstAttribute="top" secondItem="ev3-lO-cHW" secondAttribute="top" id="68k-8O-93h"/>
                                 <constraint firstItem="ev3-lO-cHW" firstAttribute="top" secondItem="gi5-wH-HBe" secondAttribute="top" constant="8" id="BkV-IG-Bal"/>
                                 <constraint firstItem="vHs-yX-wEn" firstAttribute="top" secondItem="gi5-wH-HBe" secondAttribute="top" constant="4" id="E78-6g-YT5"/>
-                                <constraint firstItem="FGK-RD-SxF" firstAttribute="top" secondItem="RxC-zh-R9I" secondAttribute="bottom" id="FSd-eR-H8O"/>
                                 <constraint firstItem="vHs-yX-wEn" firstAttribute="leading" secondItem="TWR-ly-ZCa" secondAttribute="trailing" constant="8" id="Osd-yC-ifE"/>
                                 <constraint firstItem="TWR-ly-ZCa" firstAttribute="firstBaseline" secondItem="vHs-yX-wEn" secondAttribute="firstBaseline" id="YtO-3Y-QSd"/>
-                                <constraint firstItem="RxC-zh-R9I" firstAttribute="leading" secondItem="ev3-lO-cHW" secondAttribute="trailing" constant="8" id="Ytv-cY-jQV"/>
                                 <constraint firstItem="86x-nf-Po2" firstAttribute="leading" secondItem="ev3-lO-cHW" secondAttribute="leading" id="Z42-Ug-quG"/>
+                                <constraint firstItem="FGK-RD-SxF" firstAttribute="leading" secondItem="ev3-lO-cHW" secondAttribute="trailing" constant="5" id="Z8Q-as-XON"/>
                                 <constraint firstItem="ev3-lO-cHW" firstAttribute="leading" secondItem="gi5-wH-HBe" secondAttribute="leading" constant="8" id="f5B-IS-mKi"/>
                                 <constraint firstAttribute="trailing" secondItem="vHs-yX-wEn" secondAttribute="trailing" constant="8" id="nOe-zb-OH5"/>
                                 <constraint firstItem="86x-nf-Po2" firstAttribute="top" secondItem="ev3-lO-cHW" secondAttribute="bottom" constant="3" id="tKV-ah-RAA"/>
                             </constraints>
                             <connections>
-                                <outlet property="firstLastNameLabel" destination="RxC-zh-R9I" id="QSm-d0-0aJ"/>
                                 <outlet property="profilePictureImageView" destination="ev3-lO-cHW" id="bhc-aK-Gpz"/>
                                 <outlet property="statsLabel" destination="86x-nf-Po2" id="9oY-3m-XOv"/>
-                                <outlet property="userNameLabel" destination="FGK-RD-SxF" id="3S7-9C-0X4"/>
+                                <outlet property="userLabel" destination="FGK-RD-SxF" id="3S7-9C-0X4"/>
                             </connections>
                         </collectionReusableView>
                         <connections>
