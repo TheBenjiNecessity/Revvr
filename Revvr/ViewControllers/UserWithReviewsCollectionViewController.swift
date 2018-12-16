@@ -12,6 +12,7 @@
 // - the reviews of the user's followings
 
 import UIKit
+import Promises
 
 class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, UserSettingsDelegate {
     var user = AppUser() {
@@ -118,13 +119,12 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
         self.present(userSettingsMenu, animated: true, completion: nil)
     }
     
-    func follow(user: AppUser) {
-        if let apiUser = SessionService.shared.user {
-            let following = AppUserFollowing(followerId: apiUser.id, followingId: user.id)
-            AppUserAPIService.shared.add(following: following).then { following in
-                
-            }
-        }
+    func follow(user: AppUser) -> Promise<AppUserFollowing> {
+        return AppUserAPIService.shared.add(followingId: user.id)
+    }
+    
+    func unFollow(user: AppUser) -> Promise<Data> {
+        return AppUserAPIService.shared.delete(followingId: user.id)
     }
     
     @objc func showSettings() {

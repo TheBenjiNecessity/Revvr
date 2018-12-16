@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Promises
 
 protocol UserSettingsDelegate: AnyObject {
     func showUserSettingsActionSheet()
-    func follow(user: AppUser)
+    func follow(user: AppUser) -> Promise<AppUserFollowing>
+    func unFollow(user: AppUser) -> Promise<Data>
 }
 
 class UserCollectionReusableView: UICollectionReusableView {
@@ -53,7 +55,15 @@ class UserCollectionReusableView: UICollectionReusableView {
     }
     
     @IBAction func follow(_ sender: Any) {
-        delegate?.follow(user: user)
+        if isFollowing {
+            delegate?.unFollow(user: user).then{ _ in
+                self.isFollowing = false
+            }
+        } else {
+            delegate?.follow(user: user).then{ _ in
+                self.isFollowing = true
+            }
+        }
     }
     
     @IBAction func settings(_ sender: Any) {
