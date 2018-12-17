@@ -16,7 +16,7 @@ extension NSAttributedString {
         
         let nameLength = user.firstName.count + user.lastName.count + 1
         let nameRange = NSRange(location: 0, length: nameLength)
-        let handleStart = nameLength + 2
+        let handleStart = nameLength + 1
         let handleRange = NSRange(location: handleStart, length: userDetailsText.count - handleStart)
         
         let nameAttributes: [NSAttributedStringKey: Any] = [
@@ -38,7 +38,7 @@ extension NSAttributedString {
         
         let titleLength = reviewable.title.count
         let titleRange = NSRange(location: 0, length: titleLength)
-        let descriptionStart = titleLength + 2
+        let descriptionStart = titleLength + 1
         let descriptionRange = NSRange(location: descriptionStart, length: reviewableText.count - descriptionStart)
         
         let titleAttributes: [NSAttributedStringKey: Any] = [
