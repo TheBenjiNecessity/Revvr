@@ -86,6 +86,15 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
                 let destination = segue.destination as! SettingsTableViewController
                 destination.settings = settings
             }
+        } else if segue.identifier != "ShowFollowingsListSegueIdentifier" ||
+            segue.identifier != "ShowFollowersListSegueIdentifier" {
+            var type = FollowType.followers
+            if segue.identifier == "ShowFollowingsListSegueIdentifier" {
+                type = FollowType.followings
+            }
+            
+            let fvc = segue.destination as! FollowingsTableViewController
+            fvc.set(followType: type, for: user)
         } else {
             super.prepare(for: segue, sender: sender)
         }
@@ -128,9 +137,11 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
     }
     
     func didTapFollowersLabel() {
+        self.performSegue(withIdentifier: "ShowFollowersListSegueIdentifier", sender: nil)
     }
     
     func didTapFollowingsLabel() {
+        self.performSegue(withIdentifier: "ShowFollowingsListSegueIdentifier", sender: nil)
     }
     
     @objc func showSettings() {

@@ -414,6 +414,8 @@
                     <connections>
                         <segue destination="7Ka-qV-uVQ" kind="show" identifier="ReviewDetailSegueIdentifier" id="xLi-oG-NjF"/>
                         <segue destination="k6A-hu-wMS" kind="show" identifier="ShowSettingsSegueIdentifier" id="Vif-bf-hbZ"/>
+                        <segue destination="rNI-D6-cHO" kind="show" identifier="ShowFollowingsListSegueIdentifier" id="we5-WW-hhO"/>
+                        <segue destination="rNI-D6-cHO" kind="show" identifier="ShowFollowersListSegueIdentifier" id="56L-wb-wmD"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N35-dd-WOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -548,6 +550,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvO-E0-ocb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2789.5999999999999" y="279.31034482758622"/>
+        </scene>
+        <!--Followings Table View Controller-->
+        <scene sceneID="CFL-WS-ZT9">
+            <objects>
+                <tableViewController id="rNI-D6-cHO" customClass="FollowingsTableViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RTg-Ar-Bxl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowingTableViewCellIdentifier" rowHeight="83" id="8MI-5y-vHx" customClass="FollowingTableViewCell" customModule="Revvr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="83"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8MI-5y-vHx" id="h7z-ka-kgP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultProfilePictureThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="Vvj-Fb-n90">
+                                            <rect key="frame" x="5" y="5" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="6aY-8I-EMx"/>
+                                                <constraint firstAttribute="width" constant="44" id="QnB-PE-GVg"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLo-1a-Bgy">
+                                            <rect key="frame" x="54" y="5" width="78.5" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" tag="333" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxR-yY-cuX">
+                                            <rect key="frame" x="326" y="5" width="44" height="30"/>
+                                            <state key="normal" title="Follow"/>
+                                            <connections>
+                                                <action selector="followButtonTap:" destination="8MI-5y-vHx" eventType="touchUpInside" id="wkt-DR-wUh"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vxR-yY-cuX" firstAttribute="top" secondItem="h7z-ka-kgP" secondAttribute="top" constant="5" id="0oh-71-NmI"/>
+                                        <constraint firstItem="QLo-1a-Bgy" firstAttribute="leading" secondItem="Vvj-Fb-n90" secondAttribute="trailing" constant="5" id="BHl-JP-uUb"/>
+                                        <constraint firstItem="QLo-1a-Bgy" firstAttribute="bottom" secondItem="Vvj-Fb-n90" secondAttribute="bottom" id="En2-lF-mb3"/>
+                                        <constraint firstItem="QLo-1a-Bgy" firstAttribute="top" secondItem="Vvj-Fb-n90" secondAttribute="top" id="JiP-Mg-cl5"/>
+                                        <constraint firstItem="Vvj-Fb-n90" firstAttribute="leading" secondItem="h7z-ka-kgP" secondAttribute="leading" constant="5" id="VTr-DU-lVq"/>
+                                        <constraint firstItem="Vvj-Fb-n90" firstAttribute="top" secondItem="h7z-ka-kgP" secondAttribute="top" constant="5" id="eee-Gy-EeN"/>
+                                        <constraint firstAttribute="trailing" secondItem="vxR-yY-cuX" secondAttribute="trailing" constant="5" id="t0S-Uk-Dtf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profilePictureImageView" destination="Vvj-Fb-n90" id="W08-y6-Tfj"/>
+                                    <outlet property="userLabel" destination="QLo-1a-Bgy" id="lFb-xu-rxP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rNI-D6-cHO" id="h1I-yZ-RZq"/>
+                            <outlet property="delegate" destination="rNI-D6-cHO" id="tRM-dQ-dpT"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQc-go-SUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2789.5999999999999" y="970.16491754122944"/>
         </scene>
         <!--Review-->
         <scene sceneID="pHY-Sy-bqR">
@@ -1287,6 +1352,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="MUq-Os-ZcG"/>
         <segue reference="xLi-oG-NjF"/>
+        <segue reference="we5-WW-hhO"/>
         <segue reference="dYA-Hg-Txv"/>
     </inferredMetricsTieBreakers>
 </document>
