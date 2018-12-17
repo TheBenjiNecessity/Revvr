@@ -353,8 +353,8 @@
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="## Following   ## Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86x-nf-Po2">
-                                    <rect key="frame" x="8" y="55" width="155" height="15"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="## Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86x-nf-Po2">
+                                    <rect key="frame" x="8" y="55" width="72" height="15"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -375,6 +375,12 @@
                                         <action selector="settings:" destination="gi5-wH-HBe" eventType="touchUpInside" id="PKt-Wt-Ttw"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="## Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nv-bm-alg">
+                                    <rect key="frame" x="88" y="55" width="73" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="FGK-RD-SxF" firstAttribute="bottom" secondItem="ev3-lO-cHW" secondAttribute="bottom" id="0Oc-j2-S4l"/>
@@ -385,13 +391,16 @@
                                 <constraint firstItem="TWR-ly-ZCa" firstAttribute="firstBaseline" secondItem="vHs-yX-wEn" secondAttribute="firstBaseline" id="YtO-3Y-QSd"/>
                                 <constraint firstItem="86x-nf-Po2" firstAttribute="leading" secondItem="ev3-lO-cHW" secondAttribute="leading" id="Z42-Ug-quG"/>
                                 <constraint firstItem="FGK-RD-SxF" firstAttribute="leading" secondItem="ev3-lO-cHW" secondAttribute="trailing" constant="5" id="Z8Q-as-XON"/>
+                                <constraint firstItem="1Nv-bm-alg" firstAttribute="leading" secondItem="86x-nf-Po2" secondAttribute="trailing" constant="8" id="ZFE-XU-2ST"/>
+                                <constraint firstItem="1Nv-bm-alg" firstAttribute="firstBaseline" secondItem="86x-nf-Po2" secondAttribute="firstBaseline" id="eAH-Jg-VQr"/>
                                 <constraint firstItem="ev3-lO-cHW" firstAttribute="leading" secondItem="gi5-wH-HBe" secondAttribute="leading" constant="8" id="f5B-IS-mKi"/>
                                 <constraint firstAttribute="trailing" secondItem="vHs-yX-wEn" secondAttribute="trailing" constant="8" id="nOe-zb-OH5"/>
                                 <constraint firstItem="86x-nf-Po2" firstAttribute="top" secondItem="ev3-lO-cHW" secondAttribute="bottom" constant="3" id="tKV-ah-RAA"/>
                             </constraints>
                             <connections>
+                                <outlet property="followersLabel" destination="1Nv-bm-alg" id="m63-x7-soF"/>
+                                <outlet property="followingsLabel" destination="86x-nf-Po2" id="9oY-3m-XOv"/>
                                 <outlet property="profilePictureImageView" destination="ev3-lO-cHW" id="bhc-aK-Gpz"/>
-                                <outlet property="statsLabel" destination="86x-nf-Po2" id="9oY-3m-XOv"/>
                                 <outlet property="userLabel" destination="FGK-RD-SxF" id="3S7-9C-0X4"/>
                             </connections>
                         </collectionReusableView>

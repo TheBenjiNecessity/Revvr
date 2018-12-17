@@ -77,8 +77,8 @@ class AppUserAPIService: APIService {
     }
     
     /* ========================== Stats ========================== */
-    func getStats(id: Int) -> Promise<Data> {
+    func getStats(id: Int) -> Promise<AppUserStats> {
         let uri = "\(url)/\(id)/counts"
-        return get(url: uri, type: Data.self)
+        return get(url: uri, type: AppUserStats.self)
     }
 }

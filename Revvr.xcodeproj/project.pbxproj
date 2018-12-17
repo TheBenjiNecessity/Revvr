@@ -14,6 +14,7 @@
 		7922D54621A07E6400C73816 /* Image+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922D54521A07E6400C73816 /* Image+Blur.swift */; };
 		792922F5218949FD00EB5C2D /* ReviewableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792922F4218949FD00EB5C2D /* ReviewableTableViewCell.swift */; };
 		792922F92189501100EB5C2D /* ModelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792922F82189501100EB5C2D /* ModelTableViewCell.swift */; };
+		793031B121C71D2900D4ABE6 /* AppUserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793031B021C71D2900D4ABE6 /* AppUserStats.swift */; };
 		794FCC1C2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FCC1B2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift */; };
 		795239C82187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795239C72187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift */; };
 		795239CE2187FB9D004FEB82 /* ReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */; };
@@ -109,6 +110,7 @@
 		7922D54521A07E6400C73816 /* Image+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Blur.swift"; sourceTree = "<group>"; };
 		792922F4218949FD00EB5C2D /* ReviewableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableTableViewCell.swift; sourceTree = "<group>"; };
 		792922F82189501100EB5C2D /* ModelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTableViewCell.swift; sourceTree = "<group>"; };
+		793031B021C71D2900D4ABE6 /* AppUserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserStats.swift; sourceTree = "<group>"; };
 		794FCC1B2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWithReviewsCollectionViewController.swift; sourceTree = "<group>"; };
 		795239C72187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsOnlyCollectionViewController.swift; sourceTree = "<group>"; };
 		795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				795CE101217817E400311390 /* Token.swift */,
 				79734CD521A8FEDD004AF5DD /* ReviewReply.swift */,
 				79647B6921AB0D5200C94ED6 /* Settings.swift */,
+				793031B021C71D2900D4ABE6 /* AppUserStats.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				795CE102217817E400311390 /* Token.swift in Sources */,
 				79B48BCB21150EAB00AB5415 /* ReviewableContent.swift in Sources */,
 				794FCC1C2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift in Sources */,
+				793031B121C71D2900D4ABE6 /* AppUserStats.swift in Sources */,
 				79734CD021A8D8E9004AF5DD /* ReviewStatsTableViewCell.swift in Sources */,
 				79D4814C218A187A001AEB95 /* ReviewableCollectionReusableView.swift in Sources */,
 				7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */,

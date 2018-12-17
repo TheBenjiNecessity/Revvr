@@ -30,7 +30,8 @@ class UserCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
-    @IBOutlet weak var statsLabel: UILabel!
+    @IBOutlet weak var followingsLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
     
     static let reuseIdentifier = "UserCollectionReusableViewIdentifier"
     static let viewHeight = CGFloat(72.0)
@@ -52,6 +53,11 @@ class UserCollectionReusableView: UICollectionReusableView {
                 settingsButton?.isHidden = true
                 followButton?.isHidden = true
             }
+        }
+        
+        AppUserAPIService.shared.getStats(id: self.user.id).then { stats in
+            self.followingsLabel?.text = "\(stats.followingCount) Followings"
+            self.followersLabel?.text = "\(stats.followerCount) Followers"
         }
     }
     
