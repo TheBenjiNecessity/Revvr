@@ -127,6 +127,12 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
         return AppUserAPIService.shared.delete(followingId: user.id)
     }
     
+    func didTapFollowersLabel() {
+    }
+    
+    func didTapFollowingsLabel() {
+    }
+    
     @objc func showSettings() {
         self.performSegue(withIdentifier: "ShowSettingsSegueIdentifier", sender: nil)
     }

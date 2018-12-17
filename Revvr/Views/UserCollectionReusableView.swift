@@ -13,6 +13,8 @@ protocol UserSettingsDelegate: AnyObject {
     func showUserSettingsActionSheet()
     func follow(user: AppUser) -> Promise<AppUserFollowing>
     func unFollow(user: AppUser) -> Promise<AppUserFollowing>
+    func didTapFollowersLabel()
+    func didTapFollowingsLabel()
 }
 
 class UserCollectionReusableView: UICollectionReusableView {
@@ -35,6 +37,20 @@ class UserCollectionReusableView: UICollectionReusableView {
     
     static let reuseIdentifier = "UserCollectionReusableViewIdentifier"
     static let viewHeight = CGFloat(72.0)
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let followingsTapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                    action: #selector(didTapFollowingsLabel))
+        followingsTapGestureRecognizer.numberOfTapsRequired = 1
+        followingsLabel.addGestureRecognizer(followingsTapGestureRecognizer)
+        
+        let followersTapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                   action: #selector(didTapFollowersLabel))
+        followersTapGestureRecognizer.numberOfTapsRequired = 1
+        followersLabel.addGestureRecognizer(followersTapGestureRecognizer)
+    }
     
     func setUser(user: AppUser) {
         self.user = user
@@ -75,5 +91,13 @@ class UserCollectionReusableView: UICollectionReusableView {
     
     @IBAction func settings(_ sender: Any) {
         delegate?.showUserSettingsActionSheet()
+    }
+    
+    @objc func didTapFollowingsLabel() {
+        delegate?.didTapFollowingsLabel()
+    }
+    
+    @objc func didTapFollowersLabel() {
+        delegate?.didTapFollowersLabel()
     }
 }
