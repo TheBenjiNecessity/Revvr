@@ -86,8 +86,8 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
                 let destination = segue.destination as! SettingsTableViewController
                 destination.settings = settings
             }
-        } else if segue.identifier != "ShowFollowingsListSegueIdentifier" ||
-            segue.identifier != "ShowFollowersListSegueIdentifier" {
+        } else if segue.identifier == "ShowFollowingsListSegueIdentifier" ||
+            segue.identifier == "ShowFollowersListSegueIdentifier" {
             var type = FollowType.followers
             if segue.identifier == "ShowFollowingsListSegueIdentifier" {
                 type = FollowType.followings
