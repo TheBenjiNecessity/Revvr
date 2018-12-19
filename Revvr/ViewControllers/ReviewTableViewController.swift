@@ -25,6 +25,7 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
         
         ReviewAPIService.shared.listReplies(id: review.id).then { replies in
             self.replies = replies
+            self.tableView?.reloadData()
         }
     }
 
