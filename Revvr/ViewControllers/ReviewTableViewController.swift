@@ -41,12 +41,18 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let ppHeight = CGFloat(44.0)
+        let margin = CGFloat(5.0)
         if indexPath.row == 0 {
-            return 200 //+ height of comment label?
+            let commentHeight = review.comment!.height(withConstrainedWidth: tableView.frame.size.width, font: UIFont.systemFont(ofSize: CGFloat(17.0)))
+            let rImageHeight = CGFloat(90.0)
+            return margin + ppHeight + margin + rImageHeight + margin + commentHeight + margin //+ height of comment label?
         } else if indexPath.row > 0 && indexPath.row <= 2 {
-            return 44
+            return ppHeight
         } else {
-            return 120
+            let reply = replies[indexPath.row - reuseIdentifiers.count]
+            let commentHeight = reply.comment.height(withConstrainedWidth: tableView.frame.size.width, font: UIFont.systemFont(ofSize: CGFloat(17.0)))
+            return margin + ppHeight + margin + commentHeight + margin
         }
     }
     
