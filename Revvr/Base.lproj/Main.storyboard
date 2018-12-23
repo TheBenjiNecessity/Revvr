@@ -262,31 +262,14 @@
         <!--AR View Controller-->
         <scene sceneID="ca9-gU-YSv">
             <objects>
-                <viewController title="AR View Controller" id="cnZ-L9-t5R" customClass="ViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AR View Controller" id="cnZ-L9-t5R" customClass="ScannerViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oWH-DB-tLX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AR Camera view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ile-Uk-pyR">
-                                <rect key="frame" x="125" y="168" width="125" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LL-HF-aVL">
-                                <rect key="frame" x="172" y="318" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Test"/>
-                                <connections>
-                                    <action selector="testPress:" destination="cnZ-L9-t5R" eventType="touchUpInside" id="tAF-5b-VYH"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XZR-5T-Ye7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="tj1-5I-1iy"/>
+                    <tabBarItem key="tabBarItem" title="Scanner" image="BarcodeScanTabBarIcon" selectedImage="BarcodeScanTabBarIcon" id="tj1-5I-1iy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qmn-hS-49r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
