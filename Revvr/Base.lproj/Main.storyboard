@@ -1252,11 +1252,11 @@
             </objects>
             <point key="canvasLocation" x="-10" y="-847"/>
         </scene>
-        <!--Search-->
+        <!--Navigation Controller-->
         <scene sceneID="reX-hV-5EW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NDa-5n-AzJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="uhw-eo-HWA"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="uhw-eo-HWA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t22-S6-vKo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1346,6 +1346,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BarcodeScanTabBarIcon" width="37.5" height="37.5"/>
         <image name="DefaultProfilePictureThumbnail" width="48" height="48"/>
         <image name="DefaultReviewableThumbnail" width="48" height="48"/>
     </resources>
@@ -1353,6 +1354,6 @@
         <segue reference="MUq-Os-ZcG"/>
         <segue reference="xLi-oG-NjF"/>
         <segue reference="we5-WW-hhO"/>
-        <segue reference="dYA-Hg-Txv"/>
+        <segue reference="xeq-70-FOm"/>
     </inferredMetricsTieBreakers>
 </document>
