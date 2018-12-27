@@ -862,14 +862,30 @@
             </objects>
             <point key="canvasLocation" x="3728.8000000000002" y="-1238.2308845577213"/>
         </scene>
-        <!--Revoji-->
+        <!--Search-->
         <scene sceneID="jgk-8x-2jB">
             <objects>
-                <tableViewController id="Qn0-Vm-Ed7" customClass="SearchTableViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Search" id="Qn0-Vm-Ed7" customClass="SearchTableViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ycH-4R-PCc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="5Hg-tp-RBR">
+                            <rect key="frame" x="0.0" y="200" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVV-8d-jfB">
+                                    <rect key="frame" x="124.5" y="11.5" width="126" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="bVV-8d-jfB" firstAttribute="centerX" secondItem="5Hg-tp-RBR" secondAttribute="centerX" id="WvE-9Z-KJb"/>
+                                <constraint firstItem="bVV-8d-jfB" firstAttribute="centerY" secondItem="5Hg-tp-RBR" secondAttribute="centerY" id="eKF-0c-HHs"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCellIdentifier" rowHeight="72" id="B39-z9-X8R" customClass="UserTableViewCell" customModule="Revvr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="72"/>
@@ -967,6 +983,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Revoji" id="6kx-De-ssM"/>
                     <connections>
+                        <outlet property="footerLabel" destination="bVV-8d-jfB" id="Cdc-Bs-HE4"/>
                         <segue destination="jdm-fy-Roi" kind="show" identifier="ShowReviewableSequeIdentifier" id="oba-r9-PQI"/>
                         <segue destination="gzc-2r-YGu" kind="show" identifier="ShowUserSequeIdentifier" id="dYA-Hg-Txv"/>
                     </connections>

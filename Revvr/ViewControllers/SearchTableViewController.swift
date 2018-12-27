@@ -16,6 +16,12 @@ extension SearchTableViewController: UISearchResultsUpdating, UISearchBarDelegat
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         updateSearchResults(for: searchController)
+        
+        // Set the helper text to show in the footer
+        let index = self.searchController.searchBar.selectedScopeButtonIndex
+        if let selectedSectionText = searchController.searchBar.scopeButtonTitles?[index] {
+            footerLabel?.text = sectionSearchHelperTexts[selectedSectionText.lowercased()]
+        }
     }
 }
 
@@ -24,11 +30,19 @@ class SearchTableViewController: UITableViewController {
     var debounceTimer: Timer?
     
     var models: [Any] = []
-
+    
+    let sectionSearchHelperTexts = [
+        "users": "Search for users",
+        "media": "Search for movies and tv shows",
+        "products": "Search for products",
+    ]
+    
+    @IBOutlet weak var footerLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView()
+        footerLabel?.text = sectionSearchHelperTexts["users"]
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
