@@ -12,6 +12,6 @@ class SettingDetailTableViewCell: SettingTableViewCell {
     override func setItem(item: Item) {
         super.setItem(item: item)
         
-        self.detailTextLabel?.text = item.value as? String
+        self.detailTextLabel?.text = item.value
     }
 }

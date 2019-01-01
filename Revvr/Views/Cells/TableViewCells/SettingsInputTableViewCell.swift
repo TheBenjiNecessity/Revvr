@@ -14,7 +14,7 @@ class SettingsInputTableViewCell: SettingTableViewCell {
 
     override func setItem(item: Item) {
         titleLabel?.text = item.title
-        inputField?.text = item.value as? String
+        inputField?.text = item.value
     }
     
     override func getSelection() -> Any {

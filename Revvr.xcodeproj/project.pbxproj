@@ -255,17 +255,29 @@
 		795EAB962172E33D00BB35F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				795F25A221741E610022DFE2 /* UserTableViewCell.swift */,
+				795F6E8021DBBEA300D6CF31 /* Cells */,
 				79D4814B218A187A001AEB95 /* ReviewableCollectionReusableView.swift */,
-				79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */,
-				795239CF2187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib */,
-				79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */,
-				795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */,
 				795239D12188080C004FEB82 /* UserCollectionReusableView.swift */,
+				7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		795F6E8021DBBEA300D6CF31 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				795F6E8221DBBEE600D6CF31 /* CollectionViewCells */,
+				795F6E8121DBBEB600D6CF31 /* TableViewCells */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		795F6E8121DBBEB600D6CF31 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				795F25A221741E610022DFE2 /* UserTableViewCell.swift */,
 				792922F4218949FD00EB5C2D /* ReviewableTableViewCell.swift */,
 				792922F82189501100EB5C2D /* ModelTableViewCell.swift */,
-				7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */,
-				7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */,
 				79734CCD21A8D89B004AF5DD /* ReviewTableViewCell.swift */,
 				79734CD121A8D8F7004AF5DD /* ReviewActionsTableViewCell.swift */,
 				79734CCF21A8D8E9004AF5DD /* ReviewStatsTableViewCell.swift */,
@@ -277,7 +289,19 @@
 				79647B6D21AB483000C94ED6 /* SettingTableViewCell.swift */,
 				793031B421C72C6E00D4ABE6 /* FollowingTableViewCell.swift */,
 			);
-			path = Views;
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		795F6E8221DBBEE600D6CF31 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				79594BA7217FB87A00A5C34C /* ReviewWithCommentCollectionViewCell.swift */,
+				795239CF2187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib */,
+				79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */,
+				795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */,
+				7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		79639BF62183EFFD00996DD9 /* Extensions */ = {
