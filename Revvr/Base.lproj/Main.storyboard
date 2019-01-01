@@ -266,14 +266,55 @@
                     <view key="view" contentMode="scaleToFill" id="oWH-DB-tLX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zx-fP-9wT" userLabel="Reviewable View">
+                                <rect key="frame" x="16" y="727" width="343" height="106"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="COD-iC-cYr">
+                                        <rect key="frame" x="8" y="8" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="fq0-Fq-P1n"/>
+                                            <constraint firstAttribute="height" constant="90" id="yv4-NT-NJN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-4w-mlY">
+                                        <rect key="frame" x="106" y="8" width="229" height="90"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="COD-iC-cYr" firstAttribute="leading" secondItem="5Zx-fP-9wT" secondAttribute="leading" constant="8" id="6xa-uB-plp"/>
+                                    <constraint firstItem="Jaz-4w-mlY" firstAttribute="top" secondItem="COD-iC-cYr" secondAttribute="top" id="TZH-VJ-etm"/>
+                                    <constraint firstItem="Jaz-4w-mlY" firstAttribute="bottom" secondItem="COD-iC-cYr" secondAttribute="bottom" id="Vsy-us-DZ9"/>
+                                    <constraint firstItem="COD-iC-cYr" firstAttribute="top" secondItem="5Zx-fP-9wT" secondAttribute="top" constant="8" id="rdL-lO-Gqb"/>
+                                    <constraint firstItem="Jaz-4w-mlY" firstAttribute="leading" secondItem="COD-iC-cYr" secondAttribute="trailing" constant="8" id="xWi-Xv-R2W"/>
+                                    <constraint firstAttribute="height" constant="106" id="xpw-Q9-w13"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jaz-4w-mlY" secondAttribute="trailing" constant="8" id="yji-fF-AkL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XZR-5T-Ye7" firstAttribute="trailing" secondItem="5Zx-fP-9wT" secondAttribute="trailing" constant="16" id="DG6-YE-isa"/>
+                            <constraint firstItem="XZR-5T-Ye7" firstAttribute="bottom" secondItem="5Zx-fP-9wT" secondAttribute="bottom" constant="-166" id="dTR-Qq-SrC"/>
+                            <constraint firstItem="5Zx-fP-9wT" firstAttribute="leading" secondItem="XZR-5T-Ye7" secondAttribute="leading" constant="16" id="fNk-RU-CyO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XZR-5T-Ye7"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scanner" image="BarcodeScanTabBarIcon" selectedImage="BarcodeScanTabBarIcon" id="tj1-5I-1iy"/>
+                    <connections>
+                        <outlet property="reviewableImageView" destination="COD-iC-cYr" id="3A9-XP-6mP"/>
+                        <outlet property="reviewableLabel" destination="Jaz-4w-mlY" id="M5h-nG-KX4"/>
+                        <outlet property="reviewableView" destination="5Zx-fP-9wT" id="eZJ-Rj-Gbl"/>
+                        <outlet property="reviewableViewBottomConstraint" destination="dTR-Qq-SrC" id="u5m-pX-H0H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qmn-hS-49r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-959" y="1470"/>
+            <point key="canvasLocation" x="-959.20000000000005" y="1469.4152923538231"/>
         </scene>
         <!--Reviews-->
         <scene sceneID="hwx-ov-Mhh">
@@ -412,7 +453,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mWw-vh-iny">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsWithChildrenCellIdentifier" textLabel="5u0-cf-3f0" style="IBUITableViewCellStyleDefault" id="8FR-nG-jey" customClass="SettingTableViewCell" customModule="Revvr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -597,10 +639,10 @@
             </objects>
             <point key="canvasLocation" x="2789.5999999999999" y="970.16491754122944"/>
         </scene>
-        <!--Review-->
+        <!--Review Table View Controller-->
         <scene sceneID="pHY-Sy-bqR">
             <objects>
-                <tableViewController id="7Ka-qV-uVQ" customClass="ReviewTableViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Review Table View Controller" id="7Ka-qV-uVQ" customClass="ReviewTableViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zu4-eM-a1C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1351,8 +1393,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MUq-Os-ZcG"/>
-        <segue reference="xLi-oG-NjF"/>
+        <segue reference="IAG-lf-MD3"/>
         <segue reference="we5-WW-hhO"/>
-        <segue reference="xeq-70-FOm"/>
+        <segue reference="dYA-Hg-Txv"/>
     </inferredMetricsTieBreakers>
 </document>
