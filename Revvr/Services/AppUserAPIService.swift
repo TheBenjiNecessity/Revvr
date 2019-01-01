@@ -76,6 +76,27 @@ class AppUserAPIService: APIService {
         return get(url: uri, type: [AppUser].self)
     }
     
+    /* ========================== Blockings ========================== */
+    func getBlocking(blockingId: Int) -> Promise<AppUserBlocking> {
+        let uri = "\(url)/block/\(blockingId)"
+        return get(url: uri, type: AppUserBlocking.self)
+    }
+    
+    func block(blockingId: Int) -> Promise<AppUserBlocking> {
+        let uri = "\(url)/block/\(blockingId)"
+        return post(url: uri, body: AppUserBlocking(), type: AppUserBlocking.self)
+    }
+    
+    func unblock(blockingId: Int) -> Promise<AppUserBlocking> {
+        let uri = "\(url)/block/\(blockingId)"
+        return delete(url: uri, type: AppUserBlocking.self)
+    }
+    
+    func listBlockings() -> Promise<[AppUserBlocking]> {
+        let uri = "\(url)/block"
+        return get(url: uri, type: [AppUserBlocking].self)
+    }
+    
     /* ========================== Stats ========================== */
     func getStats(id: Int) -> Promise<AppUserStats> {
         let uri = "\(url)/\(id)/counts"

@@ -112,7 +112,17 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
         let userSettingsMenu = UIAlertController(title: "User Options", message: nil, preferredStyle: .actionSheet)
 
         let blockAction = UIAlertAction(title: "Block", style: .default) { action in
-            print("Block")
+            // Show loading?
+            AppUserAPIService.shared.getBlocking(blockingId: self.user.id).then { _ in
+                AppUserAPIService.shared.block(blockingId: self.user.id).then { _ in
+                    print("block success")
+                }
+            }.catch { error in
+                //TODO: if error is 404
+                AppUserAPIService.shared.unblock(blockingId: self.user.id).then { _ in
+                    print("unblock success")
+                }
+            }
         }
 
         let reportAction = UIAlertAction(title: "Report", style: .default) { action in
