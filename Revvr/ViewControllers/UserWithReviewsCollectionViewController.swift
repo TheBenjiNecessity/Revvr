@@ -52,40 +52,13 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowSettingsSegueIdentifier" {
-            let json = """
-            {
-                "title": "Settings",
-                "groups": [{
-                    "title": "test",
-                    "items": [{
-                        "title": "subgroup",
-                        "itemType": "setting",
-                        "setting": {
-                            "title": "Sub Settings",
-                            "groups": [{
-                                "title": "subgrouptest1",
-                                "items": [{
-                                    "title": "subgroupitem1",
-                                    "itemType": "boolean"
-                                }]
-                            }]
-                        }
-                    },{
-                        "title": "subtest1",
-                        "itemType": "boolean"
-                    }, {
-                        "title": "subtest2",
-                        "itemType": "info",
-                        "value": "Benjamin"
-                    }]
-                }]
-            }
-            """.data(using: .utf8)!
-            
-            if let settings = try? JSONDecoder().decode(Setting.self, from: json) {
-                let destination = segue.destination as! SettingsTableViewController
-                destination.settings = settings
-            }
+            guard let path = Bundle.main.path(forResource: "settings", ofType: "json"),
+                let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe),
+                let settings = try? JSONDecoder().decode(Setting.self, from: data)
+            else { return }
+
+            let destination = segue.destination as! SettingsTableViewController
+            destination.settings = settings
         } else if segue.identifier == "ShowFollowingsListSegueIdentifier" ||
             segue.identifier == "ShowFollowersListSegueIdentifier" {
             var type = FollowType.followers
@@ -104,7 +77,10 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
         if hide {
             self.navigationItem.rightBarButtonItem = nil
         } else {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(showSettings))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings",
+                                                                     style: .plain,
+                                                                     target: self,
+                                                                     action: #selector(showSettings))
         }
     }
     

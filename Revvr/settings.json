@@ -1,0 +1,128 @@
+{
+    "title": "Settings",
+    "groups": [
+        {
+            "title": "Account",
+            "items": [
+                {
+                    "title": "Account",
+                    "itemType": "setting",
+                    "setting": {
+                        "title": "Account",
+                        "groups": [
+                            {
+                                "title": "Login",
+                                "items": [
+                                    {
+                                        "title": "Phone",
+                                        "itemType": "text"
+                                    },
+                                    {
+                                        "title": "Email",
+                                        "itemType": "text"
+                                    },
+                                    {
+                                        "title": "Password",
+                                        "itemType": "text"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "",
+                                "items": [
+                                    {
+                                        "title": "Deactive account",
+                                        "itemType": "setting",
+                                        "setting": {
+                                            "title": "Deactive your account",
+                                            "groups": [
+                                                {
+                                                    "title": "",
+                                                    "items": [
+                                                        {
+                                                            "title": "",
+                                                            "itemType": "info",
+                                                            "value": "Here is some text"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "",
+                                "items": [
+                                    {
+                                        "title": "Logout",
+                                        "itemType": "boolean"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Notifications",
+                    "itemType": "setting",
+                    "setting": {
+                        "title": "Sub Settings",
+                        "groups": [
+                            {
+                                "title": "subgrouptest1",
+                                "items": [
+                                    {
+                                        "title": "subgroupitem1",
+                                        "itemType": "boolean"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Blocked Accounts",
+                    "itemType": "setting",
+                    "setting": {
+                        "title": "Sub Settings",
+                        "groups": [
+                            {
+                                "title": "subgrouptest1",
+                                "items": [
+                                    {
+                                        "title": "subgroupitem1",
+                                        "itemType": "boolean"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "title": "General",
+            "items": [
+                {
+                    "title": "About",
+                    "itemType": "setting",
+                    "setting": {
+                        "title": "Sub Settings",
+                        "groups": [
+                            {
+                                "title": "subgrouptest1",
+                                "items": [
+                                    {
+                                        "title": "subgroupitem1",
+                                        "itemType": "boolean"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

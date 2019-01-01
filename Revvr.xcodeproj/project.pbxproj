@@ -67,6 +67,7 @@
 		799C141021A9CC3A001ABFC2 /* ReviewableModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C140F21A9CC3A001ABFC2 /* ReviewableModelTests.swift */; };
 		799C141221A9CC45001ABFC2 /* ReviewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C141121A9CC45001ABFC2 /* ReviewModelTests.swift */; };
 		799C141621A9DD64001ABFC2 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C141521A9DD64001ABFC2 /* SettingsTableViewController.swift */; };
+		79AF8E8221D848CE0085974F /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = 79AF8E8121D848CE0085974F /* settings.json */; };
 		79B48BBC211509E200AB5415 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBB211509E200AB5415 /* AppUser.swift */; };
 		79B48BBE211509FF00AB5415 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBD211509FF00AB5415 /* Review.swift */; };
 		79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBF21150A1B00AB5415 /* Reviewable.swift */; };
@@ -173,6 +174,7 @@
 		799C140F21A9CC3A001ABFC2 /* ReviewableModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableModelTests.swift; sourceTree = "<group>"; };
 		799C141121A9CC45001ABFC2 /* ReviewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModelTests.swift; sourceTree = "<group>"; };
 		799C141521A9DD64001ABFC2 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		79AF8E8121D848CE0085974F /* settings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = settings.json; sourceTree = "<group>"; };
 		79B48BBB211509E200AB5415 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		79B48BBD211509FF00AB5415 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		79B48BBF21150A1B00AB5415 /* Reviewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviewable.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				7994BFE720608A9600D05B25 /* Assets.xcassets */,
 				7994BFE920608A9600D05B25 /* LaunchScreen.storyboard */,
 				7994BFEC20608A9600D05B25 /* Info.plist */,
+				79AF8E8121D848CE0085974F /* settings.json */,
 				7994BFE420608A9600D05B25 /* Revvr.xcdatamodeld */,
 			);
 			path = Revvr;
@@ -544,6 +547,7 @@
 				790B5AA2217967E400A88A0D /* LICENSE.txt in Resources */,
 				7994BFEB20608A9600D05B25 /* LaunchScreen.storyboard in Resources */,
 				7994BFE820608A9600D05B25 /* Assets.xcassets in Resources */,
+				79AF8E8221D848CE0085974F /* settings.json in Resources */,
 				7994BFE320608A9600D05B25 /* Main.storyboard in Resources */,
 				795239D02187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib in Resources */,
 				795239CE2187FB9D004FEB82 /* ReviewCollectionViewCell.xib in Resources */,
