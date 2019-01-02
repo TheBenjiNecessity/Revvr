@@ -604,10 +604,97 @@
                             <outlet property="delegate" destination="k6A-hu-wMS" id="scs-na-MPi"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="luq-YZ-J6R" kind="show" identifier="ShowEmailEditSegueIdentifier" id="VHn-T9-MkR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvO-E0-ocb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qY8-Er-2LJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2789.5999999999999" y="279.31034482758622"/>
+        </scene>
+        <!--Update Email-->
+        <scene sceneID="fyd-wk-Lv5">
+            <objects>
+                <viewController id="luq-YZ-J6R" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QqQ-h8-VMH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmo-3c-Z9S">
+                                <rect key="frame" x="16" y="80" width="87.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="email@email.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBR-vU-N6P">
+                                <rect key="frame" x="111.5" y="77.5" width="247.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twH-R1-iqx">
+                                <rect key="frame" x="16" y="146" width="67.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaA-LF-Dl5">
+                                <rect key="frame" x="16" y="225" width="90" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ux-vS-Xo9">
+                                <rect key="frame" x="16" y="242" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOQ-ax-KM9">
+                                <rect key="frame" x="16" y="121" width="343" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="GnB-1G-WPU"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-aN-V8h">
+                                <rect key="frame" x="16" y="163" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="twH-R1-iqx" firstAttribute="leading" secondItem="ycb-aN-V8h" secondAttribute="leading" id="02V-qH-Xao"/>
+                            <constraint firstItem="0Ux-vS-Xo9" firstAttribute="trailing" secondItem="ycb-aN-V8h" secondAttribute="trailing" id="6X3-sl-8YX"/>
+                            <constraint firstItem="p3S-e3-Ac8" firstAttribute="trailing" secondItem="ycb-aN-V8h" secondAttribute="trailing" constant="16" id="FYE-32-NQw"/>
+                            <constraint firstItem="ycb-aN-V8h" firstAttribute="top" secondItem="twH-R1-iqx" secondAttribute="bottom" id="I1n-ZB-kCN"/>
+                            <constraint firstItem="OOQ-ax-KM9" firstAttribute="top" secondItem="Vmo-3c-Z9S" secondAttribute="bottom" constant="24" id="JcE-6n-LnN"/>
+                            <constraint firstItem="p3S-e3-Ac8" firstAttribute="trailing" secondItem="OOQ-ax-KM9" secondAttribute="trailing" constant="16" id="Kaf-Qn-Wpi"/>
+                            <constraint firstItem="Vmo-3c-Z9S" firstAttribute="top" secondItem="p3S-e3-Ac8" secondAttribute="top" constant="16" id="MsA-ZH-mi6"/>
+                            <constraint firstItem="twH-R1-iqx" firstAttribute="top" secondItem="OOQ-ax-KM9" secondAttribute="bottom" constant="24" id="SO1-dN-sua"/>
+                            <constraint firstItem="OOQ-ax-KM9" firstAttribute="leading" secondItem="p3S-e3-Ac8" secondAttribute="leading" constant="16" id="So3-m8-KZo"/>
+                            <constraint firstItem="Vmo-3c-Z9S" firstAttribute="leading" secondItem="p3S-e3-Ac8" secondAttribute="leading" constant="16" id="Uif-uq-fKU"/>
+                            <constraint firstItem="BaA-LF-Dl5" firstAttribute="top" secondItem="ycb-aN-V8h" secondAttribute="bottom" constant="32" id="fRg-Ab-b0u"/>
+                            <constraint firstItem="p3S-e3-Ac8" firstAttribute="trailing" secondItem="SBR-vU-N6P" secondAttribute="trailing" constant="16" id="lqx-oG-lEl"/>
+                            <constraint firstItem="0Ux-vS-Xo9" firstAttribute="leading" secondItem="ycb-aN-V8h" secondAttribute="leading" id="lsP-Gp-ty0"/>
+                            <constraint firstItem="BaA-LF-Dl5" firstAttribute="leading" secondItem="ycb-aN-V8h" secondAttribute="leading" id="qlQ-Ek-eCy"/>
+                            <constraint firstItem="SBR-vU-N6P" firstAttribute="firstBaseline" secondItem="Vmo-3c-Z9S" secondAttribute="firstBaseline" id="rBq-Aw-28S"/>
+                            <constraint firstItem="SBR-vU-N6P" firstAttribute="leading" secondItem="Vmo-3c-Z9S" secondAttribute="trailing" constant="8" id="ra9-OJ-TEc"/>
+                            <constraint firstItem="ycb-aN-V8h" firstAttribute="leading" secondItem="p3S-e3-Ac8" secondAttribute="leading" constant="16" id="tqJ-N6-kbN"/>
+                            <constraint firstItem="0Ux-vS-Xo9" firstAttribute="top" secondItem="BaA-LF-Dl5" secondAttribute="bottom" id="yII-Bf-E8h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p3S-e3-Ac8"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Update Email" id="8BE-IN-pwy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lFK-Mp-clS"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyR-lk-HfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3728.8000000000002" y="278.41079460269867"/>
         </scene>
         <!--Followings Table View Controller-->
         <scene sceneID="CFL-WS-ZT9">
