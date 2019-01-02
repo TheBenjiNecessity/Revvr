@@ -37,6 +37,7 @@
 		795E719D2175796900E40F16 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E719C2175796900E40F16 /* SearchTableViewController.swift */; };
 		795E71A32175926600E40F16 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E71A22175926600E40F16 /* FrontViewController.swift */; };
 		795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F25A221741E610022DFE2 /* UserTableViewCell.swift */; };
+		795F6E8421DBBF8600D6CF31 /* SettingButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F6E8321DBBF8600D6CF31 /* SettingButtonTableViewCell.swift */; };
 		7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960649A217ACA6C009F2EEA /* KeyChainService.swift */; };
 		79639BF82183F02C00996DD9 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79639BF72183F02C00996DD9 /* String+Size.swift */; };
 		79647B6A21AB0D5200C94ED6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B6921AB0D5200C94ED6 /* Settings.swift */; };
@@ -138,6 +139,7 @@
 		795E719C2175796900E40F16 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		795E71A22175926600E40F16 /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		795F25A221741E610022DFE2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		795F6E8321DBBF8600D6CF31 /* SettingButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonTableViewCell.swift; sourceTree = "<group>"; };
 		7960649A217ACA6C009F2EEA /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		79639BF72183F02C00996DD9 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		79647B6921AB0D5200C94ED6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */,
 				79647B6D21AB483000C94ED6 /* SettingTableViewCell.swift */,
 				793031B421C72C6E00D4ABE6 /* FollowingTableViewCell.swift */,
+				795F6E8321DBBF8600D6CF31 /* SettingButtonTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				792922F92189501100EB5C2D /* ModelTableViewCell.swift in Sources */,
 				795239C82187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift in Sources */,
 				7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */,
+				795F6E8421DBBF8600D6CF31 /* SettingButtonTableViewCell.swift in Sources */,
 				790D9C2C211F75D500BB8CC1 /* AppUserFollowing.swift in Sources */,
 				79B48BC621150E5200AB5415 /* AppUserContent.swift in Sources */,
 				795447D621A10FAD00AB281D /* UIFont+commonStyles.swift in Sources */,
