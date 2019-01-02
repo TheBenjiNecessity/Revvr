@@ -102,4 +102,9 @@ class AppUserAPIService: APIService {
         let uri = "\(url)/\(id)/counts"
         return get(url: uri, type: AppUserStats.self)
     }
+    
+    func updateEmail(email: String) -> Promise<Data> {
+        let uri = "\(url)/changeemail/\(email)"
+        return put(url: uri, body: Data(), type: Data.self)
+    }
 }

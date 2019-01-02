@@ -604,9 +604,6 @@
                             <outlet property="delegate" destination="k6A-hu-wMS" id="scs-na-MPi"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="luq-YZ-J6R" kind="show" identifier="ShowEmailEditSegueIdentifier" id="VHn-T9-MkR"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvO-E0-ocb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qY8-Er-2LJ" userLabel="Exit" sceneMemberID="exit"/>
@@ -616,7 +613,7 @@
         <!--Update Email-->
         <scene sceneID="fyd-wk-Lv5">
             <objects>
-                <viewController id="luq-YZ-J6R" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateEmailViewController" id="luq-YZ-J6R" customClass="UpdateEmailViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QqQ-h8-VMH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -689,12 +686,21 @@
                         <viewLayoutGuide key="safeArea" id="p3S-e3-Ac8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Update Email" id="8BE-IN-pwy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lFK-Mp-clS"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lFK-Mp-clS">
+                            <connections>
+                                <action selector="donePress:" destination="luq-YZ-J6R" id="0wt-P7-TnE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="confirmEmailTextField" destination="0Ux-vS-Xo9" id="oKr-Ik-Qxf"/>
+                        <outlet property="emailLabel" destination="SBR-vU-N6P" id="PAI-gS-eHe"/>
+                        <outlet property="newEmailTextField" destination="ycb-aN-V8h" id="Mie-MJ-k38"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyR-lk-HfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3728.8000000000002" y="278.41079460269867"/>
+            <point key="canvasLocation" x="4668" y="278.41079460269867"/>
         </scene>
         <!--Followings Table View Controller-->
         <scene sceneID="CFL-WS-ZT9">
@@ -1504,6 +1510,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGm-zK-SED" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2789.5999999999999" y="-1238.2308845577213"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PdA-tq-VGJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3On-wr-Xaj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JlK-F0-xGA">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="luq-YZ-J6R" kind="relationship" relationship="rootViewController" id="2T6-NY-HsB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5i-kk-7Ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3728.8000000000002" y="278.41079460269867"/>
         </scene>
     </scenes>
     <resources>

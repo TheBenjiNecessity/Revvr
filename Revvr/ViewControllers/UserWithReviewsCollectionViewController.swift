@@ -56,9 +56,14 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
                 let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe),
                 let settings = try? JSONDecoder().decode(Setting.self, from: data)
             else { return }
+            
+            let userValues = [
+                "#email#": user.email
+            ]
 
             let destination = segue.destination as! SettingsTableViewController
             destination.settings = settings
+            destination.values = userValues
         } else if segue.identifier == "ShowFollowingsListSegueIdentifier" ||
             segue.identifier == "ShowFollowersListSegueIdentifier" {
             var type = FollowType.followers

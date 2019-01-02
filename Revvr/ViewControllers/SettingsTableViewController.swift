@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     var settings = Setting(title: "", groups: [])
+    var values: [String: Any] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,9 @@ class SettingsTableViewController: UITableViewController {
         
         if row.itemType == .setting {
             cell.textLabel?.text = row.title
+            if let value = row.value {
+                cell.detailTextLabel?.text = values[value] as? String
+            }
         } else {
             cell.setItem(item: row)
         }
@@ -78,7 +82,16 @@ class SettingsTableViewController: UITableViewController {
         if let setting = row.setting {
             let newSettingsViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingsTableViewController") as! SettingsTableViewController
             newSettingsViewController.settings = setting
+            newSettingsViewController.values = values
             self.navigationController?.pushViewController(newSettingsViewController, animated: true)
+        } else if let identifier = row.identifier {
+            if let value = row.value {
+                if value == "#email#" {
+                    let updateEmailViewController = self.storyboard?.instantiateViewController(withIdentifier: identifier) as! UpdateEmailViewController
+                    updateEmailViewController.email = values[value] as! String
+                    self.navigationController?.pushViewController(updateEmailViewController, animated: true)
+                }
+            }
         }
     }
     
@@ -98,6 +111,8 @@ class SettingsTableViewController: UITableViewController {
                 return "SettingsSegmentCellIdentifier"
             case .setting:
                 return "SettingsWithChildrenCellIdentifier"
+            case .button:
+                return "SettingsButtonCellIdentifier"
         }
     }
     
@@ -105,5 +120,4 @@ class SettingsTableViewController: UITableViewController {
         let section = settings.groups[indexPath.section]
         return section.items[indexPath.row]
     }
-
 }
