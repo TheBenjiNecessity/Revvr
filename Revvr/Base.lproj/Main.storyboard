@@ -686,6 +686,7 @@
                         <viewLayoutGuide key="safeArea" id="p3S-e3-Ac8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Update Email" id="8BE-IN-pwy">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="xPQ-YI-YOY"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="lFK-Mp-clS">
                             <connections>
                                 <action selector="donePress:" destination="luq-YZ-J6R" id="0wt-P7-TnE"/>
@@ -701,6 +702,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyR-lk-HfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4668" y="278.41079460269867"/>
+        </scene>
+        <!--Update Password-->
+        <scene sceneID="XSn-sR-2T7">
+            <objects>
+                <viewController storyboardIdentifier="UpdatePasswordViewController" id="pS9-uK-RJR" customClass="UpdatePasswordViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LMV-uZ-vCE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFR-vE-1N6">
+                                <rect key="frame" x="16" y="80" width="89" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pzf-8L-t3Z">
+                                <rect key="frame" x="16" y="97" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojd-Va-Ndo">
+                                <rect key="frame" x="16" y="159" width="95" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5R-fE-nIc">
+                                <rect key="frame" x="16" y="176" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vD7-wX-kUc">
+                                <rect key="frame" x="16" y="238" width="118" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-8b-GIb">
+                                <rect key="frame" x="16" y="255" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vD7-wX-kUc" firstAttribute="leading" secondItem="l5R-fE-nIc" secondAttribute="leading" id="05r-r0-MaL"/>
+                            <constraint firstItem="Ojd-Va-Ndo" firstAttribute="top" secondItem="Pzf-8L-t3Z" secondAttribute="bottom" constant="32" id="3s4-JP-ned"/>
+                            <constraint firstItem="pFR-vE-1N6" firstAttribute="leading" secondItem="l3H-Pf-2NN" secondAttribute="leading" constant="16" id="Mv0-ob-ZR4"/>
+                            <constraint firstItem="pFR-vE-1N6" firstAttribute="top" secondItem="l3H-Pf-2NN" secondAttribute="top" constant="16" id="NSq-0M-jVh"/>
+                            <constraint firstItem="vD7-wX-kUc" firstAttribute="top" secondItem="l5R-fE-nIc" secondAttribute="bottom" constant="32" id="Nd3-aX-QBV"/>
+                            <constraint firstItem="l5R-fE-nIc" firstAttribute="trailing" secondItem="Pzf-8L-t3Z" secondAttribute="trailing" id="TNn-cn-qFW"/>
+                            <constraint firstItem="l5R-fE-nIc" firstAttribute="top" secondItem="Ojd-Va-Ndo" secondAttribute="bottom" id="cbP-3I-iSk"/>
+                            <constraint firstItem="VXV-8b-GIb" firstAttribute="top" secondItem="vD7-wX-kUc" secondAttribute="bottom" id="fuY-DL-xQa"/>
+                            <constraint firstItem="pFR-vE-1N6" firstAttribute="leading" secondItem="Pzf-8L-t3Z" secondAttribute="leading" id="qGa-0U-VRm"/>
+                            <constraint firstItem="VXV-8b-GIb" firstAttribute="trailing" secondItem="l5R-fE-nIc" secondAttribute="trailing" id="sc4-oP-QKT"/>
+                            <constraint firstItem="Ojd-Va-Ndo" firstAttribute="leading" secondItem="pFR-vE-1N6" secondAttribute="leading" id="vAW-pA-zlB"/>
+                            <constraint firstItem="VXV-8b-GIb" firstAttribute="leading" secondItem="l5R-fE-nIc" secondAttribute="leading" id="vnY-zl-UpV"/>
+                            <constraint firstItem="Pzf-8L-t3Z" firstAttribute="top" secondItem="pFR-vE-1N6" secondAttribute="bottom" id="wWC-3v-P0P"/>
+                            <constraint firstItem="Ojd-Va-Ndo" firstAttribute="leading" secondItem="l5R-fE-nIc" secondAttribute="leading" id="wd8-BX-ya3"/>
+                            <constraint firstItem="l3H-Pf-2NN" firstAttribute="trailing" secondItem="Pzf-8L-t3Z" secondAttribute="trailing" constant="16" id="ysN-Fs-RUz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l3H-Pf-2NN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Update Password" id="4sK-ZC-nhw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="hEb-Ol-sPK">
+                            <connections>
+                                <action selector="donePress:" destination="pS9-uK-RJR" id="xpg-nQ-6Q7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="VXV-8b-GIb" id="uqn-pT-Hsr"/>
+                        <outlet property="newPasswordTextField" destination="l5R-fE-nIc" id="eiK-ju-vWz"/>
+                        <outlet property="oldPasswordTextField" destination="Pzf-8L-t3Z" id="H4l-B4-Wsw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="piJ-vS-Ukx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4668" y="971"/>
         </scene>
         <!--Followings Table View Controller-->
         <scene sceneID="CFL-WS-ZT9">
@@ -1528,6 +1611,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5i-kk-7Ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3728.8000000000002" y="278.41079460269867"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IWh-T1-Uzw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r3K-0y-lUW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fM8-N4-z6Z">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pS9-uK-RJR" kind="relationship" relationship="rootViewController" id="svo-ey-dCa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Guf-6S-8iK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3729" y="970"/>
         </scene>
     </scenes>
     <resources>

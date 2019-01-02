@@ -58,12 +58,13 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
             else { return }
             
             let userValues = [
-                "#email#": user.email
+                "#email#": user.email,
+                "#password#": nil
             ]
 
             let destination = segue.destination as! SettingsTableViewController
             destination.settings = settings
-            destination.values = userValues
+            destination.values = userValues as [String : Any]
         } else if segue.identifier == "ShowFollowingsListSegueIdentifier" ||
             segue.identifier == "ShowFollowersListSegueIdentifier" {
             var type = FollowType.followers

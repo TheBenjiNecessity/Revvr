@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     var settings = Setting(title: "", groups: [])
-    var values: [String: Any] = [:]
+    var values: [String: Any?] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,10 +86,12 @@ class SettingsTableViewController: UITableViewController {
             self.navigationController?.pushViewController(newSettingsViewController, animated: true)
         } else if let identifier = row.identifier {
             if let value = row.value {
-                if value == "#email#" {
-                    let updateEmailViewController = self.storyboard?.instantiateViewController(withIdentifier: identifier) as! UpdateEmailViewController
-                    updateEmailViewController.email = values[value] as! String
-                    self.navigationController?.pushViewController(updateEmailViewController, animated: true)
+                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: identifier) {
+                    if value == "#email#" {
+                        (viewController as! UpdateEmailViewController).email = values[value] as! String
+                    }
+                    
+                    self.navigationController?.pushViewController(viewController, animated: true)
                 }
             }
         }

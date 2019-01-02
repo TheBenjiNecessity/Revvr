@@ -107,4 +107,9 @@ class AppUserAPIService: APIService {
         let uri = "\(url)/changeemail/\(email)"
         return put(url: uri, body: Data(), type: Data.self)
     }
+    
+    func updatePassword(newPassword: String, oldPassword: String) -> Promise<Data> {
+        let uri = "\(url)/changepassword?newPassword=\(newPassword)&oldPassword=\(oldPassword)"
+        return put(url: uri, body: Data(), type: Data.self)
+    }
 }
