@@ -9,7 +9,9 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate, TappableLabelDelegate {
-
+    let LoggedInNoAnimationSegueIdentifier = "LoggedInNoAnimationSegueIdentifier"
+    let LoggedInSegueIdentifier = "LoggedInSegueIdentifier"
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpLabel: TappableLabel!
@@ -21,15 +23,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate, TappableLabelD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        signUpLabel.delegate = self
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
         
-        loginContainerView.layer.cornerRadius = 5.0
-        // Do any additional setup after loading the view.
-        
-        // Is the user already signed in? Move to the signed in page
+        // If the user is logged in then go straight to the home page
+        if SessionService.shared.isLoggedIn() {
+            self.goToHomePage(animated: false)
+        } else {
+            signUpLabel.delegate = self
+            usernameTextField.delegate = self
+            passwordTextField.delegate = self
+            
+            loginContainerView.layer.cornerRadius = 5.0
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        }
     }
     
     @IBAction func signInButtonPress(_ sender: Any) {
@@ -84,10 +89,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate, TappableLabelD
     
     func login(withUsername username: String, password: String) {
         SessionService.shared.login(username: username, password: password).then {_ in
+            self.goToHomePage(animated: true)
             self.showLoading(loading: false)
         }.catch { error in
+            print(error)
+            self.showInputError(message: "Your user name or password is incorrect")
             self.showLoading(loading: false)
         }
+    }
+    
+    func goToHomePage(animated: Bool) {
+        let identifier = animated ? LoggedInSegueIdentifier : LoggedInNoAnimationSegueIdentifier
+        self.performSegue(withIdentifier: identifier, sender: nil)
     }
     
     func touchUpInside() {
