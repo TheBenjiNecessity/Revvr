@@ -49,6 +49,7 @@
 		79647B7221AB636D00C94ED6 /* SettingDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */; };
 		79647B7421AB638100C94ED6 /* SettingSegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */; };
 		7966E7B221A65EA3000AFE2C /* EmojiTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */; };
+		79690E28224C4B2B006892D9 /* TappableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79690E27224C4B2B006892D9 /* TappableLabel.swift */; };
 		796BD1BE21B350E5008F1E5F /* ReviewReplyModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BD1BD21B350E5008F1E5F /* ReviewReplyModalViewController.swift */; };
 		79734CCC21A8B663004AF5DD /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CCB21A8B663004AF5DD /* ReviewTableViewController.swift */; };
 		79734CCE21A8D89B004AF5DD /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CCD21A8D89B004AF5DD /* ReviewTableViewCell.swift */; };
@@ -153,6 +154,7 @@
 		79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailTableViewCell.swift; sourceTree = "<group>"; };
 		79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSegmentTableViewCell.swift; sourceTree = "<group>"; };
 		7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTabButton.swift; sourceTree = "<group>"; };
+		79690E27224C4B2B006892D9 /* TappableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableLabel.swift; sourceTree = "<group>"; };
 		796BD1BD21B350E5008F1E5F /* ReviewReplyModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewReplyModalViewController.swift; sourceTree = "<group>"; };
 		79734CCB21A8B663004AF5DD /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		79734CCD21A8D89B004AF5DD /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				79D4814B218A187A001AEB95 /* ReviewableCollectionReusableView.swift */,
 				795239D12188080C004FEB82 /* UserCollectionReusableView.swift */,
 				7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */,
+				79690E27224C4B2B006892D9 /* TappableLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				79B48BBE211509FF00AB5415 /* Review.swift in Sources */,
 				793031B321C72A2F00D4ABE6 /* FollowingsTableViewController.swift in Sources */,
 				796BD1BE21B350E5008F1E5F /* ReviewReplyModalViewController.swift in Sources */,
+				79690E28224C4B2B006892D9 /* TappableLabel.swift in Sources */,
 				79734CD421A8D938004AF5DD /* ReviewReplyTableViewCell.swift in Sources */,
 				79C07EAE2121BC1F00B7D024 /* ReviewLike.swift in Sources */,
 				799C004E21128F04001BF07D /* APIService.swift in Sources */,
