@@ -8,14 +8,22 @@
 
 import UIKit
 
+protocol SettingButtonTableViewCellDelegate: AnyObject {
+    func didPressSettingsButton(with item: Item?)
+}
+
 class SettingButtonTableViewCell: SettingTableViewCell {
     @IBOutlet weak var cellButton: UIButton!
     
+    var item: Item?
+    weak var delegate: SettingButtonTableViewCellDelegate?
+    
     override func setItem(item: Item) {
+        self.item = item
         cellButton.setTitle(item.title, for: UIControlState.normal)
     }
     
     @IBAction func cellButtonWasTapped(_ sender: Any) {
-        print("tapped")
+        delegate?.didPressSettingsButton(with: item)
     }
 }

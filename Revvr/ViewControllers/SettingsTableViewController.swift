@@ -8,7 +8,8 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, SettingButtonTableViewCellDelegate {
+    
     var settings = Setting(title: "", groups: [])
     var values: [String: Any?] = [:]
     
@@ -48,6 +49,10 @@ class SettingsTableViewController: UITableViewController {
             }
         } else {
             cell.setItem(item: row)
+            
+            if let buttonCell = cell as? SettingButtonTableViewCell {
+                buttonCell.delegate = self
+            }
         }
 
         return cell
@@ -121,5 +126,16 @@ class SettingsTableViewController: UITableViewController {
     func getRow(forIndexPath indexPath: IndexPath) -> Item {
         let section = settings.groups[indexPath.section]
         return section.items[indexPath.row]
+    }
+    
+    func didPressSettingsButton(with item: Item?) {
+        if let value = item?.value {
+            switch value {
+                case "logout":
+                    SessionService.shared.logout()
+                default:
+                    return
+            }
+        }
     }
 }

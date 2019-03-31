@@ -56,7 +56,8 @@
                                 "items": [
                                     {
                                         "title": "Logout",
-                                        "itemType": "boolean"
+                                        "itemType": "button",
+                                        "value": "logout"
                                     }
                                 ]
                             }
