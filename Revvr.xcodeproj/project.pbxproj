@@ -18,6 +18,7 @@
 		793031B121C71D2900D4ABE6 /* AppUserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793031B021C71D2900D4ABE6 /* AppUserStats.swift */; };
 		793031B321C72A2F00D4ABE6 /* FollowingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793031B221C72A2F00D4ABE6 /* FollowingsTableViewController.swift */; };
 		793031B521C72C6E00D4ABE6 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793031B421C72C6E00D4ABE6 /* FollowingTableViewCell.swift */; };
+		793CC072224F162D00DB48E1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793CC071224F162D00DB48E1 /* SignUpViewController.swift */; };
 		794FCC1C2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FCC1B2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift */; };
 		795239C82187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795239C72187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift */; };
 		795239CE2187FB9D004FEB82 /* ReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */; };
@@ -124,6 +125,7 @@
 		793031B021C71D2900D4ABE6 /* AppUserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserStats.swift; sourceTree = "<group>"; };
 		793031B221C72A2F00D4ABE6 /* FollowingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingsTableViewController.swift; sourceTree = "<group>"; };
 		793031B421C72C6E00D4ABE6 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
+		793CC071224F162D00DB48E1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		794FCC1B2186B5EA009B614A /* UserWithReviewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWithReviewsCollectionViewController.swift; sourceTree = "<group>"; };
 		795239C72187C652004FEB82 /* ReviewsOnlyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsOnlyCollectionViewController.swift; sourceTree = "<group>"; };
 		795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 				795F6E8521DC3AA300D6CF31 /* UpdateEmailViewController.swift */,
 				795F6E8721DC616C00D6CF31 /* UpdatePasswordViewController.swift */,
 				795FB69F224DA89400E81735 /* LoginViewController.swift */,
+				793CC071224F162D00DB48E1 /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				79647B6A21AB0D5200C94ED6 /* Settings.swift in Sources */,
 				79647B7421AB638100C94ED6 /* SettingSegmentTableViewCell.swift in Sources */,
 				7922D54621A07E6400C73816 /* Image+Blur.swift in Sources */,
+				793CC072224F162D00DB48E1 /* SignUpViewController.swift in Sources */,
 				792922F5218949FD00EB5C2D /* ReviewableTableViewCell.swift in Sources */,
 				79647B7221AB636D00C94ED6 /* SettingDetailTableViewCell.swift in Sources */,
 				79B48BBC211509E200AB5415 /* AppUser.swift in Sources */,

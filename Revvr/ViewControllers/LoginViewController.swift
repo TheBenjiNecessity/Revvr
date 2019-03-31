@@ -104,7 +104,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, TappableLabelD
     }
     
     func touchUpInside() {
-        print("touchUpInside")
+        self.performSegue(withIdentifier: "SignUpModalIdentifier", sender: nil)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
