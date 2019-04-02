@@ -23,17 +23,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate, TappableLabelD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        signUpLabel.delegate = self
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         // If the user is logged in then go straight to the home page
         if SessionService.shared.isLoggedIn() {
             self.goToHomePage(animated: false)
         } else {
-            signUpLabel.delegate = self
-            usernameTextField.delegate = self
-            passwordTextField.delegate = self
-            
             loginContainerView.layer.cornerRadius = 5.0
-            self.navigationController?.setNavigationBarHidden(true, animated: false)
         }
     }
     
