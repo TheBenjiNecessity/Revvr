@@ -26,12 +26,14 @@ class ReviewReplyModalViewController: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         if let comment = commentTextView?.text {
-            AppUserAPIService.shared.getApiUser().then { apiUser in
+            if let apiUser = AppUserAPIService.shared.currentUser {
                 let reviewReply = ReviewReply(appUserID: apiUser.id, reviewID: self.review.id, comment: comment)
                 ReviewAPIService.shared.reply(reply: reviewReply).then { reply in
                     //TODO: show success
                     self.presentingViewController?.dismiss(animated: true, completion: nil)
                 }
+            } else {
+                SessionService.shared.logout()
             }
         }
     }

@@ -63,12 +63,14 @@ class CreateReviewViewController: UIViewController, IconSelectorDelegate {
             return
         }
         
-        AppUserAPIService.shared.getApiUser().then { apiUser in
+        if let apiUser = AppUserAPIService.shared.currentUser {
             let review = Review(emojis: emoji, comment: self.commentTextView?.text, appUser: apiUser, reviewable: reviewable)
             ReviewAPIService.shared.create(review: review).then { review in
                 //TODO: show success
                 self.dismiss(animated: true, completion: nil)
             }
+        } else {
+            SessionService.shared.logout()
         }
     }
     

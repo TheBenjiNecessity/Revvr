@@ -32,10 +32,10 @@ class FollowingTableViewCell: UITableViewCell {
                 followButton.setTitle("Follow", for: UIControlState.normal)
             }
             
-            AppUserAPIService.shared.getApiUser().then { apiUser in
-                if self.user.id == apiUser.id {
-                    followButton.isHidden = true
-                }
+            if let currentUser = AppUserAPIService.shared.currentUser {
+                followButton.isHidden = self.user.id == currentUser.id
+            } else {
+                SessionService.shared.logout()
             }
         }
     }

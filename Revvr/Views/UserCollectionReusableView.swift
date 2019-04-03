@@ -62,13 +62,15 @@ class UserCollectionReusableView: UICollectionReusableView {
             self.isFollowing = false
         }
         
-        AppUserAPIService.shared.getApiUser().then { apiUser in
-            if self.user.id == apiUser.id {
+        if let currentUser = AppUserAPIService.shared.currentUser {
+            if self.user.id == currentUser.id {
                 let settingsButton = self.viewWithTag(111)
                 let followButton = self.viewWithTag(222)
                 settingsButton?.isHidden = true
                 followButton?.isHidden = true
             }
+        } else {
+            SessionService.shared.logout()
         }
         
         AppUserAPIService.shared.getStats(id: self.user.id).then { stats in
