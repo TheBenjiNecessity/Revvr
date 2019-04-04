@@ -131,12 +131,6 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="vHd-zW-TB3">
                                 <rect key="frame" x="177.5" y="326" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDR-hW-NT9">
-                                <rect key="frame" x="16" y="326" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -144,7 +138,6 @@
                             <constraint firstItem="fKf-sO-M7L" firstAttribute="top" secondItem="Hst-pa-Pvq" secondAttribute="bottom" constant="8" id="75Q-gc-6rv"/>
                             <constraint firstItem="fKf-sO-M7L" firstAttribute="trailing" secondItem="Hst-pa-Pvq" secondAttribute="trailing" id="A1y-Gs-02K"/>
                             <constraint firstItem="I8z-HQ-8p0" firstAttribute="leading" secondItem="QFY-bJ-Vsq" secondAttribute="leading" constant="16" id="D0c-FM-IM8"/>
-                            <constraint firstItem="QDR-hW-NT9" firstAttribute="top" secondItem="lZv-5a-Apv" secondAttribute="bottom" constant="8" id="FMy-nh-9jx"/>
                             <constraint firstItem="Hst-pa-Pvq" firstAttribute="top" secondItem="Ocu-LW-xSB" secondAttribute="bottom" constant="8" id="GI4-dU-u98"/>
                             <constraint firstItem="QFY-bJ-Vsq" firstAttribute="trailing" secondItem="I8z-HQ-8p0" secondAttribute="trailing" constant="16" id="HgY-8E-OAd"/>
                             <constraint firstItem="QFY-bJ-Vsq" firstAttribute="bottom" secondItem="I8z-HQ-8p0" secondAttribute="bottom" constant="20" id="Jhv-NX-n8U"/>
@@ -152,7 +145,6 @@
                             <constraint firstItem="FOY-QT-zpD" firstAttribute="centerX" secondItem="1XI-9o-UKy" secondAttribute="centerX" id="RI1-yr-bFz"/>
                             <constraint firstItem="fKf-sO-M7L" firstAttribute="leading" secondItem="Hst-pa-Pvq" secondAttribute="leading" id="SKY-io-Kzf"/>
                             <constraint firstItem="Ocu-LW-xSB" firstAttribute="top" secondItem="FOY-QT-zpD" secondAttribute="bottom" constant="4" id="SUd-wB-CeJ"/>
-                            <constraint firstItem="QDR-hW-NT9" firstAttribute="leading" secondItem="lZv-5a-Apv" secondAttribute="leading" id="U3f-uW-4MV"/>
                             <constraint firstItem="Hst-pa-Pvq" firstAttribute="leading" secondItem="QFY-bJ-Vsq" secondAttribute="leading" constant="16" id="d7c-X8-xI3"/>
                             <constraint firstItem="vHd-zW-TB3" firstAttribute="centerX" secondItem="1XI-9o-UKy" secondAttribute="centerX" id="hFg-ms-bto"/>
                             <constraint firstItem="lZv-5a-Apv" firstAttribute="top" secondItem="fKf-sO-M7L" secondAttribute="bottom" constant="8" id="jOZ-Yy-hCh"/>
