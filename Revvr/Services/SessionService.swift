@@ -29,7 +29,7 @@ class SessionService: APIService {
         
         return getToken(url: uri, body: body).then { token in
             return AppUserAPIService.shared.getApiUser().then { user in
-                //TODO: Necessary?
+                AppUserAPIService.shared.currentUser = user
             }
         }
     }

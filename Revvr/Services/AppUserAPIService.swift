@@ -11,6 +11,7 @@ import Promises
 
 class AppUserAPIService: APIService {
     let url = "service-api/appuser"
+    var currentUser: AppUser?
     
     static let shared = AppUserAPIService()
     
