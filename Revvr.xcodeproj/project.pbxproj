@@ -58,6 +58,7 @@
 		79734CD221A8D8F7004AF5DD /* ReviewActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CD121A8D8F7004AF5DD /* ReviewActionsTableViewCell.swift */; };
 		79734CD421A8D938004AF5DD /* ReviewReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CD321A8D938004AF5DD /* ReviewReplyTableViewCell.swift */; };
 		79734CD621A8FEDD004AF5DD /* ReviewReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CD521A8FEDD004AF5DD /* ReviewReply.swift */; };
+		7981D8482255A3A900669977 /* BlockedAccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7981D8472255A3A900669977 /* BlockedAccountsTableViewController.swift */; };
 		7994BFDE20608A9600D05B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFDD20608A9600D05B25 /* AppDelegate.swift */; };
 		7994BFE320608A9600D05B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7994BFE120608A9600D05B25 /* Main.storyboard */; };
 		7994BFE620608A9600D05B25 /* Revvr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7994BFE420608A9600D05B25 /* Revvr.xcdatamodeld */; };
@@ -164,6 +165,7 @@
 		79734CD121A8D8F7004AF5DD /* ReviewActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewActionsTableViewCell.swift; sourceTree = "<group>"; };
 		79734CD321A8D938004AF5DD /* ReviewReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewReplyTableViewCell.swift; sourceTree = "<group>"; };
 		79734CD521A8FEDD004AF5DD /* ReviewReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewReply.swift; sourceTree = "<group>"; };
+		7981D8472255A3A900669977 /* BlockedAccountsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedAccountsTableViewController.swift; sourceTree = "<group>"; };
 		7994BFDA20608A9600D05B25 /* Revvr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revvr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7994BFDD20608A9600D05B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7994BFE220608A9600D05B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 				795F6E8721DC616C00D6CF31 /* UpdatePasswordViewController.swift */,
 				795FB69F224DA89400E81735 /* LoginViewController.swift */,
 				793CC071224F162D00DB48E1 /* SignUpViewController.swift */,
+				7981D8472255A3A900669977 /* BlockedAccountsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -714,6 +717,7 @@
 				79690E28224C4B2B006892D9 /* TappableLabel.swift in Sources */,
 				79734CD421A8D938004AF5DD /* ReviewReplyTableViewCell.swift in Sources */,
 				79C07EAE2121BC1F00B7D024 /* ReviewLike.swift in Sources */,
+				7981D8482255A3A900669977 /* BlockedAccountsTableViewController.swift in Sources */,
 				799C004E21128F04001BF07D /* APIService.swift in Sources */,
 				795239D22188080C004FEB82 /* UserCollectionReusableView.swift in Sources */,
 				79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */,
