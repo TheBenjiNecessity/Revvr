@@ -92,9 +92,9 @@ class AppUserAPIService: APIService {
         return delete(url: uri, type: AppUserBlocking.self)
     }
     
-    func listBlockings() -> Promise<[AppUserBlocking]> {
+    func listBlockings() -> Promise<[AppUser]> {
         let uri = "\(url)/block"
-        return get(url: uri, type: [AppUserBlocking].self)
+        return get(url: uri, type: [AppUser].self)
     }
     
     /* ========================== Stats ========================== */
