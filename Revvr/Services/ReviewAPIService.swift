@@ -76,4 +76,10 @@ class ReviewAPIService: APIService {
         let uri = "\(url)/reply/\(id)?order=\(order)&pageStart=\(pageStart)&pageLimit=\(pageLimit)"
         return get(url: uri, type: [ReviewReply].self)
     }
+    
+    /* ========================== Stats ========================== */
+    func stats(id: Int) -> Promise<ReviewStats> {
+        let uri = "\(url)/\(id)/stats"
+        return get(url: uri, type: ReviewStats.self)
+    }
 }

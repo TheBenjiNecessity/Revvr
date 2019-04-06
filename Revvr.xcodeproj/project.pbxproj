@@ -42,6 +42,7 @@
 		795F6E8821DC616C00D6CF31 /* UpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F6E8721DC616C00D6CF31 /* UpdatePasswordViewController.swift */; };
 		795FB6A0224DA89400E81735 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FB69F224DA89400E81735 /* LoginViewController.swift */; };
 		7960649B217ACA6C009F2EEA /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960649A217ACA6C009F2EEA /* KeyChainService.swift */; };
+		79629858225939850054A0CB /* ReviewStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79629857225939850054A0CB /* ReviewStats.swift */; };
 		79639BF82183F02C00996DD9 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79639BF72183F02C00996DD9 /* String+Size.swift */; };
 		79647B6A21AB0D5200C94ED6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B6921AB0D5200C94ED6 /* Settings.swift */; };
 		79647B6C21AB47D700C94ED6 /* SettingsInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B6B21AB47D700C94ED6 /* SettingsInputTableViewCell.swift */; };
@@ -149,6 +150,7 @@
 		795F6E8721DC616C00D6CF31 /* UpdatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewController.swift; sourceTree = "<group>"; };
 		795FB69F224DA89400E81735 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7960649A217ACA6C009F2EEA /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
+		79629857225939850054A0CB /* ReviewStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewStats.swift; sourceTree = "<group>"; };
 		79639BF72183F02C00996DD9 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		79647B6921AB0D5200C94ED6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		79647B6B21AB47D700C94ED6 /* SettingsInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInputTableViewCell.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				79647B6921AB0D5200C94ED6 /* Settings.swift */,
 				793031B021C71D2900D4ABE6 /* AppUserStats.swift */,
 				791E0D2D21D986D3000240DC /* AppUserBlocking.swift */,
+				79629857225939850054A0CB /* ReviewStats.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */,
 				79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */,
 				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
+				79629858225939850054A0CB /* ReviewStats.swift in Sources */,
 				793031B521C72C6E00D4ABE6 /* FollowingTableViewCell.swift in Sources */,
 				79734CCE21A8D89B004AF5DD /* ReviewTableViewCell.swift in Sources */,
 				795F25A421741E610022DFE2 /* UserTableViewCell.swift in Sources */,
