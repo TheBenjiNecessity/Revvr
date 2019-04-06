@@ -14,16 +14,16 @@
                                 "title": "Login",
                                 "items": [
                                     {
-                                        "title": "Phone",
-                                        "itemType": "text"
-                                    },
-                                    {
                                         "title": "Email",
-                                        "itemType": "text"
+                                        "itemType": "setting",
+                                        "value": "#email#",
+                                        "identifier": "UpdateEmailViewController"
                                     },
                                     {
                                         "title": "Password",
-                                        "itemType": "text"
+                                        "itemType": "setting",
+                                        "value": "#password#",
+                                        "identifier": "UpdatePasswordViewController"
                                     }
                                 ]
                             },
@@ -65,40 +65,10 @@
                     }
                 },
                 {
-                    "title": "Notifications",
-                    "itemType": "setting",
-                    "setting": {
-                        "title": "Sub Settings",
-                        "groups": [
-                            {
-                                "title": "subgrouptest1",
-                                "items": [
-                                    {
-                                        "title": "subgroupitem1",
-                                        "itemType": "boolean"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
                     "title": "Blocked Accounts",
                     "itemType": "setting",
-                    "setting": {
-                        "title": "Sub Settings",
-                        "groups": [
-                            {
-                                "title": "subgrouptest1",
-                                "items": [
-                                    {
-                                        "title": "subgroupitem1",
-                                        "itemType": "boolean"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
+                    "value": "",
+                    "identifier": "BlockedAccountsTableViewController"
                 }
             ]
         },
