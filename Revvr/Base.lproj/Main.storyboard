@@ -897,7 +897,7 @@
             </objects>
             <point key="canvasLocation" x="6546.3999999999996" y="278.41079460269867"/>
         </scene>
-        <!--Blocked Accounts Table View Controller-->
+        <!--Blocked Users-->
         <scene sceneID="xhg-jY-hvs">
             <objects>
                 <tableViewController storyboardIdentifier="BlockedAccountsTableViewController" id="6rt-At-66G" customClass="BlockedAccountsTableViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
@@ -947,7 +947,7 @@
                             <outlet property="delegate" destination="6rt-At-66G" id="kyB-Rk-MQm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0dl-zt-HTI"/>
+                    <navigationItem key="navigationItem" title="Blocked Users" id="0dl-zt-HTI"/>
                     <connections>
                         <segue destination="gzc-2r-YGu" kind="show" identifier="ShowUserSequeIdentifier" id="Dzi-Qn-TxX"/>
                     </connections>
