@@ -13,6 +13,8 @@ class BlockedAccountsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.tableFooterView = UIView()
 
         AppUserAPIService.shared.listBlockings().then { users in
             self.users = users
