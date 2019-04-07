@@ -132,7 +132,7 @@ class SettingsTableViewController: UITableViewController, SettingButtonTableView
         if let value = item?.value {
             switch value {
                 case "logout":
-                    SessionService.shared.logout()
+                    SessionService.shared.doLogout()
                 default:
                     return
             }

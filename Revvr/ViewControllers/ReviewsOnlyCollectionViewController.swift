@@ -19,7 +19,7 @@ class ReviewsOnlyCollectionViewController: ReviewsCollectionViewController {
                 self.refresh()
             }
         } else {
-            SessionService.shared.logout()
+            SessionService.shared.forcedLogout()
         }
     }
 }

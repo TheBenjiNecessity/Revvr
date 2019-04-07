@@ -43,6 +43,37 @@ class SessionService: APIService {
         }
     }
     
+    func doLogout() {
+        let alert = UIAlertController(title: "Logout?", message: "Are you sure you want to log out?", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Log out", style: .destructive, handler: { action in
+            self.logout()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        if let window = UIApplication.shared.delegate?.window {
+            window?.rootViewController?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func forcedLogout() {
+        let alert = UIAlertController(title: nil, message: "Your session has ended.\nPlease log in again.", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { action in
+            self.logout()
+        })
+        
+        alert.addAction(okAction)
+        
+        if let window = UIApplication.shared.delegate?.window {
+            window?.rootViewController?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     func isLoggedIn() -> Bool {
         return accessToken != nil &&
             UserDefaults.standard.value(forKey: KeyChainService.shared.kUserNameKey) != nil

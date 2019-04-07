@@ -35,7 +35,7 @@ class FollowingTableViewCell: UITableViewCell {
             if let currentUser = AppUserAPIService.shared.currentUser {
                 followButton.isHidden = self.user.id == currentUser.id
             } else {
-                SessionService.shared.logout()
+                SessionService.shared.forcedLogout()
             }
         }
     }

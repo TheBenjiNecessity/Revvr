@@ -33,7 +33,7 @@ class ReviewReplyModalViewController: UIViewController {
                     self.presentingViewController?.dismiss(animated: true, completion: nil)
                 }
             } else {
-                SessionService.shared.logout()
+                SessionService.shared.forcedLogout()
             }
         }
     }

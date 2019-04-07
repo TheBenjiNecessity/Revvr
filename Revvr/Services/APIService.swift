@@ -104,7 +104,7 @@ class APIService: NSObject {
                                     userInfo: nil)
                 promise.reject(error)
                 if httpStatus.statusCode == 401 {
-                    SessionService.shared.logout()
+                    SessionService.shared.forcedLogout()
                 }
             } else if data != nil && error == nil {
                 do {

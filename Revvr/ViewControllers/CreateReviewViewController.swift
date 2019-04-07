@@ -70,7 +70,7 @@ class CreateReviewViewController: UIViewController, IconSelectorDelegate {
                 self.dismiss(animated: true, completion: nil)
             }
         } else {
-            SessionService.shared.logout()
+            SessionService.shared.forcedLogout()
         }
     }
     

@@ -17,7 +17,7 @@ class MainTabbarViewController: UITabBarController {
         if let user = AppUserAPIService.shared.currentUser {
             uservc.user = user
         } else {
-            SessionService.shared.logout()
+            SessionService.shared.forcedLogout()
         }
     }
 }

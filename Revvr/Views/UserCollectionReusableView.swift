@@ -70,7 +70,7 @@ class UserCollectionReusableView: UICollectionReusableView {
                 followButton?.isHidden = true
             }
         } else {
-            SessionService.shared.logout()
+            SessionService.shared.forcedLogout()
         }
         
         AppUserAPIService.shared.getStats(id: self.user.id).then { stats in

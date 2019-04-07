@@ -31,7 +31,7 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
         if let currentUser = AppUserAPIService.shared.currentUser {
             self.hideSettingsButton(hide: self.user.id != currentUser.id)
         } else {
-            SessionService.shared.logout()
+            SessionService.shared.forcedLogout()
         }
     }
 
