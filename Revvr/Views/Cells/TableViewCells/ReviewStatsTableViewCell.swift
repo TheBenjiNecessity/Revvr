@@ -14,9 +14,7 @@ class ReviewStatsTableViewCell: UITableViewCell {
     @IBOutlet weak var statsLabel: UILabel!
     
     func setStats(review: Review) {
-        print("set stats")
         ReviewAPIService.shared.stats(id: review.id).then { stats in
-            print(stats)
             self.statsLabel.text = "\(stats.replyCount) replies | \(stats.agreeCount) agrees | \(stats.disagreeCount) disagrees"
         }
     }
