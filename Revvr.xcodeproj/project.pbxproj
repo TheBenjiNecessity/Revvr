@@ -51,6 +51,7 @@
 		79647B7221AB636D00C94ED6 /* SettingDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */; };
 		79647B7421AB638100C94ED6 /* SettingSegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */; };
 		7966E7B221A65EA3000AFE2C /* EmojiTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */; };
+		79684B7C225AADC30025784F /* DeactivateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79684B7B225AADC30025784F /* DeactivateAccountViewController.swift */; };
 		79690E28224C4B2B006892D9 /* TappableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79690E27224C4B2B006892D9 /* TappableLabel.swift */; };
 		796BD1BE21B350E5008F1E5F /* ReviewReplyModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BD1BD21B350E5008F1E5F /* ReviewReplyModalViewController.swift */; };
 		79734CCC21A8B663004AF5DD /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79734CCB21A8B663004AF5DD /* ReviewTableViewController.swift */; };
@@ -159,6 +160,7 @@
 		79647B7121AB636D00C94ED6 /* SettingDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailTableViewCell.swift; sourceTree = "<group>"; };
 		79647B7321AB638100C94ED6 /* SettingSegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSegmentTableViewCell.swift; sourceTree = "<group>"; };
 		7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTabButton.swift; sourceTree = "<group>"; };
+		79684B7B225AADC30025784F /* DeactivateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeactivateAccountViewController.swift; sourceTree = "<group>"; };
 		79690E27224C4B2B006892D9 /* TappableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableLabel.swift; sourceTree = "<group>"; };
 		796BD1BD21B350E5008F1E5F /* ReviewReplyModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewReplyModalViewController.swift; sourceTree = "<group>"; };
 		79734CCB21A8B663004AF5DD /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				795FB69F224DA89400E81735 /* LoginViewController.swift */,
 				793CC071224F162D00DB48E1 /* SignUpViewController.swift */,
 				7981D8472255A3A900669977 /* BlockedAccountsTableViewController.swift */,
+				79684B7B225AADC30025784F /* DeactivateAccountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				799C004E21128F04001BF07D /* APIService.swift in Sources */,
 				795239D22188080C004FEB82 /* UserCollectionReusableView.swift in Sources */,
 				79B48BC021150A1B00AB5415 /* Reviewable.swift in Sources */,
+				79684B7C225AADC30025784F /* DeactivateAccountViewController.swift in Sources */,
 				79B48BC421150C5A00AB5415 /* ReviewAPIService.swift in Sources */,
 				79B48BC221150C3100AB5415 /* ReviewableAPIService.swift in Sources */,
 				79629858225939850054A0CB /* ReviewStats.swift in Sources */,

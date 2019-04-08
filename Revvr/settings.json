@@ -31,23 +31,10 @@
                                 "title": "",
                                 "items": [
                                     {
-                                        "title": "Deactive account",
+                                        "title": "Deactivate Account",
                                         "itemType": "setting",
-                                        "setting": {
-                                            "title": "Deactive your account",
-                                            "groups": [
-                                                {
-                                                    "title": "",
-                                                    "items": [
-                                                        {
-                                                            "title": "",
-                                                            "itemType": "info",
-                                                            "value": "Here is some text"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
+                                        "value": "",
+                                        "identifier": "DeactivateAccountViewController"
                                     }
                                 ]
                             },

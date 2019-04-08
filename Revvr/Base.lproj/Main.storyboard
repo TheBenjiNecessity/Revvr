@@ -1901,6 +1901,77 @@
             </objects>
             <point key="canvasLocation" x="5607" y="970"/>
         </scene>
+        <!--Deactivate Account View Controller-->
+        <scene sceneID="qNQ-9z-Sou">
+            <objects>
+                <viewController storyboardIdentifier="DeactivateAccountViewController" id="4dV-Ho-4Xx" customClass="DeactivateAccountViewController" customModule="Revvr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ILY-2R-u5i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-WO-Qio">
+                                <rect key="frame" x="16" y="607" width="343" height="44"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cYV-94-Fsh"/>
+                                </constraints>
+                                <state key="normal" title="Deactivate Account"/>
+                                <connections>
+                                    <action selector="deactivateAccount:" destination="4dV-Ho-4Xx" eventType="touchUpInside" id="Ytk-rm-gNI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to deactivate your account?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt0-E6-azC">
+                                <rect key="frame" x="16" y="80" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOO-NG-Lbi">
+                                <rect key="frame" x="16" y="121" width="343" height="72"/>
+                                <string key="text">This action is irreversible. After deactivating, you will not be able to restore your account. All of your personal data stored in your account will be lost.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0S6-QQ-Yb6" firstAttribute="trailing" secondItem="Pt0-E6-azC" secondAttribute="trailing" constant="16" id="Ex9-hc-NHk"/>
+                            <constraint firstItem="OVH-WO-Qio" firstAttribute="leading" secondItem="0S6-QQ-Yb6" secondAttribute="leading" constant="16" id="GKj-fi-mlS"/>
+                            <constraint firstItem="jOO-NG-Lbi" firstAttribute="top" secondItem="Pt0-E6-azC" secondAttribute="bottom" id="MSd-aj-2Oo"/>
+                            <constraint firstItem="jOO-NG-Lbi" firstAttribute="leading" secondItem="0S6-QQ-Yb6" secondAttribute="leading" constant="16" id="PBt-k2-TQO"/>
+                            <constraint firstItem="0S6-QQ-Yb6" firstAttribute="trailing" secondItem="OVH-WO-Qio" secondAttribute="trailing" constant="16" id="SV8-I1-TJl"/>
+                            <constraint firstItem="Pt0-E6-azC" firstAttribute="leading" secondItem="0S6-QQ-Yb6" secondAttribute="leading" constant="16" id="Wb2-xi-ztn"/>
+                            <constraint firstItem="Pt0-E6-azC" firstAttribute="top" secondItem="0S6-QQ-Yb6" secondAttribute="top" constant="16" id="lkM-wi-npD"/>
+                            <constraint firstItem="0S6-QQ-Yb6" firstAttribute="trailing" secondItem="jOO-NG-Lbi" secondAttribute="trailing" constant="16" id="nDD-PI-c2h"/>
+                            <constraint firstItem="0S6-QQ-Yb6" firstAttribute="bottom" secondItem="OVH-WO-Qio" secondAttribute="bottom" constant="16" id="sre-1g-6Qv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0S6-QQ-Yb6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Aug-Ch-Vqb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbf-KJ-aLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6104.8000000000002" y="1775.2623688155923"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ohF-C2-z1x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CXG-3d-3QV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pdd-c9-2il">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4dV-Ho-4Xx" kind="relationship" relationship="rootViewController" id="MoJ-N6-M4R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hP5-tS-X0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5165.6000000000004" y="1775.2623688155923"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BarcodeScanTabBarIcon" width="50" height="50"/>
