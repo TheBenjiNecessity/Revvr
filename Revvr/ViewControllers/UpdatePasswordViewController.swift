@@ -22,10 +22,16 @@ class UpdatePasswordViewController: UIViewController {
         else { return } //TODO: show error
         
         // TODO: Show loading
-        AppUserAPIService.shared.updatePassword(newPassword: newPassword, oldPassword: oldPassword).then { _ in
-            self.navigationController?.popViewController(animated: true)
-        }.catch { error in
-            
+        if let currentUser = AppUserAPIService.shared.currentUser {
+            AppUserAPIService.shared.updatePassword(newPassword: newPassword, oldPassword: oldPassword).then { _ in
+                SessionService.shared.login(username: currentUser.handle, password: newPassword).then { user in
+                    self.navigationController?.popViewController(animated: true)
+                }.catch { error in
+                    //TODO: show error
+                }
+            }.catch { error in
+                //TODO: show error
+            }
         }
     }
 }
