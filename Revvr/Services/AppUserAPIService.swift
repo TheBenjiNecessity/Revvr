@@ -51,6 +51,10 @@ class AppUserAPIService: APIService {
         return delete(url: uri, type: Data.self)
     }
     
+    func delete() -> Promise<Data> {
+        return delete(url: url, type: Data.self)
+    }
+    
     /* ========================== Followers ========================== */
     func add(followingId: Int) -> Promise<AppUserFollowing> {
         let uri = "\(url)/following/\(followingId)"
