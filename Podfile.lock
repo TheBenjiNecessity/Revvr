@@ -1,20 +1,24 @@
 PODS:
+  - MARKRangeSlider (1.1.1)
   - PromisesObjC (1.2.3)
   - PromisesSwift (1.2.3):
     - PromisesObjC (= 1.2.3)
 
 DEPENDENCIES:
+  - MARKRangeSlider
   - PromisesSwift (~> 1.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - MARKRangeSlider
     - PromisesObjC
     - PromisesSwift
 
 SPEC CHECKSUMS:
+  MARKRangeSlider: ef7e1fe84d22996f47fd72dcb8de50b9410aac47
   PromisesObjC: a3a4263d8a9260214267e0b3788d0f83466ad449
   PromisesSwift: f7f45c21986419e85f7c5b645ed8c6a2c10c04b4
 
-PODFILE CHECKSUM: 87f55ef1c7678c4e17e7170376c186f8666c194a
+PODFILE CHECKSUM: 34e7e248676e3dc2b2471f25787e807f2db4d061
 
 COCOAPODS: 1.5.3

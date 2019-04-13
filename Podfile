@@ -7,6 +7,7 @@ target 'Revvr' do
 
   # Pods for Revvr
   pod 'PromisesSwift', '~> 1.2'
+  pod 'MARKRangeSlider'
 
   target 'RevvrTests' do
     inherit! :search_paths
