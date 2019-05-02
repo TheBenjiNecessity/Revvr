@@ -11,7 +11,19 @@ import Promises
 
 class AppUserAPIService: APIService {
     let url = "service-api/appuser"
-    var currentUser: AppUser?
+    
+    var currentUser: AppUser? {
+        get {
+            if let data = UserDefaults.standard.value(forKey:"currentUser") as? Data {
+                return try? PropertyListDecoder().decode(AppUser.self, from: data)
+            }
+            
+            return nil
+        }
+        set {
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey:"currentUser")
+        }
+    }
     
     static let shared = AppUserAPIService()
     
