@@ -97,6 +97,7 @@
 		79D4814C218A187A001AEB95 /* ReviewableCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D4814B218A187A001AEB95 /* ReviewableCollectionReusableView.swift */; };
 		79D48150218A5F4A001AEB95 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D4814F218A5F4A001AEB95 /* MainTabbarViewController.swift */; };
 		79F1E03F21CF1F7700B46E75 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F1E03E21CF1F7700B46E75 /* ScannerViewController.swift */; };
+		79FB9AE82263F39E0015967D /* FiltersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB9AE72263F39E0015967D /* FiltersTableViewController.swift */; };
 		79FB9AEA22641CE20015967D /* RangeSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB9AE922641CE20015967D /* RangeSliderTableViewCell.swift */; };
 		8A556A4E41C57697223E17B5 /* Pods_RevvrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563D02650801DFCE8B495E64 /* Pods_RevvrTests.framework */; };
 		A5D798BB729D688B6A4F799F /* Pods_RevvrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E9D931E19714A811F984E9 /* Pods_RevvrUITests.framework */; };
@@ -220,6 +221,7 @@
 		79D4814B218A187A001AEB95 /* ReviewableCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableCollectionReusableView.swift; sourceTree = "<group>"; };
 		79D4814F218A5F4A001AEB95 /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		79F1E03E21CF1F7700B46E75 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		79FB9AE72263F39E0015967D /* FiltersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewController.swift; sourceTree = "<group>"; };
 		79FB9AE922641CE20015967D /* RangeSliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderTableViewCell.swift; sourceTree = "<group>"; };
 		80FF82895DB7AC9B7F0D7938 /* Pods-Revvr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revvr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Revvr/Pods-Revvr.debug.xcconfig"; sourceTree = "<group>"; };
 		83689F9E1F249FC5295F03C7 /* Pods-RevvrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevvrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RevvrTests/Pods-RevvrTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 				793CC071224F162D00DB48E1 /* SignUpViewController.swift */,
 				7981D8472255A3A900669977 /* BlockedAccountsTableViewController.swift */,
 				79684B7B225AADC30025784F /* DeactivateAccountViewController.swift */,
+				79FB9AE72263F39E0015967D /* FiltersTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				79647B7421AB638100C94ED6 /* SettingSegmentTableViewCell.swift in Sources */,
 				7922D54621A07E6400C73816 /* Image+Blur.swift in Sources */,
 				793CC072224F162D00DB48E1 /* SignUpViewController.swift in Sources */,
+				79FB9AE82263F39E0015967D /* FiltersTableViewController.swift in Sources */,
 				792922F5218949FD00EB5C2D /* ReviewableTableViewCell.swift in Sources */,
 				79647B7221AB636D00C94ED6 /* SettingDetailTableViewCell.swift in Sources */,
 				79B48BBC211509E200AB5415 /* AppUser.swift in Sources */,

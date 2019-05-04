@@ -7,9 +7,25 @@
 //
 
 import UIKit
-import MARKRangeSlider
+
+struct row {
+    var identifier = ""
+    var leftLabel = ""
+    var rightLabel = ""
+    var description = ""
+    var titles: [String] = []
+}
 
 class FiltersTableViewController: UITableViewController {
+    
+    let rows = [
+        row(identifier: RangeSliderTableViewCell.reuseIdentifier, leftLabel: "", rightLabel: "", description: "Age Range", titles: []),
+        row(identifier: SliderTableViewCell.reuseIdentifier, leftLabel: "Liberal", rightLabel: "Conservative", description: "Political Affiliation", titles: []),
+        row(identifier: SliderTableViewCell.reuseIdentifier, leftLabel: "Socialist", rightLabel: "Libertarian", description: "Political Opinion", titles: []),
+        row(identifier: RadioPickerTableViewCell.reuseIdentifier, leftLabel: "", rightLabel: "", description: "Location", titles: ["North America", "South America", "Europe", "Asia", "Africa", "Austalia"]),
+        row(identifier: SliderTableViewCell.reuseIdentifier, leftLabel: "Religious", rightLabel: "Non-Religious", description: "Religiosity", titles: []),
+        row(identifier: SliderTableViewCell.reuseIdentifier, leftLabel: "Introverted", rightLabel: "Extroverted", description: "Personality", titles: [])
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +38,10 @@ class FiltersTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -30,30 +50,48 @@ class FiltersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return rows.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 253
+        let row = rows[indexPath.row]
+        
+        switch row.identifier {
+            case RangeSliderTableViewCell.reuseIdentifier:
+                return 167
+            case SliderTableViewCell.reuseIdentifier:
+                return 103
+            case RadioPickerTableViewCell.reuseIdentifier:
+                return CGFloat(row.titles.count * 39) + 8
+            default:
+                return 100
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: RangeSliderTableViewCell.reuseIdentifier, for: indexPath) as! RangeSliderTableViewCell
-            
-            cell.setTitleLabelText(text: "Age Range")
-            cell.setValues(minValue: 0, maxValue: 120, minimumDistance: 1)
-            
-            return cell
-        }
-//        else {
-//            
-//        }
+        let row = rows[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: row.identifier, for: indexPath)
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SliderTableViewCell", for: indexPath)
-
-        // Configure the cell...
-
+        switch row.identifier {
+            case RangeSliderTableViewCell.reuseIdentifier:
+                let rangeSliderTableViewCell = cell as! RangeSliderTableViewCell
+                
+                rangeSliderTableViewCell.setTitleLabelText(text: row.description)
+                rangeSliderTableViewCell.setValues(minValue: 0, maxValue: 120, minimumDistance: 1)
+            case SliderTableViewCell.reuseIdentifier:
+                let sliderTableViewCell = cell as! SliderTableViewCell
+                
+                sliderTableViewCell.setLabels(leftLabel: row.leftLabel, rightLabel: row.rightLabel, description: row.description)
+                sliderTableViewCell.initSlider(minValue: 0, maxValue: 100, currentValue: 50)
+            case RadioPickerTableViewCell.reuseIdentifier:
+                let radioPickerTableViewCell = cell as! RadioPickerTableViewCell
+                
+                let views = row.titles.map { radioPickerTableViewCell.createSwitchView(title: $0) }
+                
+                radioPickerTableViewCell.addSubviews(subviews: views)
+            default: break
+        }
+        
         return cell
     }
     
