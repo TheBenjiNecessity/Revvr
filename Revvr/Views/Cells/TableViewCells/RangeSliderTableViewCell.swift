@@ -9,7 +9,7 @@
 import UIKit
 
 class RangeSliderTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
-    static let reuseIdentifier = "SliderTableViewCell"
+    static let reuseIdentifier = "RangeSliderTableViewCellIdentifier"
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var picker: UIPickerView!
