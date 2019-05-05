@@ -103,18 +103,15 @@ class ProfileTableViewController: UITableViewController {
         if let value = property.value {
             switch property.type {
                 case .textview:
-                    let textView = cell.viewWithTag(20) as! UITextView
-                    if let text = value as? String {
+                    if let text = value as? String, let textView = cell.viewWithTag(20) as? UITextView {
                         textView.text = text
                     }
                 case .textfield:
-                    let textfield = cell.viewWithTag(10) as! UITextField
-                    if let text = value as? String {
+                    if let text = value as? String, let textfield = cell.viewWithTag(10) as? UITextField {
                         textfield.text = text
                     }
                 case .date:
-                    let datePicker = cell.viewWithTag(20) as! UIDatePicker
-                    if let date = value as? Date {
+                    if let date = value as? Date, let datePicker = cell.viewWithTag(30) as? UIDatePicker {
                         datePicker.date = date
                     }
             }
