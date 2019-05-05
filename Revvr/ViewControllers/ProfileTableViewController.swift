@@ -137,11 +137,65 @@ class ProfileTableViewController: UITableViewController {
     }
 
     @IBAction func didTapSaveButton(_ sender: Any) {
+        guard let currentUser = AppUserAPIService.shared.currentUser,
+            let firstName = getValue(forRow: 0) as? String,
+            let lastName = getValue(forRow: 1) as? String,
+            let city = getValue(forRow: 9) as? String,
+            let administrativeArea = getValue(forRow: 0) as? String,
+            let country = getValue(forRow: 11) as? String,
+            let dob = getValue(forRow: 2) as? Date,
+            let gender = getValue(forRow: 3) as? String,
+            let religion = getValue(forRow: 4) as? String,
+            let politics = getValue(forRow: 5) as? String,
+            let education = getValue(forRow: 6) as? String,
+            let profession = getValue(forRow: 7) as? String,
+            let interests = getValue(forRow: 8) as? String
+        else {
+            return
+        }
         
+        let user = AppUser(firstName: firstName,
+                           lastName: lastName,
+                           handle: currentUser.handle,
+                           email: currentUser.email,
+                           password: currentUser.password,
+                           city: city,
+                           administrativeArea: administrativeArea,
+                           country: country,
+                           dob: dob,
+                           gender: gender,
+                           religion: religion,
+                           politics: politics,
+                           education: education,
+                           profession: profession,
+                           interests: interests,
+                           content: currentUser.content,
+                           settings: currentUser.settings)
+        
+        AppUserAPIService.shared.update(id: currentUser.id, user: user).then { user in
+            
+        }
     }
     
     @IBAction func didTapCancelButton(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func getValue(forRow row: Int) -> Any? {
+        guard let property = userDict[keys[row]] else { return nil }
+        let cell = self.tableView(self.tableView, cellForRowAt: IndexPath(row: row, section: 0))
+        
+        switch property.type {
+            case .textview:
+                let textView = cell.viewWithTag(20) as! UITextView
+                return textView.text
+            case .textfield:
+                let textfield = cell.viewWithTag(10) as! UITextField
+                return textfield.text
+            case .date:
+                let datePicker = cell.viewWithTag(20) as! UIDatePicker
+                return datePicker.date
+        }
     }
     
     /*
