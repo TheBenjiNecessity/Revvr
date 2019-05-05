@@ -33,6 +33,7 @@
 		79594BAA217FBCDF00A5C34C /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */; };
 		7959E6252272A71C00AA8A3E /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7959E6242272A71C00AA8A3E /* SliderTableViewCell.swift */; };
 		795B85AA21A23C630021DF0E /* CreateReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795B85A921A23C620021DF0E /* CreateReviewViewController.swift */; };
+		795BBD9A227E5CC200E34F24 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795BBD99227E5CC200E34F24 /* ProfileTableViewController.swift */; };
 		795CE0FE217813D600311390 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FD217813D600311390 /* KeychainPasswordItem.swift */; };
 		795CE1002178144500311390 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE0FF2178144500311390 /* SessionService.swift */; };
 		795CE102217817E400311390 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CE101217817E400311390 /* Token.swift */; };
@@ -151,6 +152,7 @@
 		79594BA9217FBCDF00A5C34C /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		7959E6242272A71C00AA8A3E /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
 		795B85A921A23C620021DF0E /* CreateReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewViewController.swift; sourceTree = "<group>"; };
+		795BBD99227E5CC200E34F24 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		795CE0FD217813D600311390 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		795CE0FF2178144500311390 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		795CE101217817E400311390 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				7981D8472255A3A900669977 /* BlockedAccountsTableViewController.swift */,
 				79684B7B225AADC30025784F /* DeactivateAccountViewController.swift */,
 				79FB9AE72263F39E0015967D /* FiltersTableViewController.swift */,
+				795BBD99227E5CC200E34F24 /* ProfileTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				792922F5218949FD00EB5C2D /* ReviewableTableViewCell.swift in Sources */,
 				79647B7221AB636D00C94ED6 /* SettingDetailTableViewCell.swift in Sources */,
 				79B48BBC211509E200AB5415 /* AppUser.swift in Sources */,
+				795BBD9A227E5CC200E34F24 /* ProfileTableViewController.swift in Sources */,
 				7955246921A34D4D0009C431 /* IconCollectionViewCell.swift in Sources */,
 				79B48BCD21150EC200AB5415 /* AppUserSettings.swift in Sources */,
 				795CE1002178144500311390 /* SessionService.swift in Sources */,
