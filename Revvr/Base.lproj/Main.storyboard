@@ -608,6 +608,9 @@
                                     <state key="normal" title="Edit Profile">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="changeFilters:" destination="gi5-wH-HBe" eventType="touchUpInside" id="tU4-1w-bvX"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="333" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBf-M0-9Xm">
                                     <rect key="frame" x="268" y="38" width="99" height="30"/>
@@ -616,8 +619,7 @@
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="changeFilters:" destination="gi5-wH-HBe" eventType="touchUpInside" id="Ymm-70-0qX"/>
-                                        <action selector="info:" destination="gi5-wH-HBe" eventType="touchUpInside" id="VQw-jC-DGr"/>
+                                        <action selector="info:" destination="gi5-wH-HBe" eventType="touchUpInside" id="sKp-pd-7r3"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -641,8 +643,8 @@
                                 <constraint firstAttribute="trailing" secondItem="vHs-yX-wEn" secondAttribute="trailing" constant="8" id="nOe-zb-OH5"/>
                             </constraints>
                             <connections>
-                                <outlet property="changeFiltersButton" destination="EBf-M0-9Xm" id="tdH-wO-C8f"/>
-                                <outlet property="editProfileButton" destination="2Xb-SF-Fz5" id="BdT-OU-iYo"/>
+                                <outlet property="changeFiltersButton" destination="2Xb-SF-Fz5" id="rwV-Nu-9Xy"/>
+                                <outlet property="editProfileButton" destination="EBf-M0-9Xm" id="L7w-cq-aWQ"/>
                                 <outlet property="followersLabel" destination="1Nv-bm-alg" id="m63-x7-soF"/>
                                 <outlet property="followingsLabel" destination="86x-nf-Po2" id="9oY-3m-XOv"/>
                                 <outlet property="profilePictureImageView" destination="ev3-lO-cHW" id="bhc-aK-Gpz"/>
