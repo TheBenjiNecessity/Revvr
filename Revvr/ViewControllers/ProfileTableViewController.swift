@@ -27,23 +27,39 @@ struct AppUserProperty {
 }
 
 class ProfileTableViewController: UITableViewController {
+    let keys = ["firstname", "lastname", "dob", "gender", "religion", "politics", "education", "profession", "interests", "city", "administrative_area", "country"]
     var userDict = [
-        AppUserProperty(type: .textfield, name: "First Name"),
-        AppUserProperty(type: .textfield, name: "Last Name"),
-        AppUserProperty(type: .date, name: "Date of Birth"),
-        AppUserProperty(type: .textfield, name: "Gender"),
-        AppUserProperty(type: .textfield, name: "Religion"),
-        AppUserProperty(type: .textfield, name: "Politics"),
-        AppUserProperty(type: .textfield, name: "Education"),
-        AppUserProperty(type: .textfield, name: "Profession"),
-        AppUserProperty(type: .textview, name: "Interests"),
-        AppUserProperty(type: .textfield, name: "city"),
-        AppUserProperty(type: .textfield, name: "administrative_area"),
-        AppUserProperty(type: .textfield, name: "country")
+        "firstname": AppUserProperty(type: .textfield, name: "First Name"),
+        "lastname": AppUserProperty(type: .textfield, name: "Last Name"),
+        "dob": AppUserProperty(type: .date, name: "Date of Birth"),
+        "gender": AppUserProperty(type: .textfield, name: "Gender"),
+        "religion": AppUserProperty(type: .textfield, name: "Religion"),
+        "politics": AppUserProperty(type: .textfield, name: "Politics"),
+        "education": AppUserProperty(type: .textfield, name: "Education"),
+        "profession": AppUserProperty(type: .textfield, name: "Profession"),
+        "interests": AppUserProperty(type: .textview, name: "Interests"),
+        "city": AppUserProperty(type: .textfield, name: "City"),
+        "administrative_area": AppUserProperty(type: .textfield, name: "State"),
+        "country": AppUserProperty(type: .textfield, name: "Country")
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let currentUser = AppUserAPIService.shared.currentUser {
+            userDict["firstname"]?.value = currentUser.firstName
+            userDict["lastname"]?.value = currentUser.lastName
+            userDict["dob"]?.value = currentUser.dob
+            userDict["gender"]?.value = currentUser.gender
+            userDict["religion"]?.value = currentUser.religion
+            userDict["politics"]?.value = currentUser.politics
+            userDict["education"]?.value = currentUser.education
+            userDict["profession"]?.value = currentUser.profession
+            userDict["interests"]?.value = currentUser.interests
+            userDict["city"]?.value = currentUser.city
+            userDict["administrative_area"]?.value = currentUser.administrativeArea
+            userDict["country"]?.value = currentUser.country
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -63,11 +79,11 @@ class ProfileTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userDict.count
+        return keys.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let property = userDict[indexPath.row]
+        guard let property = userDict[keys[indexPath.row]] else { return UITableViewCell(style: .default, reuseIdentifier: "")}
         var identifier = ""
         
         switch property.type {
@@ -83,12 +99,32 @@ class ProfileTableViewController: UITableViewController {
 
         let label = cell.viewWithTag(1) as! UILabel
         label.text = property.name
+        
+        if let value = property.value {
+            switch property.type {
+                case .textview:
+                    let textView = cell.viewWithTag(20) as! UITextView
+                    if let text = value as? String {
+                        textView.text = text
+                    }
+                case .textfield:
+                    let textfield = cell.viewWithTag(10) as! UITextField
+                    if let text = value as? String {
+                        textfield.text = text
+                    }
+                case .date:
+                    let datePicker = cell.viewWithTag(20) as! UIDatePicker
+                    if let date = value as? Date {
+                        datePicker.date = date
+                    }
+            }
+        }
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let property = userDict[indexPath.row]
+        guard let property = userDict[keys[indexPath.row]] else { return 0 }
         
         switch property.type {
             case .textview:
