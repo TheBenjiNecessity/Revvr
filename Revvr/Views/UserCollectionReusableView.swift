@@ -13,6 +13,8 @@ protocol UserSettingsDelegate: AnyObject {
     func showUserSettingsActionSheet()
     func follow(user: AppUser) -> Promise<AppUserFollowing>
     func unFollow(user: AppUser) -> Promise<AppUserFollowing>
+    func didTapInfoButton()
+    func didTapChangeFiltersButton()
     func didTapFollowersLabel()
     func didTapFollowingsLabel()
 }
@@ -34,9 +36,11 @@ class UserCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var followingsLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var editProfileButton: UIButton!
+    @IBOutlet weak var changeFiltersButton: UIButton!
     
     static let reuseIdentifier = "UserCollectionReusableViewIdentifier"
-    static let viewHeight = CGFloat(72.0)
+    static let viewHeight = CGFloat(76.0)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,6 +54,16 @@ class UserCollectionReusableView: UICollectionReusableView {
                                                                    action: #selector(didTapFollowersLabel))
         followersTapGestureRecognizer.numberOfTapsRequired = 1
         followersLabel.addGestureRecognizer(followersTapGestureRecognizer)
+        
+        editProfileButton.layer.borderWidth = 1.0
+        editProfileButton.layer.borderColor = UIColor.black.cgColor
+        editProfileButton.layer.cornerRadius = 5.0
+        editProfileButton.contentEdgeInsets = UIEdgeInsetsMake(5, 15, 5, 15)
+        
+        changeFiltersButton.layer.borderWidth = 1.0
+        changeFiltersButton.layer.borderColor = UIColor.black.cgColor
+        changeFiltersButton.layer.cornerRadius = 5.0
+        changeFiltersButton.contentEdgeInsets = UIEdgeInsetsMake(5, 15, 5, 15)
     }
     
     func setUser(user: AppUser) {
@@ -68,6 +82,9 @@ class UserCollectionReusableView: UICollectionReusableView {
                 let followButton = self.viewWithTag(222)
                 settingsButton?.isHidden = true
                 followButton?.isHidden = true
+            } else {
+                editProfileButton.isHidden = true
+                changeFiltersButton.isHidden = true
             }
         } else {
             SessionService.shared.forcedLogout()
@@ -93,6 +110,14 @@ class UserCollectionReusableView: UICollectionReusableView {
     
     @IBAction func settings(_ sender: Any) {
         delegate?.showUserSettingsActionSheet()
+    }
+    
+    @IBAction func info(_ sender: Any) {
+        delegate?.didTapInfoButton()
+    }
+    
+    @IBAction func changeFilters(_ sender: Any) {
+        delegate?.didTapChangeFiltersButton()
     }
     
     @objc func didTapFollowingsLabel() {
