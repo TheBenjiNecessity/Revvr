@@ -11,6 +11,7 @@ import UIKit
 protocol ReviewActionsDelegate: AnyObject {
     func reviewActionCellDidPressReply()
     func reviewActionCellDidPressAgree()
+    func reviewActionCellDidPressDisagree()
     func reviewActionCellDidPressExtras()
 }
 
@@ -25,6 +26,10 @@ class ReviewActionsTableViewCell: UITableViewCell {
     
     @IBAction func agreePress(_ sender: Any) {
         delegate?.reviewActionCellDidPressAgree()
+    }
+    
+    @IBAction func disagreePress(_ sender: Any) {
+        delegate?.reviewActionCellDidPressDisagree()
     }
     
     @IBAction func extrasPress(_ sender: Any) {
