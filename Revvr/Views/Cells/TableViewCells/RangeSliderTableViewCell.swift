@@ -8,7 +8,11 @@
 
 import UIKit
 
-class RangeSliderTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
+class RangeSliderTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource, FilterTableViewCell {
+    var value: Any {
+        get { return "\(leftValue),\(rightValue)" }
+    }
+    
     static let reuseIdentifier = "RangeSliderTableViewCellIdentifier"
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -18,17 +22,28 @@ class RangeSliderTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerV
     var maxValue = 100000000
     var minimumDistance = 0
     
+    var leftValue: Int {
+        get { return self.picker.selectedRow(inComponent: 0) }
+    }
+    
+    var rightValue: Int {
+        get { return self.picker.selectedRow(inComponent: 1) }
+    }
+    
     func setTitleLabelText(text: String) {
         titleLabel.text = text
     }
     
-    func setValues(minValue: Int, maxValue: Int, minimumDistance: Int) {
+    func setValues(minValue: Int, maxValue: Int, minimumDistance: Int, lValue: Int?, rValue: Int?) {
         self.minValue = minValue
         self.maxValue = maxValue
         self.minimumDistance = minimumDistance
         
         self.picker.delegate = self
         self.picker.dataSource = self
+        
+        self.picker.selectRow(lValue ?? minValue, inComponent: 0, animated: false)
+        self.picker.selectRow(rValue ?? maxValue, inComponent: 1, animated: false)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

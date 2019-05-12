@@ -129,4 +129,25 @@ class AppUserAPIService: APIService {
         let uri = "\(url)/changepassword?newPassword=\(newPassword)&oldPassword=\(oldPassword)"
         return put(url: uri, body: Data(), type: Data.self)
     }
+    
+    /* ========================== JSON objects ========================== */
+    func getContent(id: Int) -> Promise<AppUserContent> {
+        let uri = "\(url)/\(id)/content"
+        return get(url: uri, type: AppUserContent.self)
+    }
+    
+    func getSettings(id: Int) -> Promise<AppUserSettings> {
+        let uri = "\(url)/\(id)/setting"
+        return get(url: uri, type: AppUserSettings.self)
+    }
+    
+    func getPreferences(id: Int) -> Promise<AppUserPreferences> {
+        let uri = "\(url)/\(id)/preferences"
+        return get(url: uri, type: AppUserPreferences.self)
+    }
+    
+    func setPreferences(id: Int, preferences: AppUserPreferences) -> Promise<AppUserPreferences> {
+        let uri = "\(url)/\(id)/preferences"
+        return post(url: uri, body: preferences, type: AppUserPreferences.self)
+    }
 }

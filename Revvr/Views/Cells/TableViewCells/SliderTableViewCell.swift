@@ -8,12 +8,10 @@
 
 import UIKit
 
-class SliderTableViewCell: UITableViewCell {
+class SliderTableViewCell: UITableViewCell, FilterTableViewCell {
     static let reuseIdentifier = "SliderTableViewCellIdentifier"
     
-    var gradation = 1
-    
-    var sliderValue: Float {
+    var value: Any {
         get { return slider.value }
     }
     
@@ -28,9 +26,10 @@ class SliderTableViewCell: UITableViewCell {
         self.descriptionLabel.text = description
     }
     
-    func initSlider(minValue: Float, maxValue: Float, currentValue: Float) {
+    func initSlider(minValue: Float, maxValue: Float, currentValue: Float?) {
         slider.minimumValue = minValue
         slider.maximumValue = maxValue
-        slider.setValue(currentValue, animated: false)
+        let currValue = currentValue ?? 50.0
+        slider.setValue((currValue / 100) * maxValue, animated: false)
     }
 }
