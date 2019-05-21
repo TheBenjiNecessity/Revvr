@@ -18,6 +18,7 @@ struct AppUserProperty {
     var type: viewType
     var name = ""
     var value: Any?
+    var view: UIView?
     
     init(type: viewType, name: String) {
         self.type = type
@@ -27,11 +28,11 @@ struct AppUserProperty {
 }
 
 class ProfileTableViewController: UITableViewController {
-    let keys = ["firstname", "lastname", "dob", "gender", "religion", "politics", "education", "profession", "interests", "city", "administrative_area", "country"]
+    let keys = ["firstname", "lastname", "dateOfBirth", "gender", "religion", "politics", "education", "profession", "interests", "city", "administrative_area", "country"]
     var userDict = [
         "firstname": AppUserProperty(type: .textfield, name: "First Name"),
         "lastname": AppUserProperty(type: .textfield, name: "Last Name"),
-        "dob": AppUserProperty(type: .date, name: "Date of Birth"),
+        "dateOfBirth": AppUserProperty(type: .date, name: "Date of Birth"),
         "gender": AppUserProperty(type: .textfield, name: "Gender"),
         "religion": AppUserProperty(type: .textfield, name: "Religion"),
         "politics": AppUserProperty(type: .textfield, name: "Politics"),
@@ -49,7 +50,7 @@ class ProfileTableViewController: UITableViewController {
         if let currentUser = AppUserAPIService.shared.currentUser {
             userDict["firstname"]?.value = currentUser.firstName
             userDict["lastname"]?.value = currentUser.lastName
-            userDict["dob"]?.value = currentUser.dob
+            userDict["dateOfBirth"]?.value = currentUser.dateOfBirth
             userDict["gender"]?.value = currentUser.gender
             userDict["religion"]?.value = currentUser.religion
             userDict["politics"]?.value = currentUser.politics
@@ -60,12 +61,25 @@ class ProfileTableViewController: UITableViewController {
             userDict["administrative_area"]?.value = currentUser.administrativeArea
             userDict["country"]?.value = currentUser.country
         }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        AppUserAPIService.shared.getApiUser().then { user in
+            AppUserAPIService.shared.currentUser = user
+            
+            self.userDict["firstname"]?.value = user.firstName
+            self.userDict["lastname"]?.value = user.lastName
+            self.userDict["dateOfBirth"]?.value = user.dateOfBirth
+            self.userDict["gender"]?.value = user.gender
+            self.userDict["religion"]?.value = user.religion
+            self.userDict["politics"]?.value = user.politics
+            self.userDict["education"]?.value = user.education
+            self.userDict["profession"]?.value = user.profession
+            self.userDict["interests"]?.value = user.interests
+            self.userDict["city"]?.value = user.city
+            self.userDict["administrative_area"]?.value = user.administrativeArea
+            self.userDict["country"]?.value = user.country
+            
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -105,14 +119,17 @@ class ProfileTableViewController: UITableViewController {
                 case .textview:
                     if let text = value as? String, let textView = cell.viewWithTag(20) as? UITextView {
                         textView.text = text
+                        userDict[keys[indexPath.row]]?.view = textView
                     }
                 case .textfield:
                     if let text = value as? String, let textfield = cell.viewWithTag(10) as? UITextField {
                         textfield.text = text
+                        userDict[keys[indexPath.row]]?.view = textfield
                     }
                 case .date:
                     if let date = value as? Date, let datePicker = cell.viewWithTag(30) as? UIDatePicker {
                         datePicker.date = date
+                        userDict[keys[indexPath.row]]?.view = datePicker
                     }
             }
         }
@@ -138,9 +155,9 @@ class ProfileTableViewController: UITableViewController {
             let firstName = getValue(forRow: 0) as? String,
             let lastName = getValue(forRow: 1) as? String,
             let city = getValue(forRow: 9) as? String,
-            let administrativeArea = getValue(forRow: 0) as? String,
+            let administrativeArea = getValue(forRow: 10) as? String,
             let country = getValue(forRow: 11) as? String,
-            let dob = getValue(forRow: 2) as? Date,
+            let dateOfBirth = getValue(forRow: 2) as? Date,
             let gender = getValue(forRow: 3) as? String,
             let religion = getValue(forRow: 4) as? String,
             let politics = getValue(forRow: 5) as? String,
@@ -151,7 +168,8 @@ class ProfileTableViewController: UITableViewController {
             return
         }
         
-        let user = AppUser(firstName: firstName,
+        let user = AppUser(id: currentUser.id,
+                           firstName: firstName,
                            lastName: lastName,
                            handle: currentUser.handle,
                            email: currentUser.email,
@@ -159,18 +177,19 @@ class ProfileTableViewController: UITableViewController {
                            city: city,
                            administrativeArea: administrativeArea,
                            country: country,
-                           dob: dob,
+                           dateOfBirth: dateOfBirth,
                            gender: gender,
                            religion: religion,
                            politics: politics,
                            education: education,
                            profession: profession,
-                           interests: interests,
-                           content: currentUser.content,
-                           settings: currentUser.settings)
+                           interests: interests)
         
-        AppUserAPIService.shared.update(id: currentUser.id, user: user).then { user in
-            
+        AppUserAPIService.shared.update(id: currentUser.id, user: user).then { userResp in
+            print(userResp)
+            AppUserAPIService.shared.currentUser = userResp
+        }.catch { error in
+            print(error)
         }
     }
     
@@ -180,64 +199,17 @@ class ProfileTableViewController: UITableViewController {
     
     func getValue(forRow row: Int) -> Any? {
         guard let property = userDict[keys[row]] else { return nil }
-        let cell = self.tableView(self.tableView, cellForRowAt: IndexPath(row: row, section: 0))
         
         switch property.type {
             case .textview:
-                let textView = cell.viewWithTag(20) as! UITextView
+                let textView = property.view as! UITextView
                 return textView.text
             case .textfield:
-                let textfield = cell.viewWithTag(10) as! UITextField
+                let textfield = property.view as! UITextField
                 return textfield.text
             case .date:
-                let datePicker = cell.viewWithTag(20) as! UIDatePicker
+                let datePicker = property.view as! UIDatePicker
                 return datePicker.date
         }
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

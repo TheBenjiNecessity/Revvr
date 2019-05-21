@@ -19,7 +19,7 @@ struct AppUser: Codable {
     let city: String?
     let administrativeArea: String?
     let country: String?
-    let dob: Date?
+    let dateOfBirth: Date?
     let gender: String?
     let religion: String?
     let politics: String?
@@ -27,14 +27,12 @@ struct AppUser: Codable {
     let profession: String?
     let interests: String?
     
-    let content: AppUserContent?
-    let settings: AppUserSettings?
-    
     init() {
-        self.init(firstName: "", lastName: "", handle: "", email: "", password: "")
+        self.init(id: -1, firstName: "", lastName: "", handle: "", email: "", password: "")
     }
     
-    init(firstName: String,
+    init(id: Int,
+        firstName: String,
         lastName: String,
         handle: String,
         email: String,
@@ -42,15 +40,13 @@ struct AppUser: Codable {
         city: String? = nil,
         administrativeArea: String? = nil,
         country: String? = nil,
-        dob: Date? = nil,
+        dateOfBirth: Date? = nil,
         gender: String? = nil,
         religion: String? = nil,
         politics: String? = nil,
         education: String? = nil,
         profession: String? = nil,
-        interests: String? = nil,
-        content: AppUserContent? = nil,
-        settings: AppUserSettings? = nil) {
+        interests: String? = nil) {
         
         self.firstName = firstName
         self.lastName = lastName
@@ -58,19 +54,16 @@ struct AppUser: Codable {
         self.email = email
         self.password = password
         
-        self.id = -1
+        self.id = id
         self.city = city
         self.administrativeArea = administrativeArea
         self.country = country
-        self.dob = dob
+        self.dateOfBirth = dateOfBirth
         self.gender = gender
         self.religion = religion
         self.politics = politics
         self.education = education
         self.profession = profession
         self.interests = interests
-        
-        self.content = content
-        self.settings = settings
     }
 }

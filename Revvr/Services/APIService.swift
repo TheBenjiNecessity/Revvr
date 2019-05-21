@@ -94,7 +94,12 @@ class APIService: NSObject {
         }
         
         if let body = body {
-            request.httpBody = try? JSONEncoder().encode(body)
+            let formatter = DateFormatter()
+            let encoder = JSONEncoder()
+
+            formatter.dateFormat = Date.format
+            encoder.dateEncodingStrategy = .formatted(formatter)
+            request.httpBody = try? encoder.encode(body)
         }
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
