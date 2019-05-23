@@ -26,7 +26,7 @@ struct Review: Codable {
     
     init(emojis: String, comment: String?, appUser: AppUser, reviewable: Reviewable) {
         self.appUserID = appUser.id
-        self.reviewableID = reviewable.id
+        self.reviewableID = reviewable.id == 0 ? nil : reviewable.id
         self.comment = comment == "" ? nil : comment
         self.emojis = emojis
         self.appUser = appUser
