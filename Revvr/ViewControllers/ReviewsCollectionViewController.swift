@@ -116,9 +116,9 @@ class ReviewsCollectionViewController: UICollectionViewController {
     // MARK: Navigation methods
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let rtvc = segue.destination as! ReviewTableViewController
-        let review = sender as! Review
-        
-        rtvc.review = review
+        if let rtvc = segue.destination as? ReviewTableViewController,
+            let review = sender as? Review {
+            rtvc.review = review
+        }
     }
 }
