@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Promises
 
 class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
     let reuseIdentifiers = [
@@ -16,6 +17,7 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
     ]
     
     var review = Review()
+    var like:ReviewLike?
     var replies: [ReviewReply] = []
 
     override func viewDidLoad() {
@@ -25,7 +27,16 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
         
         ReviewAPIService.shared.listReplies(id: review.id).then { replies in
             self.replies = replies
-            self.tableView?.reloadData()
+            if let currentUser = AppUserAPIService.shared.currentUser, self.review.appUserID != currentUser.id {
+                ReviewAPIService.shared.getLike(id: self.review.id, appUserId: self.review.appUserID).then { like in
+                    self.like = like
+                    self.tableView?.reloadData()
+                }.catch { error in
+                    self.tableView?.reloadData()
+                }
+            } else {
+                self.tableView?.reloadData()
+            }
         }
     }
 
@@ -69,6 +80,9 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
                 (cell as! ReviewTableViewCell).setReview(review: self.review)
             case is ReviewActionsTableViewCell:
                 (cell as! ReviewActionsTableViewCell).delegate = self
+                if let like = self.like {
+                    (cell as! ReviewActionsTableViewCell).like = like
+                }
             case is ReviewStatsTableViewCell:
                 (cell as! ReviewStatsTableViewCell).setStats(review: self.review)
             default: // as reply
@@ -87,8 +101,12 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
         self.performSegue(withIdentifier: "CreateReplySegueIdentifier", sender: nil)
     }
     
-    func reviewActionCellDidPressAgree() {
-        print("agree")
+    func reviewActionCellDidPressAgree() -> Promise<ReviewLike> {
+        return self.reviewLike(forType: "agree")
+    }
+    
+    func reviewActionCellDidPressDisagree() -> Promise<ReviewLike> {
+        return self.reviewLike(forType: "disagree")
     }
     
     func reviewActionCellDidPressExtras() {
@@ -99,5 +117,20 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
         let nav = segue.destination as! UINavigationController
         let rrmvc = nav.topViewController as! ReviewReplyModalViewController
         rrmvc.review = review
+    }
+    
+    func reviewLike(forType type: String) -> Promise<ReviewLike> {
+        guard let userId = AppUserAPIService.shared.currentUser?.id else {
+            let error = NSError(domain: "Set like error", code: -1, userInfo: nil)
+            return Promise<ReviewLike> { fulfill, reject in reject(error); }
+        }
+        
+        let reviewId = review.id
+        let reviewLike = ReviewLike(appUserID: userId, reviewID: reviewId, type: type, created: nil)
+        
+        return ReviewAPIService.shared.like(reviewLike: reviewLike).then { like in
+            self.like = like
+            self.tableView?.reloadData()
+        }
     }
 }

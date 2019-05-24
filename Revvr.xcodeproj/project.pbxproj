@@ -26,6 +26,8 @@
 		795239CE2187FB9D004FEB82 /* ReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */; };
 		795239D02187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795239CF2187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib */; };
 		795239D22188080C004FEB82 /* UserCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795239D12188080C004FEB82 /* UserCollectionReusableView.swift */; };
+		795444542296375300CBF367 /* outline_thumb_down_black_24pt.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795444532296375300CBF367 /* outline_thumb_down_black_24pt.xcassets */; };
+		795444562296378100CBF367 /* outline_thumb_up_black_24pt.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795444552296378100CBF367 /* outline_thumb_up_black_24pt.xcassets */; };
 		795447D421A10F7F00AB281D /* UIColor+commonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795447D321A10F7F00AB281D /* UIColor+commonStyles.swift */; };
 		795447D621A10FAD00AB281D /* UIFont+commonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795447D521A10FAD00AB281D /* UIFont+commonStyles.swift */; };
 		7955246921A34D4D0009C431 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */; };
@@ -148,6 +150,8 @@
 		795239CD2187FB9D004FEB82 /* ReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		795239CF2187FF68004FEB82 /* ReviewWithCommentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewWithCommentCollectionViewCell.xib; sourceTree = "<group>"; };
 		795239D12188080C004FEB82 /* UserCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionReusableView.swift; sourceTree = "<group>"; };
+		795444532296375300CBF367 /* outline_thumb_down_black_24pt.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = outline_thumb_down_black_24pt.xcassets; sourceTree = "<group>"; };
+		795444552296378100CBF367 /* outline_thumb_up_black_24pt.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = outline_thumb_up_black_24pt.xcassets; sourceTree = "<group>"; };
 		795447D321A10F7F00AB281D /* UIColor+commonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+commonStyles.swift"; sourceTree = "<group>"; };
 		795447D521A10FAD00AB281D /* UIFont+commonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+commonStyles.swift"; sourceTree = "<group>"; };
 		7955246721A34D4D0009C431 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -406,6 +410,8 @@
 				7974F877226AA2AA0005AABA /* baseline_reply_black_24pt.xcassets */,
 				796043DF2270039C00216FC6 /* baseline_person_black_36pt.xcassets */,
 				796043E1227005AB00216FC6 /* baseline_home_black_36pt.xcassets */,
+				795444532296375300CBF367 /* outline_thumb_down_black_24pt.xcassets */,
+				795444552296378100CBF367 /* outline_thumb_up_black_24pt.xcassets */,
 				7994BFE920608A9600D05B25 /* LaunchScreen.storyboard */,
 				7994BFEC20608A9600D05B25 /* Info.plist */,
 				79AF8E8121D848CE0085974F /* settings.json */,
@@ -633,8 +639,10 @@
 			files = (
 				796043E02270039D00216FC6 /* baseline_person_black_36pt.xcassets in Resources */,
 				790B5AA2217967E400A88A0D /* LICENSE.txt in Resources */,
+				795444562296378100CBF367 /* outline_thumb_up_black_24pt.xcassets in Resources */,
 				7974F874226A98950005AABA /* baseline_thumb_down_black_24pt.xcassets in Resources */,
 				7994BFEB20608A9600D05B25 /* LaunchScreen.storyboard in Resources */,
+				795444542296375300CBF367 /* outline_thumb_down_black_24pt.xcassets in Resources */,
 				796043E2227005AB00216FC6 /* baseline_home_black_36pt.xcassets in Resources */,
 				7974F876226A98B40005AABA /* baseline_thumb_up_black_24pt.xcassets in Resources */,
 				7994BFE820608A9600D05B25 /* Assets.xcassets in Resources */,
