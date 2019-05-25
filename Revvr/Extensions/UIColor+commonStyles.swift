@@ -9,13 +9,11 @@
 import UIKit
 
 extension UIColor {
-//    static var myAppRed: UIColor {
-//        return UIColor(red: 1, green: 0.1, blue: 0.1, alpha: 1)
-//    }
-//    static var myAppGreen: UIColor {
-//        return UIColor(red: 0, green: 1, blue: 0, alpha: 1)
-//    }
-//    static var myAppBlue: UIColor {
-//        return UIColor(red: 0, green: 0.2, blue: 0.9, alpha: 1)
-//    }
+    static var tintColor: UIColor {
+        return UIColor(red: 0.0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
+    }
+    
+    static var disableTintColor: UIColor {
+        return UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+    }
 }

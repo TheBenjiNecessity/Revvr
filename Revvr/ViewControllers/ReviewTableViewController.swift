@@ -83,6 +83,10 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
                 if let like = self.like {
                     (cell as! ReviewActionsTableViewCell).like = like
                 }
+            
+                if let currentUser = AppUserAPIService.shared.currentUser {
+                    (cell as! ReviewActionsTableViewCell).disableLikeButtons(disable: currentUser.id == review.appUserID)
+                }
             case is ReviewStatsTableViewCell:
                 (cell as! ReviewStatsTableViewCell).setStats(review: self.review)
             default: // as reply
