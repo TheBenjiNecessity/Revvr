@@ -9,6 +9,7 @@
 import UIKit
 
 fileprivate let bottomPadding = CGFloat(80.0)
+fileprivate let paddingConstraint: CGFloat = CGFloat(5.0)
 
 class ReviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bgReviewableImageView: UIImageView!
@@ -36,7 +37,8 @@ class ReviewCollectionViewCell: UICollectionViewCell {
     
     func getMinHeight(collectionViewWidth: CGFloat) -> CGFloat {
         let cellWidth = self.getMinWidth(collectionViewWidth: collectionViewWidth)
-        return (cellWidth * (imageSize.height / imageSize.width)) + bottomPadding
+        let profilePictureHeight = profilePictureImageView.frame.size.height
+        return (cellWidth * (imageSize.height / imageSize.width)) + paddingConstraint + profilePictureHeight + paddingConstraint
     }
     
     func getMinWidth(collectionViewWidth: CGFloat) -> CGFloat {
