@@ -15,8 +15,10 @@ class SettingSegmentTableViewCell: SettingTableViewCell {
     
     override func setItem(item: Item) {
         super.setItem(item: item)
-        
-        segments = item.value as! [String]
+
+        if let segments = item.value?.components(separatedBy: ", ") {
+            self.segments = segments
+        }
     }
     
     override func getSelection() -> Any {
