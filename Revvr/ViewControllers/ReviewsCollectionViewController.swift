@@ -15,11 +15,9 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //let review = reviews[indexPath.row]
         let collectionViewWidth = collectionView.bounds.size.width - 2 // '- 2' for inset spacing
-        
         let cell = self.collectionView(collectionView, cellForItemAt: indexPath) as! ReviewCollectionViewCell
-        //let width = review.comment != nil ? collectionViewWidth : collectionViewWidth / 3
+        
         return CGSize(width: cell.getMinWidth(collectionViewWidth: collectionViewWidth),
                       height: cell.getMinHeight(collectionViewWidth: collectionViewWidth))
     }
@@ -55,6 +53,8 @@ class ReviewsCollectionViewController: UICollectionViewController {
         
         let reviewWithCommentViewNib = UINib(nibName: "ReviewWithCommentCollectionViewCell", bundle: nil)
         self.collectionView!.register(reviewWithCommentViewNib, forCellWithReuseIdentifier: reviewWithCommentCVCId)
+        
+        (self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout).sectionHeadersPinToVisibleBounds = true
     }
 
     // MARK: UICollectionViewDataSource
