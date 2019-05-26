@@ -27,6 +27,7 @@ class ReviewActionsTableViewCell: UITableViewCell {
     var like: ReviewLike?
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var dislikeButton: UIButton!
+    @IBOutlet weak var replyButton: UIButton!
     
     let likeSelectedImage = UIImage(named: likeSelectedImageName)
     let dislikeSelectedImage = UIImage(named: dislikeSelectedImageName)
@@ -38,6 +39,11 @@ class ReviewActionsTableViewCell: UITableViewCell {
         dislikeButton.tintColor = disable ? UIColor.disableTintColor : UIColor.tintColor
         likeButton.isEnabled = !disable
         dislikeButton.isEnabled = !disable
+    }
+    
+    func disableReplyButton(disable: Bool) {
+        replyButton.tintColor = disable ? UIColor.disableTintColor : UIColor.tintColor
+        replyButton.isEnabled = !disable
     }
 
     @IBAction func replyPress(_ sender: Any) {

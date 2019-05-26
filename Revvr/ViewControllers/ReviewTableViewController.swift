@@ -86,6 +86,12 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
             
                 if let currentUser = AppUserAPIService.shared.currentUser {
                     (cell as! ReviewActionsTableViewCell).disableLikeButtons(disable: currentUser.id == review.appUserID)
+                    
+                    let repliesFromUser = replies.filter{ reply -> Bool in
+                        return currentUser.id == reply.appUserID
+                    }
+                    
+                    (cell as! ReviewActionsTableViewCell).disableReplyButton(disable: repliesFromUser.count > 0)
                 }
             case is ReviewStatsTableViewCell:
                 (cell as! ReviewStatsTableViewCell).setStats(review: self.review)

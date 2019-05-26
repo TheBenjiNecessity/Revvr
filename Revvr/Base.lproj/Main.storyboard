@@ -1303,6 +1303,7 @@
                                 <connections>
                                     <outlet property="dislikeButton" destination="Aan-0q-tdZ" id="d1D-YS-Y4o"/>
                                     <outlet property="likeButton" destination="gMI-qc-uAJ" id="elH-ld-mtI"/>
+                                    <outlet property="replyButton" destination="tuh-VK-HM9" id="yuV-D6-cGd"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewReplyTableViewCellIdentifier" rowHeight="160" id="va9-aA-org" customClass="ReviewReplyTableViewCell" customModule="Revvr" customModuleProvider="target">
