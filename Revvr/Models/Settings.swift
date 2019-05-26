@@ -14,6 +14,8 @@ enum SettingsType: String, Decodable {
     case segment
     case info
     case setting
+    case button
+    // description?
 }
 
 // Representing the entire table view of settings
@@ -39,4 +41,5 @@ struct Item: Decodable {
     let itemType: SettingsType
     let setting: Setting?
     let value: String?
+    let identifier: String?
 }
