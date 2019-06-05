@@ -8,8 +8,15 @@
 
 import UIKit
 
-@IBDesignable
+protocol UserDetailsViewDelegate: AnyObject {
+    func didTap(with user: AppUser)
+}
+
 class UserDetailsView: UIView {
+    weak var delegate: UserDetailsViewDelegate?
+    
+    var user = AppUser()
+    
     lazy var profilePictureImageView: UIImageView = {
         let ppImage = UIImage(named: "DefaultProfilePictureThumbnail")
         let ppView = UIImageView(image: ppImage)
@@ -68,7 +75,13 @@ class UserDetailsView: UIView {
     }
     
     func setUserDetails(user: AppUser) {
+        self.user = user
+        
         //profilePictureImageView.image = UIImage.image(from: user.blah)
         userDetailsLabel.attributedText = NSAttributedString.attributedStringFor(user: user, of: CGFloat(15.0))
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        delegate?.didTap(with: self.user)
     }
 }

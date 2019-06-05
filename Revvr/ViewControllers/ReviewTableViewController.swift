@@ -9,7 +9,7 @@
 import UIKit
 import Promises
 
-class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
+class ReviewTableViewController: UITableViewController, ReviewActionsDelegate, UserDetailsViewDelegate {
     let reuseIdentifiers = [
         ReviewTableViewCell.reuseIdentifier,
         ReviewStatsTableViewCell.reuseIdentifier,
@@ -78,6 +78,7 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
         switch cell {
             case is ReviewTableViewCell:
                 (cell as! ReviewTableViewCell).setReview(review: self.review)
+                (cell as! ReviewTableViewCell).userDetailsView.delegate = self
             case is ReviewActionsTableViewCell:
                 (cell as! ReviewActionsTableViewCell).delegate = self
                 if let like = self.like {
@@ -121,6 +122,14 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate {
     
     func reviewActionCellDidPressExtras() {
         print("extras")
+    }
+    
+    func didTap(with user: AppUser) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let uwrcvc = storyboard.instantiateViewController(withIdentifier: "UserWithReviewsCollectionViewController") as! UserWithReviewsCollectionViewController
+        uwrcvc.user = user
+        self.navigationController?.pushViewController(uwrcvc, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
