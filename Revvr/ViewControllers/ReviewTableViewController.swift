@@ -125,7 +125,6 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate, U
     }
     
     func didTap(with user: AppUser) {
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let uwrcvc = storyboard.instantiateViewController(withIdentifier: "UserWithReviewsCollectionViewController") as! UserWithReviewsCollectionViewController
         uwrcvc.user = user
