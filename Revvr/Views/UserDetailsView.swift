@@ -8,11 +8,13 @@
 
 import UIKit
 
+@IBDesignable
 class UserDetailsView: UIView {
     lazy var profilePictureImageView: UIImageView = {
         let ppImage = UIImage(named: "DefaultProfilePictureThumbnail")
         let ppView = UIImageView(image: ppImage)
         ppView.translatesAutoresizingMaskIntoConstraints = false
+        ppView.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         
         return ppView
     }()
@@ -22,6 +24,7 @@ class UserDetailsView: UIView {
         label.numberOfLines = 2
         label.text = "Username"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.frame = CGRect(x: 44, y: 0, width: 100, height: 44)
         
         return label
     }()
@@ -55,7 +58,7 @@ class UserDetailsView: UIView {
         
         allConstraints += [NSLayoutConstraint(item: profilePictureImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: CGFloat(1), constant: 0)]
         
-        let subviewHorizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[ppview(44)]-8-[udview]-|",
+        let subviewHorizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[ppview(44)]-8-[udview]-0-|",
                                                                           options: [.alignAllTop, .alignAllBottom],
                                                                           metrics: nil,
                                                                           views: views)

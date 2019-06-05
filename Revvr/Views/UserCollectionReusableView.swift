@@ -34,6 +34,7 @@ class UserCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var userDetailsView: UserDetailsView!
     @IBOutlet weak var followingsLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!
     @IBOutlet weak var editProfileButton: UIButton!
@@ -68,7 +69,9 @@ class UserCollectionReusableView: UICollectionReusableView {
     
     func setUser(user: AppUser) {
         self.user = user
-        userLabel?.attributedText = NSAttributedString.attributedStringFor(user: user, of: CGFloat(17.0))
+        //userLabel?.attributedText = NSAttributedString.attributedStringFor(user: user, of: CGFloat(17.0))
+        
+        userDetailsView.setUserDetails(user: user)
         
         AppUserAPIService.shared.get(followingId: user.id).then { following in
             self.isFollowing = true

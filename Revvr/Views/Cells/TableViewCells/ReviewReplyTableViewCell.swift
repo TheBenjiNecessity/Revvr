@@ -11,12 +11,11 @@ import UIKit
 class ReviewReplyTableViewCell: UITableViewCell {
     static let reuseIdentifier = "ReviewReplyTableViewCellIdentifier"
     
-    @IBOutlet weak var profilePictureImageView: UIImageView!
-    @IBOutlet weak var userDetailsLabel: UILabel!
+    @IBOutlet weak var userDetailsView: UserDetailsView!
     @IBOutlet weak var commentLabel: UILabel!
     
     func setReply(reply: ReviewReply) {
-        userDetailsLabel?.attributedText = NSAttributedString.attributedStringFor(user: reply.appUser, of: CGFloat(17.0))
+        userDetailsView.setUserDetails(user: reply.appUser)
         commentLabel?.text = reply.comment
     }
 }

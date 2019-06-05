@@ -23,8 +23,7 @@ class FollowingTableViewCell: UITableViewCell {
         didSet {
             let followButton = self.viewWithTag(333) as! UIButton
             
-            userLabel?.attributedText = NSAttributedString.attributedStringFor(user: user, of: CGFloat(15.0))
-            //profilePictureImageView?
+            userDetailsView.setUserDetails(user: user)
             
             AppUserAPIService.shared.get(followingId: user.id).then { following in
                 followButton.setTitle("Unfollow", for: UIControlState.normal)
@@ -40,8 +39,7 @@ class FollowingTableViewCell: UITableViewCell {
         }
     }
 
-    @IBOutlet weak var userLabel: UILabel!
-    @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var userDetailsView: UserDetailsView!
     
     @IBAction func followButtonTap(_ sender: Any) {
         if isFollowing {

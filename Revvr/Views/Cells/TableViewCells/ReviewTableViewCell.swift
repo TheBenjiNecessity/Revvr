@@ -11,15 +11,14 @@ import UIKit
 class ReviewTableViewCell: UITableViewCell {
     static let reuseIdentifier = "ReviewTableViewCellIdentifier"
     
-    @IBOutlet weak var profilePictureImageView: UIImageView!
-    @IBOutlet weak var userDetailsLabel: UILabel!
+    @IBOutlet weak var userDetailsView: UserDetailsView!
     @IBOutlet weak var reviewableImageView: UIImageView!
     @IBOutlet weak var reviewableDetailsLabel: UILabel!
     @IBOutlet weak var reviewCommentLabel: UILabel!
     @IBOutlet weak var emojiImageView: UIImageView!
     
     func setReview(review: Review) {
-        userDetailsLabel?.attributedText = NSAttributedString.attributedStringFor(user: review.appUser, of: CGFloat(17.0))
+        userDetailsView.setUserDetails(user: review.appUser)
         reviewCommentLabel?.text = review.comment
         
         emojiImageView?.image = UIImage(named: review.emojis + "Emoji")
