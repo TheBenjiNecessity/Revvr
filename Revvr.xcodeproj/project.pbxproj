@@ -88,6 +88,7 @@
 		799C141021A9CC3A001ABFC2 /* ReviewableModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C140F21A9CC3A001ABFC2 /* ReviewableModelTests.swift */; };
 		799C141221A9CC45001ABFC2 /* ReviewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C141121A9CC45001ABFC2 /* ReviewModelTests.swift */; };
 		799C141621A9DD64001ABFC2 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C141521A9DD64001ABFC2 /* SettingsTableViewController.swift */; };
+		79ACEF8522A4C50000C14D99 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACEF8422A4C50000C14D99 /* UserDetailsView.swift */; };
 		79AF8E8221D848CE0085974F /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = 79AF8E8121D848CE0085974F /* settings.json */; };
 		79B48BBC211509E200AB5415 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBB211509E200AB5415 /* AppUser.swift */; };
 		79B48BBE211509FF00AB5415 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B48BBD211509FF00AB5415 /* Review.swift */; };
@@ -218,6 +219,7 @@
 		799C140F21A9CC3A001ABFC2 /* ReviewableModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewableModelTests.swift; sourceTree = "<group>"; };
 		799C141121A9CC45001ABFC2 /* ReviewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModelTests.swift; sourceTree = "<group>"; };
 		799C141521A9DD64001ABFC2 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		79ACEF8422A4C50000C14D99 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		79AF8E8121D848CE0085974F /* settings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = settings.json; sourceTree = "<group>"; };
 		79B48BBB211509E200AB5415 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		79B48BBD211509FF00AB5415 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				795239D12188080C004FEB82 /* UserCollectionReusableView.swift */,
 				7966E7B121A65EA3000AFE2C /* EmojiTabButton.swift */,
 				79690E27224C4B2B006892D9 /* TappableLabel.swift */,
+				79ACEF8422A4C50000C14D99 /* UserDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79ACEF8522A4C50000C14D99 /* UserDetailsView.swift in Sources */,
 				79D4814A218A172A001AEB95 /* ReviewableWithReviewsCollectionViewController.swift in Sources */,
 				79647B7021AB635F00C94ED6 /* SettingSwitchTableViewCell.swift in Sources */,
 				79647B6A21AB0D5200C94ED6 /* Settings.swift in Sources */,
