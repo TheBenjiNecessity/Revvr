@@ -99,6 +99,7 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate, U
             default: // as reply
                 let replyCell = cell as! ReviewReplyTableViewCell
                 replyCell.setReply(reply: replies[indexPath.row - reuseIdentifiers.count])
+                replyCell.userDetailsView.delegate = self
         }
 
         return cell

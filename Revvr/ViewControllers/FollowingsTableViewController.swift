@@ -14,7 +14,7 @@ enum FollowType {
     case followings
 }
 
-class FollowingsTableViewController: UITableViewController, FollowDelegate {
+class FollowingsTableViewController: UITableViewController, FollowDelegate, UserDetailsViewDelegate {
     var user: AppUser = AppUser()
     var followings: [AppUser] = [] { didSet { self.tableView?.reloadData() } }
     var followType: FollowType = .followers
@@ -50,6 +50,8 @@ class FollowingsTableViewController: UITableViewController, FollowDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: FollowingTableViewCell.reuseIdentifier, for: indexPath) as! FollowingTableViewCell
         
         cell.user = followings[indexPath.row]
+        
+        cell.userDetailsView.delegate = self
 
         return cell
     }
@@ -66,50 +68,10 @@ class FollowingsTableViewController: UITableViewController, FollowDelegate {
         return AppUserAPIService.shared.delete(followingId: user.id)
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func didTap(with user: AppUser) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let uwrcvc = storyboard.instantiateViewController(withIdentifier: "UserWithReviewsCollectionViewController") as! UserWithReviewsCollectionViewController
+        uwrcvc.user = user
+        self.navigationController?.pushViewController(uwrcvc, animated: true)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

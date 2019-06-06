@@ -32,12 +32,12 @@ class ReviewWithCommentCollectionViewCell: ReviewCollectionViewCell {
     }
     
     override func getMinHeight(collectionViewWidth: CGFloat) -> CGFloat {
-        let ppWidth = profilePictureImageView.frame.size.width
+        let ppWidth = CGFloat(35)
         let lblWidth = collectionViewWidth - (paddingConstraint + ppWidth + paddingConstraint)
         let reviewableImageHeight = reviewableImageView.frame.size.height
         
         // Compute the height of the username and comment labels based on their widths and text contents
-        let profilePictureHeight = profilePictureImageView.frame.size.height
+        let profilePictureHeight = CGFloat(35)
         let commentLblHeight = commentLabel.text?.height(withConstrainedWidth: CGFloat(lblWidth), font: commentLabel.font)
         let lblHeight = reviewableImageHeight + paddingConstraint + profilePictureHeight + paddingConstraint + commentLblHeight! + bottomSpacingConstraint
 

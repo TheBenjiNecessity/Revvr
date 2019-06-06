@@ -41,7 +41,7 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-class ReviewsCollectionViewController: UICollectionViewController {
+class ReviewsCollectionViewController: UICollectionViewController, UserDetailsViewDelegate {
     var segueIdentifier = "ReviewDetailSegueIdentifier"
     var reviews: [Review] = []
 
@@ -120,5 +120,12 @@ class ReviewsCollectionViewController: UICollectionViewController {
             let review = sender as? Review {
             rtvc.review = review
         }
+    }
+    
+    func didTap(with user: AppUser) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let uwrcvc = storyboard.instantiateViewController(withIdentifier: "UserWithReviewsCollectionViewController") as! UserWithReviewsCollectionViewController
+        uwrcvc.user = user
+        self.navigationController?.pushViewController(uwrcvc, animated: true)
     }
 }
