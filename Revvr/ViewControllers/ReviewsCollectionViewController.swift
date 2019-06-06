@@ -73,6 +73,9 @@ class ReviewsCollectionViewController: UICollectionViewController, UserDetailsVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! ReviewCollectionViewCell
         
         cell.setReview(review: review)
+        cell.userDetailsView.delegate = self
+        cell.userDetailsView.setImage(height: 35)
+        cell.userDetailsView.shouldAllowTap = true
         
         return cell
     }

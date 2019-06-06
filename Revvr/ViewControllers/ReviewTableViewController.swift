@@ -79,6 +79,7 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate, U
             case is ReviewTableViewCell:
                 (cell as! ReviewTableViewCell).setReview(review: self.review)
                 (cell as! ReviewTableViewCell).userDetailsView.delegate = self
+                (cell as! ReviewTableViewCell).userDetailsView.shouldAllowTap = true
             case is ReviewActionsTableViewCell:
                 (cell as! ReviewActionsTableViewCell).delegate = self
                 if let like = self.like {
@@ -100,6 +101,7 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate, U
                 let replyCell = cell as! ReviewReplyTableViewCell
                 replyCell.setReply(reply: replies[indexPath.row - reuseIdentifiers.count])
                 replyCell.userDetailsView.delegate = self
+                replyCell.userDetailsView.shouldAllowTap = true
         }
 
         return cell

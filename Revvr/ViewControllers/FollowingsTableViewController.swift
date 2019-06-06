@@ -52,6 +52,7 @@ class FollowingsTableViewController: UITableViewController, FollowDelegate, User
         cell.user = followings[indexPath.row]
         
         cell.userDetailsView.delegate = self
+        cell.userDetailsView.shouldAllowTap = true
 
         return cell
     }

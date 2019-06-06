@@ -20,7 +20,7 @@ class ReviewCollectionViewCell: UICollectionViewCell {
     var imageSize = CGSize.zero
     
     func setReview(review: Review) {
-        userDetailsView.setUserDetails(user: review.appUser)
+        userDetailsView.setUserDetails(user: review.appUser, fontSize: CGFloat(13))
         reviewableLabel.text = review.reviewable.title
         
         if let imageUrl = review.reviewable.titleImageUrl {
