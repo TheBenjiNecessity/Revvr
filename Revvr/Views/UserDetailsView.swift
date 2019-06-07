@@ -52,6 +52,8 @@ class UserDetailsView: UIView {
     private func setupView(height: Int) {
         translatesAutoresizingMaskIntoConstraints = false
         
+        profilePictureImageView.removeConstraints(profilePictureImageView.constraints)
+        userDetailsLabel.removeConstraints(userDetailsLabel.constraints)
         profilePictureImageView.removeFromSuperview()
         userDetailsLabel.removeFromSuperview()
         
