@@ -617,6 +617,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="2Xb-SF-Fz5" firstAttribute="top" secondItem="gi5-wH-HBe" secondAttribute="top" constant="8" id="0Cd-nl-8in"/>
                                 <constraint firstItem="86x-nf-Po2" firstAttribute="leading" secondItem="gi5-wH-HBe" secondAttribute="leading" constant="8" id="3JF-Od-4FB"/>
