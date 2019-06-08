@@ -93,7 +93,9 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate, U
                         return currentUser.id == reply.appUserID
                     }
                     
-                    (cell as! ReviewActionsTableViewCell).disableReplyButton(disable: repliesFromUser.count > 0)
+                    let disable = repliesFromUser.count > 0 || self.review.appUserID == currentUser.id
+                    
+                    (cell as! ReviewActionsTableViewCell).disableReplyButton(disable: disable)
                 }
             case is ReviewStatsTableViewCell:
                 (cell as! ReviewStatsTableViewCell).setStats(review: self.review)
