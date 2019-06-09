@@ -19,6 +19,7 @@ class ReviewableWithReviewsCollectionViewController: ReviewsCollectionViewContro
     
     func setReviewable(reviewable: Reviewable) {
         self.reviewable = reviewable
+        self.showLoadingIndicator(show: true)
         ReviewableAPIService.shared.get(tpId: reviewable.tpId, type: reviewable.tpName).then { r in
             self.reviewable = r
             self.title = reviewable.title
@@ -26,7 +27,13 @@ class ReviewableWithReviewsCollectionViewController: ReviewsCollectionViewContro
             ReviewAPIService.shared.listByReviewable(reviewable: r).then { reviews in
                 self.reviews = reviews
                 self.refresh()
+                self.showLoadingIndicator(show: false)
+            }.catch{ error in
+                //TODO: no reviews found
+                self.showLoadingIndicator(show: false)
             }
+        }.catch{ error in
+            self.showLoadingIndicator(show: false)
         }
     }
 

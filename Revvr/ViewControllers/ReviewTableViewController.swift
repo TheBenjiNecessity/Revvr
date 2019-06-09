@@ -24,20 +24,11 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate, U
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
         
-        ReviewAPIService.shared.listReplies(id: review.id).then { replies in
-            self.replies = replies
-            if let currentUser = AppUserAPIService.shared.currentUser, self.review.appUserID != currentUser.id {
-                ReviewAPIService.shared.getLike(id: self.review.id, appUserId: self.review.appUserID).then { like in
-                    self.like = like
-                    self.tableView?.reloadData()
-                }.catch { error in
-                    self.tableView?.reloadData()
-                }
-            } else {
-                self.tableView?.reloadData()
-            }
-        }
+        self.showLoadingIndicator(show: true)
+        self.refresh()
     }
 
     // MARK: - Table view data source
@@ -154,6 +145,32 @@ class ReviewTableViewController: UITableViewController, ReviewActionsDelegate, U
         return ReviewAPIService.shared.like(reviewLike: reviewLike).then { like in
             self.like = like
             self.tableView?.reloadData()
+        }
+    }
+    
+    @objc func refresh() {
+        let listReplies = ReviewAPIService.shared.listReplies(id: review.id)
+        var getLike = Promise(ReviewLike(appUserID: -1, reviewID: -1, type: "", created: nil))
+        
+        if let currentUser = AppUserAPIService.shared.currentUser, self.review.appUserID != currentUser.id {
+            getLike = ReviewAPIService.shared.getLike(id: self.review.id, appUserId: self.review.appUserID)
+        }
+        
+        all(listReplies, getLike).then { replies, like in
+            self.replies = replies
+            if like.appUserID != -1 {
+                self.like = like
+            }
+        }.always {
+            self.showLoadingIndicator(show: false)
+        }
+    }
+    
+    func showLoadingIndicator(show: Bool) {
+        if show {
+            self.tableView!.refreshControl?.beginRefreshing()
+        } else {
+            self.tableView!.refreshControl?.endRefreshing()
         }
     }
 }
