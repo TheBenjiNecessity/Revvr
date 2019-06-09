@@ -55,6 +55,8 @@ class ReviewsCollectionViewController: UICollectionViewController, UserDetailsVi
         self.collectionView!.register(reviewWithCommentViewNib, forCellWithReuseIdentifier: reviewWithCommentCVCId)
         
         (self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout).sectionHeadersPinToVisibleBounds = true
+        
+        self.collectionView!.refreshControl = UIRefreshControl()
     }
 
     // MARK: UICollectionViewDataSource
@@ -106,6 +108,14 @@ class ReviewsCollectionViewController: UICollectionViewController, UserDetailsVi
         // use the same cell
         
         collectionView?.reloadData()
+    }
+    
+    func showLoadingIndicator(show: Bool) {
+        if show {
+            self.collectionView!.refreshControl?.beginRefreshing()
+        } else {
+            self.collectionView!.refreshControl?.endRefreshing()
+        }
     }
 
     // MARK: UICollectionViewDelegate
