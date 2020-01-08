@@ -48,7 +48,6 @@ class SearchTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Users & Products"
-        searchController.searchBar.scopeButtonTitles = ["Users", "Media", "Products"]
         searchController.searchBar.delegate = self
         
         navigationItem.searchController = searchController
