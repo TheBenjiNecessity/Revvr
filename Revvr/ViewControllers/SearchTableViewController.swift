@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Promises
 
 extension SearchTableViewController: UISearchResultsUpdating, UISearchBarDelegate {
     // MARK: - UISearchResultsUpdating Delegate
@@ -113,19 +114,12 @@ class SearchTableViewController: UITableViewController {
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         debounceTimer?.invalidate()
         let nextTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
-            let index = self.searchController.searchBar.selectedScopeButtonIndex
-            if index == 0 {
-                AppUserAPIService.shared.search(text: searchText).then { users in
-                    self.models = users
-                    self.tableView.reloadData()
-                }
-            } else {
-                if let type = self.searchController.searchBar.scopeButtonTitles?[index] {
-                    ReviewableAPIService.shared.search(text: searchText, type: type.lowercased()).then { reviewables in
-                        self.models = reviewables
-                        self.tableView.reloadData()
-                    }
-                }
+            all(
+                AppUserAPIService.shared.search(text: searchText),
+                ReviewableAPIService.shared.search(text: searchText, type: "media")
+            ).then { users, reviewables in
+                self.models = users + reviewables
+                self.tableView.reloadData()
             }
         }
         debounceTimer = nextTimer
