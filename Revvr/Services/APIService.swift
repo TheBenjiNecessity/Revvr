@@ -10,7 +10,7 @@ import Promises
 
 class APIService: NSObject {
     private let errorDomain = "com.revvr.Revvr"
-    private let serviceUrl: String = "http://localhost:5001/"//TODO
+    private let serviceUrl: String = "http://revoji.us-west-2.elasticbeanstalk.com/"
 
     var accessToken: String? {
         get {
