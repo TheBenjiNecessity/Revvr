@@ -173,7 +173,6 @@ class ProfileTableViewController: UITableViewController {
                            lastName: lastName,
                            handle: currentUser.handle,
                            email: currentUser.email,
-                           password: currentUser.password,
                            city: city,
                            administrativeArea: administrativeArea,
                            country: country,

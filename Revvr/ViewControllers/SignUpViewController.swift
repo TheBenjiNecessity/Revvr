@@ -102,7 +102,7 @@ class SignUpViewController: UIViewController, TappableLabelDelegate {
                              email: String,
                              firstname: String,
                              lastname: String) {
-        let user = AppUser(id: -1, firstName: firstname, lastName: lastname, handle: username, email: email, password: password)
+        let user = AppUser(id: -1, firstName: firstname, lastName: lastname, handle: username, email: email)
         AppUserAPIService.shared.create(user: user).then { user in
             self.presentingViewController?.dismiss(animated: true, completion: {
                 if let loginViewController = self.presentingViewController as? LoginViewController {
