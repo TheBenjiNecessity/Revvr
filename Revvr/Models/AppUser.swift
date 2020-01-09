@@ -14,7 +14,6 @@ struct AppUser: Codable {
     let lastName: String
     let handle: String
     let email: String
-    let password: String
     
     let city: String?
     let administrativeArea: String?
@@ -28,7 +27,7 @@ struct AppUser: Codable {
     let interests: String?
     
     init() {
-        self.init(id: -1, firstName: "", lastName: "", handle: "", email: "", password: "")
+        self.init(id: -1, firstName: "", lastName: "", handle: "", email: "")
     }
     
     init(id: Int,
@@ -36,7 +35,6 @@ struct AppUser: Codable {
         lastName: String,
         handle: String,
         email: String,
-        password: String,
         city: String? = nil,
         administrativeArea: String? = nil,
         country: String? = nil,
@@ -52,7 +50,6 @@ struct AppUser: Codable {
         self.lastName = lastName
         self.handle = handle
         self.email = email
-        self.password = password
         
         self.id = id
         self.city = city
