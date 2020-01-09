@@ -15,6 +15,15 @@ protocol UserDetailsViewDelegate: AnyObject {
 class UserDetailsView: UIView {
     weak var delegate: UserDetailsViewDelegate?
     
+    @IBInspectable var textColor : UIColor? {
+        set (newValue) {
+            userDetailsLabel.textColor = newValue ?? UIColor.black
+        }
+        get {
+            return userDetailsLabel.textColor
+        }
+    }
+    
     var user = AppUser()
     var shouldAllowTap = false
     
