@@ -37,9 +37,8 @@ class ReviewWithCommentCollectionViewCell: ReviewCollectionViewCell {
         let reviewableImageHeight = reviewableImageView.frame.size.height
         
         // Compute the height of the username and comment labels based on their widths and text contents
-        let profilePictureHeight = CGFloat(35)
         let commentLblHeight = commentLabel.text?.height(withConstrainedWidth: CGFloat(lblWidth), font: commentLabel.font)
-        let lblHeight = reviewableImageHeight + paddingConstraint + profilePictureHeight + paddingConstraint + commentLblHeight! + bottomSpacingConstraint
+        let lblHeight = reviewableImageHeight + paddingConstraint + commentLblHeight! + bottomSpacingConstraint
 
         return max(minHeight, lblHeight)
     }

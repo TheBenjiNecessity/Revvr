@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,17 +15,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nZ1-Yh-4uK">
-                    <rect key="frame" x="0.0" y="0.0" width="125" height="138"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultEmojiThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="mKS-Od-bO5">
-                    <rect key="frame" x="85" y="5" width="35" height="35"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="35" id="F3n-Dk-N1d"/>
-                        <constraint firstAttribute="height" constant="35" id="eDZ-c4-DZF"/>
-                    </constraints>
+                    <rect key="frame" x="0.0" y="0.0" width="125" height="183"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsI-PF-Ww1">
-                    <rect key="frame" x="0.0" y="88" width="125" height="50"/>
+                    <rect key="frame" x="0.0" y="133" width="125" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviewable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAb-2B-hZQ">
                             <rect key="frame" x="5" y="5" width="115" height="40"/>
@@ -46,28 +37,44 @@
                         <constraint firstItem="EAb-2B-hZQ" firstAttribute="top" secondItem="tsI-PF-Ww1" secondAttribute="top" constant="5" id="f4y-cU-9Yx"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCp-sz-33w" customClass="UserDetailsView" customModule="Revvr" customModuleProvider="target">
-                    <rect key="frame" x="5" y="142" width="115" height="36"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZC-e0-pLP">
+                    <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCp-sz-33w" customClass="UserDetailsView" customModule="Revvr" customModuleProvider="target">
+                            <rect key="frame" x="5" y="5" width="115" height="40"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="36" id="xLS-KK-qTo"/>
+                        <constraint firstAttribute="bottom" secondItem="KCp-sz-33w" secondAttribute="bottom" constant="5" id="5Wu-Kb-FWx"/>
+                        <constraint firstItem="KCp-sz-33w" firstAttribute="leading" secondItem="SZC-e0-pLP" secondAttribute="leading" constant="5" id="K6c-A5-KLh"/>
+                        <constraint firstAttribute="trailing" secondItem="KCp-sz-33w" secondAttribute="trailing" constant="5" id="Q8o-wf-sVY"/>
+                        <constraint firstAttribute="height" constant="50" id="QqK-8x-JLS"/>
+                        <constraint firstItem="KCp-sz-33w" firstAttribute="top" secondItem="SZC-e0-pLP" secondAttribute="top" constant="5" id="wdH-EJ-9Gq"/>
                     </constraints>
                 </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultEmojiThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="mKS-Od-bO5">
+                    <rect key="frame" x="85" y="5" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="F3n-Dk-N1d"/>
+                        <constraint firstAttribute="height" constant="35" id="eDZ-c4-DZF"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mKS-Od-bO5" secondAttribute="trailing" constant="5" id="1qg-RB-lRK"/>
-                <constraint firstItem="KCp-sz-33w" firstAttribute="top" secondItem="tsI-PF-Ww1" secondAttribute="bottom" constant="4" id="3d6-gg-bE1"/>
+                <constraint firstItem="SZC-e0-pLP" firstAttribute="leading" secondItem="nZ1-Yh-4uK" secondAttribute="leading" id="CFn-0L-ZCF"/>
                 <constraint firstItem="mKS-Od-bO5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="JMz-hR-Qkd"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KCp-sz-33w" secondAttribute="trailing" constant="5" id="Vxc-3Z-gLw"/>
+                <constraint firstItem="SZC-e0-pLP" firstAttribute="trailing" secondItem="nZ1-Yh-4uK" secondAttribute="trailing" id="KDG-dQ-4ZS"/>
+                <constraint firstItem="SZC-e0-pLP" firstAttribute="top" secondItem="nZ1-Yh-4uK" secondAttribute="top" id="PNG-Uu-gr3"/>
                 <constraint firstItem="tsI-PF-Ww1" firstAttribute="leading" secondItem="nZ1-Yh-4uK" secondAttribute="leading" id="cNd-QQ-g1t"/>
                 <constraint firstItem="nZ1-Yh-4uK" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dOH-Ne-Jux"/>
                 <constraint firstItem="nZ1-Yh-4uK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="dyE-fq-Wo1"/>
                 <constraint firstItem="tsI-PF-Ww1" firstAttribute="trailing" secondItem="nZ1-Yh-4uK" secondAttribute="trailing" id="fPR-Rs-V18"/>
                 <constraint firstItem="tsI-PF-Ww1" firstAttribute="bottom" secondItem="nZ1-Yh-4uK" secondAttribute="bottom" id="laS-Ky-Dxv"/>
                 <constraint firstItem="nZ1-Yh-4uK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qMS-4s-jt0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KCp-sz-33w" secondAttribute="bottom" constant="5" id="rUp-Fq-uOV"/>
-                <constraint firstItem="KCp-sz-33w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="xYb-BC-6kC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nZ1-Yh-4uK" secondAttribute="bottom" id="vY8-Wh-I8i"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
