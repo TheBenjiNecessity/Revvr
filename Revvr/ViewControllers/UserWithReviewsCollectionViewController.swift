@@ -19,13 +19,8 @@ class UserWithReviewsCollectionViewController: ReviewsCollectionViewController, 
         didSet {
             self.title = "\(user.firstName) \(user.lastName)"
             self.showLoadingIndicator(show: true)
-            ReviewAPIService.shared.listByUser(id: user.id).then { reviews in
-                self.reviews = reviews
-                self.refresh()
-                self.showLoadingIndicator(show: false)
-            }.catch { error in
-                self.showLoadingIndicator(show: false)
-            }
+            self.reviewsPromise = ReviewAPIService.shared.listByUser(id: user.id)
+            self.refresh()
         }
     }
     

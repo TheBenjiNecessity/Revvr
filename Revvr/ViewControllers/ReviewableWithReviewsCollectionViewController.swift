@@ -24,14 +24,8 @@ class ReviewableWithReviewsCollectionViewController: ReviewsCollectionViewContro
             self.reviewable = r
             self.title = reviewable.title
             self.collectionView!.reloadData()//TODO needed?
-            ReviewAPIService.shared.listByReviewable(reviewable: r).then { reviews in
-                self.reviews = reviews
-                self.refresh()
-                self.showLoadingIndicator(show: false)
-            }.catch{ error in
-                //TODO: no reviews found
-                self.showLoadingIndicator(show: false)
-            }
+            self.reviewsPromise = ReviewAPIService.shared.listByReviewable(reviewable: r)
+            self.refresh()
         }.catch{ error in
             self.showLoadingIndicator(show: false)
         }

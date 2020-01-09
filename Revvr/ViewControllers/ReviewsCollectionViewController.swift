@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Promises
 
 fileprivate let reviewWithCommentCVCId = "ReviewWithCommentCollectionViewCellIdentifier"
 fileprivate let reviewWithoutCommentCVCId = "ReviewWithoutCommentCollectionViewCellIdentifier"
@@ -44,6 +45,8 @@ extension ReviewsCollectionViewController: UICollectionViewDelegateFlowLayout {
 class ReviewsCollectionViewController: UICollectionViewController, UserDetailsViewDelegate {
     var segueIdentifier = "ReviewDetailSegueIdentifier"
     var reviews: [Review] = []
+    
+    var reviewsPromise: Promise<[Review]>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +60,7 @@ class ReviewsCollectionViewController: UICollectionViewController, UserDetailsVi
         (self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout).sectionHeadersPinToVisibleBounds = true
         
         self.collectionView!.refreshControl = UIRefreshControl()
+        self.collectionView!.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
     }
 
     // MARK: UICollectionViewDataSource
@@ -82,32 +86,36 @@ class ReviewsCollectionViewController: UICollectionViewController, UserDetailsVi
         return cell
     }
     
-    func refresh() {
-        // Group reviews based on reviews having or not having a comment.
-        // Reviews without comments are grouped in blocks of three.
-        var groupedReviews: [Review] = []
-        var smallArray: [Review] = []
-        
-        for review in reviews {
-            if review.comment != nil {
-                groupedReviews.append(review)
-            } else {
-                smallArray.append(review)
-                if smallArray.count == 3 {
-                    groupedReviews += smallArray
-                    smallArray.removeAll()
+    @objc func refresh() {
+        reviewsPromise?.then{ reviews in
+            // Group reviews based on reviews having or not having a comment.
+            // Reviews without comments are grouped in blocks of three.
+            var groupedReviews: [Review] = []
+            var smallArray: [Review] = []
+            
+            for review in reviews {
+                if review.comment != nil {
+                    groupedReviews.append(review)
+                } else {
+                    smallArray.append(review)
+                    if smallArray.count == 3 {
+                        groupedReviews += smallArray
+                        smallArray.removeAll()
+                    }
                 }
             }
+            
+            // set reviews to grouped formation (not forgetting to add remainder of smallArray
+            // if smallArray had fewer than 3 elements by the end).
+            self.reviews = groupedReviews + smallArray
+            
+            // I may also want to group by reviewable where all reviews without comments with the same reviewable should
+            // use the same cell
+            
+            self.collectionView?.reloadData()
+        }.always {
+            self.showLoadingIndicator(show: false)
         }
-        
-        // set reviews to grouped formation (not forgetting to add remainder of smallArray
-        // if smallArray had fewer than 3 elements by the end).
-        reviews = groupedReviews + smallArray
-        
-        // I may also want to group by reviewable where all reviews without comments with the same reviewable should
-        // use the same cell
-        
-        collectionView?.reloadData()
     }
     
     func showLoadingIndicator(show: Bool) {
